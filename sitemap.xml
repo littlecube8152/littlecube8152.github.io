@@ -3,15 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://littlecube8152.github.io/categories/</loc>
+    <loc>/categories/</loc>
   </url>
   
   <url>
-    <loc>http://littlecube8152.github.io/</loc>
+    <loc>/</loc>
   </url>
   
   <url>
-    <loc>http://littlecube8152.github.io/tags/</loc>
+    <loc>/tags/</loc>
   </url>
   
 </urlset>
