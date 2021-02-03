@@ -6,7 +6,25 @@
     <description>Recent content in Posts on LittleCube Coding Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 02 Feb 2021 21:16:38 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 2021 21:08:39 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codeforces 1128E 矩陣快速冪</title>
+      <link>https://littlecube8152.github.io/posts/codeforces-1128e/</link>
+      <pubDate>Wed, 03 Feb 2021 21:08:39 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/posts/codeforces-1128e/</guid>
+      <description>矩陣好難:(
+題敘 對於 $ x \leq 4 $ ， $ f_n = c^{2n-6} f_{n-1} f_{n-2} f_{n-3} $
+給定 $ n, f_1, f_2, f_3, c $，求 $ f_n \mod 10^9 + 7 $。
+$ ( 4 \leq n \leq 10^{18}, 1 \leq f_1, f_2, f_3, c \leq 10^9 ) $
+想法 TLE 用模仿費式數列DP的方法做的話&amp;hellip;&amp;hellip;總複雜度 $ \mathcal{O}(n) $
+看一下值域，感覺就是會吃爆TLE&amp;hellip;&amp;hellip;
+快速冪 這裡要用到一個技巧：矩陣快速冪
+把原本的式子拆開，可以分成兩個部份解決
+$ f_n = (c^{2n-6}) \times (f_{n-1} f_{n-2} f_{n-3}) $
+先令 $ a_n, b_n, c_n, p_n $ 代表 $ f_n = c^{p_n} f_1^{a_n} f_2^{b_n} f_3^{c_n} $</description>
+    </item>
+    
     <item>
       <title>Blog: First</title>
       <link>https://littlecube8152.github.io/posts/my-first-post/</link>
