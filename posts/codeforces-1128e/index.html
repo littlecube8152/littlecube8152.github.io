@@ -296,6 +296,7 @@ $   \begin{bmatrix}
 {p_{n-2}}  \newline
 {2n-6} \newline
 {2}   \end{bmatrix}$<br>
+<br>
 結果記得隨時mod，不然會溢位，<br>
 再次利用快速冪求得$c^{p_n}$，複雜度$\mathcal{O}(\log n)$</p>
 <h3 id="結果">結果</h3>
@@ -307,15 +308,9 @@ $   \begin{bmatrix}
 <h1 id="ac-code">AC Code</h1>
 <h2 id="快速冪-1">快速冪</h2>
 <p>寫得稍微有點長，不過應該蠻好看懂的(吧？)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#75715e">//#pragma GCC optimize(&#34;Ofast,unroll-loops&#34;)
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//#pragma GCC target(&#34;avx,avx2,sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,fma,tune=native&#34;)
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">#define ll long long
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">#define pii pair&lt;int, int&gt;
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">#define pll pair&lt;ll, ll&gt;
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">#define MOD 1000000007
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">#define _INFINITY 9223372036854775807
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">#define fast ios::sync_with_stdio(0), cin.tie(0)
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
 
   <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Matrix3</span>
