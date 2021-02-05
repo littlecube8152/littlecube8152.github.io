@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 數論 質數與模運算[未完] | LittleCube Coding Site</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="數論 質數與模運算[未完]" />
+<meta property="og:description" content="從寒訓整理一些東西出來
+不然我好像會跟不上:(
+質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
+實作上可用 從3開始判奇數 以及 每次篩到$\sqrt{N}$就停止
+對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
+$N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle6} &#43; \frac{\displaystyle1}{\displaystyle15} &#43; \frac{\displaystyle1}{\displaystyle105} &#43; \cdots) &lt; N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$
+優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，
+優化後大概是$\mathcal{O}(N \log \log \sqrt{N})$，還要考慮壓常數的部分。
+(複雜度還要驗證一次，不確定有沒有算錯)
+Code 有時間再放 我好懶XD
+[待補]
+埃式篩法 基本上跟上個做法很像，不過換成：
+如果找到一個質數，把這個質數的所有倍數都標記為不是質數，
+比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，
+這個算法也有優化，除了 從3開始判奇數 ，他的第二種可以進階為 篩到$\sqrt{N}$就停止，
+原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，
+對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：
+$N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://littlecube8152.github.io/posts/math-modular/" />
+<meta property="article:published_time" content="2021-02-04T21:37:11+08:00" />
+<meta property="article:modified_time" content="2021-02-04T21:37:11+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="數論 質數與模運算[未完]"/>
+<meta name="twitter:description" content="從寒訓整理一些東西出來
+不然我好像會跟不上:(
+質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
+實作上可用 從3開始判奇數 以及 每次篩到$\sqrt{N}$就停止
+對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
+$N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle6} &#43; \frac{\displaystyle1}{\displaystyle15} &#43; \frac{\displaystyle1}{\displaystyle105} &#43; \cdots) &lt; N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$
+優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，
+優化後大概是$\mathcal{O}(N \log \log \sqrt{N})$，還要考慮壓常數的部分。
+(複雜度還要驗證一次，不確定有沒有算錯)
+Code 有時間再放 我好懶XD
+[待補]
+埃式篩法 基本上跟上個做法很像，不過換成：
+如果找到一個質數，把這個質數的所有倍數都標記為不是質數，
+比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，
+這個算法也有優化，除了 從3開始判奇數 ，他的第二種可以進階為 篩到$\sqrt{N}$就停止，
+原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，
+對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：
+$N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://littlecube8152.github.io/css/style-dark.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://littlecube8152.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://littlecube8152.github.io/posts/codeforces-1128e/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&text=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&is_video=false&description=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%20%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%20%e4%bb%a5%e5%8f%8a%20%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%20%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%20%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%20%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&t=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#最基礎的想法">最基礎的想法</a>
+      <ul>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#埃式篩法">埃式篩法</a>
+      <ul>
+        <li><a href="#code-1">Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#線性篩法">線性篩法</a>
+      <ul>
+        <li><a href="#code-2">Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#質數篩法dp">質數篩法+DP</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#擴展歐幾里得算法">擴展歐幾里得算法</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#基本運算">基本運算</a></li>
+    <li><a href="#剩餘系">剩餘系</a></li>
+    <li><a href="#有限體">有限體</a></li>
+    <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline">
+          數論 質數與模運算[未完]
+        </h1>
+        <div class="meta">
+          
+          <div class="postdate">
+            
+            <time datetime="2021-02-04 21:37:11 &#43;0800 CST" itemprop="datePublished">2021-02-04</time>
+            
+          </div>
+          
+          
+          <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="../../%20/tags/math" rel="tag">math</a>
+            
+          </div>
+          
+        </div>
+      </header>
+
+      
+      <div class="content" itemprop="articleBody">
+        <p>從寒訓整理一些東西出來<br>
+不然我好像會跟不上:(</p>
+<h1 id="質數篩法">質數篩法</h1>
+<h2 id="最基礎的想法">最基礎的想法</h2>
+<p>用一個陣列維護當前的質因數個數，最容易想也做容易寫<br>
+實作上可用 <strong>從3開始判奇數</strong> 以及 <strong>每次篩到$\sqrt{N}$就停止</strong><br>
+對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：<br>
+<br>
+$N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle6} + \frac{\displaystyle1}{\displaystyle15} + \frac{\displaystyle1}{\displaystyle105} + \cdots) &lt; N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$<br>
+優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，<br>
+優化後大概是$\mathcal{O}(N \log \log \sqrt{N})$，還要考慮壓常數的部分。</p>
+<p><strong>(複雜度還要驗證一次，不確定有沒有算錯)</strong></p>
+<h3 id="code">Code</h3>
+<p>有時間再放 我好懶XD<br>
+[待補]</p>
+<h2 id="埃式篩法">埃式篩法</h2>
+<p>基本上跟上個做法很像，不過換成：<br>
+如果找到一個質數，<strong>把這個質數的所有倍數都標記為不是質數</strong>，<br>
+比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，<br>
+這個算法也有優化，除了 <strong>從3開始判奇數</strong> ，他的第二種可以進階為 <strong>篩到$\sqrt{N}$就停止</strong>，<br>
+原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，<br>
+對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：<br>
+<br>
+$N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$<br>
+優化前的複雜度約為$\mathcal{O}(N \log \log N)$<br>
+優化後為$\mathcal{O}(\sqrt{N} \log \log N)$，同樣也有壓常數的部分。</p>
+<h3 id="code-1">Code</h3>
+<p>有空再放，現在燒雞了:(<br>
+[待補]</p>
+<h2 id="線性篩法">線性篩法</h2>
+<p>線性篩法的精神是<br>
+如果有一個數是合數，那他就應該 <strong>只被篩掉一次</strong>，<br>
+如果某個數字$K = p_1 p_2 p_3 \cdots p_n$，其中$p_1 \leq p_2 \leq p_3 \leq \cdots \leq p_n$，<br>
+我們希望他只被最大的東西篩掉，所以排除自己，最大的就是$p_2 p_3 \cdots p_n$，<br>
+對於每個數$C = p_1 p_2 p_3 \cdots p_n$，可以篩掉$p \times p_1 p_2 p_3 \cdots p_n$，<br>
+其中$p \leq p_1$，否則我們篩掉的那個數字有更大的合數因數：$p p_2 p_3 \cdots p_n$。<br>
+<br>
+複雜度是$\mathcal{O}(N)$，由於每個數都只會被篩到一次(或不被篩到)。</p>
+<h3 id="code-2">Code</h3>
+<p>[待補]</p>
+<h2 id="質數篩法dp">質數篩法+DP</h2>
+<p>如果在篩掉的時候順便紀錄 <strong>是被誰篩掉的</strong> ，可以在短時間求得質因數相關問題的解。<br>
+[待補]</p>
+<h1 id="gcd">GCD</h1>
+<h2 id="擴展歐幾里得算法">擴展歐幾里得算法</h2>
+<h1 id="同餘模運算">同餘/模運算</h1>
+<p>如果有兩個數字$a, b$除$m$的餘數相等，<strong>即$m|(a-b)$</strong> (m被a-b整除)<br>
+記為$a \equiv b \mod m$</p>
+<h2 id="基本運算">基本運算</h2>
+<ol>
+<li>$a \equiv b \mod m, a \equiv b \mod m \Rightarrow a+c \equiv b+d \mod m$ (同mod下同加)</li>
+<li>$a \equiv b \mod m, a \equiv b \mod m \Rightarrow ac \equiv bd \mod m$ (同mod下同乘)</li>
+<li>$a \equiv b \mod m, \Rightarrow a^k \equiv b^k \mod m$ (同mod下同次方)<br>
+證明：$m|(a-b) \Rightarrow m|(a-b)(a^{k-1} + a^{k-2}b^1 + a^{k-3}b^2 + \cdots + b^{k-1}) \Rightarrow m|(a^k-b^k)$</li>
+<li>$ca \equiv cb \mod n \Rightarrow a \equiv b \mod \frac{\displaystyle n}{\displaystyle gcd(n, c)}$<br>
+證明：令$d = gcd(n, c)$<br>
+$n|c(a-b) \Rightarrow \frac{\displaystyle n}{\displaystyle d}|\frac{\displaystyle c}{\displaystyle d}(a-b)$<br>
+而且 $gcd(\frac{\displaystyle n}{\displaystyle d}, \frac{\displaystyle c}{\displaystyle d}) = 1$<br>
+故 $\frac{\displaystyle n}{\displaystyle d}|(a-b)$<br>
+$\Rightarrow a \equiv b \mod \frac{\displaystyle n}{\displaystyle d}$</li>
+</ol>
+<h2 id="剩餘系">剩餘系</h2>
+<p>定義：</p>
+<ul>
+<li>完全剩餘系：對某個集合裡的數$\mod n$之後，恰有$n$個相異的數字</li>
+<li>非負最小完全剩餘系：對$\mod n$下，非負最小完全剩餘系為$\{ 0,1,\cdots,m-1 \}$</li>
+<li>簡化剩餘系：任意一個完全剩餘系只保留與$m$互質的數</li>
+<li>非負最小簡化剩餘系：非負最小完全剩餘系只保留與$m$互質的數<br>
+<br>
+例如考慮$\mod 6$<br>
+<strong>完全剩餘系</strong> 可以是$\{6, -5, -10, 603, 10, 17\}, \{0, 1, 2, -3, -2, -1\} \cdots$<br>
+但 <strong>非負最小完全剩餘系</strong> 只能是$\{0,1,2,3,4,5\}$<br>
+<strong>非負最小簡化剩餘系</strong> 也只能是$\{0,5\}$</li>
+</ul>
+<h2 id="有限體">有限體</h2>
+<p>根據模運算的規則，我們可以定義一種代數結構(稱為體)：<br>
+<br>
+對於$n &gt; 1$，定義$\langle \mathbb{Z}_n, +_n, \times_n \rangle$(簡寫為$\mathbb{Z}_n$)<br>
+其中：<br>
+$\mathbb{Z}_n = \{ 0,1,\cdots,m-1 \}$<br>
+$   \forall a, b \mod n \in \mathbb{Z}_n
+\begin{cases}
+a +_n b := (a + b) \mod n \newline
+a \times_n b := (a \times b) \mod n
+\end{cases} $<br>
+事實上就是程式中的%運算，<br>
+而且$\mathbb{Z}_n$同時滿足：<br>
+$   \begin{cases}
+(a +_n b) +_n c = a +_n (b +_n c) \newline
+(a \times_n b) \times_n c = a \times_n (b \times_n c)
+\end{cases} $       (結合律)<br>
+$   \begin{cases}
+a +_n b = b +_n a \newline
+a \times_n b = b \times_n a
+\end{cases} $           (交換律)<br>
+$   (a +_n b) \times_n c = a \times_n c +_n b \times_n c$(分配律)</p>
+<h2 id="模逆元及反元素">模逆元及反元素</h2>
+<p>如果存在兩個數$a, b \in \mathbb{Z}_n$滿足$a \times_n b = 1$，<br>
+我們稱$b$是$a$的反元素，記為$a^{-1}$<br>
+$a \times_n b = 1 \Leftrightarrow b := a^{-1}$<br>
+在$\mod m$下也有這樣的定義不是，稱為 <strong>模逆元</strong> ：<br>
+$ab \equiv 1 \mod m \Leftrightarrow b \equiv a^{-1} \mod m$<br>
+<br>
+在$\mathbb{Z}_n$(或$\mod n$下)，不是每個元素都有反元素(模逆元)，<br>
+例如$\mathbb{Z}_9$下：</p>
+<table>
+<thead>
+<tr>
+<th>$a$</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$a^{-1}$</td>
+<td>無</td>
+<td>1</td>
+<td>5</td>
+<td>無</td>
+<td>7</td>
+<td>2</td>
+<td>無</td>
+<td>4</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+    </article>
+
+    
+  
+
+
+
+
+
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Posts</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#最基礎的想法">最基礎的想法</a>
+      <ul>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#埃式篩法">埃式篩法</a>
+      <ul>
+        <li><a href="#code-1">Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#線性篩法">線性篩法</a>
+      <ul>
+        <li><a href="#code-2">Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#質數篩法dp">質數篩法+DP</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#擴展歐幾里得算法">擴展歐幾里得算法</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#基本運算">基本運算</a></li>
+    <li><a href="#剩餘系">剩餘系</a></li>
+    <li><a href="#有限體">有限體</a></li>
+    <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&text=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&is_video=false&description=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%20%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%20%e4%bb%a5%e5%8f%8a%20%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%20%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%20%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%20%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&t=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  LittleCube Coding Site 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</script>
+
+
+</html>

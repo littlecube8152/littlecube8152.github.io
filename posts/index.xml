@@ -6,7 +6,33 @@
     <description>Recent content in Posts on LittleCube Coding Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 03 Feb 2021 21:08:39 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 21:37:11 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>數論 質數與模運算[未完]</title>
+      <link>https://littlecube8152.github.io/posts/math-modular/</link>
+      <pubDate>Thu, 04 Feb 2021 21:37:11 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/posts/math-modular/</guid>
+      <description>從寒訓整理一些東西出來
+不然我好像會跟不上:(
+質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
+實作上可用 從3開始判奇數 以及 每次篩到$\sqrt{N}$就停止
+對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
+$N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle6} + \frac{\displaystyle1}{\displaystyle15} + \frac{\displaystyle1}{\displaystyle105} + \cdots) &amp;lt; N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$
+優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，
+優化後大概是$\mathcal{O}(N \log \log \sqrt{N})$，還要考慮壓常數的部分。
+(複雜度還要驗證一次，不確定有沒有算錯)
+Code 有時間再放 我好懶XD
+[待補]
+埃式篩法 基本上跟上個做法很像，不過換成：
+如果找到一個質數，把這個質數的所有倍數都標記為不是質數，
+比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，
+這個算法也有優化，除了 從3開始判奇數 ，他的第二種可以進階為 篩到$\sqrt{N}$就停止，
+原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &amp;lt; \sqrt{N}$，
+對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：
+$N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$</description>
+    </item>
+    
     <item>
       <title>Codeforces 1128E 矩陣快速冪</title>
       <link>https://littlecube8152.github.io/posts/codeforces-1128e/</link>
