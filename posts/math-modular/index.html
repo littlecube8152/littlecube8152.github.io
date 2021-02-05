@@ -211,6 +211,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
   </ul>
 
   <ul>
+    <li><a href="#貝祖定理">貝祖定理</a></li>
     <li><a href="#擴展歐幾里得算法">擴展歐幾里得算法</a></li>
   </ul>
 
@@ -219,6 +220,9 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
     <li><a href="#剩餘系">剩餘系</a></li>
     <li><a href="#有限體">有限體</a></li>
     <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
+    <li><a href="#費馬小定理">費馬小定理</a></li>
+    <li><a href="#歐拉函數">歐拉函數</a></li>
+    <li><a href="#中國剩餘定理">中國剩餘定理</a></li>
   </ul>
 </nav>
     </div>
@@ -297,7 +301,29 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displa
 <p>如果在篩掉的時候順便紀錄 <strong>是被誰篩掉的</strong> ，可以在短時間求得質因數相關問題的解。<br>
 [待補]</p>
 <h1 id="gcd">GCD</h1>
+<h2 id="貝祖定理">貝祖定理</h2>
+<p>若$a,b,c \in \mathbb{Z}^{+}$，則有<br>
+$ax+by=c$存在整數解 $x_0, y_0\Leftrightarrow gcd(a,b)|c$<br>
+證明：<br>
+($\Rightarrow$)<br>
+若$ax+by=c$存在整數解 $x_0, y_0$，則$ax_0+by_0=c$<br>
+由於$gcd(a,b)|a, gcd(a,b)|b$，故原式可寫為$gcd(a,b)(\frac{\displaystyle a}{\displaystyle gcd(a,b)}x_0+\frac{\displaystyle b}{\displaystyle gcd(a,b)}y_0)=c$<br>
+故$gcd(a,b)|c$，得證<br>
+($\Leftarrow$)<br>
+因$gcd(a,b)|c$，設$c = gcd(a,b)d$<br>
+因為$\exists s,t \in \mathbb{Z}$使得$as+bt = gcd(a,b)$<br>
+[待證明]<br>
+故$a(ds)+b(dt) = gcd(a,b)d$，$x_0=ds, y_0=dt$，得證</p>
 <h2 id="擴展歐幾里得算法">擴展歐幾里得算法</h2>
+<p>如果原式$ax+by=c$有解，可以轉換為：<br>
+$bx + (a \mod b)y = c$有解 (由於這樣處理GCD不變)<br>
+接下來要想辦法讓他跟原式有關係：<br>
+$bx' + (a \mod b)y' = c$<br>
+$bx' + (a - b\lfloor\frac{\displaystyle a}{\displaystyle b}\rfloor)y' = c$<br>
+$bx' + ay' - b\lfloor\frac{\displaystyle a}{\displaystyle b}\rfloor y' = c$<br>
+$ay' + b(x' - \lfloor\frac{\displaystyle a}{\displaystyle b}\rfloor y') = c$<br>
+所以可以透過遞迴的方式把問題縮小，<br>
+中間$a, b$其實就是做GCD的過程，必會遇到其中一項為$0$的情況，可以直接解出來</p>
 <h1 id="同餘模運算">同餘/模運算</h1>
 <p>如果有兩個數字$a, b$除$m$的餘數相等，<strong>即$m|(a-b)$</strong> (m被a-b整除)<br>
 記為$a \equiv b \mod m$</p>
@@ -388,6 +414,35 @@ $ab \equiv 1 \mod m \Leftrightarrow b \equiv a^{-1} \mod m$<br>
 </tr>
 </tbody>
 </table>
+<p>由於模逆元可以用擴展歐幾里得算法求出來，<br>
+例如$a$在$\mod m$下的模逆元可以用
+$aa^{-1} + bm = 1$，此時$gcd(a, m)$只能為$1$，即 <strong>兩數互質</strong><br>
+\</p>
+<p>如果需要建反元素\模逆元表，可以用以下推導出的遞迴式：<br>
+$P - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor = P \% i$<br>
+$P - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor \equiv P \% i \mod P$<br>
+$P \times i - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor \equiv P \% i \mod P$<br>
+$i \times (P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) \equiv P \% i \mod P$<br>
+$i \times (P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \equiv 1 \mod P$<br>
+$(P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \equiv i^{-1} \mod P$<br>
+$i^{-1} \equiv (P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \mod P$</p>
+<h2 id="費馬小定理">費馬小定理</h2>
+<p>在$\mod p$下，對於任意整數$a$及質數$p$，有：<br>
+$a^{p} = a \mod p$<br>
+$a^{p-1} = 1 \mod p$<br>
+$a^{p-2} = a^{-1} \mod p$ (三個其實是同一式)<br>
+<br>
+[證明]<br>
+對於$a, 2a, 3a, \cdots, (p-1)a$在$\mod p$下必須一一對應到$1, 2, 3, \cdots, p-1$，<br>
+否則可以得到$a|p$的矛盾，<br>
+連乘之後得到<br>
+$(p-1)!a^{p-1} \equiv a \times 2a \times \cdots \times (p-1)a \equiv 1 \times 2 \times \cdots \times (p-1) \equiv (p-1)! \mod m$<br>
+$a^{p-1} \equiv 1 \mod m$，得證<br>
+<br>
+所以反元素有另一種求法是透過 <strong>費馬小定理</strong> ，前提是$m$是質數，<br>
+此時$a^{-1} = a^{p-2} \mod p$</p>
+<h2 id="歐拉函數">歐拉函數</h2>
+<h2 id="中國剩餘定理">中國剩餘定理</h2>
 
       </div>
     </article>
@@ -436,6 +491,7 @@ $ab \equiv 1 \mod m \Leftrightarrow b \equiv a^{-1} \mod m$<br>
   </ul>
 
   <ul>
+    <li><a href="#貝祖定理">貝祖定理</a></li>
     <li><a href="#擴展歐幾里得算法">擴展歐幾里得算法</a></li>
   </ul>
 
@@ -444,6 +500,9 @@ $ab \equiv 1 \mod m \Leftrightarrow b \equiv a^{-1} \mod m$<br>
     <li><a href="#剩餘系">剩餘系</a></li>
     <li><a href="#有限體">有限體</a></li>
     <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
+    <li><a href="#費馬小定理">費馬小定理</a></li>
+    <li><a href="#歐拉函數">歐拉函數</a></li>
+    <li><a href="#中國剩餘定理">中國剩餘定理</a></li>
   </ul>
 </nav>
     </div>
