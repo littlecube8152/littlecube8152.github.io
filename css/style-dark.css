@@ -9,9 +9,11 @@
 }
 .table {
   display: table;
+  overflow: hidden;
 }
 .table-cell {
   display: table-cell;
+  overflow: hidden;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -320,34 +322,45 @@ body h1,
 body .h1 {
   display: block;
   margin-top: 3rem;
-  margin-bottom: 1rem;
-  color: #2bbc8a;
+  /*margin-bottom: 1rem;*/
+  color: #5ddcff;
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.5em;
+  font-size: 1.75em;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
 body h2,
 body .h2 {
+  display: block;
+  margin-top: 1.5rem;
+  /*margin-bottom: 1rem;*/
+  color: #5ddcff;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.75em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+body h3 {
   position: relative;
   display: block;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
   color: #eee;
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
-body h3 {
+body h4 {
   color: #eee;
   text-decoration: underline;
   font-weight: bold;
   font-size: 0.9rem;
 }
-body h4,
 body h5,
 body h6 {
   display: inline;
@@ -356,7 +369,6 @@ body h6 {
   font-weight: bold;
   font-size: 0.9rem;
 }
-body h3,
 body h4,
 body h5,
 body h6 {
@@ -420,7 +432,7 @@ body table {
   border-collapse: collapse;
   text-align: left;
   font-size: 12px;
-  overflow: auto;
+  overflow: hidden;
   display: block;
 }
 body th {
@@ -608,7 +620,7 @@ body {
   -webkit-filter: grayscale(100%);
 }
 #header #nav {
-  color: #2bbc8a;
+  color: #5ddcff;
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
@@ -622,10 +634,10 @@ body {
 }
 #header #nav ul a {
   margin-right: 15px;
-  color: #2bbc8a;
+  color: #5ddcff;
 }
 #header #nav ul a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, #2bbc8a 5px, #2bbc8a);
+  background-image: linear-gradient(transparent, transparent 5px, #5ddcff 5px, #5ddcff);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -634,7 +646,7 @@ body {
   display: inline-block;
   margin-right: 15px;
   border-right: 1px dotted;
-  border-color: #2bbc8a;
+  border-color: #5ddcff;
   vertical-align: middle;
 }
 #header #nav ul .icon {
@@ -655,11 +667,13 @@ body {
   #header #title {
     display: table;
     margin-right: 5rem;
+    font-size: 3em;
     min-height: 50px;
   }
   #header #title h1 {
     display: table-cell;
     vertical-align: middle;
+    font-size: 3em;
   }
   #header #nav ul a:hover {
     background: none;
@@ -738,7 +752,7 @@ body {
   margin-left: 15px;
 }
 #header-post #menu-icon:hover {
-  color: #2bbc8a;
+  color: #5ddcff;
 }
 #header-post #menu-icon-tablet {
   float: right;
@@ -746,7 +760,7 @@ body {
   margin-left: 15px;
 }
 #header-post #menu-icon-tablet:hover {
-  color: #2bbc8a;
+  color: #5ddcff;
 }
 #header-post #top-icon-tablet {
   position: fixed;
@@ -756,17 +770,17 @@ body {
   margin-left: 15px;
 }
 #header-post #top-icon-tablet:hover {
-  color: #2bbc8a;
+  color: #5ddcff;
 }
 #header-post .active {
-  color: #2bbc8a;
+  color: #5ddcff;
 }
 #header-post #menu {
   visibility: hidden;
   margin-right: 2rem;
 }
 #header-post #nav {
-  color: #2bbc8a;
+  color: #5ddcff;
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
@@ -777,16 +791,16 @@ body {
 }
 #header-post #nav ul a {
   margin-right: 15px;
-  color: #2bbc8a;
+  color: #5ddcff;
 }
 #header-post #nav ul a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, #2bbc8a 5px, #2bbc8a);
+  background-image: linear-gradient(transparent, transparent 5px, #5ddcff 5px, #5ddcff);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
 #header-post #nav ul li {
-  border-right: 1px dotted #2bbc8a;
+  border-right: 1px dotted #5ddcff;
 }
 #header-post #nav ul li:last-child {
   margin-right: 0;
@@ -837,7 +851,7 @@ body {
   font-size: 0.8rem;
 }
 #header-post #toc nav > ul > li:before {
-  color: #2bbc8a;
+  color: #5ddcff;
   content: "#";
   margin-right: 8px;
 }
@@ -846,7 +860,7 @@ body {
   font-size: 0.7rem;
 }
 #header-post #toc nav > ul > li > ul > li:before {
-  color: #2bbc8a;
+  color: #5ddcff;
   content: "·";
   font-weight: bold;
   margin-right: 3px;
@@ -934,11 +948,11 @@ body {
   text-align: center;
 }
 #footer-post #nav-footer a {
-  color: #2bbc8a;
+  color: #5ddcff;
   font-size: 1em;
 }
 #footer-post #nav-footer a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, #2bbc8a 5px, #2bbc8a);
+  background-image: linear-gradient(transparent, transparent 5px, #5ddcff 5px, #5ddcff);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -969,7 +983,7 @@ body {
 #footer-post #actions-footer a {
   display: inline-block;
   padding-left: 1rem;
-  color: #2bbc8a;
+  color: #5ddcff;
 }
 #footer-post #share-footer {
   padding-right: 1rem;
@@ -1013,7 +1027,7 @@ body {
   font-size: 0.8rem;
 }
 #footer-post #toc-footer #TableOfContents > ul > li:before {
-  color: #2bbc8a;
+  color: #5ddcff;
   content: "#";
   margin-right: 8px;
 }
@@ -1023,7 +1037,7 @@ body {
   line-height: 15px;
 }
 #footer-post #toc-footer #TableOfContents > ul > li > ul > li:before {
-  color: #2bbc8a;
+  color: #5ddcff;
   content: "·";
   font-weight: bold;
   margin-right: 3px;
@@ -1074,7 +1088,7 @@ article header .posttitle {
   margin-top: 0;
   margin-bottom: 0;
   text-transform: none;
-  font-size: 1.5em;
+  font-size: 2em;
   line-height: 1.25;
 }
 article header .meta {
@@ -1093,11 +1107,11 @@ article header .author {
 article header .postdate {
   display: inline;
 }
-article .content h2:before {
+article .content h3:before {
   position: absolute;
   top: -4px;
   left: -1rem;
-  color: #2bbc8a;
+  color: #5ddcff;
   content: "#";
   font-weight: bold;
   font-size: 1.2rem;
@@ -1126,8 +1140,8 @@ article .content .video-container embed {
   height: 100%;
 }
 article .content blockquote {
-  margin: 1rem 10px;
-  padding: 0.5em 10px;
+  margin: 0em 10px;
+  padding: 0.25em 10px;
   background: inherit;
   color: #ccffb6;
   quotes: "\201C" "\201D" "\2018" "\2019";
@@ -1137,12 +1151,9 @@ article .content blockquote p {
   margin: 0;
 }
 article .content blockquote:before {
-  margin-right: 0.25em;
+  margin-right: 0.0em;
   color: #ccffb6;
-  content: "\201C";
-  vertical-align: -0.4em;
   font-size: 2em;
-  line-height: 0.1em;
 }
 article .content blockquote footer {
   margin: line-height 0;
@@ -1338,7 +1349,7 @@ article .content .caption {
   -moz-border-radius: 5px;
 }
 .search-input:focus {
-  border: solid 1px #2bbc8a;
+  border: solid 1px #5ddcff;
 }
 #search-result ul.search-result-list {
   padding: 0;
@@ -1563,7 +1574,7 @@ code {
   transition: opacity 0.2s ease-in;
 }
 .highlight .btn-copy:hover {
-  color: #2bbc8a;
+  color: #5ddcff;
 }
 .highlight pre {
   margin: 0;

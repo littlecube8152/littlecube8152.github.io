@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Codeforces 1128E 矩陣快速冪 | LittleCube Coding Site</title>
-  
+  <meta name="description" content="如果我也能成為電神就好了...">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -184,19 +184,19 @@ $ f_n = (c^{2n-6}) \times (f_{n-1} f_{n-2} f_{n-3}) $
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#tle">TLE</a></li>
-    <li><a href="#快速冪">快速冪</a>
+    <li><a href="#題敘">題敘</a></li>
+    <li><a href="#想法">想法</a>
       <ul>
-        <li><a href="#解決後半f_1a_n-f_2b_n-f_3c_n">解決後半($f_1^{a_n} f_2^{b_n} f_3^{c_n}$)</a></li>
-        <li><a href="#解決前半cp_n">解決前半($c^{p_n}$)</a></li>
-        <li><a href="#結果">結果</a></li>
+        <li><a href="#tle">TLE</a></li>
+        <li><a href="#快速冪">快速冪</a></li>
+        <li><a href="#其他">其他</a></li>
       </ul>
     </li>
-    <li><a href="#其他">其他</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#快速冪-1">快速冪</a></li>
+    <li><a href="#ac-code">AC Code</a>
+      <ul>
+        <li><a href="#快速冪-1">快速冪</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -224,22 +224,22 @@ $ f_n = (c^{2n-6}) \times (f_{n-1} f_{n-2} f_{n-3}) $
       
       <div class="content" itemprop="articleBody">
         <p>矩陣好難:(</p>
-<h1 id="題敘">題敘</h1>
+<h2 id="題敘">題敘</h2>
 <p><a href="https://codeforces.com/contest/1182/problem/E">題目連結</a><br>
 對於 $ x \geq 4 $ ， $ f_n = c^{2n-6} f_{n-1} f_{n-2} f_{n-3} $<br>
 給定 $ n, f_1, f_2, f_3, c $，求 $ f_n \mod 10^9 + 7 $。<br>
 <br>
 $ ( 4 \leq n \leq 10^{18}, 1 \leq f_1, f_2, f_3, c \leq 10^9  ) $</p>
-<h1 id="想法">想法</h1>
-<h2 id="tle">TLE</h2>
+<h2 id="想法">想法</h2>
+<h3 id="tle">TLE</h3>
 <p>用模仿費式數列DP的方法做的話&hellip;&hellip;總複雜度 $ \mathcal{O}(n) $<br>
 看一下值域，感覺就是會吃爆TLE&hellip;&hellip;</p>
-<h2 id="快速冪">快速冪</h2>
+<h3 id="快速冪">快速冪</h3>
 <p>這裡要用到一個技巧：矩陣快速冪<br>
 把原本的式子拆開，可以分成兩個部份解決<br>
 $ f_n = (c^{2n-6}) \times (f_{n-1} f_{n-2} f_{n-3}) $<br>
 先令 $ a_n, b_n, c_n, p_n $ 代表 $ f_n = c^{p_n} f_1^{a_n} f_2^{b_n} f_3^{c_n} $</p>
-<h3 id="解決後半f_1a_n-f_2b_n-f_3c_n">解決後半($f_1^{a_n} f_2^{b_n} f_3^{c_n}$)</h3>
+<h4 id="解決後半f_1a_n-f_2b_n-f_3c_n">解決後半($f_1^{a_n} f_2^{b_n} f_3^{c_n}$)</h4>
 <p>對於這個部分，有：<br>
 $\begin{cases} a_n = a_{n-1} + a_{n-2} + a_{n-3}\newline b_n = b_{n-1} + b_{n-2} + b_{n-3} \newline c_n = c_{n-1} + c_{n-2} + c_{n-3} \end{cases}$<br>
 <br>
@@ -268,7 +268,7 @@ $ a^{p-1} \equiv 1 \mod p $<br>
 <br>
 再透過一次快速冪，我們可以在$\mathcal{O}(\log n)$內得到$f_{n-1} f_{n-2} f_{n-3}$的部分，<br>
 而$c^{2n-6}$呢？ 當然也可以！</p>
-<h3 id="解決前半cp_n">解決前半($c^{p_n}$)</h3>
+<h4 id="解決前半cp_n">解決前半($c^{p_n}$)</h4>
 <p>先列出他的轉移式：<br>
 $ p_n = 2n-6 + p_{n-1} + p_{n-2} + p_{n-3} $<br>
 <br>
@@ -308,14 +308,14 @@ $   \begin{bmatrix}
 <br>
 結果記得隨時mod，不然會溢位，<br>
 再次利用快速冪求得$c^{p_n}$，複雜度$\mathcal{O}(\log n)$</p>
-<h3 id="結果">結果</h3>
+<h4 id="結果">結果</h4>
 <p>總複雜度$\mathcal{O}(\log n)$<br>
 應該過的了，不然就是寫錯了(痛苦的Debug時間)</p>
-<h2 id="其他">其他</h2>
+<h3 id="其他">其他</h3>
 <p>似乎可以用原根+BSGS過？<br>
 不過那個我還沒學過，改天學完再來處理這種方法。</p>
-<h1 id="ac-code">AC Code</h1>
-<h2 id="快速冪-1">快速冪</h2>
+<h2 id="ac-code">AC Code</h2>
+<h3 id="快速冪-1">快速冪</h3>
 <p>寫得稍微有點長，不過應該蠻好看懂的(吧？)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">#define ll long long
@@ -357,21 +357,21 @@ $   \begin{bmatrix}
   };
 
   Matrix3 A <span style="color:#f92672">=</span> {{{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>},
-              {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}}};
+               {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
+               {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}}};
   Matrix5 B <span style="color:#f92672">=</span> {{{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>},
-              {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}};
+                {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
+                {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
+                {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>},
+                {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}};
   Matrix3 I3 <span style="color:#f92672">=</span> {{{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}};
+                {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>},
+                {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}};
   Matrix5 I5 <span style="color:#f92672">=</span> {{{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>},
-              {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}};
+                 {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
+                 {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>},
+                 {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>},
+                 {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}};
 
   ll f1, f2, f3, c, n, pf1, pf2, pf3, pc;
 
@@ -456,19 +456,19 @@ $   \begin{bmatrix}
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#tle">TLE</a></li>
-    <li><a href="#快速冪">快速冪</a>
+    <li><a href="#題敘">題敘</a></li>
+    <li><a href="#想法">想法</a>
       <ul>
-        <li><a href="#解決後半f_1a_n-f_2b_n-f_3c_n">解決後半($f_1^{a_n} f_2^{b_n} f_3^{c_n}$)</a></li>
-        <li><a href="#解決前半cp_n">解決前半($c^{p_n}$)</a></li>
-        <li><a href="#結果">結果</a></li>
+        <li><a href="#tle">TLE</a></li>
+        <li><a href="#快速冪">快速冪</a></li>
+        <li><a href="#其他">其他</a></li>
       </ul>
     </li>
-    <li><a href="#其他">其他</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#快速冪-1">快速冪</a></li>
+    <li><a href="#ac-code">AC Code</a>
+      <ul>
+        <li><a href="#快速冪-1">快速冪</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>

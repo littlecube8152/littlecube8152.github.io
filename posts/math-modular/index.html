@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> 數論 質數與模運算[未完] | LittleCube Coding Site</title>
-  
+  <meta name="description" content="如果我也能成為電神就好了...">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -192,37 +192,31 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#最基礎的想法">最基礎的想法</a>
+    <li><a href="#質數篩法">質數篩法</a>
       <ul>
-        <li><a href="#code">Code</a></li>
+        <li><a href="#最基礎的想法">最基礎的想法</a></li>
+        <li><a href="#埃式篩法">埃式篩法</a></li>
+        <li><a href="#線性篩法">線性篩法</a></li>
+        <li><a href="#質數篩法dp">質數篩法+DP</a></li>
       </ul>
     </li>
-    <li><a href="#埃式篩法">埃式篩法</a>
+    <li><a href="#gcd">GCD</a>
       <ul>
-        <li><a href="#code-1">Code</a></li>
+        <li><a href="#貝祖定理">貝祖定理</a></li>
+        <li><a href="#擴展歐幾里得算法">擴展歐幾里得算法</a></li>
       </ul>
     </li>
-    <li><a href="#線性篩法">線性篩法</a>
+    <li><a href="#同餘模運算">同餘/模運算</a>
       <ul>
-        <li><a href="#code-2">Code</a></li>
+        <li><a href="#基本運算">基本運算</a></li>
+        <li><a href="#剩餘系">剩餘系</a></li>
+        <li><a href="#有限體">有限體</a></li>
+        <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
+        <li><a href="#費馬小定理">費馬小定理</a></li>
+        <li><a href="#歐拉函數">歐拉函數</a></li>
+        <li><a href="#中國剩餘定理">中國剩餘定理</a></li>
       </ul>
     </li>
-    <li><a href="#質數篩法dp">質數篩法+DP</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#貝祖定理">貝祖定理</a></li>
-    <li><a href="#擴展歐幾里得算法">擴展歐幾里得算法</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#基本運算">基本運算</a></li>
-    <li><a href="#剩餘系">剩餘系</a></li>
-    <li><a href="#有限體">有限體</a></li>
-    <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
-    <li><a href="#費馬小定理">費馬小定理</a></li>
-    <li><a href="#歐拉函數">歐拉函數</a></li>
-    <li><a href="#中國剩餘定理">中國剩餘定理</a></li>
   </ul>
 </nav>
     </div>
@@ -259,8 +253,8 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
       <div class="content" itemprop="articleBody">
         <p>從寒訓整理一些東西出來<br>
 不然我好像會跟不上:(</p>
-<h1 id="質數篩法">質數篩法</h1>
-<h2 id="最基礎的想法">最基礎的想法</h2>
+<h2 id="質數篩法">質數篩法</h2>
+<h3 id="最基礎的想法">最基礎的想法</h3>
 <p>用一個陣列維護當前的質因數個數，最容易想也做容易寫<br>
 實作上可用 <strong>從3開始判奇數</strong> 以及 <strong>每次篩到$\sqrt{N}$就停止</strong><br>
 對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：<br>
@@ -269,10 +263,10 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displa
 優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，<br>
 優化後大概是$\mathcal{O}(N \log \log \sqrt{N})$，還要考慮壓常數的部分。</p>
 <p><strong>(複雜度還要驗證一次，不確定有沒有算錯)</strong></p>
-<h3 id="code">Code</h3>
+<h4 id="code">Code</h4>
 <p>有時間再放 我好懶XD<br>
 [待補]</p>
-<h2 id="埃式篩法">埃式篩法</h2>
+<h3 id="埃式篩法">埃式篩法</h3>
 <p>基本上跟上個做法很像，不過換成：<br>
 如果找到一個質數，<strong>把這個質數的所有倍數都標記為不是質數</strong>，<br>
 比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，<br>
@@ -283,10 +277,10 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displa
 $N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$<br>
 優化前的複雜度約為$\mathcal{O}(N \log \log N)$<br>
 優化後為$\mathcal{O}(\sqrt{N} \log \log N)$，同樣也有壓常數的部分。</p>
-<h3 id="code-1">Code</h3>
+<h4 id="code-1">Code</h4>
 <p>有空再放，現在燒雞了:(<br>
 [待補]</p>
-<h2 id="線性篩法">線性篩法</h2>
+<h3 id="線性篩法">線性篩法</h3>
 <p>線性篩法的精神是<br>
 如果有一個數是合數，那他就應該 <strong>只被篩掉一次</strong>，<br>
 如果某個數字$K = p_1 p_2 p_3 \cdots p_n$，其中$p_1 \leq p_2 \leq p_3 \leq \cdots \leq p_n$，<br>
@@ -295,13 +289,13 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displa
 其中$p \leq p_1$，否則我們篩掉的那個數字有更大的合數因數：$p p_2 p_3 \cdots p_n$。<br>
 <br>
 複雜度是$\mathcal{O}(N)$，由於每個數都只會被篩到一次(或不被篩到)。</p>
-<h3 id="code-2">Code</h3>
+<h4 id="code-2">Code</h4>
 <p>[待補]</p>
-<h2 id="質數篩法dp">質數篩法+DP</h2>
+<h3 id="質數篩法dp">質數篩法+DP</h3>
 <p>如果在篩掉的時候順便紀錄 <strong>是被誰篩掉的</strong> ，可以在短時間求得質因數相關問題的解。<br>
 [待補]</p>
-<h1 id="gcd">GCD</h1>
-<h2 id="貝祖定理">貝祖定理</h2>
+<h2 id="gcd">GCD</h2>
+<h3 id="貝祖定理">貝祖定理</h3>
 <p>若$a,b,c \in \mathbb{Z}^{+}$，則有<br>
 $ax+by=c$存在整數解 $x_0, y_0\Leftrightarrow gcd(a,b)|c$<br>
 證明：<br>
@@ -314,7 +308,7 @@ $ax+by=c$存在整數解 $x_0, y_0\Leftrightarrow gcd(a,b)|c$<br>
 因為$\exists s,t \in \mathbb{Z}$使得$as+bt = gcd(a,b)$<br>
 [待證明]<br>
 故$a(ds)+b(dt) = gcd(a,b)d$，$x_0=ds, y_0=dt$，得證</p>
-<h2 id="擴展歐幾里得算法">擴展歐幾里得算法</h2>
+<h3 id="擴展歐幾里得算法">擴展歐幾里得算法</h3>
 <p>如果原式$ax+by=c$有解，可以轉換為：<br>
 $bx + (a \mod b)y = c$有解 (由於這樣處理GCD不變)<br>
 接下來要想辦法讓他跟原式有關係：<br>
@@ -324,10 +318,10 @@ $bx' + ay' - b\lfloor\frac{\displaystyle a}{\displaystyle b}\rfloor y' = c$<br>
 $ay' + b(x' - \lfloor\frac{\displaystyle a}{\displaystyle b}\rfloor y') = c$<br>
 所以可以透過遞迴的方式把問題縮小，<br>
 中間$a, b$其實就是做GCD的過程，必會遇到其中一項為$0$的情況，可以直接解出來</p>
-<h1 id="同餘模運算">同餘/模運算</h1>
+<h2 id="同餘模運算">同餘/模運算</h2>
 <p>如果有兩個數字$a, b$除$m$的餘數相等，<strong>即$m|(a-b)$</strong> (m被a-b整除)<br>
 記為$a \equiv b \mod m$</p>
-<h2 id="基本運算">基本運算</h2>
+<h3 id="基本運算">基本運算</h3>
 <ol>
 <li>$a \equiv b \mod m, a \equiv b \mod m \Rightarrow a+c \equiv b+d \mod m$ (同mod下同加)</li>
 <li>$a \equiv b \mod m, a \equiv b \mod m \Rightarrow ac \equiv bd \mod m$ (同mod下同乘)</li>
@@ -340,7 +334,7 @@ $n|c(a-b) \Rightarrow \frac{\displaystyle n}{\displaystyle d}|\frac{\displaystyl
 故 $\frac{\displaystyle n}{\displaystyle d}|(a-b)$<br>
 $\Rightarrow a \equiv b \mod \frac{\displaystyle n}{\displaystyle d}$</li>
 </ol>
-<h2 id="剩餘系">剩餘系</h2>
+<h3 id="剩餘系">剩餘系</h3>
 <p>定義：</p>
 <ul>
 <li>完全剩餘系：對某個集合裡的數$\mod n$之後，恰有$n$個相異的數字</li>
@@ -353,7 +347,7 @@ $\Rightarrow a \equiv b \mod \frac{\displaystyle n}{\displaystyle d}$</li>
 但 <strong>非負最小完全剩餘系</strong> 只能是$\{0,1,2,3,4,5\}$<br>
 <strong>非負最小簡化剩餘系</strong> 也只能是$\{0,5\}$</li>
 </ul>
-<h2 id="有限體">有限體</h2>
+<h3 id="有限體">有限體</h3>
 <p>根據模運算的規則，我們可以定義一種代數結構(稱為體)：<br>
 <br>
 對於$n &gt; 1$，定義$\langle \mathbb{Z}_n, +_n, \times_n \rangle$(簡寫為$\mathbb{Z}_n$)<br>
@@ -375,7 +369,7 @@ a +_n b = b +_n a \newline
 a \times_n b = b \times_n a
 \end{cases} $           (交換律)<br>
 $   (a +_n b) \times_n c = a \times_n c +_n b \times_n c$(分配律)</p>
-<h2 id="模逆元及反元素">模逆元及反元素</h2>
+<h3 id="模逆元及反元素">模逆元及反元素</h3>
 <p>如果存在兩個數$a, b \in \mathbb{Z}_n$滿足$a \times_n b = 1$，<br>
 我們稱$b$是$a$的反元素，記為$a^{-1}$<br>
 $a \times_n b = 1 \Leftrightarrow b := a^{-1}$<br>
@@ -417,8 +411,8 @@ $ab \equiv 1 \mod m \Leftrightarrow b \equiv a^{-1} \mod m$<br>
 <p>由於模逆元可以用擴展歐幾里得算法求出來，<br>
 例如$a$在$\mod m$下的模逆元可以用
 $aa^{-1} + bm = 1$，此時$gcd(a, m)$只能為$1$，即 <strong>兩數互質</strong><br>
-\</p>
-<p>如果需要建反元素\模逆元表，可以用以下推導出的遞迴式：<br>
+<br>
+如果需要建反元素\模逆元表，可以用以下推導出的遞迴式：<br>
 $P - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor = P \% i$<br>
 $P - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor \equiv P \% i \mod P$<br>
 $P \times i - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor \equiv P \% i \mod P$<br>
@@ -426,7 +420,7 @@ $i \times (P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) \equiv P \
 $i \times (P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \equiv 1 \mod P$<br>
 $(P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \equiv i^{-1} \mod P$<br>
 $i^{-1} \equiv (P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \mod P$</p>
-<h2 id="費馬小定理">費馬小定理</h2>
+<h3 id="費馬小定理">費馬小定理</h3>
 <p>在$\mod p$下，對於任意整數$a$及質數$p$，有：<br>
 $a^{p} = a \mod p$<br>
 $a^{p-1} = 1 \mod p$<br>
@@ -434,15 +428,30 @@ $a^{p-2} = a^{-1} \mod p$ (三個其實是同一式)<br>
 <br>
 [證明]<br>
 對於$a, 2a, 3a, \cdots, (p-1)a$在$\mod p$下必須一一對應到$1, 2, 3, \cdots, p-1$，<br>
-否則可以得到$a|p$的矛盾，<br>
+否則兩個同樣餘數的相減就可以得到$a|p$的矛盾，<br>
 連乘之後得到<br>
 $(p-1)!a^{p-1} \equiv a \times 2a \times \cdots \times (p-1)a \equiv 1 \times 2 \times \cdots \times (p-1) \equiv (p-1)! \mod m$<br>
 $a^{p-1} \equiv 1 \mod m$，得證<br>
 <br>
 所以反元素有另一種求法是透過 <strong>費馬小定理</strong> ，前提是$m$是質數，<br>
 此時$a^{-1} = a^{p-2} \mod p$</p>
-<h2 id="歐拉函數">歐拉函數</h2>
-<h2 id="中國剩餘定理">中國剩餘定理</h2>
+<h3 id="歐拉函數">歐拉函數</h3>
+<h4 id="定義">定義</h4>
+<p><strong>歐拉函數</strong>$\Phi(n)$的值表示在$1, 2,&hellip;,n$中與$n$互質的個數<br>
+常用$\mathbb{Z}_n^{*}$代表從$\mathbb{Z}_n$中與$n$互質的數，也就是說$\mathbb{Z}_n^{*}$有$\Phi(n)$個數</p>
+<h4 id="求值">求值</h4>
+<p>求歐拉函數$\Phi(n)$的值，最暴力的方法是檢查每個$d$滿足$gcd(n, d) \neq 1$，<br>
+更快的方法是對於$gcd(m, n) = 1, \Phi(mn) = \Phi(m)\Phi(n)$<br>
+[證明]
+把$mn$個數排成下面的樣子：<br>
+$\begin{bmatrix}
+{1} &amp; {2} &amp; {3} &amp; {\cdots} &amp; {m} \newline
+{m + 1} &amp; {m + 2} &amp; {m + 3} &amp; {\cdots} &amp; {2m} \newline
+{2m + 1} &amp; {2m + 2} &amp; {2m + 3} &amp; {\cdots} &amp; {3m} \newline
+{\vdots} &amp; {\vdots} &amp; {\vdots} &amp; {\ddots} &amp; {\vdots} \newline
+{(n-1)m + 1} &amp; {(n-1)m + 2} &amp; {(n-1)m + 3} &amp; {\cdots} &amp; {nm}
+\end{bmatrix}$</p>
+<h3 id="中國剩餘定理">中國剩餘定理</h3>
 
       </div>
     </article>
@@ -472,37 +481,31 @@ $a^{p-1} \equiv 1 \mod m$，得證<br>
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#最基礎的想法">最基礎的想法</a>
+    <li><a href="#質數篩法">質數篩法</a>
       <ul>
-        <li><a href="#code">Code</a></li>
+        <li><a href="#最基礎的想法">最基礎的想法</a></li>
+        <li><a href="#埃式篩法">埃式篩法</a></li>
+        <li><a href="#線性篩法">線性篩法</a></li>
+        <li><a href="#質數篩法dp">質數篩法+DP</a></li>
       </ul>
     </li>
-    <li><a href="#埃式篩法">埃式篩法</a>
+    <li><a href="#gcd">GCD</a>
       <ul>
-        <li><a href="#code-1">Code</a></li>
+        <li><a href="#貝祖定理">貝祖定理</a></li>
+        <li><a href="#擴展歐幾里得算法">擴展歐幾里得算法</a></li>
       </ul>
     </li>
-    <li><a href="#線性篩法">線性篩法</a>
+    <li><a href="#同餘模運算">同餘/模運算</a>
       <ul>
-        <li><a href="#code-2">Code</a></li>
+        <li><a href="#基本運算">基本運算</a></li>
+        <li><a href="#剩餘系">剩餘系</a></li>
+        <li><a href="#有限體">有限體</a></li>
+        <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
+        <li><a href="#費馬小定理">費馬小定理</a></li>
+        <li><a href="#歐拉函數">歐拉函數</a></li>
+        <li><a href="#中國剩餘定理">中國剩餘定理</a></li>
       </ul>
     </li>
-    <li><a href="#質數篩法dp">質數篩法+DP</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#貝祖定理">貝祖定理</a></li>
-    <li><a href="#擴展歐幾里得算法">擴展歐幾里得算法</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#基本運算">基本運算</a></li>
-    <li><a href="#剩餘系">剩餘系</a></li>
-    <li><a href="#有限體">有限體</a></li>
-    <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
-    <li><a href="#費馬小定理">費馬小定理</a></li>
-    <li><a href="#歐拉函數">歐拉函數</a></li>
-    <li><a href="#中國剩餘定理">中國剩餘定理</a></li>
   </ul>
 </nav>
     </div>
