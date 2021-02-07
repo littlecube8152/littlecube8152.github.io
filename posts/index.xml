@@ -6,11 +6,11 @@
     <description>Recent content in Posts on LittleCube Coding Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 04 Feb 2021 21:37:11 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 20:13:11 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>數論 質數與模運算[未完]</title>
       <link>https://littlecube8152.github.io/posts/math-modular/</link>
-      <pubDate>Thu, 04 Feb 2021 21:37:11 +0800</pubDate>
+      <pubDate>Sun, 07 Feb 2021 20:13:11 +0800</pubDate>
       
       <guid>https://littlecube8152.github.io/posts/math-modular/</guid>
       <description>從寒訓整理一些東西出來
@@ -59,6 +59,7 @@ $ f_n = (c^{2n-6}) \times (f_{n-1} f_{n-2} f_{n-3}) $
       
       <guid>https://littlecube8152.github.io/posts/my-first-post/</guid>
       <description>Blog  為什麼我會來打競程？ 老實說，我自己也可能不知道
+  不過競程真的好好玩&amp;gt;&amp;lt;
  這個地方是用來放我的筆記，應該大部分都是競賽的部分，只有少數會是別的東西（例如這篇）
 好像電神都會寫這種東西，所以我也來寫寫看好了
 或許有一天

@@ -359,7 +359,7 @@ body h4 {
   color: #eee;
   text-decoration: underline;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 body h5,
 body h6 {
@@ -372,8 +372,8 @@ body h6 {
 body h4,
 body h5,
 body h6 {
-  margin-top: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.0rem;
 }
 body hr {
   border: 0.5px dashed #ccc;
@@ -493,6 +493,7 @@ body {
 }
 .content p {
   hyphens: auto;
+  line-height: 2.25em;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
@@ -1591,4 +1592,7 @@ code {
 }
 .highlight .line {
   height: 22px;
+}
+p mjx-container{
+  margin: 1em, 0em;
 }

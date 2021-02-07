@@ -29,8 +29,8 @@ Code 有時間再放 我好懶XD
 $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://littlecube8152.github.io/posts/math-modular/" />
-<meta property="article:published_time" content="2021-02-04T21:37:11+08:00" />
-<meta property="article:modified_time" content="2021-02-04T21:37:11+08:00" />
+<meta property="article:published_time" content="2021-02-07T20:13:11+08:00" />
+<meta property="article:modified_time" content="2021-02-07T20:13:11+08:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="數論 質數與模運算[未完]"/>
@@ -214,9 +214,10 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
         <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
         <li><a href="#費馬小定理">費馬小定理</a></li>
         <li><a href="#歐拉函數">歐拉函數</a></li>
-        <li><a href="#中國剩餘定理">中國剩餘定理</a></li>
+        <li><a href="#中國剩餘定理crt">中國剩餘定理(CRT)</a></li>
       </ul>
     </li>
+    <li><a href="#後記">後記</a></li>
   </ul>
 </nav>
     </div>
@@ -233,7 +234,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
           
           <div class="postdate">
             
-            <time datetime="2021-02-04 21:37:11 &#43;0800 CST" itemprop="datePublished">2021-02-04</time>
+            <time datetime="2021-02-07 20:13:11 &#43;0800 CST" itemprop="datePublished">2021-02-07</time>
             
           </div>
           
@@ -363,11 +364,12 @@ a \times_n b := (a \times b) \mod n
 $   \begin{cases}
 (a +_n b) +_n c = a +_n (b +_n c) \newline
 (a \times_n b) \times_n c = a \times_n (b \times_n c)
-\end{cases} $       (結合律)<br>
+\end{cases}
+\newline$      (結合律)<br>
 $   \begin{cases}
 a +_n b = b +_n a \newline
 a \times_n b = b \times_n a
-\end{cases} $           (交換律)<br>
+\end{cases} \newline$           (交換律)<br>
 $   (a +_n b) \times_n c = a \times_n c +_n b \times_n c$(分配律)</p>
 <h3 id="模逆元及反元素">模逆元及反元素</h3>
 <p>如果存在兩個數$a, b \in \mathbb{Z}_n$滿足$a \times_n b = 1$，<br>
@@ -441,6 +443,7 @@ $a^{p-1} \equiv 1 \mod m$，得證<br>
 常用$\mathbb{Z}_n^{*}$代表從$\mathbb{Z}_n$中與$n$互質的數，也就是說$\mathbb{Z}_n^{*}$有$\Phi(n)$個數</p>
 <h4 id="求值">求值</h4>
 <p>求歐拉函數$\Phi(n)$的值，最暴力的方法是檢查每個$d$滿足$gcd(n, d) \neq 1$，<br>
+<br>
 更快的方法是對於$gcd(m, n) = 1, \Phi(mn) = \Phi(m)\Phi(n)$<br>
 [證明]
 把$mn$個數排成下面的樣子：<br>
@@ -450,8 +453,83 @@ $\begin{bmatrix}
 {2m + 1} &amp; {2m + 2} &amp; {2m + 3} &amp; {\cdots} &amp; {3m} \newline
 {\vdots} &amp; {\vdots} &amp; {\vdots} &amp; {\ddots} &amp; {\vdots} \newline
 {(n-1)m + 1} &amp; {(n-1)m + 2} &amp; {(n-1)m + 3} &amp; {\cdots} &amp; {nm}
-\end{bmatrix}$</p>
-<h3 id="中國剩餘定理">中國剩餘定理</h3>
+\end{bmatrix}$<br>
+每一橫列都有$\Phi(m)$個元素是跟$m$互質的，<br>
+而且$kp + r \equiv r \mod m$，所以有$\Phi(m)$個直排是與$m$互質的，<br>
+每一直排也都有$\Phi(n)$個元素是跟$n$互質的，<br>
+因為把每一直排都寫成$km+r$的樣式，每一個必須在$\mod n$下一一對應到$0, 1, &hellip;, n-1$<br>
+否則可以找到$(k_0 - k_1)m|n$，也就是說兩數不互質的矛盾，<br>
+所以可以得到有$\Phi(m)$個直排與$m$互質，每排有$\Phi(n)$個元素是跟$n$互質，<br>
+因為與$m,n$都互質的元素也會跟$mn$互質(可以從質因數下手)，
+得證$gcd(m, n) = 1, \Phi(mn) = \Phi(m)\Phi(n)$<br>
+<br>
+不過同時可以發現，如果可以把某個數換成質數的乘積，就可以把他們全部乘起來：<br>
+$N = {p_1}^{a_1}{p_2}^{a_2}{p_3}^{a_3} \cdots {p_n}^{a_n}$<br>
+$\Phi(N) = \Phi({p_1}^{a_1})\Phi({p_2}^{a_2})\Phi({p_3}^{a_3}) \cdots \Phi({p_n}^{a_n})$<br>
+如果某數$M$是某個質數$p$的k次方，與他不互質的數必定是$p$的倍數，共有$\frac{\displaystyle M}{\displaystyle p}$個，故：<br>
+$\Phi(M) = M - \frac{\displaystyle M}{\displaystyle p} = M \times \frac{\displaystyle p-1}{\displaystyle p}$<br>
+套在前面的式子可以發現：<br>
+$\Phi(N) = {p_1}^{a_1} \times \frac{\displaystyle p_1-1}{\displaystyle p_1}
+{p_2}^{a_2} \times \frac{\displaystyle p_2-1}{\displaystyle p_2}
+{p_3}^{a_3} \times \frac{\displaystyle p_3-1}{\displaystyle p_3}
+\cdots
+{p_n}^{a_n} \times \frac{\displaystyle p_n-1}{\displaystyle p_n}$<br>
+$\Phi(N) = N \displaystyle\prod \frac{\displaystyle p-1}{\displaystyle p} $</p>
+<h3 id="中國剩餘定理crt">中國剩餘定理(CRT)</h3>
+<h4 id="定理">定理</h4>
+<p>方程組<br>
+$   \begin{cases}
+x \equiv a_1 \mod m_1 \newline
+x \equiv a_2 \mod m_2 \newline
+x \equiv a_3 \mod m_3 \newline
+\vdots \newline
+x \equiv a_k \mod m_k
+\end{cases}$<br>
+當所有$1 \leq i, j \leq k, i \neq j$，$n_i, n_j$都互質時，$x$有解，<br>
+而且對於$x' \equiv x \mod n_1n_2\cdots n_k$，$x'$也是一組解。</p>
+<h4 id="求解">求解</h4>
+<p>如果方程組只有兩個式子：<br>
+$   \begin{cases}
+x \equiv a_1 \mod m_1 \newline
+x \equiv a_2 \mod m_2
+\end{cases}$<br>
+可以化為：<br>
+$   \begin{cases}
+x = pm_1 + a_1 \newline
+x = qm_2 + a_2 \newline
+\end{cases}$<br>
+$pm_1 + a_1 = qm_2 + a_2$<br>
+$pm_1 - qm_2 = a_2 - a_1$<br>
+由於$gcd(m_1 - m_2) = 1$，所以方程式必有解(而且不只一組)，<br>
+利用擴展歐幾里得算法解得的$p, q$回推$x$，<br>
+而此時所有$x + km_1m_2$都是答案，<br>
+<br>
+對於多組方程式的問題，就可以兩兩求解，<br>
+合併時再使用擴展歐幾里得算法，<br>
+如此一來時間複雜度是$\mathcal{O}(k \log k \log min\{n_i\})$<br>
+<strong>(複雜度有待確定(擴展歐幾里得演算法部分))</strong><br>
+<br>
+另一種想法式對於每個式子，都構建一個解$e_i$使得在$\mod n_i$下為$1$，其他為$0$，<br>
+這樣只要把$a_i e_i$加起來就是要求的$x$，<br>
+設$N = n_1n_2\cdots n_k$，$n_i^{*} = \frac{\displaystyle N}{\displaystyle n_i}$<br>
+顯然$e_i$為$n_i^{*}$的倍數，設$e_i = t_i n_i^{*}$，<br>
+現在要解的方程式就變為$t_i n_i^{*} \equiv 1 \mod n_i$，<br>
+<br>
+把原本的方程式化為$t_i n_i^{*} + sn_i = 1$<br>
+就可以使用擴展歐幾里得算法找出解，<br>
+原本要解的$x$就變為$\sum_{n=1}^{k} a_i e_i$，<br>
+時間複雜度是$\mathcal{O}(k \log max\{n_i\})$<br>
+<br>
+或是觀察這個式子$t_i n_i^{*} \equiv 1 \mod n_i$：<br>
+其實要求的$t_i$就是$\mod n_i$下的模逆元，<br>
+不過注意這邊不能直接一起合併為$1$，因為答案並不是在$\mod n_i$下，<br>
+所以要解的$x$就變為$\sum_{n=1}^{k} a_i t_i n_i^{*}$，<br>
+模逆元可以用遞迴方求解，<br>
+時間複雜度是$\mathcal{O}(k \log max\{n_i\})$\</p>
+<h2 id="後記">後記</h2>
+<p>數論好難:(<br>
+之後會打算放一篇進階的，<br>
+不過我要先學會&hellip;&hellip;</p>
 
       </div>
     </article>
@@ -503,9 +581,10 @@ $\begin{bmatrix}
         <li><a href="#模逆元及反元素">模逆元及反元素</a></li>
         <li><a href="#費馬小定理">費馬小定理</a></li>
         <li><a href="#歐拉函數">歐拉函數</a></li>
-        <li><a href="#中國剩餘定理">中國剩餘定理</a></li>
+        <li><a href="#中國剩餘定理crt">中國剩餘定理(CRT)</a></li>
       </ul>
     </li>
+    <li><a href="#後記">後記</a></li>
   </ul>
 </nav>
     </div>
