@@ -6,9 +6,20 @@
     <description>Recent content in Posts on LittleCube Coding Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 07 Feb 2021 20:13:11 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 22:18:25 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>數論 質數與模運算[未完]</title>
+      <title>數論 進階模運算及FFT[待補]</title>
+      <link>https://littlecube8152.github.io/posts/math-modular-fft/</link>
+      <pubDate>Sun, 07 Feb 2021 22:18:25 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/posts/math-modular-fft/</guid>
+      <description>質數 Miller-Rabin 質數測試 概念 對於任意的$p$，$x^2 \equiv 1 \mod p$的解，
+必有$1, -1$兩個，我們稱之為平凡平方根，\
+除法 Newton-Raphson 除法 進階模運算 數論函數 狄利克雷捲積 莫比烏斯反演 原根 BSGS 快速傅立葉轉換 FFT 生成函數 離散傅立葉轉換 DFT 快速傅立葉轉換 FFT </description>
+    </item>
+    
+    <item>
+      <title>數論 質數與模運算[90%完成]</title>
       <link>https://littlecube8152.github.io/posts/math-modular/</link>
       <pubDate>Sun, 07 Feb 2021 20:13:11 +0800</pubDate>
       

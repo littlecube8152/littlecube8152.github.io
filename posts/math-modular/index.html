@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 數論 質數與模運算[未完] | LittleCube Coding Site</title>
+  <title> 數論 質數與模運算[90%完成] | LittleCube Coding Site</title>
   <meta name="description" content="如果我也能成為電神就好了...">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="數論 質數與模運算[未完]" />
+  <meta property="og:title" content="數論 質數與模運算[90%完成]" />
 <meta property="og:description" content="從寒訓整理一些東西出來
 不然我好像會跟不上:(
 質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
@@ -33,7 +33,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
 <meta property="article:modified_time" content="2021-02-07T20:13:11+08:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="數論 質數與模運算[未完]"/>
+<meta name="twitter:title" content="數論 質數與模運算[90%完成]"/>
 <meta name="twitter:description" content="從寒訓整理一些東西出來
 不然我好像會跟不上:(
 質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
@@ -107,6 +107,12 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
         
         
         <li>
+          <a class="icon" href="https://littlecube8152.github.io/posts/math-modular-fft/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
             <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
           </a>
@@ -137,52 +143,52 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&text=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&text=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&is_video=false&description=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&is_video=false&description=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f">
+    <a class="icon" href="mailto:?subject=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&t=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&t=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -229,7 +235,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
       <header>
         <h1 class="posttitle" itemprop="name headline">
-          數論 質數與模運算[未完]
+          數論 質數與模運算[90%完成]
         </h1>
         <div class="meta">
           
@@ -608,52 +614,52 @@ $pm_1 - qm_2 = a_2 - a_1$<br>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&text=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&text=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&is_video=false&description=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&is_video=false&description=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f">
+    <a class="icon" href="mailto:?subject=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&title=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&t=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&t=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
