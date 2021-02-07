@@ -12,7 +12,7 @@
 <meta property="og:description" content="從寒訓整理一些東西出來
 不然我好像會跟不上:(
 質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
-實作上可用 從3開始判奇數 以及 每次篩到$\sqrt{N}$就停止
+實作上可用從3開始判奇數以及每次篩到$\sqrt{N}$就停止
 對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
 $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle6} &#43; \frac{\displaystyle1}{\displaystyle15} &#43; \frac{\displaystyle1}{\displaystyle105} &#43; \cdots) &lt; N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$
 優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，
@@ -23,7 +23,7 @@ Code 有時間再放 我好懶XD
 埃式篩法 基本上跟上個做法很像，不過換成：
 如果找到一個質數，把這個質數的所有倍數都標記為不是質數，
 比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，
-這個算法也有優化，除了 從3開始判奇數 ，他的第二種可以進階為 篩到$\sqrt{N}$就停止，
+這個算法也有優化，除了從3開始判奇數，他的第二種可以進階為篩到$\sqrt{N}$就停止，
 原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，
 對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：
 $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$" />
@@ -37,7 +37,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
 <meta name="twitter:description" content="從寒訓整理一些東西出來
 不然我好像會跟不上:(
 質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
-實作上可用 從3開始判奇數 以及 每次篩到$\sqrt{N}$就停止
+實作上可用從3開始判奇數以及每次篩到$\sqrt{N}$就停止
 對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
 $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle6} &#43; \frac{\displaystyle1}{\displaystyle15} &#43; \frac{\displaystyle1}{\displaystyle105} &#43; \cdots) &lt; N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$
 優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，
@@ -48,7 +48,7 @@ Code 有時間再放 我好懶XD
 埃式篩法 基本上跟上個做法很像，不過換成：
 如果找到一個質數，把這個質數的所有倍數都標記為不是質數，
 比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，
-這個算法也有優化，除了 從3開始判奇數 ，他的第二種可以進階為 篩到$\sqrt{N}$就停止，
+這個算法也有優化，除了從3開始判奇數，他的第二種可以進階為篩到$\sqrt{N}$就停止，
 原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，
 對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：
 $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$"/>
@@ -177,7 +177,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%20%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%20%e4%bb%a5%e5%8f%8a%20%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%20%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%20%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%20%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -198,6 +198,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
         <li><a href="#埃式篩法">埃式篩法</a></li>
         <li><a href="#線性篩法">線性篩法</a></li>
         <li><a href="#質數篩法dp">質數篩法+DP</a></li>
+        <li><a href="#有沒有更快的方法">有沒有更快的方法？</a></li>
       </ul>
     </li>
     <li><a href="#gcd">GCD</a>
@@ -257,7 +258,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
 <h2 id="質數篩法">質數篩法</h2>
 <h3 id="最基礎的想法">最基礎的想法</h3>
 <p>用一個陣列維護當前的質因數個數，最容易想也做容易寫<br>
-實作上可用 <strong>從3開始判奇數</strong> 以及 <strong>每次篩到$\sqrt{N}$就停止</strong><br>
+實作上可用<strong>從3開始判奇數</strong>以及<strong>每次篩到$\sqrt{N}$就停止</strong><br>
 對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：<br>
 <br>
 $N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle6} + \frac{\displaystyle1}{\displaystyle15} + \frac{\displaystyle1}{\displaystyle105} + \cdots) &lt; N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$<br>
@@ -271,7 +272,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displa
 <p>基本上跟上個做法很像，不過換成：<br>
 如果找到一個質數，<strong>把這個質數的所有倍數都標記為不是質數</strong>，<br>
 比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，<br>
-這個算法也有優化，除了 <strong>從3開始判奇數</strong> ，他的第二種可以進階為 <strong>篩到$\sqrt{N}$就停止</strong>，<br>
+這個算法也有優化，除了<strong>從3開始判奇數</strong>，他的第二種可以進階為<strong>篩到$\sqrt{N}$就停止</strong>，<br>
 原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，<br>
 對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：<br>
 <br>
@@ -283,7 +284,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displa
 [待補]</p>
 <h3 id="線性篩法">線性篩法</h3>
 <p>線性篩法的精神是<br>
-如果有一個數是合數，那他就應該 <strong>只被篩掉一次</strong>，<br>
+如果有一個數是合數，那他就應該<strong>只被篩掉一次</strong>，<br>
 如果某個數字$K = p_1 p_2 p_3 \cdots p_n$，其中$p_1 \leq p_2 \leq p_3 \leq \cdots \leq p_n$，<br>
 我們希望他只被最大的東西篩掉，所以排除自己，最大的就是$p_2 p_3 \cdots p_n$，<br>
 對於每個數$C = p_1 p_2 p_3 \cdots p_n$，可以篩掉$p \times p_1 p_2 p_3 \cdots p_n$，<br>
@@ -293,8 +294,11 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displa
 <h4 id="code-2">Code</h4>
 <p>[待補]</p>
 <h3 id="質數篩法dp">質數篩法+DP</h3>
-<p>如果在篩掉的時候順便紀錄 <strong>是被誰篩掉的</strong> ，可以在短時間求得質因數相關問題的解。<br>
+<p>如果在篩掉的時候順便紀錄<strong>是被誰篩掉的</strong>，可以在短時間求得質因數相關問題的解。<br>
 [待補]</p>
+<h3 id="有沒有更快的方法">有沒有更快的方法？</h3>
+<p>當然有，不過這裡先不多作介紹，<br>
+下一篇的時候我再把比較難的方法整理出來好了</p>
 <h2 id="gcd">GCD</h2>
 <h3 id="貝祖定理">貝祖定理</h3>
 <p>若$a,b,c \in \mathbb{Z}^{+}$，則有<br>
@@ -338,15 +342,15 @@ $\Rightarrow a \equiv b \mod \frac{\displaystyle n}{\displaystyle d}$</li>
 <h3 id="剩餘系">剩餘系</h3>
 <p>定義：</p>
 <ul>
-<li>完全剩餘系：對某個集合裡的數$\mod n$之後，恰有$n$個相異的數字</li>
-<li>非負最小完全剩餘系：對$\mod n$下，非負最小完全剩餘系為$\{ 0,1,\cdots,m-1 \}$</li>
-<li>簡化剩餘系：任意一個完全剩餘系只保留與$m$互質的數</li>
-<li>非負最小簡化剩餘系：非負最小完全剩餘系只保留與$m$互質的數<br>
+<li><strong>完全剩餘系</strong>：對某個集合裡的數$\mod n$之後，恰有$n$個相異的數字</li>
+<li><strong>非負最小完全剩餘系</strong>：對$\mod n$下，非負最小完全剩餘系為$\{ 0,1,\cdots,m-1 \}$</li>
+<li><strong>簡化剩餘系</strong>：任意一個完全剩餘系只保留與$m$互質的數</li>
+<li><strong>非負最小簡化剩餘系</strong>：非負最小完全剩餘系只保留與$m$互質的數<br>
 <br>
 例如考慮$\mod 6$<br>
-<strong>完全剩餘系</strong> 可以是$\{6, -5, -10, 603, 10, 17\}, \{0, 1, 2, -3, -2, -1\} \cdots$<br>
-但 <strong>非負最小完全剩餘系</strong> 只能是$\{0,1,2,3,4,5\}$<br>
-<strong>非負最小簡化剩餘系</strong> 也只能是$\{0,5\}$</li>
+<strong>完全剩餘系</strong>可以是$\{6, -5, -10, 603, 10, 17\}, \{0, 1, 2, -3, -2, -1\} \cdots$<br>
+但<strong>非負最小完全剩餘系</strong>只能是$\{0,1,2,3,4,5\}$<br>
+<strong>非負最小簡化剩餘系</strong>也只能是$\{0,5\}$</li>
 </ul>
 <h3 id="有限體">有限體</h3>
 <p>根據模運算的規則，我們可以定義一種代數結構(稱為體)：<br>
@@ -375,7 +379,7 @@ $   (a +_n b) \times_n c = a \times_n c +_n b \times_n c$(分配律)</p>
 <p>如果存在兩個數$a, b \in \mathbb{Z}_n$滿足$a \times_n b = 1$，<br>
 我們稱$b$是$a$的反元素，記為$a^{-1}$<br>
 $a \times_n b = 1 \Leftrightarrow b := a^{-1}$<br>
-在$\mod m$下也有這樣的定義不是，稱為 <strong>模逆元</strong> ：<br>
+在$\mod m$下也有這樣的定義不是，稱為<strong>模逆元</strong>：<br>
 $ab \equiv 1 \mod m \Leftrightarrow b \equiv a^{-1} \mod m$<br>
 <br>
 在$\mathbb{Z}_n$(或$\mod n$下)，不是每個元素都有反元素(模逆元)，<br>
@@ -412,7 +416,7 @@ $ab \equiv 1 \mod m \Leftrightarrow b \equiv a^{-1} \mod m$<br>
 </table>
 <p>由於模逆元可以用擴展歐幾里得算法求出來，<br>
 例如$a$在$\mod m$下的模逆元可以用
-$aa^{-1} + bm = 1$，此時$gcd(a, m)$只能為$1$，即 <strong>兩數互質</strong><br>
+$aa^{-1} + bm = 1$，此時$gcd(a, m)$只能為$1$，即<strong>兩數互質</strong><br>
 <br>
 如果需要建反元素\模逆元表，可以用以下推導出的遞迴式：<br>
 $P - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor = P \% i$<br>
@@ -435,7 +439,7 @@ $a^{p-2} = a^{-1} \mod p$ (三個其實是同一式)<br>
 $(p-1)!a^{p-1} \equiv a \times 2a \times \cdots \times (p-1)a \equiv 1 \times 2 \times \cdots \times (p-1) \equiv (p-1)! \mod m$<br>
 $a^{p-1} \equiv 1 \mod m$，得證<br>
 <br>
-所以反元素有另一種求法是透過 <strong>費馬小定理</strong> ，前提是$m$是質數，<br>
+所以反元素有另一種求法是透過<strong>費馬小定理</strong>，前提是$m$是質數，<br>
 此時$a^{-1} = a^{p-2} \mod p$</p>
 <h3 id="歐拉函數">歐拉函數</h3>
 <h4 id="定義">定義</h4>
@@ -525,7 +529,7 @@ $pm_1 - qm_2 = a_2 - a_1$<br>
 不過注意這邊不能直接一起合併為$1$，因為答案並不是在$\mod n_i$下，<br>
 所以要解的$x$就變為$\sum_{n=1}^{k} a_i t_i n_i^{*}$，<br>
 模逆元可以用遞迴方求解，<br>
-時間複雜度是$\mathcal{O}(k \log max\{n_i\})$\</p>
+時間複雜度是$\mathcal{O}(k \log max\{n_i\})$</p>
 <h2 id="後記">後記</h2>
 <p>數論好難:(<br>
 之後會打算放一篇進階的，<br>
@@ -565,6 +569,7 @@ $pm_1 - qm_2 = a_2 - a_1$<br>
         <li><a href="#埃式篩法">埃式篩法</a></li>
         <li><a href="#線性篩法">線性篩法</a></li>
         <li><a href="#質數篩法dp">質數篩法+DP</a></li>
+        <li><a href="#有沒有更快的方法">有沒有更快的方法？</a></li>
       </ul>
     </li>
     <li><a href="#gcd">GCD</a>
@@ -643,7 +648,7 @@ $pm_1 - qm_2 = a_2 - a_1$<br>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%20%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%20%e4%bb%a5%e5%8f%8a%20%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%20%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%20%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%20%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b%e6%9c%aa%e5%ae%8c%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
