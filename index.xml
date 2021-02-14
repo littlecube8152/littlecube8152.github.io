@@ -9,13 +9,23 @@
     <lastBuildDate>Sun, 07 Feb 2021 22:18:25 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>數論 進階模運算及FFT[待補]</title>
-      <link>https://littlecube8152.github.io/posts/math-modular-fft/</link>
+      <link>https://littlecube8152.github.io/posts/working/math-modular-fft/</link>
       <pubDate>Sun, 07 Feb 2021 22:18:25 +0800</pubDate>
       
-      <guid>https://littlecube8152.github.io/posts/math-modular-fft/</guid>
-      <description>質數 Miller-Rabin 質數測試 概念 對於任意的$p$，$x^2 \equiv 1 \mod p$的解，
-必有$1, -1$兩個，我們稱之為平凡平方根，\
-除法 Newton-Raphson 除法 進階模運算 數論函數 狄利克雷捲積 莫比烏斯反演 原根 BSGS 快速傅立葉轉換 FFT 生成函數 離散傅立葉轉換 DFT 快速傅立葉轉換 FFT </description>
+      <guid>https://littlecube8152.github.io/posts/working/math-modular-fft/</guid>
+      <description>質數 Miller-Rabin 質數測試 如果$p$是質數且$p &amp;gt; 2$，$x^2 \equiv 1 \mod p$的解：
+$x^2 \equiv 1 \mod p$
+$(x+1)(x-1) \equiv 0 \mod p$
+也就是說，$x=p-1$或$p|(x-1)(x+1)$，
+此時$x + 1 \equiv 0, x \equiv 1 \mod p$ 或 $x - 1 \equiv 0, x \equiv -1 \mod p$，
+我們稱$1, -1$為$1 \mod p$的平凡平方根，
+如果存在不平凡平方根(即$x \neq 1, -1$)，
+表示$p$具有因數，與前面假設矛盾
+現在假設$n$是質數且$n &amp;gt; 2$，
+所以$n-1$會是一個偶數，把它分解為$2^st$，其中$t$是奇數，
+在$\mathbb{Z}_n$下的所有數$a$，都能能找到$0 \leq r &amp;lt; s$，滿足兩式其一：
+(1) $\begin{equation} a^d \equiv 1 \mod n \end{equation}$
+(2) $\begin{equation} a^{2^rd} \equiv -1 \mod n \end{equation}$</description>
     </item>
     
     <item>
@@ -28,20 +38,14 @@
 不然我好像會跟不上:(
 質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
 實作上可用從3開始判奇數以及每次篩到$\sqrt{N}$就停止
-對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
-$N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle6} + \frac{\displaystyle1}{\displaystyle15} + \frac{\displaystyle1}{\displaystyle105} + \cdots) &amp;lt; N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$
+對於$N$個數字，有$\dfrac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\dfrac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
+$N \times (\dfrac{\displaystyle1}{\displaystyle2} + \dfrac{\displaystyle1}{\displaystyle6} + \dfrac{\displaystyle1}{\displaystyle15} + \dfrac{\displaystyle1}{\displaystyle105} + \cdots) &amp;lt; N \times (\dfrac{\displaystyle1}{\displaystyle2} + \dfrac{\displaystyle1}{\displaystyle3} + \dfrac{\displaystyle1}{\displaystyle5} + \dfrac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$
 優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，
 優化後大概是$\mathcal{O}(N \log \log \sqrt{N})$，還要考慮壓常數的部分。
 (複雜度還要驗證一次，不確定有沒有算錯)
-Code 有時間再放 我好懶XD
-[待補]
-埃式篩法 基本上跟上個做法很像，不過換成：
-如果找到一個質數，把這個質數的所有倍數都標記為不是質數，
-比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，
-這個算法也有優化，除了從3開始判奇數，他的第二種可以進階為篩到$\sqrt{N}$就停止，
-原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &amp;lt; \sqrt{N}$，
-對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：
-$N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$</description>
+Code 有使用從3開始判奇數以及每次篩到$\sqrt{N}$就停止兩個優化，
+執行時間到$N = 10^{6}$都還能接受。
+#include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int prime[100000], index = 1; int main() { //Easy Sieve  // | Range | Time |  // |-------|--------|  // | 1e5 | 3 ms |  // | 1e6 | 76 ms |  // | 1e7 | 1.</description>
     </item>
     
     <item>

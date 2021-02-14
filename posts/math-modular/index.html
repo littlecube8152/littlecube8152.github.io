@@ -13,20 +13,14 @@
 不然我好像會跟不上:(
 質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
 實作上可用從3開始判奇數以及每次篩到$\sqrt{N}$就停止
-對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
-$N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle6} &#43; \frac{\displaystyle1}{\displaystyle15} &#43; \frac{\displaystyle1}{\displaystyle105} &#43; \cdots) &lt; N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$
+對於$N$個數字，有$\dfrac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\dfrac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
+$N \times (\dfrac{\displaystyle1}{\displaystyle2} &#43; \dfrac{\displaystyle1}{\displaystyle6} &#43; \dfrac{\displaystyle1}{\displaystyle15} &#43; \dfrac{\displaystyle1}{\displaystyle105} &#43; \cdots) &lt; N \times (\dfrac{\displaystyle1}{\displaystyle2} &#43; \dfrac{\displaystyle1}{\displaystyle3} &#43; \dfrac{\displaystyle1}{\displaystyle5} &#43; \dfrac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$
 優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，
 優化後大概是$\mathcal{O}(N \log \log \sqrt{N})$，還要考慮壓常數的部分。
 (複雜度還要驗證一次，不確定有沒有算錯)
-Code 有時間再放 我好懶XD
-[待補]
-埃式篩法 基本上跟上個做法很像，不過換成：
-如果找到一個質數，把這個質數的所有倍數都標記為不是質數，
-比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，
-這個算法也有優化，除了從3開始判奇數，他的第二種可以進階為篩到$\sqrt{N}$就停止，
-原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，
-對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：
-$N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$" />
+Code 有使用從3開始判奇數以及每次篩到$\sqrt{N}$就停止兩個優化，
+執行時間到$N = 10^{6}$都還能接受。
+#include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int prime[100000], index = 1; int main() { //Easy Sieve  // | Range | Time |  // |-------|--------|  // | 1e5 | 3 ms |  // | 1e6 | 76 ms |  // | 1e7 | 1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://littlecube8152.github.io/posts/math-modular/" />
 <meta property="article:published_time" content="2021-02-07T20:13:11+08:00" />
@@ -38,20 +32,14 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
 不然我好像會跟不上:(
 質數篩法 最基礎的想法 用一個陣列維護當前的質因數個數，最容易想也做容易寫
 實作上可用從3開始判奇數以及每次篩到$\sqrt{N}$就停止
-對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
-$N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle6} &#43; \frac{\displaystyle1}{\displaystyle15} &#43; \frac{\displaystyle1}{\displaystyle105} &#43; \cdots) &lt; N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$
+對於$N$個數字，有$\dfrac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\dfrac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：
+$N \times (\dfrac{\displaystyle1}{\displaystyle2} &#43; \dfrac{\displaystyle1}{\displaystyle6} &#43; \dfrac{\displaystyle1}{\displaystyle15} &#43; \dfrac{\displaystyle1}{\displaystyle105} &#43; \cdots) &lt; N \times (\dfrac{\displaystyle1}{\displaystyle2} &#43; \dfrac{\displaystyle1}{\displaystyle3} &#43; \dfrac{\displaystyle1}{\displaystyle5} &#43; \dfrac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$
 優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，
 優化後大概是$\mathcal{O}(N \log \log \sqrt{N})$，還要考慮壓常數的部分。
 (複雜度還要驗證一次，不確定有沒有算錯)
-Code 有時間再放 我好懶XD
-[待補]
-埃式篩法 基本上跟上個做法很像，不過換成：
-如果找到一個質數，把這個質數的所有倍數都標記為不是質數，
-比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，
-這個算法也有優化，除了從3開始判奇數，他的第二種可以進階為篩到$\sqrt{N}$就停止，
-原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，
-對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：
-$N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\displaystyle3} &#43; \frac{\displaystyle1}{\displaystyle5} &#43; \frac{\displaystyle1}{\displaystyle7} &#43; \cdots) = N \ln \ln N$"/>
+Code 有使用從3開始判奇數以及每次篩到$\sqrt{N}$就停止兩個優化，
+執行時間到$N = 10^{6}$都還能接受。
+#include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int prime[100000], index = 1; int main() { //Easy Sieve  // | Range | Time |  // |-------|--------|  // | 1e5 | 3 ms |  // | 1e6 | 76 ms |  // | 1e7 | 1."/>
 
   
   
@@ -107,7 +95,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
         
         
         <li>
-          <a class="icon" href="https://littlecube8152.github.io/posts/math-modular-fft/">
+          <a class="icon" href="https://littlecube8152.github.io/posts/working/math-modular-fft/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -183,7 +171,7 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e4%bd%bf%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%e5%85%a9%e5%80%8b%e5%84%aa%e5%8c%96%ef%bc%8c%0a%e5%9f%b7%e8%a1%8c%e6%99%82%e9%96%93%e5%88%b0%24N%20%3d%2010%5e%7b6%7d%24%e9%83%bd%e9%82%84%e8%83%bd%e6%8e%a5%e5%8f%97%e3%80%82%0a%23include%20%26lt%3bbits%2fstdc%2b%2b.h%26gt%3b%20using%20namespace%20std%3b%20int%20prime%5b100000%5d%2c%20index%20%3d%201%3b%20int%20main%28%29%20%7b%20%2f%2fEasy%20Sieve%20%20%2f%2f%20%7c%20Range%20%7c%20Time%20%7c%20%20%2f%2f%20%7c-------%7c--------%7c%20%20%2f%2f%20%7c%201e5%20%7c%203%20ms%20%7c%20%20%2f%2f%20%7c%201e6%20%7c%2076%20ms%20%7c%20%20%2f%2f%20%7c%201e7%20%7c%201.">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -265,30 +253,80 @@ $N \times (\frac{\displaystyle1}{\displaystyle2} &#43; \frac{\displaystyle1}{\di
 <h3 id="最基礎的想法">最基礎的想法</h3>
 <p>用一個陣列維護當前的質因數個數，最容易想也做容易寫<br>
 實作上可用<strong>從3開始判奇數</strong>以及<strong>每次篩到$\sqrt{N}$就停止</strong><br>
-對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\frac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：<br>
+對於$N$個數字，有$\dfrac{\displaystyle1}{\displaystyle2}$是在第$1$步被篩到，$\dfrac{\displaystyle1}{\displaystyle6}$在第二步被篩到，最後的數列接近：<br>
 <br>
-$N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle6} + \frac{\displaystyle1}{\displaystyle15} + \frac{\displaystyle1}{\displaystyle105} + \cdots) &lt; N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$<br>
+$N \times (\dfrac{\displaystyle1}{\displaystyle2} + \dfrac{\displaystyle1}{\displaystyle6} + \dfrac{\displaystyle1}{\displaystyle15} + \dfrac{\displaystyle1}{\displaystyle105} + \cdots) &lt; N \times (\dfrac{\displaystyle1}{\displaystyle2} + \dfrac{\displaystyle1}{\displaystyle3} + \dfrac{\displaystyle1}{\displaystyle5} + \dfrac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$<br>
 優化前複雜度會比$\mathcal{O}(N \log \log N)$好一點點，但比$\mathcal{O}(N)$差，<br>
 優化後大概是$\mathcal{O}(N \log \log \sqrt{N})$，還要考慮壓常數的部分。</p>
 <p><strong>(複雜度還要驗證一次，不確定有沒有算錯)</strong></p>
 <h4 id="code">Code</h4>
-<p>有時間再放 我好懶XD<br>
-[待補]</p>
-<h3 id="埃式篩法">埃式篩法</h3>
+<p>有使用<strong>從3開始判奇數</strong>以及<strong>每次篩到$\sqrt{N}$就停止</strong>兩個優化，<br>
+執行時間到$N = 10^{6}$都還能接受。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+    <span style="color:#66d9ef">int</span> prime[<span style="color:#ae81ff">100000</span>], index <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+
+    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+    {
+        <span style="color:#75715e">//Easy Sieve
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// | Range |  Time  |
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// |-------|--------|
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// |  1e5  |   3 ms |
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// |  1e6  |  76 ms |
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// |  1e7  | 1.5  s |
+</span><span style="color:#75715e"></span>
+        prime[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000000</span>; i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span>)
+        {
+            <span style="color:#66d9ef">bool</span> isprime <span style="color:#f92672">=</span> true;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; prime[j] <span style="color:#f92672">&lt;=</span> sqrt(i) <span style="color:#f92672">&amp;&amp;</span> isprime; j<span style="color:#f92672">++</span>)
+                <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(i <span style="color:#f92672">%</span> prime[j])) isprime <span style="color:#f92672">=</span> false;
+            <span style="color:#66d9ef">if</span> (isprime) prime[index<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> i;
+        }
+    }
+</code></pre></div><h3 id="埃式篩法">埃式篩法</h3>
 <p>基本上跟上個做法很像，不過換成：<br>
 如果找到一個質數，<strong>把這個質數的所有倍數都標記為不是質數</strong>，<br>
 比起上個的優點是，可以同時做出$1 \sim N$的歐拉函數$\varphi(N)$，<br>
-這個算法也有優化，除了<strong>從3開始判奇數</strong>，他的第二種可以進階為<strong>篩到$\sqrt{N}$就停止</strong>，<br>
-原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\frac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\frac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，<br>
-對於$N$個數字，有$\frac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\frac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：<br>
+這個算法也有優化，除了<strong>從3開始判奇數</strong>，他的第二種可以進階為<strong>篩到$\sqrt{N}$就停止(特判偶數)</strong>，<br>
+原因是因為如果某數$N$存在大於$\sqrt{N}$的質因數$d$，$\dfrac{\displaystyle N}{\displaystyle d}$也是$N$的一個因數且$\dfrac{\displaystyle N}{\displaystyle d} &lt; \sqrt{N}$，<br>
+對於$N$個數字，有$\dfrac{\displaystyle1}{\displaystyle2}$被$2$篩到，$\dfrac{\displaystyle1}{\displaystyle6}$被$3$篩到，最後的數列接近：<br>
 <br>
-$N \times (\frac{\displaystyle1}{\displaystyle2} + \frac{\displaystyle1}{\displaystyle3} + \frac{\displaystyle1}{\displaystyle5} + \frac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$<br>
+$N \times (\dfrac{\displaystyle1}{\displaystyle2} + \dfrac{\displaystyle1}{\displaystyle3} + \dfrac{\displaystyle1}{\displaystyle5} + \dfrac{\displaystyle1}{\displaystyle7} + \cdots) = N \ln \ln N$<br>
 優化前的複雜度約為$\mathcal{O}(N \log \log N)$<br>
 優化後為$\mathcal{O}(\sqrt{N} \log \log N)$，同樣也有壓常數的部分。</p>
 <h4 id="code-1">Code</h4>
-<p>有空再放，現在燒雞了:(<br>
-[待補]</p>
-<h3 id="線性篩法">線性篩法</h3>
+<p>實作上程式較短，也比較容易優化，<br>
+優化的部分除了<strong>從3開始判奇數</strong>以及<strong>篩到$\sqrt{N}$就停止(特判偶數)</strong>，<br>
+還有用bitset壓常數，<br>
+執行時間到$N = 10^{7}$都還能接受。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+    bitset<span style="color:#f92672">&lt;</span>N<span style="color:#f92672">&gt;</span> notprime <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+
+    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+    {
+        <span style="color:#75715e">//Eratosthenes Sieve
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// | Range |  Time  |
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// |-------|--------|
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// |  1e5  |   1 ms |
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// |  1e6  |  12 ms |
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// |  1e7  | 144 ms |
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// |  1e8  | 1.9  s |
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">//Pre-compute all 2n except 2
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100000</span>; i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span>)
+            notprime[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+
+        <span style="color:#75715e">//Main Program
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; i <span style="color:#f92672">&lt;</span> sqrt(<span style="color:#ae81ff">100000</span>); i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span>)
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>notprime[i])
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100000</span>; j <span style="color:#f92672">+=</span> i <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+                    notprime[j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    }
+</code></pre></div><h3 id="線性篩法">線性篩法</h3>
 <p>線性篩法的精神是<br>
 如果有一個數是合數，那他就應該<strong>只被篩掉一次</strong>，<br>
 如果某個數字$K = p_1 p_2 p_3 \cdots p_n$，其中$p_1 \leq p_2 \leq p_3 \leq \cdots \leq p_n$，<br>
@@ -312,7 +350,7 @@ $ax+by=c$存在整數解 $x_0, y_0\Leftrightarrow gcd(a,b)|c$<br>
 證明：<br>
 ($\Rightarrow$)<br>
 若$ax+by=c$存在整數解 $x_0, y_0$，則$ax_0+by_0=c$<br>
-由於$gcd(a,b)|a, gcd(a,b)|b$，故原式可寫為$gcd(a,b)(\frac{\displaystyle a}{\displaystyle gcd(a,b)}x_0+\frac{\displaystyle b}{\displaystyle gcd(a,b)}y_0)=c$<br>
+由於$gcd(a,b)|a, gcd(a,b)|b$，故原式可寫為$gcd(a,b)(\dfrac{\displaystyle a}{\displaystyle gcd(a,b)}x_0+\dfrac{\displaystyle b}{\displaystyle gcd(a,b)}y_0)=c$<br>
 故$gcd(a,b)|c$，得證<br>
 ($\Leftarrow$)<br>
 因$gcd(a,b)|c$，設$c = gcd(a,b)d$<br>
@@ -324,9 +362,9 @@ $ax+by=c$存在整數解 $x_0, y_0\Leftrightarrow gcd(a,b)|c$<br>
 $bx + (a \mod b)y = c$有解 (由於這樣處理GCD不變)<br>
 接下來要想辦法讓他跟原式有關係：<br>
 $bx' + (a \mod b)y' = c$<br>
-$bx' + (a - b\lfloor\frac{\displaystyle a}{\displaystyle b}\rfloor)y' = c$<br>
-$bx' + ay' - b\lfloor\frac{\displaystyle a}{\displaystyle b}\rfloor y' = c$<br>
-$ay' + b(x' - \lfloor\frac{\displaystyle a}{\displaystyle b}\rfloor y') = c$<br>
+$bx' + (a - b\lfloor\dfrac{\displaystyle a}{\displaystyle b}\rfloor)y' = c$<br>
+$bx' + ay' - b\lfloor\dfrac{\displaystyle a}{\displaystyle b}\rfloor y' = c$<br>
+$ay' + b(x' - \lfloor\dfrac{\displaystyle a}{\displaystyle b}\rfloor y') = c$<br>
 所以可以透過遞迴的方式把問題縮小，<br>
 中間$a, b$其實就是做GCD的過程，必會遇到其中一項為$0$的情況，可以直接解出來</p>
 <h2 id="同餘模運算">同餘/模運算</h2>
@@ -338,12 +376,12 @@ $ay' + b(x' - \lfloor\frac{\displaystyle a}{\displaystyle b}\rfloor y') = c$<br>
 <li>$a \equiv b \mod m, a \equiv b \mod m \Rightarrow ac \equiv bd \mod m$ (同mod下同乘)</li>
 <li>$a \equiv b \mod m, \Rightarrow a^k \equiv b^k \mod m$ (同mod下同次方)<br>
 證明：$m|(a-b) \Rightarrow m|(a-b)(a^{k-1} + a^{k-2}b^1 + a^{k-3}b^2 + \cdots + b^{k-1}) \Rightarrow m|(a^k-b^k)$</li>
-<li>$ca \equiv cb \mod n \Rightarrow a \equiv b \mod \frac{\displaystyle n}{\displaystyle gcd(n, c)}$<br>
+<li>$ca \equiv cb \mod n \Rightarrow a \equiv b \mod \dfrac{\displaystyle n}{\displaystyle gcd(n, c)}$<br>
 證明：令$d = gcd(n, c)$<br>
-$n|c(a-b) \Rightarrow \frac{\displaystyle n}{\displaystyle d}|\frac{\displaystyle c}{\displaystyle d}(a-b)$<br>
-而且 $gcd(\frac{\displaystyle n}{\displaystyle d}, \frac{\displaystyle c}{\displaystyle d}) = 1$<br>
-故 $\frac{\displaystyle n}{\displaystyle d}|(a-b)$<br>
-$\Rightarrow a \equiv b \mod \frac{\displaystyle n}{\displaystyle d}$</li>
+$n|c(a-b) \Rightarrow \dfrac{\displaystyle n}{\displaystyle d}|\dfrac{\displaystyle c}{\displaystyle d}(a-b)$<br>
+而且 $gcd(\dfrac{\displaystyle n}{\displaystyle d}, \dfrac{\displaystyle c}{\displaystyle d}) = 1$<br>
+故 $\dfrac{\displaystyle n}{\displaystyle d}|(a-b)$<br>
+$\Rightarrow a \equiv b \mod \dfrac{\displaystyle n}{\displaystyle d}$</li>
 </ol>
 <h3 id="剩餘系">剩餘系</h3>
 <p>定義：</p>
@@ -425,13 +463,13 @@ $ab \equiv 1 \mod m \Leftrightarrow b \equiv a^{-1} \mod m$<br>
 $aa^{-1} + bm = 1$，此時$gcd(a, m)$只能為$1$，即<strong>兩數互質</strong><br>
 <br>
 如果需要建反元素\模逆元表，可以用以下推導出的遞迴式：<br>
-$P - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor = P \% i$<br>
-$P - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor \equiv P \% i \mod P$<br>
-$P \times i - i \times \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor \equiv P \% i \mod P$<br>
-$i \times (P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) \equiv P \% i \mod P$<br>
-$i \times (P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \equiv 1 \mod P$<br>
-$(P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \equiv i^{-1} \mod P$<br>
-$i^{-1} \equiv (P - \lfloor\frac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \mod P$</p>
+$P - i \times \lfloor\dfrac{\displaystyle P}{\displaystyle i}\rfloor = P \% i$<br>
+$P - i \times \lfloor\dfrac{\displaystyle P}{\displaystyle i}\rfloor \equiv P \% i \mod P$<br>
+$P \times i - i \times \lfloor\dfrac{\displaystyle P}{\displaystyle i}\rfloor \equiv P \% i \mod P$<br>
+$i \times (P - \lfloor\dfrac{\displaystyle P}{\displaystyle i}\rfloor) \equiv P \% i \mod P$<br>
+$i \times (P - \lfloor\dfrac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \equiv 1 \mod P$<br>
+$(P - \lfloor\dfrac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \equiv i^{-1} \mod P$<br>
+$i^{-1} \equiv (P - \lfloor\dfrac{\displaystyle P}{\displaystyle i}\rfloor) (P \% i)^{-1} \mod P$</p>
 <h3 id="費馬小定理">費馬小定理</h3>
 <p>在$\mod p$下，對於任意整數$a$及質數$p$，有：<br>
 $a^{p} = a \mod p$<br>
@@ -476,15 +514,15 @@ $\begin{bmatrix}
 不過同時可以發現，如果可以把某個數換成質數的乘積，就可以把他們全部乘起來：<br>
 $N = {p_1}^{a_1}{p_2}^{a_2}{p_3}^{a_3} \cdots {p_n}^{a_n}$<br>
 $\Phi(N) = \Phi({p_1}^{a_1})\Phi({p_2}^{a_2})\Phi({p_3}^{a_3}) \cdots \Phi({p_n}^{a_n})$<br>
-如果某數$M$是某個質數$p$的k次方，與他不互質的數必定是$p$的倍數，共有$\frac{\displaystyle M}{\displaystyle p}$個，故：<br>
-$\Phi(M) = M - \frac{\displaystyle M}{\displaystyle p} = M \times \frac{\displaystyle p-1}{\displaystyle p}$<br>
+如果某數$M$是某個質數$p$的k次方，與他不互質的數必定是$p$的倍數，共有$\dfrac{\displaystyle M}{\displaystyle p}$個，故：<br>
+$\Phi(M) = M - \dfrac{\displaystyle M}{\displaystyle p} = M \times \dfrac{\displaystyle p-1}{\displaystyle p}$<br>
 套在前面的式子可以發現：<br>
-$\Phi(N) = {p_1}^{a_1} \times \frac{\displaystyle p_1-1}{\displaystyle p_1}
-{p_2}^{a_2} \times \frac{\displaystyle p_2-1}{\displaystyle p_2}
-{p_3}^{a_3} \times \frac{\displaystyle p_3-1}{\displaystyle p_3}
+$\Phi(N) = {p_1}^{a_1} \times \dfrac{\displaystyle p_1-1}{\displaystyle p_1}
+{p_2}^{a_2} \times \dfrac{\displaystyle p_2-1}{\displaystyle p_2}
+{p_3}^{a_3} \times \dfrac{\displaystyle p_3-1}{\displaystyle p_3}
 \cdots
-{p_n}^{a_n} \times \frac{\displaystyle p_n-1}{\displaystyle p_n}$<br>
-$\Phi(N) = N \displaystyle\prod \frac{\displaystyle p-1}{\displaystyle p} $</p>
+{p_n}^{a_n} \times \dfrac{\displaystyle p_n-1}{\displaystyle p_n}$<br>
+$\Phi(N) = N \displaystyle\prod \dfrac{\displaystyle p-1}{\displaystyle p} $</p>
 <h3 id="中國剩餘定理crt">中國剩餘定理(CRT)</h3>
 <h4 id="定理">定理</h4>
 <p>方程組<br>
@@ -521,7 +559,7 @@ $pm_1 - qm_2 = a_2 - a_1$<br>
 <br>
 另一種想法式對於每個式子，都構建一個解$e_i$使得在$\mod n_i$下為$1$，其他為$0$，<br>
 這樣只要把$a_i e_i$加起來就是要求的$x$，<br>
-設$N = n_1n_2\cdots n_k$，$n_i^{*} = \frac{\displaystyle N}{\displaystyle n_i}$<br>
+設$N = n_1n_2\cdots n_k$，$n_i^{*} = \dfrac{\displaystyle N}{\displaystyle n_i}$<br>
 顯然$e_i$為$n_i^{*}$的倍數，設$e_i = t_i n_i^{*}$，<br>
 現在要解的方程式就變為$t_i n_i^{*} \equiv 1 \mod n_i$，<br>
 <br>
@@ -654,7 +692,7 @@ $pm_1 - qm_2 = a_2 - a_1$<br>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e6%99%82%e9%96%93%e5%86%8d%e6%94%be%20%e6%88%91%e5%a5%bd%e6%87%b6XD%0a%5b%e5%be%85%e8%a3%9c%5d%0a%e5%9f%83%e5%bc%8f%e7%af%a9%e6%b3%95%20%e5%9f%ba%e6%9c%ac%e4%b8%8a%e8%b7%9f%e4%b8%8a%e5%80%8b%e5%81%9a%e6%b3%95%e5%be%88%e5%83%8f%ef%bc%8c%e4%b8%8d%e9%81%8e%e6%8f%9b%e6%88%90%ef%bc%9a%0a%e5%a6%82%e6%9e%9c%e6%89%be%e5%88%b0%e4%b8%80%e5%80%8b%e8%b3%aa%e6%95%b8%ef%bc%8c%e6%8a%8a%e9%80%99%e5%80%8b%e8%b3%aa%e6%95%b8%e7%9a%84%e6%89%80%e6%9c%89%e5%80%8d%e6%95%b8%e9%83%bd%e6%a8%99%e8%a8%98%e7%82%ba%e4%b8%8d%e6%98%af%e8%b3%aa%e6%95%b8%ef%bc%8c%0a%e6%af%94%e8%b5%b7%e4%b8%8a%e5%80%8b%e7%9a%84%e5%84%aa%e9%bb%9e%e6%98%af%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%90%8c%e6%99%82%e5%81%9a%e5%87%ba%241%20%5csim%20N%24%e7%9a%84%e6%ad%90%e6%8b%89%e5%87%bd%e6%95%b8%24%5cvarphi%28N%29%24%ef%bc%8c%0a%e9%80%99%e5%80%8b%e7%ae%97%e6%b3%95%e4%b9%9f%e6%9c%89%e5%84%aa%e5%8c%96%ef%bc%8c%e9%99%a4%e4%ba%86%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%ef%bc%8c%e4%bb%96%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a8%ae%e5%8f%af%e4%bb%a5%e9%80%b2%e9%9a%8e%e7%82%ba%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%ef%bc%8c%0a%e5%8e%9f%e5%9b%a0%e6%98%af%e5%9b%a0%e7%82%ba%e5%a6%82%e6%9e%9c%e6%9f%90%e6%95%b8%24N%24%e5%ad%98%e5%9c%a8%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%24d%24%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%24%e4%b9%9f%e6%98%af%24N%24%e7%9a%84%e4%b8%80%e5%80%8b%e5%9b%a0%e6%95%b8%e4%b8%94%24%5cfrac%7b%5cdisplaystyle%20N%7d%7b%5cdisplaystyle%20d%7d%20%26lt%3b%20%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e8%a2%ab%242%24%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e8%a2%ab%243%24%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular%2f&name=%e6%95%b8%e8%ab%96%20%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97%5b90%25%e5%ae%8c%e6%88%90%5d&description=%e5%be%9e%e5%af%92%e8%a8%93%e6%95%b4%e7%90%86%e4%b8%80%e4%ba%9b%e6%9d%b1%e8%a5%bf%e5%87%ba%e4%be%86%0a%e4%b8%8d%e7%84%b6%e6%88%91%e5%a5%bd%e5%83%8f%e6%9c%83%e8%b7%9f%e4%b8%8d%e4%b8%8a%3a%28%0a%e8%b3%aa%e6%95%b8%e7%af%a9%e6%b3%95%20%e6%9c%80%e5%9f%ba%e7%a4%8e%e7%9a%84%e6%83%b3%e6%b3%95%20%e7%94%a8%e4%b8%80%e5%80%8b%e9%99%a3%e5%88%97%e7%b6%ad%e8%ad%b7%e7%95%b6%e5%89%8d%e7%9a%84%e8%b3%aa%e5%9b%a0%e6%95%b8%e5%80%8b%e6%95%b8%ef%bc%8c%e6%9c%80%e5%ae%b9%e6%98%93%e6%83%b3%e4%b9%9f%e5%81%9a%e5%ae%b9%e6%98%93%e5%af%ab%0a%e5%af%a6%e4%bd%9c%e4%b8%8a%e5%8f%af%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%0a%e5%b0%8d%e6%96%bc%24N%24%e5%80%8b%e6%95%b8%e5%ad%97%ef%bc%8c%e6%9c%89%24%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%24%e6%98%af%e5%9c%a8%e7%ac%ac%241%24%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%24%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%24%e5%9c%a8%e7%ac%ac%e4%ba%8c%e6%ad%a5%e8%a2%ab%e7%af%a9%e5%88%b0%ef%bc%8c%e6%9c%80%e5%be%8c%e7%9a%84%e6%95%b8%e5%88%97%e6%8e%a5%e8%bf%91%ef%bc%9a%0a%24N%20%5ctimes%20%28%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle6%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle15%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle105%7d%20%2b%20%5ccdots%29%20%26lt%3b%20N%20%5ctimes%20%28%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle2%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle3%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle5%7d%20%2b%20%5cdfrac%7b%5cdisplaystyle1%7d%7b%5cdisplaystyle7%7d%20%2b%20%5ccdots%29%20%3d%20N%20%5cln%20%5cln%20N%24%0a%e5%84%aa%e5%8c%96%e5%89%8d%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%af%94%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20N%29%24%e5%a5%bd%e4%b8%80%e9%bb%9e%e9%bb%9e%ef%bc%8c%e4%bd%86%e6%af%94%24%5cmathcal%7bO%7d%28N%29%24%e5%b7%ae%ef%bc%8c%0a%e5%84%aa%e5%8c%96%e5%be%8c%e5%a4%a7%e6%a6%82%e6%98%af%24%5cmathcal%7bO%7d%28N%20%5clog%20%5clog%20%5csqrt%7bN%7d%29%24%ef%bc%8c%e9%82%84%e8%a6%81%e8%80%83%e6%85%ae%e5%a3%93%e5%b8%b8%e6%95%b8%e7%9a%84%e9%83%a8%e5%88%86%e3%80%82%0a%28%e8%a4%87%e9%9b%9c%e5%ba%a6%e9%82%84%e8%a6%81%e9%a9%97%e8%ad%89%e4%b8%80%e6%ac%a1%ef%bc%8c%e4%b8%8d%e7%a2%ba%e5%ae%9a%e6%9c%89%e6%b2%92%e6%9c%89%e7%ae%97%e9%8c%af%29%0aCode%20%e6%9c%89%e4%bd%bf%e7%94%a8%e5%be%9e3%e9%96%8b%e5%a7%8b%e5%88%a4%e5%a5%87%e6%95%b8%e4%bb%a5%e5%8f%8a%e6%af%8f%e6%ac%a1%e7%af%a9%e5%88%b0%24%5csqrt%7bN%7d%24%e5%b0%b1%e5%81%9c%e6%ad%a2%e5%85%a9%e5%80%8b%e5%84%aa%e5%8c%96%ef%bc%8c%0a%e5%9f%b7%e8%a1%8c%e6%99%82%e9%96%93%e5%88%b0%24N%20%3d%2010%5e%7b6%7d%24%e9%83%bd%e9%82%84%e8%83%bd%e6%8e%a5%e5%8f%97%e3%80%82%0a%23include%20%26lt%3bbits%2fstdc%2b%2b.h%26gt%3b%20using%20namespace%20std%3b%20int%20prime%5b100000%5d%2c%20index%20%3d%201%3b%20int%20main%28%29%20%7b%20%2f%2fEasy%20Sieve%20%20%2f%2f%20%7c%20Range%20%7c%20Time%20%7c%20%20%2f%2f%20%7c-------%7c--------%7c%20%20%2f%2f%20%7c%201e5%20%7c%203%20ms%20%7c%20%20%2f%2f%20%7c%201e6%20%7c%2076%20ms%20%7c%20%20%2f%2f%20%7c%201e7%20%7c%201.">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
