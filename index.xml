@@ -45,7 +45,7 @@ $N \times (\dfrac{\displaystyle1}{\displaystyle2} + \dfrac{\displaystyle1}{\disp
 (複雜度還要驗證一次，不確定有沒有算錯)
 Code 有使用從3開始判奇數以及每次篩到$\sqrt{N}$就停止兩個優化，
 執行時間到$N = 10^{6}$都還能接受。
-#include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int prime[100000], index = 1; int main() { //Easy Sieve  // | Range | Time |  // |-------|--------|  // | 1e5 | 3 ms |  // | 1e6 | 76 ms |  // | 1e7 | 1.</description>
+#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std; int prime[100000], index = 1; int main() { //Easy Sieve  // | Range | Time |  // |-------|--------|  // | 1e5 | 3 ms |  // | 1e6 | 76 ms |  // | 1e7 | 1.</description>
     </item>
     
     <item>
