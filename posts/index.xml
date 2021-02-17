@@ -6,13 +6,28 @@
     <description>Recent content in Posts on LittleCube Coding Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 07 Feb 2021 22:18:25 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Feb 2021 16:15:54 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常見程式的Bug</title>
+      <link>https://littlecube8152.github.io/posts/programming-bugs/</link>
+      <pubDate>Tue, 16 Feb 2021 16:15:54 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/posts/programming-bugs/</guid>
+      <description>溢位 int -&amp;gt; long long 注意$10^5$的範圍相乘就會有溢位了，
+不怕MLE之下都開long long比較保險。
+long long -&amp;gt; double 如果涉及距離運算或是其他需要的浮點運算，
+都先把型態轉成double以免發生NaN的悲劇。
+像是下面的程式碼在座標都是int是不會過的：
+double dis(pair&amp;lt;long long,long long&amp;gt; p1, pair&amp;lt;long long,long long&amp;gt; p2) { return sqrt((p1.first - p2.first) * (p1.first - p2.first) + (p1.second - p2.second) * (p1.second - p2.second)); } 需要寫成：
+double dis(pair&amp;lt;long long,long long&amp;gt; p1, pair&amp;lt;long long,long long&amp;gt; p2) { return sqrt(double(p1.first - p2.first) * (p1.first - p2.first) + double(p1.second - p2.second) * (p1.second - p2.second)); } 乘除順序 在不影響結果之下， 建議先除再乘，避免溢位。</description>
+    </item>
+    
     <item>
       <title>數論 進階模運算及FFT[待補]</title>
-      <link>https://littlecube8152.github.io/posts/working/math-modular-fft/</link>
+      <link>https://littlecube8152.github.io/posts/math-modular-fft/</link>
       <pubDate>Sun, 07 Feb 2021 22:18:25 +0800</pubDate>
       
-      <guid>https://littlecube8152.github.io/posts/working/math-modular-fft/</guid>
+      <guid>https://littlecube8152.github.io/posts/math-modular-fft/</guid>
       <description>質數 Miller-Rabin 質數測試 如果$p$是質數且$p &amp;gt; 2$，$x^2 \equiv 1 \mod p$的解：
 $x^2 \equiv 1 \mod p$
 $(x+1)(x-1) \equiv 0 \mod p$

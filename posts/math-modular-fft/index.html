@@ -8,10 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="google-site-verification" content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388" />
   <meta property="og:title" content="數論 進階模運算及FFT[待補]" />
-<meta property="og:description" content="質數 Miller-Rabin 質數測試 概念 對於任意的$p$，$x^2 \equiv 1 \mod p$的解，
-必有$1, -1$兩個，我們稱之為平凡平方根，\
-除法 Newton-Raphson 除法 進階模運算 數論函數 狄利克雷捲積 莫比烏斯反演 原根 BSGS 快速傅立葉轉換 FFT 生成函數 離散傅立葉轉換 DFT 快速傅立葉轉換 FFT " />
+<meta property="og:description" content="質數 Miller-Rabin 質數測試 如果$p$是質數且$p &gt; 2$，$x^2 \equiv 1 \mod p$的解：
+$x^2 \equiv 1 \mod p$
+$(x&#43;1)(x-1) \equiv 0 \mod p$
+也就是說，$x=p-1$或$p|(x-1)(x&#43;1)$，
+此時$x &#43; 1 \equiv 0, x \equiv 1 \mod p$ 或 $x - 1 \equiv 0, x \equiv -1 \mod p$，
+我們稱$1, -1$為$1 \mod p$的平凡平方根，
+如果存在不平凡平方根(即$x \neq 1, -1$)，
+表示$p$具有因數，與前面假設矛盾
+現在假設$n$是質數且$n &gt; 2$，
+所以$n-1$會是一個偶數，把它分解為$2^st$，其中$t$是奇數，
+在$\mathbb{Z}_n$下的所有數$a$，都能能找到$0 \leq r &lt; s$，滿足兩式其一：
+(1) $\begin{equation} a^d \equiv 1 \mod n \end{equation}$
+(2) $\begin{equation} a^{2^rd} \equiv -1 \mod n \end{equation}$" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://littlecube8152.github.io/posts/math-modular-fft/" />
 <meta property="article:published_time" content="2021-02-07T22:18:25+08:00" />
@@ -19,9 +30,19 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="數論 進階模運算及FFT[待補]"/>
-<meta name="twitter:description" content="質數 Miller-Rabin 質數測試 概念 對於任意的$p$，$x^2 \equiv 1 \mod p$的解，
-必有$1, -1$兩個，我們稱之為平凡平方根，\
-除法 Newton-Raphson 除法 進階模運算 數論函數 狄利克雷捲積 莫比烏斯反演 原根 BSGS 快速傅立葉轉換 FFT 生成函數 離散傅立葉轉換 DFT 快速傅立葉轉換 FFT "/>
+<meta name="twitter:description" content="質數 Miller-Rabin 質數測試 如果$p$是質數且$p &gt; 2$，$x^2 \equiv 1 \mod p$的解：
+$x^2 \equiv 1 \mod p$
+$(x&#43;1)(x-1) \equiv 0 \mod p$
+也就是說，$x=p-1$或$p|(x-1)(x&#43;1)$，
+此時$x &#43; 1 \equiv 0, x \equiv 1 \mod p$ 或 $x - 1 \equiv 0, x \equiv -1 \mod p$，
+我們稱$1, -1$為$1 \mod p$的平凡平方根，
+如果存在不平凡平方根(即$x \neq 1, -1$)，
+表示$p$具有因數，與前面假設矛盾
+現在假設$n$是質數且$n &gt; 2$，
+所以$n-1$會是一個偶數，把它分解為$2^st$，其中$t$是奇數，
+在$\mathbb{Z}_n$下的所有數$a$，都能能找到$0 \leq r &lt; s$，滿足兩式其一：
+(1) $\begin{equation} a^d \equiv 1 \mod n \end{equation}$
+(2) $\begin{equation} a^{2^rd} \equiv -1 \mod n \end{equation}$"/>
 
   
   
@@ -75,6 +96,12 @@
           </a>
         </li>
         
+        
+        <li>
+          <a class="icon" href="https://littlecube8152.github.io/posts/programming-bugs/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
@@ -147,7 +174,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-fft%2f&name=%e6%95%b8%e8%ab%96%20%e9%80%b2%e9%9a%8e%e6%a8%a1%e9%81%8b%e7%ae%97%e5%8f%8aFFT%5b%e5%be%85%e8%a3%9c%5d&description=%e8%b3%aa%e6%95%b8%20Miller-Rabin%20%e8%b3%aa%e6%95%b8%e6%b8%ac%e8%a9%a6%20%e6%a6%82%e5%bf%b5%20%e5%b0%8d%e6%96%bc%e4%bb%bb%e6%84%8f%e7%9a%84%24p%24%ef%bc%8c%24x%5e2%20%5cequiv%201%20%5cmod%20p%24%e7%9a%84%e8%a7%a3%ef%bc%8c%0a%e5%bf%85%e6%9c%89%241%2c%20-1%24%e5%85%a9%e5%80%8b%ef%bc%8c%e6%88%91%e5%80%91%e7%a8%b1%e4%b9%8b%e7%82%ba%e5%b9%b3%e5%87%a1%e5%b9%b3%e6%96%b9%e6%a0%b9%ef%bc%8c%5c%0a%e9%99%a4%e6%b3%95%20Newton-Raphson%20%e9%99%a4%e6%b3%95%20%e9%80%b2%e9%9a%8e%e6%a8%a1%e9%81%8b%e7%ae%97%20%e6%95%b8%e8%ab%96%e5%87%bd%e6%95%b8%20%e7%8b%84%e5%88%a9%e5%85%8b%e9%9b%b7%e6%8d%b2%e7%a9%8d%20%e8%8e%ab%e6%af%94%e7%83%8f%e6%96%af%e5%8f%8d%e6%bc%94%20%e5%8e%9f%e6%a0%b9%20BSGS%20%e5%bf%ab%e9%80%9f%e5%82%85%e7%ab%8b%e8%91%89%e8%bd%89%e6%8f%9b%20FFT%20%e7%94%9f%e6%88%90%e5%87%bd%e6%95%b8%20%e9%9b%a2%e6%95%a3%e5%82%85%e7%ab%8b%e8%91%89%e8%bd%89%e6%8f%9b%20DFT%20%e5%bf%ab%e9%80%9f%e5%82%85%e7%ab%8b%e8%91%89%e8%bd%89%e6%8f%9b%20FFT%20">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-fft%2f&name=%e6%95%b8%e8%ab%96%20%e9%80%b2%e9%9a%8e%e6%a8%a1%e9%81%8b%e7%ae%97%e5%8f%8aFFT%5b%e5%be%85%e8%a3%9c%5d&description=%e8%b3%aa%e6%95%b8%20Miller-Rabin%20%e8%b3%aa%e6%95%b8%e6%b8%ac%e8%a9%a6%20%e5%a6%82%e6%9e%9c%24p%24%e6%98%af%e8%b3%aa%e6%95%b8%e4%b8%94%24p%20%26gt%3b%202%24%ef%bc%8c%24x%5e2%20%5cequiv%201%20%5cmod%20p%24%e7%9a%84%e8%a7%a3%ef%bc%9a%0a%24x%5e2%20%5cequiv%201%20%5cmod%20p%24%0a%24%28x%2b1%29%28x-1%29%20%5cequiv%200%20%5cmod%20p%24%0a%e4%b9%9f%e5%b0%b1%e6%98%af%e8%aa%aa%ef%bc%8c%24x%3dp-1%24%e6%88%96%24p%7c%28x-1%29%28x%2b1%29%24%ef%bc%8c%0a%e6%ad%a4%e6%99%82%24x%20%2b%201%20%5cequiv%200%2c%20x%20%5cequiv%201%20%5cmod%20p%24%20%e6%88%96%20%24x%20-%201%20%5cequiv%200%2c%20x%20%5cequiv%20-1%20%5cmod%20p%24%ef%bc%8c%0a%e6%88%91%e5%80%91%e7%a8%b1%241%2c%20-1%24%e7%82%ba%241%20%5cmod%20p%24%e7%9a%84%e5%b9%b3%e5%87%a1%e5%b9%b3%e6%96%b9%e6%a0%b9%ef%bc%8c%0a%e5%a6%82%e6%9e%9c%e5%ad%98%e5%9c%a8%e4%b8%8d%e5%b9%b3%e5%87%a1%e5%b9%b3%e6%96%b9%e6%a0%b9%28%e5%8d%b3%24x%20%5cneq%201%2c%20-1%24%29%ef%bc%8c%0a%e8%a1%a8%e7%a4%ba%24p%24%e5%85%b7%e6%9c%89%e5%9b%a0%e6%95%b8%ef%bc%8c%e8%88%87%e5%89%8d%e9%9d%a2%e5%81%87%e8%a8%ad%e7%9f%9b%e7%9b%be%0a%e7%8f%be%e5%9c%a8%e5%81%87%e8%a8%ad%24n%24%e6%98%af%e8%b3%aa%e6%95%b8%e4%b8%94%24n%20%26gt%3b%202%24%ef%bc%8c%0a%e6%89%80%e4%bb%a5%24n-1%24%e6%9c%83%e6%98%af%e4%b8%80%e5%80%8b%e5%81%b6%e6%95%b8%ef%bc%8c%e6%8a%8a%e5%ae%83%e5%88%86%e8%a7%a3%e7%82%ba%242%5est%24%ef%bc%8c%e5%85%b6%e4%b8%ad%24t%24%e6%98%af%e5%a5%87%e6%95%b8%ef%bc%8c%0a%e5%9c%a8%24%5cmathbb%7bZ%7d_n%24%e4%b8%8b%e7%9a%84%e6%89%80%e6%9c%89%e6%95%b8%24a%24%ef%bc%8c%e9%83%bd%e8%83%bd%e8%83%bd%e6%89%be%e5%88%b0%240%20%5cleq%20r%20%26lt%3b%20s%24%ef%bc%8c%e6%bb%bf%e8%b6%b3%e5%85%a9%e5%bc%8f%e5%85%b6%e4%b8%80%ef%bc%9a%0a%281%29%20%24%5cbegin%7bequation%7d%20a%5ed%20%5cequiv%201%20%5cmod%20n%20%5cend%7bequation%7d%24%0a%282%29%20%24%5cbegin%7bequation%7d%20a%5e%7b2%5erd%7d%20%5cequiv%20-1%20%5cmod%20n%20%5cend%7bequation%7d%24">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -216,11 +243,112 @@
       <div class="content" itemprop="articleBody">
         <h2 id="質數">質數</h2>
 <h3 id="miller-rabin-質數測試">Miller-Rabin 質數測試</h3>
-<h4 id="概念">概念</h4>
-<p>對於任意的$p$，$x^2 \equiv 1 \mod p$的解，<br>
-必有$1, -1$兩個，我們稱之為平凡平方根，\</p>
+<p>如果$p$是質數且$p &gt; 2$，$x^2 \equiv 1 \mod p$的解：<br>
+$x^2 \equiv 1 \mod p$<br>
+$(x+1)(x-1) \equiv 0 \mod p$<br>
+也就是說，$x=p-1$或$p|(x-1)(x+1)$，<br>
+此時$x + 1 \equiv 0, x \equiv 1 \mod p$ 或 $x - 1 \equiv 0, x \equiv -1 \mod p$，<br>
+我們稱$1, -1$為$1 \mod p$的平凡平方根，<br>
+如果存在不平凡平方根(即$x \neq 1, -1$)，<br>
+表示$p$具有因數，與前面假設矛盾<br>
+<br>
+現在假設$n$是質數且$n &gt; 2$，<br>
+所以$n-1$會是一個偶數，把它分解為$2^st$，其中$t$是奇數，<br>
+在$\mathbb{Z}_n$下的所有數$a$，都能能找到$0 \leq r &lt; s$，滿足兩式其一：<br>
+(1) $\begin{equation}
+a^d \equiv 1 \mod n
+\end{equation}$<br>
+(2) $\begin{equation}
+a^{2^rd} \equiv -1 \mod n
+\end{equation}$<br>
+原因是因為<strong>費馬小定理</strong>，在$\mod n$下會有<br>
+$a^{p-1} \equiv 1 \mod n$<br>
+由於$n$是質數，在對$a^{p-1}$不斷取平方根的時候，僅會有平凡平方根($1, -1$)出現，<br>
+如果過程中有出現$-1$，(2)式必成立，<br>
+如果都出現$1$，則(1)式成立，<br>
+<br>
+所以把整個敘述反過來：<br>
+<strong>如果找到一個數</strong>$a$<strong>讓所有</strong>$0 \leq r &lt; s$<strong>都滿足兩式：</strong><br>
+(3) $\begin{equation}
+a^d \not\equiv 1 \mod n
+\end{equation}$<br>
+(4) $\begin{equation}
+a^{2^rd} \not\equiv -1 \mod n
+\end{equation}$<br>
+<strong>那</strong>$p$<strong>就一定是合數，</strong><br>
+所以對於一個大於3的數，我們可以選取很多個數字去做驗證，<br>
+如果有一個數字使得上面兩式(3)(4)都成立，就足以判別$p$是合數，<br>
+不過如果有一個數字使得上面兩式(3)(4)至少有一個不成立，<br>
+他就有可能是$p$是質數的「<strong>憑證</strong>」或是「<strong>強偽證</strong>」，<br>
+如果所有的$a$都是<strong>強偽證</strong>，那$p$就是質數。<br>
+<br>
+如果我們在$\mathbb{Z}_n$中測試$K$個數，可以在$\log N$的時間做完，<br>
+不過注意乘法的時候複雜度也要考慮進去，因為數字可能很大，所以大約是$\log^2 N$，<br>
+總複雜度是$\mathcal{O}(K \log^3 N)$(不考慮乘法是$\mathcal{O}(K \log N)$)<br>
+<br>
+可是要怎麼選取每一步的$a$，會讓算法效率產生差異，<br>
+有人計算出他的精確度差度多是$4^{-k}$，<br>
+不過比賽或實作上總不可能直接靠機率不要出錯吧？<br>
+為此，有人給出了一個可以在一定範圍內保證直接測出所有質數的數列：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">最大值</th>
+<th style="text-align:center"></th>
+<th style="text-align:left">測試數列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1373653</td>
+<td style="text-align:center">(&gt; 10$^{6}$, 題目常用範圍)</td>
+<td style="text-align:left">2, 3,</td>
+</tr>
+<tr>
+<td style="text-align:right">4759123141</td>
+<td style="text-align:center">(&gt; 2$^{31}$-1, <strong>int</strong>範圍)</td>
+<td style="text-align:left">2, 7, 61</td>
+</tr>
+<tr>
+<td style="text-align:right">18446744073709551616</td>
+<td style="text-align:center">(= 2$^{64}$, <strong>long long</strong>範圍)</td>
+<td style="text-align:left">2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37</td>
+</tr>
+<tr>
+<td style="text-align:right">&gt; 2$^{64}$</td>
+<td style="text-align:center">(&gt; 2$^{64}$, <strong>long long</strong>範圍)</td>
+<td style="text-align:left">2, 325, 9375, 28178, 450775, 9780504, 1795265022</td>
+</tr>
+</tbody>
+</table>
+<p>這樣一來測試單一數就變成了$\mathcal{O}(\log^3 N)$，<br>
+而且可以解決埃氏篩法及線性篩法無法篩到<strong>long long</strong>範圍的問題(可以用bitset壓？)<br>
+<br>
+做的同時也可以做GCD，就可以一邊做一邊質因數分解了</p>
+<h4 id="參考資料">參考資料</h4>
+<p><a href="https://archive.is/20120711112013/http://miller-rabin.appspot.com/#selection-259.0-259.48">https://archive.is/20120711112013/http://miller-rabin.appspot.com/#selection-259.0-259.48</a><br>
+<a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test</a></p>
 <h2 id="除法">除法</h2>
 <h3 id="newton-raphson-除法">Newton-Raphson 除法</h3>
+<p>與直式除法不同的是，Newton-Raphson除法的目的是在除法的式子中：<br>
+$N / D = Q$<br>
+如果能找到$D$的乘法反元素(即倒數)，<br>
+就可以用<strong>乘法</strong>的方式去做除法，<br>
+所以如果能找到一個方程式$f(x)$讓$x = 1/D$是其中的一根，就可以用牛頓法去求解，<br>
+先觀察一下牛頓法的迭代過程：<br>
+$x_{i+1} = x_i - \dfrac{\displaystyle f(x_i)}{\displaystyle f'(x_i)}$<br>
+最好想到方程式是$f(x) = Dx - 1$，然而微分過後會出現$f'(x) = D$，<br>
+分母有出現$D$，然而我們還沒計算出$D$的反元素，這個方程式是不可行的，<br>
+所以我們把原式$x = 1/D$換成$D = 1/x$，<br>
+就有$f(x) = 1/x - D$，微分過後會出現$f'(x) = - 1/x^2$，<br>
+此時代入牛頓法的公式，會得到：<br>
+$x_{i+1} = x_i - \dfrac{\displaystyle \dfrac{\displaystyle 1}{\displaystyle x_i} - D}{\displaystyle - \dfrac{\displaystyle 1}{\displaystyle {x_i}^2}} = x_i - \dfrac{\displaystyle x_i - D{x_i}^2}{\displaystyle - 1} = x_i + x_i - D{x_i}^2 = x_i(2 - Dx_i)$<br>
+雖然$x_i + x_i - D{x_i}^2$和$x_i(2 - Dx_i)$看起來很像，不過計算時用後者，意義上的精度會是前者的兩倍，<br>
+如果把第$i$步的錯誤設為$\varepsilon_i = 1 - Dx_i$，<br>
+則第$i+1$步的錯誤就會是：<br>
+$\varepsilon_{i+1} = 1 - Dx_{i+1} = 1 - Dx_i(2 - Dx_i)  = 1 - 2Dx_i - D^2x_i^2 = (1 - Dx_i)^2 = \varepsilon_i^2$<br>
+也就是說誤差會持續被開平方根，但同時也表示初始值$x_0$不能亂選，<br>
+最終取得$N$位精度需要$\mathcal{O}(log N)$的時間。</p>
 <h2 id="進階模運算">進階模運算</h2>
 <h3 id="數論函數">數論函數</h3>
 <h3 id="狄利克雷捲積">狄利克雷捲積</h3>
@@ -344,7 +472,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-fft%2f&name=%e6%95%b8%e8%ab%96%20%e9%80%b2%e9%9a%8e%e6%a8%a1%e9%81%8b%e7%ae%97%e5%8f%8aFFT%5b%e5%be%85%e8%a3%9c%5d&description=%e8%b3%aa%e6%95%b8%20Miller-Rabin%20%e8%b3%aa%e6%95%b8%e6%b8%ac%e8%a9%a6%20%e6%a6%82%e5%bf%b5%20%e5%b0%8d%e6%96%bc%e4%bb%bb%e6%84%8f%e7%9a%84%24p%24%ef%bc%8c%24x%5e2%20%5cequiv%201%20%5cmod%20p%24%e7%9a%84%e8%a7%a3%ef%bc%8c%0a%e5%bf%85%e6%9c%89%241%2c%20-1%24%e5%85%a9%e5%80%8b%ef%bc%8c%e6%88%91%e5%80%91%e7%a8%b1%e4%b9%8b%e7%82%ba%e5%b9%b3%e5%87%a1%e5%b9%b3%e6%96%b9%e6%a0%b9%ef%bc%8c%5c%0a%e9%99%a4%e6%b3%95%20Newton-Raphson%20%e9%99%a4%e6%b3%95%20%e9%80%b2%e9%9a%8e%e6%a8%a1%e9%81%8b%e7%ae%97%20%e6%95%b8%e8%ab%96%e5%87%bd%e6%95%b8%20%e7%8b%84%e5%88%a9%e5%85%8b%e9%9b%b7%e6%8d%b2%e7%a9%8d%20%e8%8e%ab%e6%af%94%e7%83%8f%e6%96%af%e5%8f%8d%e6%bc%94%20%e5%8e%9f%e6%a0%b9%20BSGS%20%e5%bf%ab%e9%80%9f%e5%82%85%e7%ab%8b%e8%91%89%e8%bd%89%e6%8f%9b%20FFT%20%e7%94%9f%e6%88%90%e5%87%bd%e6%95%b8%20%e9%9b%a2%e6%95%a3%e5%82%85%e7%ab%8b%e8%91%89%e8%bd%89%e6%8f%9b%20DFT%20%e5%bf%ab%e9%80%9f%e5%82%85%e7%ab%8b%e8%91%89%e8%bd%89%e6%8f%9b%20FFT%20">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-fft%2f&name=%e6%95%b8%e8%ab%96%20%e9%80%b2%e9%9a%8e%e6%a8%a1%e9%81%8b%e7%ae%97%e5%8f%8aFFT%5b%e5%be%85%e8%a3%9c%5d&description=%e8%b3%aa%e6%95%b8%20Miller-Rabin%20%e8%b3%aa%e6%95%b8%e6%b8%ac%e8%a9%a6%20%e5%a6%82%e6%9e%9c%24p%24%e6%98%af%e8%b3%aa%e6%95%b8%e4%b8%94%24p%20%26gt%3b%202%24%ef%bc%8c%24x%5e2%20%5cequiv%201%20%5cmod%20p%24%e7%9a%84%e8%a7%a3%ef%bc%9a%0a%24x%5e2%20%5cequiv%201%20%5cmod%20p%24%0a%24%28x%2b1%29%28x-1%29%20%5cequiv%200%20%5cmod%20p%24%0a%e4%b9%9f%e5%b0%b1%e6%98%af%e8%aa%aa%ef%bc%8c%24x%3dp-1%24%e6%88%96%24p%7c%28x-1%29%28x%2b1%29%24%ef%bc%8c%0a%e6%ad%a4%e6%99%82%24x%20%2b%201%20%5cequiv%200%2c%20x%20%5cequiv%201%20%5cmod%20p%24%20%e6%88%96%20%24x%20-%201%20%5cequiv%200%2c%20x%20%5cequiv%20-1%20%5cmod%20p%24%ef%bc%8c%0a%e6%88%91%e5%80%91%e7%a8%b1%241%2c%20-1%24%e7%82%ba%241%20%5cmod%20p%24%e7%9a%84%e5%b9%b3%e5%87%a1%e5%b9%b3%e6%96%b9%e6%a0%b9%ef%bc%8c%0a%e5%a6%82%e6%9e%9c%e5%ad%98%e5%9c%a8%e4%b8%8d%e5%b9%b3%e5%87%a1%e5%b9%b3%e6%96%b9%e6%a0%b9%28%e5%8d%b3%24x%20%5cneq%201%2c%20-1%24%29%ef%bc%8c%0a%e8%a1%a8%e7%a4%ba%24p%24%e5%85%b7%e6%9c%89%e5%9b%a0%e6%95%b8%ef%bc%8c%e8%88%87%e5%89%8d%e9%9d%a2%e5%81%87%e8%a8%ad%e7%9f%9b%e7%9b%be%0a%e7%8f%be%e5%9c%a8%e5%81%87%e8%a8%ad%24n%24%e6%98%af%e8%b3%aa%e6%95%b8%e4%b8%94%24n%20%26gt%3b%202%24%ef%bc%8c%0a%e6%89%80%e4%bb%a5%24n-1%24%e6%9c%83%e6%98%af%e4%b8%80%e5%80%8b%e5%81%b6%e6%95%b8%ef%bc%8c%e6%8a%8a%e5%ae%83%e5%88%86%e8%a7%a3%e7%82%ba%242%5est%24%ef%bc%8c%e5%85%b6%e4%b8%ad%24t%24%e6%98%af%e5%a5%87%e6%95%b8%ef%bc%8c%0a%e5%9c%a8%24%5cmathbb%7bZ%7d_n%24%e4%b8%8b%e7%9a%84%e6%89%80%e6%9c%89%e6%95%b8%24a%24%ef%bc%8c%e9%83%bd%e8%83%bd%e8%83%bd%e6%89%be%e5%88%b0%240%20%5cleq%20r%20%26lt%3b%20s%24%ef%bc%8c%e6%bb%bf%e8%b6%b3%e5%85%a9%e5%bc%8f%e5%85%b6%e4%b8%80%ef%bc%9a%0a%281%29%20%24%5cbegin%7bequation%7d%20a%5ed%20%5cequiv%201%20%5cmod%20n%20%5cend%7bequation%7d%24%0a%282%29%20%24%5cbegin%7bequation%7d%20a%5e%7b2%5erd%7d%20%5cequiv%20-1%20%5cmod%20n%20%5cend%7bequation%7d%24">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
