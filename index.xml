@@ -6,7 +6,20 @@
     <description>Recent content on LittleCube Coding Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 16 Feb 2021 16:15:54 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 19:55:11 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>待補演算法</title>
+      <link>https://littlecube8152.github.io/posts/algo-list/</link>
+      <pubDate>Mon, 01 Mar 2021 19:55:11 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/posts/algo-list/</guid>
+      <description>最近沒再更新了
+找個時間補
+這邊放的是我還需要練的演算法
+祝我上一階
+數論  原根 BSGS 莫比烏斯函數  計算幾何  凸包 外積 線段交點  DP  斜率優化 凸包優化 四邊形優化  圖論  二分圖匹配 Re-rooting Tree DP 樹分治 Flow APSP Jhonson Algorithm  資結  帶區間修改線段樹 BIT Treap 進階  算法  分塊 莫隊 啟發式合併 RMQ &amp;lt;O(N), O(1)&amp;gt;  </description>
+    </item>
+    
     <item>
       <title>常見程式的Bug</title>
       <link>https://littlecube8152.github.io/posts/programming-bugs/</link>
