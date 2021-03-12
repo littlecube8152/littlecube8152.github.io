@@ -27,7 +27,10 @@ pC沒想到，所以想丟暴搜上去，
 pD更沒想到，只是我大概知道不可能AC，所以我跳過了，
 pE一看就沒希望，不過還好pCDE都可以暴搜過subtask 1，
 決定先拿子題。
-120分鐘 拿到了pDE的子題，pC debug失敗，心態回穩了，決定去拿pA， 因為不確定std::sort是不是stable的， 懶得打compare function直接丟bubble AC， 此時pC抓出了一個bug，但還沒拿到分數，
+120分鐘 拿到了pDE的子題，pC debug失敗，心態回穩了，決定去拿pA，
+因為不確定std::sort是不是stable的，
+懶得打compare function直接丟bubble AC，
+此時pC抓出了一個bug，但還沒拿到分數，
 150分鐘 想到pB的$\mathcal{O}(N^3)$，決定寫，
 然而出bug，所以現在pBC交換看，
 然後就沒再拿分了。
