@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://littlecube8152.github.io/tags/blog/</loc>
+    <lastmod>2021-03-13T00:29:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://littlecube8152.github.io/</loc>
+    <lastmod>2021-03-13T00:29:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://littlecube8152.github.io/posts/</loc>
+    <lastmod>2021-03-13T00:29:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://littlecube8152.github.io/tags/</loc>
+    <lastmod>2021-03-13T00:29:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://littlecube8152.github.io/posts/toi-2021-pre/</loc>
+    <lastmod>2021-03-13T00:29:39+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://littlecube8152.github.io/tags/codeforces/</loc>
     <lastmod>2021-03-11T08:27:38+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://littlecube8152.github.io/posts/codeforces-mashup-2/</loc>
-    <lastmod>2021-03-11T08:27:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://littlecube8152.github.io/</loc>
-    <lastmod>2021-03-11T08:27:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://littlecube8152.github.io/posts/</loc>
-    <lastmod>2021-03-11T08:27:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://littlecube8152.github.io/tags/</loc>
     <lastmod>2021-03-11T08:27:38+08:00</lastmod>
   </url>
   
@@ -65,11 +75,6 @@
   <url>
     <loc>https://littlecube8152.github.io/posts/codeforces-1128e/</loc>
     <lastmod>2021-02-03T21:08:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://littlecube8152.github.io/tags/blog/</loc>
-    <lastmod>2021-02-02T21:16:38+08:00</lastmod>
   </url>
   
   <url>
