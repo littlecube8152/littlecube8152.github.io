@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> TIOJ-1169 (2015 TOI 1st pC) | LittleCube Coding Site</title>
+  <meta name="description" content="如果我也能成為電神就好了...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="google-site-verification" content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388" />
+  <meta property="og:title" content="TIOJ-1169 (2015 TOI 1st pC)" />
+<meta property="og:description" content="題敘 Link
+有一個長度為$N$的陣列，
+請$Q$次支援：
+ 單點修改 區間查詢不含某數的最長連續序列  想法 區間修改會想到線段樹或分塊，
+這裡採用分塊(其實是不知道線段樹版要怎麼寫)
+假設$K$個一塊，每次修改要重新計算當下區間的三個值：
+ 以左界為起點的最長區間 任意條件的最長區間 以右界為終點的最長區間  就能輕鬆的合併值了，
+重算的複雜度是$\mathcal{O}(K)$。
+把原本的序列預處理就要$\mathcal{O}(NK)$
+由於標示氣球種類的值域到$2^{24}$，
+所以用map存，不存在的區間要當做可以延續$K$個，
+合併會最多算到$2K$個零散的值，$\frac{N}{K}$個區間，
+複雜度會是$\mathcal{O}(\frac{N}{K} \log K &#43; K)$。
+總複雜度$\mathcal{O}(NK &#43; Q(\frac{N}{K} \log K &#43; K))$，
+$K$不好估，但可以確定他大於$\sqrt{N}$，
+取$(4\sim 10)\sqrt{N}$都會過。
+AC Code #pragma GCC optimize(&#34;O3,unroll-loops&#34;) #include &lt;bits/stdc&#43;&#43;.h&gt;#pragma pack(0) #define ll long long #define pii pair&lt;ll, ll&gt; #define pll pair&lt;ll, ll&gt; #define F first #define S second #define MOD 1000000007 #define MOD2 998244353 #define _INFINITY 9223372036854775807 #define fast ios::sync_with_stdio(0), cin." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://littlecube8152.github.io/posts/tioj_1169/" />
+<meta property="article:published_time" content="2021-03-14T00:12:31+08:00" />
+<meta property="article:modified_time" content="2021-03-14T00:12:31+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TIOJ-1169 (2015 TOI 1st pC)"/>
+<meta name="twitter:description" content="題敘 Link
+有一個長度為$N$的陣列，
+請$Q$次支援：
+ 單點修改 區間查詢不含某數的最長連續序列  想法 區間修改會想到線段樹或分塊，
+這裡採用分塊(其實是不知道線段樹版要怎麼寫)
+假設$K$個一塊，每次修改要重新計算當下區間的三個值：
+ 以左界為起點的最長區間 任意條件的最長區間 以右界為終點的最長區間  就能輕鬆的合併值了，
+重算的複雜度是$\mathcal{O}(K)$。
+把原本的序列預處理就要$\mathcal{O}(NK)$
+由於標示氣球種類的值域到$2^{24}$，
+所以用map存，不存在的區間要當做可以延續$K$個，
+合併會最多算到$2K$個零散的值，$\frac{N}{K}$個區間，
+複雜度會是$\mathcal{O}(\frac{N}{K} \log K &#43; K)$。
+總複雜度$\mathcal{O}(NK &#43; Q(\frac{N}{K} \log K &#43; K))$，
+$K$不好估，但可以確定他大於$\sqrt{N}$，
+取$(4\sim 10)\sqrt{N}$都會過。
+AC Code #pragma GCC optimize(&#34;O3,unroll-loops&#34;) #include &lt;bits/stdc&#43;&#43;.h&gt;#pragma pack(0) #define ll long long #define pii pair&lt;ll, ll&gt; #define pll pair&lt;ll, ll&gt; #define F first #define S second #define MOD 1000000007 #define MOD2 998244353 #define _INFINITY 9223372036854775807 #define fast ios::sync_with_stdio(0), cin."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://littlecube8152.github.io/css/style-dark.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://littlecube8152.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://littlecube8152.github.io/posts/toi-2021-pre/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&text=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&is_video=false&description=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=TIOJ-1169%20%282015%20TOI%201st%20pC%29&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&name=TIOJ-1169%20%282015%20TOI%201st%20pC%29&description=%e9%a1%8c%e6%95%98%20Link%0a%e6%9c%89%e4%b8%80%e5%80%8b%e9%95%b7%e5%ba%a6%e7%82%ba%24N%24%e7%9a%84%e9%99%a3%e5%88%97%ef%bc%8c%0a%e8%ab%8b%24Q%24%e6%ac%a1%e6%94%af%e6%8f%b4%ef%bc%9a%0a%20%e5%96%ae%e9%bb%9e%e4%bf%ae%e6%94%b9%20%e5%8d%80%e9%96%93%e6%9f%a5%e8%a9%a2%e4%b8%8d%e5%90%ab%e6%9f%90%e6%95%b8%e7%9a%84%e6%9c%80%e9%95%b7%e9%80%a3%e7%ba%8c%e5%ba%8f%e5%88%97%20%20%e6%83%b3%e6%b3%95%20%e5%8d%80%e9%96%93%e4%bf%ae%e6%94%b9%e6%9c%83%e6%83%b3%e5%88%b0%e7%b7%9a%e6%ae%b5%e6%a8%b9%e6%88%96%e5%88%86%e5%a1%8a%ef%bc%8c%0a%e9%80%99%e8%a3%a1%e6%8e%a1%e7%94%a8%e5%88%86%e5%a1%8a%28%e5%85%b6%e5%af%a6%e6%98%af%e4%b8%8d%e7%9f%a5%e9%81%93%e7%b7%9a%e6%ae%b5%e6%a8%b9%e7%89%88%e8%a6%81%e6%80%8e%e9%ba%bc%e5%af%ab%29%0a%e5%81%87%e8%a8%ad%24K%24%e5%80%8b%e4%b8%80%e5%a1%8a%ef%bc%8c%e6%af%8f%e6%ac%a1%e4%bf%ae%e6%94%b9%e8%a6%81%e9%87%8d%e6%96%b0%e8%a8%88%e7%ae%97%e7%95%b6%e4%b8%8b%e5%8d%80%e9%96%93%e7%9a%84%e4%b8%89%e5%80%8b%e5%80%bc%ef%bc%9a%0a%20%e4%bb%a5%e5%b7%a6%e7%95%8c%e7%82%ba%e8%b5%b7%e9%bb%9e%e7%9a%84%e6%9c%80%e9%95%b7%e5%8d%80%e9%96%93%20%e4%bb%bb%e6%84%8f%e6%a2%9d%e4%bb%b6%e7%9a%84%e6%9c%80%e9%95%b7%e5%8d%80%e9%96%93%20%e4%bb%a5%e5%8f%b3%e7%95%8c%e7%82%ba%e7%b5%82%e9%bb%9e%e7%9a%84%e6%9c%80%e9%95%b7%e5%8d%80%e9%96%93%20%20%e5%b0%b1%e8%83%bd%e8%bc%95%e9%ac%86%e7%9a%84%e5%90%88%e4%bd%b5%e5%80%bc%e4%ba%86%ef%bc%8c%0a%e9%87%8d%e7%ae%97%e7%9a%84%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%98%af%24%5cmathcal%7bO%7d%28K%29%24%e3%80%82%0a%e6%8a%8a%e5%8e%9f%e6%9c%ac%e7%9a%84%e5%ba%8f%e5%88%97%e9%a0%90%e8%99%95%e7%90%86%e5%b0%b1%e8%a6%81%24%5cmathcal%7bO%7d%28NK%29%24%0a%e7%94%b1%e6%96%bc%e6%a8%99%e7%a4%ba%e6%b0%a3%e7%90%83%e7%a8%ae%e9%a1%9e%e7%9a%84%e5%80%bc%e5%9f%9f%e5%88%b0%242%5e%7b24%7d%24%ef%bc%8c%0a%e6%89%80%e4%bb%a5%e7%94%a8map%e5%ad%98%ef%bc%8c%e4%b8%8d%e5%ad%98%e5%9c%a8%e7%9a%84%e5%8d%80%e9%96%93%e8%a6%81%e7%95%b6%e5%81%9a%e5%8f%af%e4%bb%a5%e5%bb%b6%e7%ba%8c%24K%24%e5%80%8b%ef%bc%8c%0a%e5%90%88%e4%bd%b5%e6%9c%83%e6%9c%80%e5%a4%9a%e7%ae%97%e5%88%b0%242K%24%e5%80%8b%e9%9b%b6%e6%95%a3%e7%9a%84%e5%80%bc%ef%bc%8c%24%5cfrac%7bN%7d%7bK%7d%24%e5%80%8b%e5%8d%80%e9%96%93%ef%bc%8c%0a%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%98%af%24%5cmathcal%7bO%7d%28%5cfrac%7bN%7d%7bK%7d%20%5clog%20K%20%2b%20K%29%24%e3%80%82%0a%e7%b8%bd%e8%a4%87%e9%9b%9c%e5%ba%a6%24%5cmathcal%7bO%7d%28NK%20%2b%20Q%28%5cfrac%7bN%7d%7bK%7d%20%5clog%20K%20%2b%20K%29%29%24%ef%bc%8c%0a%24K%24%e4%b8%8d%e5%a5%bd%e4%bc%b0%ef%bc%8c%e4%bd%86%e5%8f%af%e4%bb%a5%e7%a2%ba%e5%ae%9a%e4%bb%96%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%8f%96%24%284%5csim%2010%29%5csqrt%7bN%7d%24%e9%83%bd%e6%9c%83%e9%81%8e%e3%80%82%0aAC%20Code%20%23pragma%20GCC%20optimize%28%26%2334%3bO3%2cunroll-loops%26%2334%3b%29%20%23include%20%26lt%3bbits%2fstdc%2b%2b.h%26gt%3b%23pragma%20pack%280%29%20%23define%20ll%20long%20long%20%23define%20pii%20pair%26lt%3bll%2c%20ll%26gt%3b%20%23define%20pll%20pair%26lt%3bll%2c%20ll%26gt%3b%20%23define%20F%20first%20%23define%20S%20second%20%23define%20MOD%201000000007%20%23define%20MOD2%20998244353%20%23define%20_INFINITY%209223372036854775807%20%23define%20fast%20ios%3a%3async_with_stdio%280%29%2c%20cin.">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&t=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#題敘">題敘</a></li>
+    <li><a href="#想法">想法</a></li>
+    <li><a href="#ac-code">AC Code</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline">
+          TIOJ-1169 (2015 TOI 1st pC)
+        </h1>
+        <div class="meta">
+          
+          <div class="postdate">
+            
+            <time datetime="2021-03-14 00:12:31 &#43;0800 CST" itemprop="datePublished">2021-03-14</time>
+            
+          </div>
+          
+          
+          <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="../../%20/tags/tioj" rel="tag">TIOJ</a>
+            
+             ,  
+            <a class="tag-link" href="../../%20/tags/tutorial" rel="tag">tutorial</a>
+            
+          </div>
+          
+        </div>
+      </header>
+
+      
+      <div class="content" itemprop="articleBody">
+        <h2 id="題敘">題敘</h2>
+<p><a href="https://tioj.ck.tp.edu.tw/problems/1169">Link</a><br>
+有一個長度為$N$的陣列，<br>
+請$Q$次支援：</p>
+<ol>
+<li>單點修改</li>
+<li>區間查詢<strong>不含某數</strong>的最長連續序列</li>
+</ol>
+<h2 id="想法">想法</h2>
+<p>區間修改會想到線段樹或分塊，<br>
+這裡採用分塊(<del>其實是不知道線段樹版要怎麼寫</del>)</p>
+<p>假設$K$個一塊，每次修改要重新計算當下區間的三個值：</p>
+<ol>
+<li>以左界為起點的最長區間</li>
+<li>任意條件的最長區間</li>
+<li>以右界為終點的最長區間</li>
+</ol>
+<p>就能輕鬆的合併值了，<br>
+重算的複雜度是$\mathcal{O}(K)$。</p>
+<p>把原本的序列預處理就要$\mathcal{O}(NK)$</p>
+<p>由於標示氣球種類的值域到$2^{24}$，<br>
+所以用<code>map</code>存，不存在的區間要當做可以延續$K$個，<br>
+合併會最多算到$2K$個零散的值，$\frac{N}{K}$個區間，<br>
+複雜度會是$\mathcal{O}(\frac{N}{K} \log K + K)$。</p>
+<p>總複雜度$\mathcal{O}(NK + Q(\frac{N}{K} \log K + K))$，<br>
+$K$不好估，但可以確定他大於$\sqrt{N}$，<br>
+取$(4\sim 10)\sqrt{N}$都會過。</p>
+<h2 id="ac-code">AC Code</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#pragma GCC optimize(&#34;O3,unroll-loops&#34;)
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#pragma pack(0)
+</span><span style="color:#75715e">#define ll long long
+</span><span style="color:#75715e">#define pii pair&lt;ll, ll&gt;
+</span><span style="color:#75715e">#define pll pair&lt;ll, ll&gt;
+</span><span style="color:#75715e">#define F first
+</span><span style="color:#75715e">#define S second
+</span><span style="color:#75715e">#define MOD 1000000007
+</span><span style="color:#75715e">#define MOD2 998244353
+</span><span style="color:#75715e">#define _INFINITY 9223372036854775807
+</span><span style="color:#75715e">#define fast ios::sync_with_stdio(0), cin.tie(0)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> arr[<span style="color:#ae81ff">200005</span>], n, q, c, size;
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Block</span>
+{
+    <span style="color:#66d9ef">int</span> l, mid, r;
+};
+unordered_map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, Block<span style="color:#f92672">&gt;</span> block[<span style="color:#ae81ff">450</span>];
+
+<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cal_block</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j)
+{
+
+    <span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, mid <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, tmp <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, r <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> size <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">*</span> size <span style="color:#f92672">+</span> k <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">&amp;&amp;</span> arr[i <span style="color:#f92672">*</span> size <span style="color:#f92672">+</span> k] <span style="color:#f92672">!=</span> j; k<span style="color:#f92672">++</span>)
+        l<span style="color:#f92672">++</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> size <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">*</span> size <span style="color:#f92672">+</span> k <span style="color:#f92672">&lt;</span> n; k<span style="color:#f92672">++</span>)
+        <span style="color:#66d9ef">if</span> (arr[i <span style="color:#f92672">*</span> size <span style="color:#f92672">+</span> k] <span style="color:#f92672">!=</span> j)
+            tmp<span style="color:#f92672">++</span>;
+        <span style="color:#66d9ef">else</span>
+            mid <span style="color:#f92672">=</span> max(mid, tmp), tmp <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    mid <span style="color:#f92672">=</span> max(mid, tmp);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> min(n <span style="color:#f92672">-</span> (i <span style="color:#f92672">*</span> size) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, size <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>); k <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> arr[i <span style="color:#f92672">*</span> size <span style="color:#f92672">+</span> k] <span style="color:#f92672">!=</span> j; k<span style="color:#f92672">--</span>)
+        r<span style="color:#f92672">++</span>;
+
+    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">==</span> size)
+        block[i].erase(j);
+    <span style="color:#66d9ef">else</span>
+        block[i][j] <span style="color:#f92672">=</span> Block{l, mid, r};
+}
+
+<span style="color:#66d9ef">signed</span> <span style="color:#a6e22e">main</span>()
+{
+    fast;
+    cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> q <span style="color:#f92672">&gt;&gt;</span> c;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>)
+        cin <span style="color:#f92672">&gt;&gt;</span> arr[i];
+    size <span style="color:#f92672">=</span> ceil(sqrt(<span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> n));
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> ((n <span style="color:#f92672">+</span> size <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> size); i<span style="color:#f92672">++</span>)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;=</span> size <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">*</span> size <span style="color:#f92672">+</span> j <span style="color:#f92672">&lt;</span> n; j<span style="color:#f92672">++</span>)
+            <span style="color:#66d9ef">if</span> (block[i].find(arr[i <span style="color:#f92672">*</span> size <span style="color:#f92672">+</span> j]) <span style="color:#f92672">==</span> block[i].end())
+                cal_block(i, arr[i <span style="color:#f92672">*</span> size <span style="color:#f92672">+</span> j]);
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> q; i<span style="color:#f92672">++</span>)
+    {
+        <span style="color:#66d9ef">int</span> x, a, b, c;
+        cin <span style="color:#f92672">&gt;&gt;</span> x;
+        <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+        {
+            cin <span style="color:#f92672">&gt;&gt;</span> a <span style="color:#f92672">&gt;&gt;</span> b;
+            <span style="color:#66d9ef">int</span> p <span style="color:#f92672">=</span> arr[a];
+            arr[a] <span style="color:#f92672">=</span> b;
+            cal_block(a <span style="color:#f92672">/</span> size, p);
+            cal_block(a <span style="color:#f92672">/</span> size, arr[a]);
+        }
+        <span style="color:#66d9ef">else</span>
+        {
+            cin <span style="color:#f92672">&gt;&gt;</span> a <span style="color:#f92672">&gt;&gt;</span> b <span style="color:#f92672">&gt;&gt;</span> c;
+            <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> a, tmp <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, val <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">for</span> (; j <span style="color:#f92672">%</span> size <span style="color:#f92672">&amp;&amp;</span> j <span style="color:#f92672">&lt;</span> b; j<span style="color:#f92672">++</span>)
+                <span style="color:#66d9ef">if</span> (arr[j] <span style="color:#f92672">!=</span> c)
+                    tmp<span style="color:#f92672">++</span>;
+                <span style="color:#66d9ef">else</span>
+                    val <span style="color:#f92672">=</span> max(tmp, val), tmp <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">for</span> (; j <span style="color:#f92672">&lt;</span> b <span style="color:#f92672">-</span> size; j <span style="color:#f92672">+=</span> size)
+            {
+                <span style="color:#66d9ef">auto</span> iter <span style="color:#f92672">=</span> block[j <span style="color:#f92672">/</span> size].find(c);
+                <span style="color:#66d9ef">if</span> (iter <span style="color:#f92672">==</span> block[j <span style="color:#f92672">/</span> size].end())
+                    tmp <span style="color:#f92672">+=</span> size;
+                <span style="color:#66d9ef">else</span>
+                {
+                    val <span style="color:#f92672">=</span> max({tmp <span style="color:#f92672">+</span> iter<span style="color:#f92672">-&gt;</span>second.l, iter<span style="color:#f92672">-&gt;</span>second.mid, val});
+                    tmp <span style="color:#f92672">=</span> iter<span style="color:#f92672">-&gt;</span>second.r;
+                }
+            }
+            <span style="color:#66d9ef">for</span> (; j <span style="color:#f92672">&lt;</span> b; j<span style="color:#f92672">++</span>)
+                <span style="color:#66d9ef">if</span> (arr[j] <span style="color:#f92672">!=</span> c)
+                    tmp<span style="color:#f92672">++</span>;
+                <span style="color:#66d9ef">else</span>
+                    val <span style="color:#f92672">=</span> max(tmp, val), tmp <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            val <span style="color:#f92672">=</span> max(tmp, val);
+            cout <span style="color:#f92672">&lt;&lt;</span> val <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+        }
+    }
+}
+
+</code></pre></div>
+      </div>
+    </article>
+
+    
+  
+
+
+
+
+
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Posts</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#題敘">題敘</a></li>
+    <li><a href="#想法">想法</a></li>
+    <li><a href="#ac-code">AC Code</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&text=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&is_video=false&description=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=TIOJ-1169%20%282015%20TOI%201st%20pC%29&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&title=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&name=TIOJ-1169%20%282015%20TOI%201st%20pC%29&description=%e9%a1%8c%e6%95%98%20Link%0a%e6%9c%89%e4%b8%80%e5%80%8b%e9%95%b7%e5%ba%a6%e7%82%ba%24N%24%e7%9a%84%e9%99%a3%e5%88%97%ef%bc%8c%0a%e8%ab%8b%24Q%24%e6%ac%a1%e6%94%af%e6%8f%b4%ef%bc%9a%0a%20%e5%96%ae%e9%bb%9e%e4%bf%ae%e6%94%b9%20%e5%8d%80%e9%96%93%e6%9f%a5%e8%a9%a2%e4%b8%8d%e5%90%ab%e6%9f%90%e6%95%b8%e7%9a%84%e6%9c%80%e9%95%b7%e9%80%a3%e7%ba%8c%e5%ba%8f%e5%88%97%20%20%e6%83%b3%e6%b3%95%20%e5%8d%80%e9%96%93%e4%bf%ae%e6%94%b9%e6%9c%83%e6%83%b3%e5%88%b0%e7%b7%9a%e6%ae%b5%e6%a8%b9%e6%88%96%e5%88%86%e5%a1%8a%ef%bc%8c%0a%e9%80%99%e8%a3%a1%e6%8e%a1%e7%94%a8%e5%88%86%e5%a1%8a%28%e5%85%b6%e5%af%a6%e6%98%af%e4%b8%8d%e7%9f%a5%e9%81%93%e7%b7%9a%e6%ae%b5%e6%a8%b9%e7%89%88%e8%a6%81%e6%80%8e%e9%ba%bc%e5%af%ab%29%0a%e5%81%87%e8%a8%ad%24K%24%e5%80%8b%e4%b8%80%e5%a1%8a%ef%bc%8c%e6%af%8f%e6%ac%a1%e4%bf%ae%e6%94%b9%e8%a6%81%e9%87%8d%e6%96%b0%e8%a8%88%e7%ae%97%e7%95%b6%e4%b8%8b%e5%8d%80%e9%96%93%e7%9a%84%e4%b8%89%e5%80%8b%e5%80%bc%ef%bc%9a%0a%20%e4%bb%a5%e5%b7%a6%e7%95%8c%e7%82%ba%e8%b5%b7%e9%bb%9e%e7%9a%84%e6%9c%80%e9%95%b7%e5%8d%80%e9%96%93%20%e4%bb%bb%e6%84%8f%e6%a2%9d%e4%bb%b6%e7%9a%84%e6%9c%80%e9%95%b7%e5%8d%80%e9%96%93%20%e4%bb%a5%e5%8f%b3%e7%95%8c%e7%82%ba%e7%b5%82%e9%bb%9e%e7%9a%84%e6%9c%80%e9%95%b7%e5%8d%80%e9%96%93%20%20%e5%b0%b1%e8%83%bd%e8%bc%95%e9%ac%86%e7%9a%84%e5%90%88%e4%bd%b5%e5%80%bc%e4%ba%86%ef%bc%8c%0a%e9%87%8d%e7%ae%97%e7%9a%84%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%98%af%24%5cmathcal%7bO%7d%28K%29%24%e3%80%82%0a%e6%8a%8a%e5%8e%9f%e6%9c%ac%e7%9a%84%e5%ba%8f%e5%88%97%e9%a0%90%e8%99%95%e7%90%86%e5%b0%b1%e8%a6%81%24%5cmathcal%7bO%7d%28NK%29%24%0a%e7%94%b1%e6%96%bc%e6%a8%99%e7%a4%ba%e6%b0%a3%e7%90%83%e7%a8%ae%e9%a1%9e%e7%9a%84%e5%80%bc%e5%9f%9f%e5%88%b0%242%5e%7b24%7d%24%ef%bc%8c%0a%e6%89%80%e4%bb%a5%e7%94%a8map%e5%ad%98%ef%bc%8c%e4%b8%8d%e5%ad%98%e5%9c%a8%e7%9a%84%e5%8d%80%e9%96%93%e8%a6%81%e7%95%b6%e5%81%9a%e5%8f%af%e4%bb%a5%e5%bb%b6%e7%ba%8c%24K%24%e5%80%8b%ef%bc%8c%0a%e5%90%88%e4%bd%b5%e6%9c%83%e6%9c%80%e5%a4%9a%e7%ae%97%e5%88%b0%242K%24%e5%80%8b%e9%9b%b6%e6%95%a3%e7%9a%84%e5%80%bc%ef%bc%8c%24%5cfrac%7bN%7d%7bK%7d%24%e5%80%8b%e5%8d%80%e9%96%93%ef%bc%8c%0a%e8%a4%87%e9%9b%9c%e5%ba%a6%e6%9c%83%e6%98%af%24%5cmathcal%7bO%7d%28%5cfrac%7bN%7d%7bK%7d%20%5clog%20K%20%2b%20K%29%24%e3%80%82%0a%e7%b8%bd%e8%a4%87%e9%9b%9c%e5%ba%a6%24%5cmathcal%7bO%7d%28NK%20%2b%20Q%28%5cfrac%7bN%7d%7bK%7d%20%5clog%20K%20%2b%20K%29%29%24%ef%bc%8c%0a%24K%24%e4%b8%8d%e5%a5%bd%e4%bc%b0%ef%bc%8c%e4%bd%86%e5%8f%af%e4%bb%a5%e7%a2%ba%e5%ae%9a%e4%bb%96%e5%a4%a7%e6%96%bc%24%5csqrt%7bN%7d%24%ef%bc%8c%0a%e5%8f%96%24%284%5csim%2010%29%5csqrt%7bN%7d%24%e9%83%bd%e6%9c%83%e9%81%8e%e3%80%82%0aAC%20Code%20%23pragma%20GCC%20optimize%28%26%2334%3bO3%2cunroll-loops%26%2334%3b%29%20%23include%20%26lt%3bbits%2fstdc%2b%2b.h%26gt%3b%23pragma%20pack%280%29%20%23define%20ll%20long%20long%20%23define%20pii%20pair%26lt%3bll%2c%20ll%26gt%3b%20%23define%20pll%20pair%26lt%3bll%2c%20ll%26gt%3b%20%23define%20F%20first%20%23define%20S%20second%20%23define%20MOD%201000000007%20%23define%20MOD2%20998244353%20%23define%20_INFINITY%209223372036854775807%20%23define%20fast%20ios%3a%3async_with_stdio%280%29%2c%20cin.">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftioj_1169%2f&t=TIOJ-1169%20%282015%20TOI%201st%20pC%29">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  LittleCube Coding Site 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</script>
+
+
+</html>

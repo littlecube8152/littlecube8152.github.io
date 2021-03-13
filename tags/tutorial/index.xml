@@ -6,7 +6,32 @@
     <description>Recent content in tutorial on LittleCube Coding Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 11 Mar 2021 08:27:38 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Mar 2021 00:12:31 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TIOJ-1169 (2015 TOI 1st pC)</title>
+      <link>https://littlecube8152.github.io/posts/tioj_1169/</link>
+      <pubDate>Sun, 14 Mar 2021 00:12:31 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/posts/tioj_1169/</guid>
+      <description>題敘 Link
+有一個長度為$N$的陣列，
+請$Q$次支援：
+ 單點修改 區間查詢不含某數的最長連續序列  想法 區間修改會想到線段樹或分塊，
+這裡採用分塊(其實是不知道線段樹版要怎麼寫)
+假設$K$個一塊，每次修改要重新計算當下區間的三個值：
+ 以左界為起點的最長區間 任意條件的最長區間 以右界為終點的最長區間  就能輕鬆的合併值了，
+重算的複雜度是$\mathcal{O}(K)$。
+把原本的序列預處理就要$\mathcal{O}(NK)$
+由於標示氣球種類的值域到$2^{24}$，
+所以用map存，不存在的區間要當做可以延續$K$個，
+合併會最多算到$2K$個零散的值，$\frac{N}{K}$個區間，
+複雜度會是$\mathcal{O}(\frac{N}{K} \log K + K)$。
+總複雜度$\mathcal{O}(NK + Q(\frac{N}{K} \log K + K))$，
+$K$不好估，但可以確定他大於$\sqrt{N}$，
+取$(4\sim 10)\sqrt{N}$都會過。
+AC Code #pragma GCC optimize(&amp;#34;O3,unroll-loops&amp;#34;) #include &amp;lt;bits/stdc++.h&amp;gt;#pragma pack(0) #define ll long long #define pii pair&amp;lt;ll, ll&amp;gt; #define pll pair&amp;lt;ll, ll&amp;gt; #define F first #define S second #define MOD 1000000007 #define MOD2 998244353 #define _INFINITY 9223372036854775807 #define fast ios::sync_with_stdio(0), cin.</description>
+    </item>
+    
     <item>
       <title>Codeforces Mashup 練習2</title>
       <link>https://littlecube8152.github.io/posts/codeforces-mashup-2/</link>
@@ -84,7 +109,7 @@ AC Code
       
       <guid>https://littlecube8152.github.io/posts/codeforces-1128e/</guid>
       <description>矩陣好難:(
-題敘 題目連結
+題敘 Link
 對於 $ x \geq 4 $ ， $ f_n = c^{2n-6} f_{n-1} f_{n-2} f_{n-3} $
 給定 $ n, f_1, f_2, f_3, c $，求 $ f_n \mod 10^9 + 7 $。
 $ ( 4 \leq n \leq 10^{18}, 1 \leq f_1, f_2, f_3, c \leq 10^9 ) $
