@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> IOICamp 2022 | Little Cube Blog</title>
+  <meta name="description" content="如果我也能成為電神就好了...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="google-site-verification" content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388" />
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   <script src="https://littlecube8152.github.io/js/prism.js"></script>  <script src="https://littlecube8152.github.io/js/prism-line-numbers.js"></script> 
+  <meta property="og:title" content="IOICamp 2022" />
+<meta property="og:description" content="笨方塊去 IOIC 被爆揍，燒雞" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://littlecube8152.github.io/posts/ioic-2022/" /><meta property="article:section" content="posts" />
+
+<meta property="article:published_time" content="2022-01-29T11:54:18+08:00" />
+
+<meta property="article:modified_time" content="2022-01-29T11:54:18+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IOICamp 2022"/>
+<meta name="twitter:description" content=""/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://littlecube8152.github.io/css/style-dark.css">
+  
+   <link rel="stylesheet" href="https://littlecube8152.github.io/css/syntax.css">  <link rel="stylesheet" href="https://littlecube8152.github.io/css/prism.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://littlecube8152.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://littlecube8152.github.io/posts/virtual-boi-2018/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://littlecube8152.github.io/posts/virtual-joi-final-2021/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&text=IOICamp%202022">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&is_video=false&description=IOICamp%202022">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=IOICamp%202022&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&name=IOICamp%202022&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e5%8e%bb%20IOIC%20%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&t=IOICamp%202022">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#day--">Day -?</a></li>
+    <li><a href="#day-1">Day 1</a></li>
+    <li><a href="#day-2">Day 2</a></li>
+    <li><a href="#day-3">Day 3</a></li>
+    <li><a href="#day-4">Day 4</a></li>
+    <li><a href="#day-5">Day 5</a></li>
+    <li><a href="#心得">心得</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline">
+          IOICamp 2022
+        </h1>
+
+        
+        <div class="meta">
+          
+          <div class="postdate">
+            
+            <time datetime="2022-01-29 11:54:18 &#43;0800 CST" itemprop="datePublished">2022-01-29</time>
+            
+          </div>
+          
+          
+        </div>
+      </header>
+
+      
+      <div class="content" itemprop="articleBody">
+        <p>高一的時候太笨根本不知道有 IOIC，<br>
+總算今年報到了 &gt;&lt;</p>
+<h2 id="day--">Day -?</h2>
+<p>雖然今年營隊改成線上的很可惜，<br>
+但我收到講義的時候超興奮的，<br>
+那時候翻了一遍講義，順便把習題都整理出來，大概有 350 多題，<br>
+戳了幾題看了也完全沒有想法，大概我有生之年是寫不完的吧。</p>
+<p>寫基礎資結的習題寫得很挫折想說要不要放棄聽進階，<br>
+但聽說即使聽了那堂課習題也不會寫是正常的所以後來就去進階了。</p>
+<h2 id="day-1">Day 1</h2>
+<p>早上不是經驗分享，是何達睿講了一些有關競賽跟這個營隊的事情，<br>
+中間有講到各種活動對應的 CF rating，<br>
+看到二階被放在紅牌，然後自己也特別笨連深橘都上不了應該今年會連初選都過不了吧，<br>
+還有總召波路特石在講營隊規則的時候講到了今年有特別的 Flag 機制，感覺很酷，<br>
+接下來就是 Gartic 的益智破冰，超難猜還好隊友吳威錡超強，通靈大師orz</p>
+<p>順帶一提，找到 Flag 是沒有附贈舒服的，<br>
+但中午突然多出空題，我一開始傳了 CE 拿到了普通 submission CE 的首殺，<br>
+後來我想說傳傳看正常的 Code 看看結果拿到了 Flag，<br>
+但我沒有很想喝飲料，所以後來就請工作人員幫我給下一個人順便舒服他了，<br>
+後來那個 submission 被刪掉了，然後我也就沒再找到過 Flag 了 qwq</p>
+<p>下午是資料結構，我對李超線段樹 Ex. 跟線段樹優化建圖比較有感受，<br>
+但聽到吉如一線段樹 (Segment Tree Beats) 就直接燒雞聽不懂，<br>
+那時候剛開始聽完全不知道為什麼暴力是好的，直覺我的線段樹暴力下去就會失控，<br>
+甚至不會維護同時有取 $\min$ 跟加值的懶標，是上課去戳 PixelCat 問才會的，<br>
+講到兩個陣列、歷史最值還有區間取 $\min$ 跟 GCD 直接聽不懂，被打爆。</p>
+<p>晚上團體趣味賽完全不知道是駭客題、除蟲題跟構造題，一進去有點嚇到，<br>
+點開的題目完全不會做，被抓到自己不會 C++，<br>
+過程中只做出三題，其中一題是 Easy，一題是測資爆搜<br>
+那題傳了超多次因為我原本想用 Memory 分但好像被優化掉了，笨到忘記可以用時間分zzz<br>
+另一題是浮點數的 bug，那時候我覺得爆不了精度大概就是往 <code>inf</code> 跟 <code>nan</code> 想，<br>
+不過 checker 爛了所以我是全場唯一唬爛過的 &gt;&lt;</p>
+<p>Result:  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Rank</th>
+<th style="text-align:center">Score</th>
+<th style="text-align:center">Penalty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">20</td>
+<td style="text-align:center">1500</td>
+<td style="text-align:center">2099</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">E</th>
+<th style="text-align:center">F</th>
+<th style="text-align:center">G</th>
+<th style="text-align:center">H</th>
+<th style="text-align:center">I</th>
+<th style="text-align:center">J</th>
+<th style="text-align:center">K</th>
+<th style="text-align:center">L</th>
+<th style="text-align:center">M</th>
+<th style="text-align:center">N</th>
+<th style="text-align:center">O</th>
+<th style="text-align:center">P</th>
+<th style="text-align:center">Q</th>
+<th style="text-align:center">R</th>
+<th style="text-align:center">S</th>
+<th style="text-align:center">T</th>
+<th style="text-align:center">U</th>
+<th style="text-align:center">V</th>
+<th style="text-align:center">W</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"><green>+3</green></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><green>+1</green></td>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"><green>+</green></td>
+<td style="text-align:center"><green>+1</green></td>
+<td style="text-align:center"><green>+55</green></td>
+<td style="text-align:center"><green>+1</green></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></br></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="day-2">Day 2</h2>
+<p>早上是數學課，聽到組合技數的後面幾乎是在想「這到底怎麼通靈出來的」，<br>
+還好後面幾天出組合計數的題目不多 (?<br>
+數論前面都還能跟上，但是到歐拉函數、循環節跟原根的時候幾乎都聽不懂，<br>
+後面多項式操作只聽得懂 FFT，慘。</p>
+<p>下午是進階圖論，沒想到支配樹沒有想像中的那麼恐怖，Lemma 還算能理解，<br>
+有向最小生成樹也還能理解，<br>
+但擬陣真的太抽象了，到現在還是聽不太懂，燒雞。</p>
+<p>晚上個人賽一開始先讀題，然後就看到 C，發現這不是就一臉排序不等式嗎，<br>
+寫下去傳了才發現可能會有正負的 case，我有點忘記原本的不等式有沒有正負了，<br>
+然後他就過了，首殺好耶，<br>
+之後覺得 D 一臉二分搜樣，寫了二分搜 + greedy 過了，<br>
+這時候 E 看到原本要開刻 SCC 的，後來發現他是 DAG 所以就直接拓撲排序就過了，<br>
+中間傳來 D rejudge 變 WA，後來發現他 greedy 應該是爛的，<br>
+隨便構就發現這樣做會有很多無法決定的 case，決定跳去做 A 數學題，<br>
+想著想著發現 $K$ 最多就只有 $30$，就想了一個排容傳上去 WA，<br>
+想很久之後去寫了暴力對拍發現自己有多 1 少 1，發現是判太大的 <code>if</code> 壞了，換成 <code>pow</code> 去估計就過了，<br>
+後來把 GH 暴搜分寫完，看板很多人會 G 就在那邊想要怎麼砸線段樹，<br>
+想了很久終於有合成函數的想法，複雜度 $O(NC \log N)$ 但傳上去被卡常，我線段樹常數怪，<br>
+後來沒過，燒雞。<br>
+Result:  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Rank</th>
+<th style="text-align:center">Score</th>
+<th style="text-align:center">Penalty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">335</td>
+<td style="text-align:center">429</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">E</th>
+<th style="text-align:center">F</th>
+<th style="text-align:center">G</th>
+<th style="text-align:center">H</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><green>100</green><sub>/4</sub></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+<td style="text-align:center">-<sub>/2</sub></td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">25<sub>/6</sub></td>
+<td style="text-align:center">10<sub>/1</sub></td>
+</tr>
+<tr>
+<td style="text-align:center"></br></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="day-3">Day 3</h2>
+<p>早上是賽局，講師超會嘴砲，<br>
+上完真的有對 SG Value 是怎麼來的有更進一步的理解了，<br>
+可是還是不會通靈，我爛。</p>
+<p>下午是進階 DP，真的很酷，<br>
+上課大概就是 ZCK 講題目然後<del>抓人duel</del>讓有想法的人上去討論，<br>
+題目很酷，拆題目的方式也很酷，<br>
+但題目真的太難了，至少上完比較知道要怎麼定 DP 了(吧。</p>
+<p>晚上團體賽我以為又會跟 Day 1 一樣，結果是正常比賽。<br>
+進去我先看 GHI，發現 I 是裸的雙指針就寫下去 AC 了，<br>
+吳威錡超強，把 E 做掉去看 H 但很不幸的 TLE 了，<br>
+這時候我們已經有一大段時間沒進展了，當時我看 A 應該就跟烏龜疊疊樂一樣是斜率優化，<br>
+想清楚之後開刻 deque，過程中一直被細節卡到，<br>
+工作人員就進來問我們需不需要提示，<br>
+我說我在做 A，同時王亭懿在看 B 她說她等等再看看需不需要提示，<br>
+然後我 A 就一發過了，<br>
+工作人員：你們應該不用提示了<br>
+然後他就走了 XD<br>
+吳威錡問我說要不要看 D，我看了一下發現是 DSU 水題就跟他講解之後就過了，<br>
+同時王亭懿看出 B 的奇數 case，但不會偶數，我跟他說偶數就 <code>/2</code> XOR 起來看 SG Value 就好，<br>
+B 也過了，起飛，<br>
+後來我去看 H Claim 了一個感覺會唬爛過的解，我跟吳威錡驗驗看，他覺得它會爛掉，<br>
+但因為我們手邊沒有更好的解了，所以我就跟他說我傳上去唬爛看看，<br>
+H 過了，好耶，唬爛成功<br>
+最後我們全力在做賽局 F 但好像假解了所以找到的循環節是錯的，<br>
+SG Value 是對的但不知道為什麼我們會爛。<br>
+Result:  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Rank</th>
+<th style="text-align:center">Score</th>
+<th style="text-align:center">Penalty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center">800</td>
+<td style="text-align:center">502</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">E</th>
+<th style="text-align:center">F</th>
+<th style="text-align:center">G</th>
+<th style="text-align:center">H</th>
+<th style="text-align:center">I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><green>200</green><sub>/1</sub></td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+<td style="text-align:center">-<sub>/7</sub></td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+<td style="text-align:center"><green>100</green><sub>/2</sub></td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+</tr>
+<tr>
+<td style="text-align:center"></br></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="day-4">Day 4</h2>
+<p>對不起字串講師，早上我睡過頭了，笨死zzz<br>
+還好字串前面沒講很難的東西，所以直接聽後綴平衡樹還可以撐得住。</p>
+<p>下午是計算幾何，一個很酷但又很煩躁的東西，<br>
+聽了很多酷題，但完全沒練實作所以很多燒雞燒掉了，<br>
+掃描線收穫很大，還有如何減少枚舉這個技巧也很酷。</p>
+<p>晚上是個人賽，開場先讀題， <br>
+H 根本就簽到題，傳上去就 AC 了，<br>
+回去看 B 觀察了一下覺得可能性很少，本機爆搜完就傳上去了，WA<br>
+發現是自己沒有刪乾淨不合的東西，刪一刪就 AC 了，<br>
+接下來去刻 C 的線段樹，因為看到二次方把它展開就很顯然了，所以直接開寫，<br>
+吃了兩次 WA 因為忘記在算一次項要乘以區間大小，燒雞，<br>
+回去碰賽局 E，打表看完規律傳上去得到了 WA，<br>
+想很久之後發現講義有 $t = 0$ 的 case，抓到我打表都在亂打，重新打完傳上去就過了，<br>
+做完之後去看了 F 先寫了 $O(NK)$ 的傳上去拿 25 分，看了記分板一堆 WA 我猜應該是沒有凹性所以就不打算砸 Aliens 了，<br>
+之後就是猶豫要寫 D 50、G 100，還是 G 40，這時候我應該先去做 D 50 因為他只要倍增就做完了，<br>
+但實際上我去寫了 G 100，是這場的敗筆之一，因為我沒有把握 G 可以刻完，<br>
+後來 G 刻完 WA 我才發現要映射到 $[0,\,\pi)$ 才是對的，被邊界搞了很就之後就掛了，<br>
+我就算要刻 G 也應該早一點發現才對 -w-，根本沒想好就開刻是這場的另一個敗筆。</p>
+<p>Result:  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Rank</th>
+<th style="text-align:center">Score</th>
+<th style="text-align:center">Penalty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center">425</td>
+<td style="text-align:center">338</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">E</th>
+<th style="text-align:center">F</th>
+<th style="text-align:center">G</th>
+<th style="text-align:center">H</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center"><green>100</green><sub>/2</sub></td>
+<td style="text-align:center"><green>100</green><sub>/3</sub></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center"><green>100</green><sub>/2</sub></td>
+<td style="text-align:center">25<sub>/1</sub></td>
+<td style="text-align:center">-<sub>/6</sub></td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></br></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="day-5">Day 5</h2>
+<p>燒雞團體賽。<br>
+開場吳威錡 Claim A 組合超少就做出 A 了，<br>
+這時候我看後面幾題都沒想法，吳威錡問我說要不要寫 G 裸李超，我就去寫了然後過了，<br>
+之後吳威錡去做 B，吃了 WA 然後請我幫他 debug，<br>
+：$n$ 會不會可以是 $0$ 啊<br>
+：如果加上去過了我就爆氣<br>
+然後 B 就過了，<br>
+接著我繼續看題目，然後吳威錡去寫 K 17 分，<br>
+後來我跟他說 K 我應該會做就去刻 SA 跟 LCP 了，<br>
+講義的模板本機 RE 所以我就再想了一下 SA 跟 LCP 要怎麼做，<br>
+後來傳上去第一次忘記拔 debug，超蠢，<br>
+第二次我還是忘記拔 debug 的 <code>assert</code>，但它不應該 RE 的，<br>
+這時候傳來 K 爛掉了會 rejudge，<br>
+：我們就先當它過了好了<br>
+之後我把 E 的表打出來了，然後吳威錡超強都會看規律，<br>
+找到之後 Claim 我其實也不知道他是不是對的但傳上去就 AC 了，<br>
+後來不知道什麼時候吳威錡做出 F 20，超強，<br>
+後來我去做 D，然後隊友在走自己的路 (N)，<br>
+D 一開始我想位元 DP 然後後來就發現位數會很多個，就改做背包，<br>
+完全忘光這時候就可以同餘最短路了，笨死zzz<br>
+後來隊友沒走出自己的路，然後我唬爛過 D 了，<br>
+我的方法是枚舉 $1,\,10^1,\,10^2,\,\cdots,\,10^K$ ，然後判完答案 = 1 的取嚴格前 $C$ 小暴力背包，<br>
+很神淇的就過了，超唬爛，<br>
+整場我都在耍笨，J 沒看出是凸包然後 M 也沒發現可以差分，該回去基礎班了吧。</p>
+<p>Result:  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Rank</th>
+<th style="text-align:center">Score</th>
+<th style="text-align:center">Penalty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center">620</td>
+<td style="text-align:center">1184</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">E</th>
+<th style="text-align:center">F</th>
+<th style="text-align:center">G</th>
+<th style="text-align:center">H</th>
+<th style="text-align:center">I</th>
+<th style="text-align:center">J</th>
+<th style="text-align:center">K</th>
+<th style="text-align:center">L</th>
+<th style="text-align:center">M</th>
+<th style="text-align:center">N</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><green>100</green><sub>/2</sub></td>
+<td style="text-align:center"><green>100</green><sub>/2</sub></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center"><green>100</green><sub>/10</sub></td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+<td style="text-align:center">20<sub>/2</sub></td>
+<td style="text-align:center"><green>100</green><sub>/1</sub></td>
+<td style="text-align:center">-<sub>/1</sub></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center"><green>100</green><sub>/3</sub></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-<sub>/4</sub></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></br></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="心得">心得</h2>
+<p>在 IOIC 完全被揍回原形，我不會寫程式，<br>
+然後還被山姆整天嘲諷，燒雞，<br>
+希望可以至少把 IOIC 習題做完 $\frac 1 3$，然後補完 $\frac 7 {10}$ IOIC Judge 上的題目，<br>
+不然到了初選我還是一樣弱 qwq</p>
+<p>另外想要 IOIC 題目整理的可以來找我，條件是你有參加今年的 IOIC &gt;&lt;</p>
+
+      </div>
+    </article>
+
+    
+  
+
+
+
+
+
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Posts</a></li>
+         
+          <li><a href="../../working">Working</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#day--">Day -?</a></li>
+    <li><a href="#day-1">Day 1</a></li>
+    <li><a href="#day-2">Day 2</a></li>
+    <li><a href="#day-3">Day 3</a></li>
+    <li><a href="#day-4">Day 4</a></li>
+    <li><a href="#day-5">Day 5</a></li>
+    <li><a href="#心得">心得</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&text=IOICamp%202022">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&is_video=false&description=IOICamp%202022">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=IOICamp%202022&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&title=IOICamp%202022">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&name=IOICamp%202022&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e5%8e%bb%20IOIC%20%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioic-2022%2f&t=IOICamp%202022">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Little Cube Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</script>
+
+
+</html>

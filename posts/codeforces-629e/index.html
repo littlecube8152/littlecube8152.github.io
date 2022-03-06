@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> [Codeforces] 629E | Little Cube Blog</title>
+  <meta name="description" content="如果我也能成為電神就好了...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="google-site-verification" content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388" />
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   <script src="https://littlecube8152.github.io/js/prism.js"></script>  <script src="https://littlecube8152.github.io/js/prism-line-numbers.js"></script> 
+  <meta property="og:title" content="[Codeforces] 629E" />
+<meta property="og:description" content="笨方塊想學寫程式被爆揍，燒雞" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://littlecube8152.github.io/posts/codeforces-629e/" /><meta property="article:section" content="posts" />
+
+<meta property="article:published_time" content="2021-04-24T17:40:29+08:00" />
+
+<meta property="article:modified_time" content="2021-04-24T17:40:29+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Codeforces] 629E"/>
+<meta name="twitter:description" content="Famil Door and Roads"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://littlecube8152.github.io/css/style-dark.css">
+  
+   <link rel="stylesheet" href="https://littlecube8152.github.io/css/syntax.css">  <link rel="stylesheet" href="https://littlecube8152.github.io/css/prism.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://littlecube8152.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://littlecube8152.github.io/posts/codeforces-427c/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://littlecube8152.github.io/posts/codeforces-1444c/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&text=%5bCodeforces%5d%20629E">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&is_video=false&description=%5bCodeforces%5d%20629E">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bCodeforces%5d%20629E&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&name=%5bCodeforces%5d%20629E&description=Famil%20Door%20and%20Roads">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&t=%5bCodeforces%5d%20629E">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#題敘">題敘</a></li>
+    <li><a href="#提示">提示</a>
+      <ul>
+        <li><a href="#hint-1">Hint 1</a></li>
+        <li><a href="#hint-2">Hint 2</a></li>
+        <li><a href="#hint-3">Hint 3</a></li>
+      </ul>
+    </li>
+    <li><a href="#想法">想法</a>
+      <ul>
+        <li><a href="#case-1">Case 1</a></li>
+        <li><a href="#case-2">Case 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#ac-code">AC Code</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline">
+          [Codeforces] 629E
+        </h1>
+
+        
+        <h1 class="postsubtitle" itemprop="name headline">
+          Famil Door and Roads
+        </h1>
+        
+        <div class="meta">
+          
+          <div class="postdate">
+            
+            <time datetime="2021-04-24 17:40:29 &#43;0800 CST" itemprop="datePublished">2021-04-24</time>
+            
+          </div>
+          
+          
+          <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="../../%20tags/codeforces" rel="tag">codeforces</a>
+            
+             ,  
+            <a class="tag-link" href="../../%20tags/tutorial" rel="tag">tutorial</a>
+            
+          </div>
+          
+        </div>
+      </header>
+
+      
+      <div class="content" itemprop="articleBody">
+        <h2 id="題敘">題敘</h2>
+<p><a href="https://codeforces.com/contest/629/problem/E">Link</a><br>
+給定一棵$N$個點的樹，<br>
+$M$筆查詢兩個點$u,\  v$，<br>
+所有加一條邊（允許重邊）讓$u, \ v$都在環裡的情況，<br>
+<strong>環長度的期望值</strong>是多少？<br>
+$1 \leq M,\ N \leq 10^5$</p>
+<h2 id="提示">提示</h2>
+<h3 id="hint-1">Hint 1</h3>
+<p>思考簡單一點的狀況：如果問的是<strong>方法數</strong>要怎麼算出來？<br>
+有辦法在多好的複雜度？<br>
+　</p>
+<h3 id="hint-2">Hint 2</h3>
+<p>思考完簡單的計算之後，要怎麼利用期望值就快速地計算出來？<br>
+　</p>
+<h3 id="hint-3">Hint 3</h3>
+<p>總共需要對每個節點維護什麼東西？
+$\newline$　<br>
+　</p>
+<h2 id="想法">想法</h2>
+<p>把情況看簡單一點，總共有兩個狀況：</p>
+<h3 id="case-1">Case 1</h3>
+<ul>
+<li>兩個點<strong>沒有</strong>間接祖先或小孩的關係</li>
+</ul>
+<p>這樣問題很簡單，邊必須要連接兩個點的子樹，<br>
+利用樹DP的方式可以對每個子樹預處理子樹以下的期望值，<br>
+令$k$是他們的最近共同祖先，<br>
+$size[p]$是$p$子樹的大小，$dp[p]$是$p$子樹所有點到根的距離總和，$dis[p]$是$p$到根的距離， <br>
+然後答案就是$\displaystyle \frac{dp[u]}{size[u]} + \frac{dp[v]}{size[v]} - dis[k]\times 2 + 1$</p>
+<figure><img src="../../images/Codeforces-629E/case-1-graph.webp" width="500"/>
+</figure>
+
+<h3 id="case-2">Case 2</h3>
+<ul>
+<li>兩個點<strong>有</strong>間接祖先或小孩的關係</li>
+</ul>
+<p>發現上面的方法沒有辦法直接用，<br>
+假設$u$是$v$的某一輩祖先，<br>
+可能的狀況是$\{u$沒有$v$的那些子樹 + $u$上面可以走到的所有點$\}$連接$\{ v$的子樹$\}$<br>
+$\newline$<br>
+令$k$是所有$v$的祖先且為$u$的小孩中最靠近$u$的那個（也就是$u$下面有$v$的那棵子樹的根）<br>
+所以可能的狀況可以變成$\{$全部點$-k$的子樹$\}$連接$\{ v$的子樹$\}$<br>
+$\newline$<br>
+然而上面的環長度不能直接求期望值，<br>
+但是可以在計算DP的時候，順便計算以$u$當根的時候，全部點距離總和是多少，<br>
+令對$p$而言新計算的這個DP值為$dp&rsquo;[p]$，<br>
+由於原本那棵子樹不變，可以得到答案就是<br>
+$\begin{align*}&amp; \frac{dp&rsquo;[u] - dp[k] + dis[k]size[k]}{N - size[u]} + \frac{dp[v] - dis[y]size[y]}{size[v]} + dis[v] - dis[u] + 1\newline = &amp; \frac{dp&rsquo;[u] - dp[k] + dis[k]size[k]}{N - size[u]} + \frac{dp[v]}{size[v]} - dis[u] + 1\end{align*}$<br>
+求$k$可以用倍增法得到，甚至可以跟Case 1共用一個函式。</p>
+<figure><img src="../../images/Codeforces-629E/case-2-graph.webp" width="500"/>
+</figure>
+
+<h2 id="ac-code">AC Code</h2>
+<p><a href="https://codeforces.com/contest/629/submission/114114848">Link</a><br>
+終於把Code寫好看一點了owo</p>
+
+      </div>
+    </article>
+
+    
+  
+
+
+
+
+
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Posts</a></li>
+         
+          <li><a href="../../working">Working</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#題敘">題敘</a></li>
+    <li><a href="#提示">提示</a>
+      <ul>
+        <li><a href="#hint-1">Hint 1</a></li>
+        <li><a href="#hint-2">Hint 2</a></li>
+        <li><a href="#hint-3">Hint 3</a></li>
+      </ul>
+    </li>
+    <li><a href="#想法">想法</a>
+      <ul>
+        <li><a href="#case-1">Case 1</a></li>
+        <li><a href="#case-2">Case 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#ac-code">AC Code</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&text=%5bCodeforces%5d%20629E">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&is_video=false&description=%5bCodeforces%5d%20629E">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bCodeforces%5d%20629E&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&title=%5bCodeforces%5d%20629E">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&name=%5bCodeforces%5d%20629E&description=Famil%20Door%20and%20Roads">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-629e%2f&t=%5bCodeforces%5d%20629E">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Little Cube Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</script>
+
+
+</html>

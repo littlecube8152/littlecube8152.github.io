@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> [資料結構] 掃描線 | Little Cube Blog</title>
+  <meta name="description" content="如果我也能成為電神就好了...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="google-site-verification" content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388" />
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   <script src="https://littlecube8152.github.io/js/prism.js"></script>  <script src="https://littlecube8152.github.io/js/prism-line-numbers.js"></script> 
+  <meta property="og:title" content="[資料結構] 掃描線" />
+<meta property="og:description" content="笨方塊想學掃描線被爆揍，燒雞" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://littlecube8152.github.io/posts/ds-scanning-line/" /><meta property="article:section" content="posts" />
+
+<meta property="article:published_time" content="2021-06-08T21:31:46+08:00" />
+
+<meta property="article:modified_time" content="2021-06-08T21:31:46+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[資料結構] 掃描線"/>
+<meta name="twitter:description" content="TIOJ 1224, CF 524E, CF 833B, TIOJ 1872"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://littlecube8152.github.io/css/style-dark.css">
+  
+   <link rel="stylesheet" href="https://littlecube8152.github.io/css/syntax.css">  <link rel="stylesheet" href="https://littlecube8152.github.io/css/prism.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://littlecube8152.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://littlecube8152.github.io/posts/atcoder-dp/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://littlecube8152.github.io/posts/dp-sum-over-subsets/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&text=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&is_video=false&description=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&name=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a&description=TIOJ%201224%2c%20CF%20524E%2c%20CF%20833B%2c%20TIOJ%201872">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&t=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#先備知識">先備知識</a></li>
+    <li><a href="#經典題---矩形覆蓋面積計算">經典題 - 矩形覆蓋面積計算</a>
+      <ul>
+        <li><a href="#做法">做法</a></li>
+      </ul>
+    </li>
+    <li><a href="#整理">整理</a></li>
+    <li><a href="#例題---codeforces-524e-rooks-and-rectangles">例題 - Codeforces 524E Rooks and Rectangles</a>
+      <ul>
+        <li><a href="#觀察">觀察</a></li>
+        <li><a href="#做法-1">做法</a></li>
+        <li><a href="#實作">實作</a></li>
+      </ul>
+    </li>
+    <li><a href="#類題---codeforces-833b-the-bakery">類題 - Codeforces 833B The Bakery</a>
+      <ul>
+        <li><a href="#觀察-1">觀察</a></li>
+        <li><a href="#做法-2">做法</a></li>
+      </ul>
+    </li>
+    <li><a href="#類題---tioj-1872-最小公倍數">類題 - TIOJ 1872 最小公倍數</a>
+      <ul>
+        <li><a href="#觀察-2">觀察</a></li>
+        <li><a href="#做法-3">做法</a></li>
+      </ul>
+    </li>
+    <li><a href="#離線限制">離線限制？</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline">
+          [資料結構] 掃描線
+        </h1>
+
+        
+        <h1 class="postsubtitle" itemprop="name headline">
+          TIOJ 1224, CF 524E, CF 833B, TIOJ 1872
+        </h1>
+        
+        <div class="meta">
+          
+          <div class="postdate">
+            
+            <time datetime="2021-06-08 21:31:46 &#43;0800 CST" itemprop="datePublished">2021-06-08</time>
+            
+          </div>
+          
+          
+        </div>
+      </header>
+
+      
+      <div class="content" itemprop="articleBody">
+        <h2 id="先備知識">先備知識</h2>
+<ul>
+<li>線段樹</li>
+</ul>
+<p>基本上掃描線可以算是線段樹的一種變化，大部分的掃描線題都離不開線段樹。</p>
+<h2 id="經典題---矩形覆蓋面積計算">經典題 - 矩形覆蓋面積計算</h2>
+<p><a href="https://tioj.ck.tp.edu.tw/problems/1224">Link - TIOJ 1224</a><br>
+給你$N$個矩形，四邊範圍 $0 \leq L,\ R,\ D,\ U \leq 10^6$，<br>
+問你總覆蓋面積（重疊的只算一次）是多少。
+　</p>
+<h3 id="做法">做法</h3>
+<p>直接扣掉重疊面積好像有點難，<br>
+又不太容易套二維資料結構$^*$，<br>
+不如把每次覆蓋區域不一樣的地方都切成一條長條型，<br>
+這樣要計算的東西就是 $覆蓋量 \times 高度$，<br>
+不過要怎麼維護覆蓋量？</p>
+<p>$*_{\scriptstyle 註：還是可行的，但是複雜度是O(N\log^2N)}$<br>
+<figure><img src="../../images/ds-scanning-line/scanning-1.webp" width="750"/>
+</figure>
+</p>
+<p>參考上面這張圖，當我加入一個矩形的時候，<br>
+必須要對區間都加一次值（代表多被覆蓋一次），<br>
+同樣，當一個矩形被掃完的時候，<br>
+必須要對區間都扣一次值（代表少被覆蓋一次），<br>
+但是每次我想知道的是<strong>有多少非$\,0\,$的值</strong>（代表覆蓋到的實際面積），<br>
+這樣就把原本的問題換成了區間操作的問題。</p>
+<p>實作上可以使用線段樹，<br>
+由於在線段樹上一個區間可以被拆成$\log N$個區間，<br>
+所以在每個區間的值就是</p>
+<ul>
+<li>如果被蓋到，就是整個區間的長度</li>
+<li>否則，回傳兩個子區間相加</li>
+</ul>
+<p>這樣，總複雜度$\mathcal O(N \log N)$。</p>
+<p>基本概念差不多只有這樣，<br>
+不過要做到更好，可以對區間做<strong>離散化</strong>，<br>
+做起來會跟一般線段樹不太一樣，但基本上都是對區間做出修改。</p>
+<details>
+  <summary>Code</summary>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+#define ll long long
+#define pii pair&lt;int, int&gt;
+#define F first
+#define S second
+#define pb(x) emplace_back(x)
+#define fast ios::sync_with_stdio(0), cin.tie(0)
+using namespace std;
+
+int n, m, seg[400000], lazy[400000];
+ll ans;
+vector&lt;int&gt; t;
+vector&lt;int&gt; pos;
+vector&lt;pair&lt;int, pii&gt;&gt; add;
+vector&lt;pair&lt;int, pii&gt;&gt; rem;
+
+void push(int l, int r, int i)
+{
+    if (lazy[i] &gt; 0)
+    {
+        lazy[i * 2] += lazy[i];
+        lazy[i * 2 + 1] += lazy[i];
+        lazy[i] = 0;
+        seg[i] = (pos[r] - pos[l]);
+    }
+}
+
+void pull(int l, int r, int i)
+{
+    int mid = (l + r) / 2;
+    if (lazy[i] &gt; 0)
+        seg[i] = (pos[r] - pos[l]);
+    else
+        seg[i] = (lazy[i * 2] &gt; 0     ? (pos[mid] - pos[l]) : seg[i * 2]) + 
+                 (lazy[i * 2 + 1] &gt; 0 ? (pos[r] - pos[mid]) : seg[i * 2 + 1]);
+}
+
+void modify(int l, int r, int i, int a, int b, int val)
+{
+
+    if (l == r)
+        return;
+    if (b &lt;= l || r &lt;= a)
+        return;
+    if (a &lt;= l &amp;&amp; r &lt;= b)
+        lazy[i] += val;
+    else
+    {
+        int mid = (l + r) / 2;
+        modify(l, mid, i * 2, a, b, val);
+        modify(mid, r, i * 2 + 1, a, b, val);
+    }
+    pull(l, r, i);
+}
+
+signed main()
+{
+    fast;
+    int n;
+    cin &gt;&gt; n;
+    for (int i = 1; i &lt;= n; i++)
+    {
+        int l, r, d, u;
+        cin &gt;&gt; l &gt;&gt; r &gt;&gt; d &gt;&gt; u;
+        t.pb(d);
+        t.pb(u);
+        pos.pb(l);
+        pos.pb(r);
+        add.pb(make_pair(d, pii{l, r}));
+        rem.pb(make_pair(u, pii{l, r}));
+    }
+    t.pb(-1);
+    sort(t.begin(), t.end());
+    t.resize(unique(t.begin(), t.end()) - t.begin());
+    sort(pos.begin(), pos.end());
+    pos.resize(unique(pos.begin(), pos.end()) - pos.begin());
+    sort(add.begin(), add.end(), greater&lt;pair&lt;int, pii&gt;&gt;());
+    sort(rem.begin(), rem.end(), greater&lt;pair&lt;int, pii&gt;&gt;());
+    for (int i = 1; i &lt; t.size(); i++)
+    {
+        pull(0, pos.size() - 1, 1);
+        ans += (ll)(t[i] - t[i - 1]) * seg[1];
+        while (!add.empty() &amp;&amp; add.back().F == t[i])
+        {
+            int L = lower_bound(pos.begin(), pos.end(), add.back().S.F) - pos.begin(),
+                R = lower_bound(pos.begin(), pos.end(), add.back().S.S) - pos.begin();
+            modify(0, pos.size() - 1, 1, L, R, 1);
+            add.pop_back();
+        }
+        while (!rem.empty() &amp;&amp; rem.back().F == t[i])
+        {
+            int L = lower_bound(pos.begin(), pos.end(), rem.back().S.F) - pos.begin(),
+                R = lower_bound(pos.begin(), pos.end(), rem.back().S.S) - pos.begin();
+            modify(0, pos.size() - 1, 1, L, R, -1);
+            rem.pop_back();
+        }
+    }
+    cout &lt;&lt; ans &lt;&lt; '\n';
+}
+</code></pre>
+</details>
+<h2 id="整理">整理</h2>
+<p>剛剛我們做了什麼事讓原本$\mathcal O(N^2)$的事降到$\mathcal O(N \log N)$？<br>
+一個很重要的關鍵是，對於原本的問題，<br>
+本來要按照輸入順序做的東西，把他按照順序排好之後，<br>
+<strong>用時間</strong>掃過一個維度（或是一項要維護的問題），<br>
+然後其他按照順序去做處理。</p>
+<p>接下來有很多掃描線的問題可能題目並沒有一個圖，<br>
+但實際觀點有點像在平面上維護一些性質。</p>
+<h2 id="例題---codeforces-524e-rooks-and-rectangles">例題 - Codeforces 524E Rooks and Rectangles</h2>
+<p><a href="https://codeforces.com/contest/524/problem/E">Link</a><br>
+給你一個 $N \times M$ 的矩形，上面有 $K$ 個城堡（可以走直或橫），<br>
+$Q$次詢問一個矩形是不是每格都被矩形內的城堡保護到。<br>
+$N,\ M \leq 10^5$<br>
+$K,\ Q \leq 2 \times 10^5$</p>
+<h3 id="觀察">觀察</h3>
+<p>一個矩形要被完全保護到，一定滿足：</p>
+<ul>
+<li>直的每一列上都要有城堡</li>
+<li>否則橫的每一行都要有城堡</li>
+</ul>
+<p>所以問題就簡單一點了，問題是單獨查詢每一列複雜度是可怕的$\mathcal O(QN\log N)$。</p>
+<h3 id="做法-1">做法</h3>
+<p>首先，有了剛才的觀察，就只要先討論一個方向就好，<br>
+另一個方向可以用一樣的方法解決。</p>
+<p>看到二維的東西，然而又不能用二維的資料結構處理，<br>
+所以轉向去思考：有沒有可能用時間慢慢掃過一維處理？</p>
+<p>想像一條掃描線從左掃到右，記錄當下的狀況，<br>
+但是遇到的問題是：查詢不僅是在線上的一個區間，還有時效的限制。</p>
+<p>剛剛想到<strong>用時間處理一維</strong>，但是掃描線只解決了右界的問題，<br>
+那左界呢？可以想成過期的條件，<br>
+也就是說我可以查看看最好的解，再回來用左界看看他是不是過期了，<br>
+如果這個最好的解過期了，表示其他所有解都一定過期了。</p>
+<p>換句話說， <br>
+當我<strong>掃到一個查詢的右界</strong>的時候，在當下就<strong>回答那個查詢</strong>，<br>
+並且對所有左界<strong>都可以處理那個查詢</strong>。</p>
+<h3 id="實作">實作</h3>
+<p>既然我們有把「左界當成過期」的想法，那要怎麼知道有沒有過期？<br>
+剛剛有提到，「先查看看最好的解，再看看他有沒有過期」，<br>
+所以對於每一橫排，當我掃到$\,R\,$的時候，<br>
+需要把左邊所有的城堡都放進去，<br>
+也就是保留$\,R-1\,$的狀況，新增在$\,R\,$上的城堡，<br>
+<figure><img src="../../images/ds-scanning-line/scanning-2.webp" width="500"/>
+</figure>
+</p>
+<p>當我遇到那一橫排有新的加入，就覆蓋掉前面的，<br>
+因為當我回答的時候可以想像成<strong>從右界開始往左掃回去</strong>，所以越右邊的會越好。<br>
+查詢的時候只要看區間裡最早出現的元素（最小值），<br>
+再拿去跟左界比較有沒有過期。</p>
+<p>時間複雜度$\mathcal O(Q \log Q + Q \ log N + K \log N )$。<br>
+<a href="https://codeforces.com/contest/524/submission/114427891">Code</a></p>
+<h2 id="類題---codeforces-833b-the-bakery">類題 - Codeforces 833B The Bakery</h2>
+<p><a href="https://codeforces.com/contest/833/problem/B">Link</a></p>
+<p>給你一個長度為$\,N\,$的陣列，要你剛好切成$\,K\,$塊，<br>
+其中每塊的價值是那一塊中相異元素的數量，問最大價值。</p>
+<h3 id="觀察-1">觀察</h3>
+<p>稍微想一下，可以設出DP狀態：<br>
+$dp[i][j]$ 表示已經安排好$[1..i]$的部分，而且已經切了$\,j\,$塊的最大價值。<br>
+問題是轉移時需要$\mathcal O(N)$，需要優化。</p>
+<p>但是看一下DP計算的順序，剛好是 $1 \rightarrow N$ ，<br>
+這樣來看，似乎可以套用掃描線的技巧？</p>
+<h3 id="做法-2">做法</h3>
+<p>如果我需要用線段樹加速DP，就要想辦法維護轉移的價值，<br>
+這樣只要單點修改加上之前的DP值就可以在$\mathcal O(\log N)$的時間計算出來，<br>
+觀察到每個數字排在一行上，其實跟上一題的情況有點像，<br>
+只需要改一下維護的值，<br>
+當同樣一個數字出現的時候，需要對$[上次出現+1..這次出現]$加值， <br>
+<figure><img src="../../images/ds-scanning-line/scanning-2-2.webp" width="500"/>
+</figure>
+</p>
+<p><a href="https://codeforces.com/contest/833/submission/118806751">Code</a></p>
+<h2 id="類題---tioj-1872-最小公倍數">類題 - TIOJ 1872 最小公倍數</h2>
+<p><a href="https://tioj.ck.tp.edu.tw/problems/1872">Link - TIOJ 1872</a><br>
+給定一個長度為 $N$ 的陣列 $c$，$Q$ 次查詢區間最小公倍數$\mod 10^9 + 7$。<br>
+$N,\ Q,\ c_i \leq 10^6$。</p>
+<h3 id="觀察-2">觀察</h3>
+<p>區間中的LCM似乎沒有辦法好好的用兩個數字的LCM做，是一個最大的問題。</p>
+<p>區間$[i, j]$要求的其實是$\displaystyle \prod_{p \in \mathbb{P}}p_k^{\max{a_k}}$。<br>
+但是直接對每個質數維護是不夠好的，複雜度為$\mathcal O(\displaystyle Q \frac{N}{\log N} \log N ) = \mathcal O(QN  )$。<br>
+（質數個數$\mathcal O(\displaystyle\frac{N}{\log N})$）</p>
+<h3 id="做法-3">做法</h3>
+<p>把質因數分解之後，一一對齊會長的像是：<br>
+<figure><img src="../../images/ds-scanning-line/scanning-3.webp" width="400"/>
+</figure>
+</p>
+<p>還記得剛剛優化的核心概念嗎？</p>
+<p>當我<strong>掃到一個查詢的右界</strong>的時候，在當下就<strong>回答那個查詢</strong>，<br>
+並且對所有左界<strong>都可以處理那個查詢</strong>。</p>
+<p>也就是說，從右界往左的所有<strong>後綴區間</strong>都是有效的。<br>
+這裡我的做法用<strong>區間乘積</strong>維護答案，<br>
+對於每個質數都要有一個單調隊列依序遞減，<br>
+所以區間乘積就要透過差分去做拆解：</p>
+<ul>
+<li>當新的次方較大，就把舊的刪除</li>
+<li>否則，差分完丟進我們維護的線段樹內</li>
+</ul>
+<figure><img src="../../images/ds-scanning-line/scanning-4.webp" width="700"/>
+</figure>
+
+<p>如觀察所述，我需要做到：</p>
+<ul>
+<li>質數篩 + DP $\mathcal O(C + \sqrt C \log \log C)$</li>
+<li>質因數分解 $\mathcal O(\log C)$</li>
+<li>按右界sort一次查詢$\mathcal O(Q \log Q)$</li>
+<li>每次對 $\mathcal O(\dfrac{\log C}{\log \log C})$ 個質因數的單調隊列更新 均攤$\mathcal O(1)$</li>
+<li>每次單調隊列更新就更新線段樹 $\mathcal O(\log N)$</li>
+<li>回答查詢$\mathcal O(Q\log N)$</li>
+</ul>
+<p>總複雜度$\mathcal O(C + Q\log Q + Q \log N + \dfrac{ N \log N \log C}{\log \log C} + N \log C)$。</p>
+<details>
+  <summary>Code</summary>
+<pre><code class="language-cpp">/*  | |       _    _  | |        _____       | |
+//  | |   _  | |  | | | | _____ /  ___|__  __| |___  _____
+//  | |  |_|[   ][   ]| |/  _  \| |    | | | |  _  \/  _  \  
+//  | L__| | | |_ | |_| || ____|| |___ | |_| | |_| || ____|
+//  L____|_| |___||___|_|\_____|\_____|\_____/\____/\_____|
+//  Segment Tree is hard.
+*/
+#pragma GCC optimize(&quot;Ofast,unroll-loops&quot;)
+#include &lt;bits/stdc++.h&gt;
+#pragma pack(0)
+#define ll long long
+#define pii pair&lt;int, int&gt;
+#define pll pair&lt;ll, ll&gt;
+#define F first
+#define S second
+#define MOD 1000000007
+#define fast ios::sync_with_stdio(0), cin.tie(0)
+using namespace std;
+
+struct Q
+{
+    ll i, l, r;
+};
+
+ll n, q, arr[1000005], sieve[1000005], seg[4000000], prime[1000005], idx = 1, ans[1000005];
+vector&lt;pii&gt; mq[1000000];
+vector&lt;Q&gt; query;
+
+ll fastpow(ll base, ll p)
+{
+    ll a = 1, b = base;
+    while (p &gt; 0)
+    {
+        if (p &amp; 1)
+            a = a * b % MOD;
+        b = b * b % MOD;
+        p &gt;&gt;= 1;
+    }
+    return a;
+}
+
+void Modify(int l, int r, int i, int pos, ll val)
+{
+    seg[i] = seg[i] * val % MOD;
+    if (l == r)
+        return;
+    int mid = (l + r) / 2;
+    if (pos &lt;= mid)
+        Modify(l, mid, i * 2, pos, val);
+    else
+        Modify(mid + 1, r, i * 2 + 1, pos, val);
+}
+
+ll Query(int l, int r, int i, int a, int b)
+{
+    if (a &lt;= l &amp;&amp; r &lt;= b)
+        return seg[i];
+    else if (b &lt; l || r &lt; a)
+        return 1;
+    else
+    {
+        int mid = (l + r) / 2;
+        return Query(l, mid, i * 2, a, b) * Query(mid + 1, r, i * 2 + 1, a, b) % MOD;
+    }
+}
+
+signed main()
+{
+    fast;
+    for (int i = 2; i &lt;= 1000000; i += 2)
+        sieve[i] = 2;
+    prime[2] = 1;
+    for (int i = 3; i &lt;= 1000000; i += 2)
+        if (sieve[i] == 0)
+        {
+            sieve[i] = i;
+            prime[i] = ++idx;
+            for (int j = i * i; j &lt;= 1000000; j += i)
+                sieve[j] = i;
+        }
+
+    cin &gt;&gt; n &gt;&gt; q;
+    for (int i = 1; i &lt;= n; i++)
+        cin &gt;&gt; arr[i];
+    for (int i = 1; i &lt;= q; i++)
+    {
+        int l, r;
+        cin &gt;&gt; l &gt;&gt; r;
+        query.emplace_back(Q{i, l, r});
+    }
+    for (int i = 1; i &lt; 4000000; i++)
+        seg[i] = 1;
+
+    sort(query.begin(), query.end(), [](Q q1, Q q2) { return q1.r &lt; q2.r; });
+    idx = 0;
+
+    for (int i = 1; i &lt;= n; i++)
+    {
+        while (arr[i] &gt; 1)
+        {
+            ll base = sieve[arr[i]], p = 0;
+            while (arr[i] % base == 0)
+                arr[i] /= base, p++;
+            while (!mq[prime[base]].empty() &amp;&amp; p &gt;= mq[prime[base]].back().S)
+            {
+                pii last = mq[prime[base]].back();
+                Modify(1, 1000000, 1, last.F, fastpow(base, last.S * (MOD - 2) % (MOD - 1)));
+                mq[prime[base]].pop_back();
+
+                if (!mq[prime[base]].empty())
+                    Modify(1, 1000000, 1, mq[prime[base]].back().F, fastpow(base, last.S));
+            }
+            ll res = fastpow(base, p);
+            Modify(1, 1000000, 1, i, res);
+            if (!mq[prime[base]].empty())
+                Modify(1, 1000000, 1, mq[prime[base]].back().F, fastpow(res, MOD - 2));
+            mq[prime[base]].emplace_back(make_pair(i, p));
+        }
+        while (idx &lt; q &amp;&amp; query[idx].r == i)
+        {
+            ans[query[idx].i] = Query(1, 1000000, 1, query[idx].l, query[idx].r);
+            idx++;
+        }
+        if (idx &gt; q - 1)
+            break;
+    }
+    for (int i = 1; i &lt;= q; i++)
+        cout &lt;&lt; ans[i] &lt;&lt; '\n';
+}
+</code></pre>
+</details>
+<h2 id="離線限制">離線限制？</h2>
+<p>剛剛所有提到的做法都要剛剛好是離線sort的狀態，<br>
+那有沒有可以在線回答的方法呢？</p>
+<p>答案是有，只要有效率地把所有東西都存下來就可以，<br>
+如果以線段樹作為儲存資料結構，<br>
+那只要把它<strong>持久化</strong>就可以做到在線詢問了。</p>
+
+      </div>
+    </article>
+
+    
+  
+
+
+
+
+
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Posts</a></li>
+         
+          <li><a href="../../working">Working</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#先備知識">先備知識</a></li>
+    <li><a href="#經典題---矩形覆蓋面積計算">經典題 - 矩形覆蓋面積計算</a>
+      <ul>
+        <li><a href="#做法">做法</a></li>
+      </ul>
+    </li>
+    <li><a href="#整理">整理</a></li>
+    <li><a href="#例題---codeforces-524e-rooks-and-rectangles">例題 - Codeforces 524E Rooks and Rectangles</a>
+      <ul>
+        <li><a href="#觀察">觀察</a></li>
+        <li><a href="#做法-1">做法</a></li>
+        <li><a href="#實作">實作</a></li>
+      </ul>
+    </li>
+    <li><a href="#類題---codeforces-833b-the-bakery">類題 - Codeforces 833B The Bakery</a>
+      <ul>
+        <li><a href="#觀察-1">觀察</a></li>
+        <li><a href="#做法-2">做法</a></li>
+      </ul>
+    </li>
+    <li><a href="#類題---tioj-1872-最小公倍數">類題 - TIOJ 1872 最小公倍數</a>
+      <ul>
+        <li><a href="#觀察-2">觀察</a></li>
+        <li><a href="#做法-3">做法</a></li>
+      </ul>
+    </li>
+    <li><a href="#離線限制">離線限制？</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&text=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&is_video=false&description=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&title=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&name=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a&description=TIOJ%201224%2c%20CF%20524E%2c%20CF%20833B%2c%20TIOJ%201872">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fds-scanning-line%2f&t=%5b%e8%b3%87%e6%96%99%e7%b5%90%e6%a7%8b%5d%20%e6%8e%83%e6%8f%8f%e7%b7%9a">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Little Cube Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</script>
+
+
+</html>

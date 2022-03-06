@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>math on Little Cube Blog</title>
+    <link>https://littlecube8152.github.io/tags/math/</link>
+    <description>Recent content in math on Little Cube Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 29 Jul 2021 15:13:11 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[數論] 質數與模運算</title>
+      <link>https://littlecube8152.github.io/posts/math-modular/</link>
+      <pubDate>Thu, 29 Jul 2021 15:13:11 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/posts/math-modular/</guid>
+      <description>笨方塊想學數學被爆揍，燒雞</description>
+    </item>
+    
+    <item>
+      <title>[數論] 進階質數與模運算</title>
+      <link>https://littlecube8152.github.io/posts/math-modular-advance/</link>
+      <pubDate>Thu, 29 Jul 2021 09:18:25 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/posts/math-modular-advance/</guid>
+      <description>笨方塊想學更多數學被爆揍，燒雞</description>
+    </item>
+    
+    <item>
+      <title>[Codeforces] 1182E</title>
+      <link>https://littlecube8152.github.io/posts/codeforces-1182e/</link>
+      <pubDate>Wed, 03 Feb 2021 21:08:39 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/posts/codeforces-1182e/</guid>
+      <description>笨方塊想學寫程式被爆揍，燒雞</description>
+    </item>
+    
+  </channel>
+</rss>

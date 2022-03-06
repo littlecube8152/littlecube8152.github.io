@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> [數論] 進階質數與模運算 | Little Cube Blog</title>
+  <meta name="description" content="如果我也能成為電神就好了...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="google-site-verification" content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388" />
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   <script src="https://littlecube8152.github.io/js/prism.js"></script>  <script src="https://littlecube8152.github.io/js/prism-line-numbers.js"></script> 
+  <meta property="og:title" content="[數論] 進階質數與模運算" />
+<meta property="og:description" content="笨方塊想學更多數學被爆揍，燒雞" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://littlecube8152.github.io/posts/math-modular-advance/" /><meta property="article:section" content="posts" />
+
+<meta property="article:published_time" content="2021-07-29T09:18:25+08:00" />
+
+<meta property="article:modified_time" content="2021-07-29T09:18:25+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[數論] 進階質數與模運算"/>
+<meta name="twitter:description" content=""/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://littlecube8152.github.io/css/style-dark.css">
+  
+   <link rel="stylesheet" href="https://littlecube8152.github.io/css/syntax.css">  <link rel="stylesheet" href="https://littlecube8152.github.io/css/prism.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://littlecube8152.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://littlecube8152.github.io/posts/8th-junior-camp/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://littlecube8152.github.io/posts/math-modular/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&text=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&is_video=false&description=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&name=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e6%83%b3%e5%ad%b8%e6%9b%b4%e5%a4%9a%e6%95%b8%e5%ad%b8%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&t=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#質數">質數</a>
+      <ul>
+        <li><a href="#多項式的解">多項式的解</a></li>
+        <li><a href="#miller-rabin-質數測試">Miller-Rabin 質數測試</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="#除法">除法</a>
+      <ul>
+        <li><a href="#newton-raphson-除法">Newton-Raphson 除法</a></li>
+      </ul>
+    </li>
+    <li><a href="#進階模運算">進階模運算</a>
+      <ul>
+        <li><a href="#數論函數">數論函數</a></li>
+        <li><a href="#積性函數">積性函數</a></li>
+        <li><a href="#狄利克雷卷積">狄利克雷卷積</a></li>
+        <li><a href="#莫比烏斯反演">莫比烏斯反演</a></li>
+        <li><a href="#原根">原根</a></li>
+        <li><a href="#bsgs">BSGS</a></li>
+      </ul>
+    </li>
+    <li><a href="#因數">因數</a>
+      <ul>
+        <li><a href="#因數個數">因數個數</a></li>
+        <li><a href="#質因數種類數">質因數種類數</a></li>
+        <li><a href="#reference-1">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline">
+          [數論] 進階質數與模運算
+        </h1>
+
+        
+        <div class="meta">
+          
+          <div class="postdate">
+            
+            <time datetime="2021-07-29 09:18:25 &#43;0800 CST" itemprop="datePublished">2021-07-29</time>
+            
+          </div>
+          
+          
+          <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="../../%20tags/math" rel="tag">math</a>
+            
+          </div>
+          
+        </div>
+      </header>
+
+      
+      <div class="content" itemprop="articleBody">
+        <p>[7/29] 初稿</p>
+<p>[8/17] 我發現 Miller-Rabin 質數測試部分是爛掉的，之後會把這部分重寫，請先不要參考</p>
+<h2 id="質數">質數</h2>
+<h3 id="多項式的解">多項式的解</h3>
+<p>為了接下來的 Miller-Rabin 質數測試 會需要用到一些性質，<br>
+在這裡先討論這個問題並稍微提到一個小定理。</p>
+<h4 id="模質數">模質數</h4>
+<p>定理：對於最高次為 $n$ 的非常數多項式 $f(x)$ 在 $\mathbb{Z}_p$，最多有 $n$ 個根。<br>
+證明：<br>
+最高次為 $1$ 的多項式會形如 $ax + b \equiv 0 \mod p$，<br>
+最多只有 $1$ 個解 $x = -ba^-1$。</p>
+<p>假設最高次為 $n$ 的 $f(x)$ 至少有一個根 $a$，則 $f(x) = (x - a)g(x)$，其中 $g(x)$ 的最高次是 $n - 1$，<br>
+所以以下兩個其中一個會成立：</p>
+<ul>
+<li>$x - a \equiv 0 \mod p$，此時 $x \equiv a$。</li>
+<li>$g(x) \equiv 0 \mod p$，此時最多有 $n - 1$ 個根。</li>
+<li>不可能出現 $g(x)$ 不被 $p$ 整除，$x - a$ 也不被 $p$ 整除但 $(x - a)g(x)$ 被 $p$ 整除的情形，因為 $p$ 是質數。<br>
+因此 $f(x)$ 最多有 $n$ 個根。<br>
+否則，$f(x)$ 沒有任何根，仍然成立。</li>
+</ul>
+<h4 id="模合數">模合數</h4>
+<h3 id="miller-rabin-質數測試">Miller-Rabin 質數測試</h3>
+<p>如果 $p$ 是質數且 $p &gt; 2$，$x^2 \equiv 1 \mod p$的解：<br>
+$x^2 \equiv 1 \mod p$<br>
+$(x+1)(x-1) \equiv 0 \mod p$<br>
+也就是說，$x=p-1$ 或 $p|(x-1)(x+1)$，<br>
+此時 $x + 1 \equiv 0,\, x \equiv 1 \mod p$ 或 $x - 1 \equiv 0, x \equiv -1 \mod p$，<br>
+我們稱 $1, -1$ 為 $1 \mod p$的平凡平方根，<br>
+如果存在不平凡平方根（即 $x \neq 1, -1$），<br>
+表示 $p$ 具有因數，與前面假設矛盾</p>
+<p>現在假設 $n$ 是質數且 $n &gt; 2$，<br>
+所以 $n-1$ 會是一個偶數，把它分解為 $2^st$，其中 $t$ 是奇數，<br>
+在 $\mathbb{Z}_n$ 下的所有數 $a$，都能能找到 $0 \leq r &lt; s$，滿足兩式其一：<br>
+$\begin{equation} a^d \equiv 1 \mod n \tag{1.1} \end{equation}$<br>
+$\begin{equation} a^{2^rd} \equiv -1 \mod n \tag{1.2} \end{equation}$<br>
+原因是因為<strong>費馬小定理</strong>，在$\mod n$ 下會有<br>
+$a^{p-1} \equiv 1 \mod n$<br>
+由於 $n$ 是質數，在對 $a^{p-1}$ 不斷取平方根的時候，僅會有平凡平方根（$1,\,-1$）出現，<br>
+如果過程中有出現 $-1$，$(1.2)$ 式必成立，<br>
+如果都出現 $1$，則 $(1.1)$ 式成立，</p>
+<p>所以把整個敘述反過來：<br>
+<strong>如果找到一個數</strong> $a$ <strong>讓所有</strong> $0 \leq r &lt; s$ <strong>都滿足兩式：</strong><br>
+$\begin{equation} a^d \not\equiv 1 \mod n \tag{2.1} \end{equation}$<br>
+$\begin{equation} a^{2^rd} \not\equiv -1 \mod n \tag{2.2} \end{equation}$<br>
+<strong>那</strong> $p$ <strong>就一定是合數，</strong><br>
+所以對於一個大於 3 的數，我們可以選取很多個數字去做驗證，<br>
+如果有一個數字使得上面兩式 $(2.1)(2.2)$ 都成立，就足以判別 $p$ 是合數，<br>
+不過如果有一個數字使得上面兩式 $(2.1)(2.2)$ 至少有一個不成立，<br>
+他就有可能是 $p$ 是質數的「<strong>憑證</strong><sub>（它真的是質數）</sub>」或是「<strong>強偽證</strong><sub>（它不是質數，但這個讓它看起來很像）</sub>」，<br>
+如果所有的 $a$ 都是<strong>強偽證</strong>，那 $p$ 就是質數。</p>
+<p>如果我們在 $\mathbb{Z}_n$ 中測試 $K$ 個數，可以在 $K \log N$ 的時間做完，<br>
+不過注意乘法的時候複雜度也要考慮進去，因為數字可能很大，所以大約是 $\log^2 N$，<br>
+總複雜度是 $O(K \log^3 N)$（不考慮乘法是$O(K \log N)$）</p>
+<p>可是要怎麼選取每一步的$a$，會讓算法效率產生差異，<br>
+有人計算出他的精確度差度多是 $4^{-k}$，<br>
+不過比賽或實作上總不可能直接靠機率不要出錯吧？<br>
+為此，有人給出了一個可以在一定範圍內保證直接測出所有質數的數列： </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">最大值</th>
+<th style="text-align:center"></th>
+<th style="text-align:left">測試數列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1373653</td>
+<td style="text-align:center">&gt; 10$^{6}$，題目常用範圍</td>
+<td style="text-align:left">2, 3,</td>
+</tr>
+<tr>
+<td style="text-align:right">4759123141</td>
+<td style="text-align:center"><strong>int</strong>範圍</td>
+<td style="text-align:left">2, 7, 61</td>
+</tr>
+<tr>
+<td style="text-align:right">2$^{64}$</td>
+<td style="text-align:center"><strong>long long</strong>範圍</td>
+<td style="text-align:left">2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37</td>
+</tr>
+<tr>
+<td style="text-align:right">&gt; 2$^{64}$</td>
+<td style="text-align:center"><strong>long long</strong>範圍</td>
+<td style="text-align:left">2, 325, 9375, 28178, 450775, 9780504, 1795265022</td>
+</tr>
+</tbody>
+</table>
+<p>這樣一來測試單一數就變成了 $O(\log^3 N)$，<br>
+而且可以解決埃氏篩法及線性篩法無法篩到<strong>long long</strong>範圍的問題。</p>
+<p>做的時候不能質因數分解。</p>
+<h3 id="reference">Reference</h3>
+<p><a href="https://archive.is/20120711112013/http://miller-rabin.appspot.com/#selection-259.0-259.48">https://archive.is/20120711112013/http://miller-rabin.appspot.com/#selection-259.0-259.48</a><br>
+<a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test</a></p>
+<h2 id="除法">除法</h2>
+<h3 id="newton-raphson-除法">Newton-Raphson 除法</h3>
+<p>與直式除法不同的是，Newton-Raphson 除法的目的是在除法的式子中：<br>
+$N / D = Q$<br>
+如果能找到$D$的乘法反元素（即倒數），<br>
+就可以用<strong>乘法</strong>的方式去做除法，<br>
+所以如果能找到一個方程式 $f(x)$ 讓 $x = 1/D$ 是其中的一根，就可以用牛頓法去求解，<br>
+先觀察一下牛頓法的迭代過程：<br>
+$x_{i+1} = x_i - \dfrac{\displaystyle f(x_i)}{\displaystyle f&rsquo;(x_i)}$<br>
+最好想到的方程式是$ f(x) = Dx - 1$，然而微分過後會出現 $f&rsquo;(x) = D$，<br>
+分母有出現 $D$，然而我們還沒計算出 $D$ 的反元素，這個方程式是不可行的，<br>
+所以我們把原式 $x = 1/D$ 換成$D = 1/x$，<br>
+就有 $f(x) = 1/x - D$，微分過後會出現 $f&rsquo;(x) = - 1/x^2$，<br>
+此時代入牛頓法的公式，會得到：<br>
+$x_{i+1} = x_i - \dfrac{\displaystyle \dfrac{\displaystyle 1}{\displaystyle x_i} - D}{\displaystyle - \dfrac{\displaystyle 1}{\displaystyle {x_i}^2}} = x_i - \dfrac{\displaystyle x_i - D{x_i}^2}{\displaystyle - 1} = x_i + x_i - D{x_i}^2 = x_i(2 - Dx_i)$<br>
+雖然 $x_i + x_i - D{x_i}^2$ 和 $x_i(2 - Dx_i)$ 看起來很像，不過計算時用後者，意義上的精度會是前者的兩倍，<br>
+如果把第 $i$ 步的錯誤設為 $\varepsilon_i = 1 - Dx_i$，<br>
+則第 $i+1$ 步的錯誤就會是：<br>
+$\varepsilon_{i+1} = 1 - Dx_{i+1} = 1 - Dx_i(2 - Dx_i)  = 1 - 2Dx_i - D^2x_i^2 = (1 - Dx_i)^2 = \varepsilon_i^2$<br>
+也就是說誤差會持續被開平方根，但同時也表示初始值 $x_0$ 不能亂選，<br>
+最終取得 $N$ 位精度需要 $O(\log N)$ 的時間。</p>
+<h2 id="進階模運算">進階模運算</h2>
+<h3 id="數論函數">數論函數</h3>
+<p>其實數論函數本身沒有什麼特殊的，基本上就是<br>
+符合 $f:\mathbb{Z}^+ \rightarrow \mathbb{C}$<br>
+簡單來說就是滿足吃進一個正整數，吐出一個 $\mathbb{Z}$、$\mathbb{R}$ 或 $\mathbb{C}$ 的都算。</p>
+<h3 id="積性函數">積性函數</h3>
+<p>一個積性函數要滿足：</p>
+<ul>
+<li>定義域是 $\mathbb{Z}^+$，也就是說要是<strong>數論函數</strong></li>
+<li>當 $\mathrm{gcd}(a,\,b) = 1$，$f(a)f(b) = f(ab)$</li>
+</ul>
+<p>以下都是積性函數：</p>
+<ul>
+<li>$\Phi(n)$ - 歐拉函數</li>
+<li>$\mu(n)$ - 莫比烏斯函數
+<ul>
+<li>$\begin{cases}\mu(n) = 1 &amp; n = 1 \newline \mu(n) = (-1)^k &amp; n = p_1 p_2 \cdots p_k \newline \mu(n) = 0 &amp; n\mathrm{\ 有次數大於\ 1\ 的質因數}\end{cases}$</li>
+</ul>
+</li>
+<li>$\mathrm{gcd}(n,\,k)$ （當 $k$ 固定） - 最大公因數</li>
+<li>$1(n)$ - 1函數
+<ul>
+<li>$1(n) = 1$</li>
+</ul>
+</li>
+</ul>
+<p>另外積性函數有個很重要的性質：<br>
+$n = p_1^{a_1} p_2^{a_2} \cdots p_k^{a_k}$<br>
+$f(n) = f(p_1^{a_1})f(p_2^{a_2}) \cdots f(p_k^{a_k})$</p>
+<h3 id="狄利克雷卷積">狄利克雷卷積</h3>
+<p>定義狄利克雷卷積的目的在於：<br>
+讓數論函數的乘法是狄利克雷卷積、加法是普通加法，<br>
+就可以讓數論函數是一個交換環（一個環但多滿足交換律）。</p>
+<p>定義兩個數論函數的狄利克雷卷積如下：<br>
+$(f * g)(n) = \displaystyle\sum_{d|n}f(d)g(\frac{n}{d})$<br>
+注意它也有另一個形式：<br>
+$(f * g)(n) = \displaystyle\sum_{dd&rsquo;= n}f(d)g(d&rsquo;)$<br>
+而狄利克雷卷積滿足下列運算：</p>
+<ul>
+<li>交換律 $f * g = g * f$
+<ul>
+<li>證明：<br>
+令$d&rsquo;= \displaystyle\frac{n}{d}$，<br>
+則有$\displaystyle\frac{n}{d&rsquo;} = d \Rightarrow d&rsquo;|n$，<br>
+故$(g * f)(n) = \displaystyle\sum_{d&rsquo;|n}g(d)f(\frac{n}{d&rsquo;}) = \sum_{d|n}g(\frac{n}{d})f(d) = \sum_{d|n}f(d)g(\frac{n}{d})$</li>
+</ul>
+</li>
+<li>結合律 $(f * g) * h = f * (g * h)$
+<ul>
+<li>證明：<br>
+$\begin{align*}((f * g) * h)(n) &amp; = \sum_{d_1|n}(f * g)(d_1)h(\frac{n}{d_1}) \newline &amp; = \sum_{d_1|n}\sum_{d_2|d_1}f(d_2)g(\frac{d_1}{d_2})h(\frac{n}{d_1}) \newline &amp; = \sum_{d_1d_1&rsquo;=n}\sum_{d_2d_2&rsquo;=d_1}f(d_2)g(d_2&rsquo;)h(d_1&rsquo;)\newline &amp; = \sum_{d_2d_2&rsquo;d_1&rsquo;=n}f(d_2)g(d_2&rsquo;)h(d_1&rsquo;)\newline &amp; = \sum_{d_2d_2&rsquo;d_1&rsquo;=n}f(d_1&rsquo;)g(d_2)h(d_2&rsquo;)\newline &amp; = \sum_{d_1d_1&rsquo;=n}\sum_{d_2d_2&rsquo;=d_1}f(d_1&rsquo;)g(d_2)h(d_2&rsquo;) \newline &amp; = \sum_{d_1d_1&rsquo;=n}f(d_1&rsquo;)(g * h)(d_1) \newline &amp; = (f * (g * h))(n) \end{align*} $</li>
+</ul>
+</li>
+<li>分配律 $f * (g + h) = f * g + f * h$
+<ul>
+<li>證明：<br>
+$\begin{align*}(f * (g + h))(n) &amp; = \sum_{d|n}f(d_1)(g + h)(\frac{n}{d_1}) \newline &amp; = \sum_{d|n}f(d_1)(g(\frac{n}{d_1}) + h(\frac{n}{d_1})) \newline &amp; = \sum_{d|n}f(d_1)g(\frac{n}{d_1}) + \sum_{d|n}f(d_1)h(\frac{n}{d_1})  \newline &amp; = (f * g)(n) + (f * h)(n)\end{align*} $</li>
+</ul>
+</li>
+<li>單位函數 $\epsilon$ 使得 $f * \epsilon = f$
+<ul>
+<li>其中 $\begin{cases}\epsilon(n) = 1 &amp; n = 1 \newline \epsilon(n) = 0 &amp; \mathrm{otherwise}\end{cases}$</li>
+</ul>
+</li>
+<li>對於任意數論函數 $f$，若 $f(1) \neq 0$，則存在<strong>唯一的$f^{-1}$</strong> ，使得 $f * f^{-1} = \epsilon$
+<ul>
+<li>構造的方法是：<br>
+顯然 $f(1)f^{-1}(1) = 1$，$f^{-1}(1) = \displaystyle\frac{1}{f(1)}$，<br>
+而對 $n \neq 1$，有<br>
+$\displaystyle\sum_{d|n}f(d) f^{-1}(\frac{n}{d}) = 0$<br>
+$f(1)f^{-1}(n) = -\displaystyle\sum_{d|n, d\neq 1}f(d) f^{-1}(\frac{n}{d})$<br>
+$f^{-1}(n) = -\displaystyle\frac{\displaystyle\sum_{d|n, d\neq 1}f(d) f^{-1}(\frac{n}{d})}{f(1)}$</li>
+</ul>
+</li>
+<li>積性函數的狄利克雷卷積還是積性函數
+<ul>
+<li>證明：
+令 $\mathrm{gcd}(a, b) = 1$，<br>
+$   \begin{align*}(f * g)(ab)&amp;  = \sum_{d|ab}f(d)g(\frac{ab}{d}) \newline
+&amp; = \sum_{d_a|a}\sum_{d_b|b}f(d_ad_b)g(\frac{ab}{d_ad_b}) \newline
+&amp; = \sum_{d_a|a}\sum_{d_b|b}f(d_a)f(d_b)g(\frac{a}{d_a})g(\frac{b}{d_b}) \newline
+&amp; = \sum_{d_a|a}f(d_a)g(\frac{a}{d_a})\sum_{d_b|b}f(d_b)g(\frac{b}{d_b}) \newline
+&amp; = (f * g)(a)(f * g)(b) \newline\end{align*}$</li>
+</ul>
+</li>
+<li>一個數論函數 $g$ 是積性函數，<strong>若且唯若</strong> $g$ 跟另一個積性函數 $f$ 的狄利克雷卷積 $f*g$ 也是積性函數
+<ul>
+<li>證明：
+令 $h = f * g$，$gcd(a,\,b) = 1$， <br>
+假設 $g$ 跟 $h$ 其中一個不是積性的，<br>
+就會存在 $n = ab$ 是最小的組合使得 $g(a)g(b) \neq g(ab)$ 或 $h(a)h(b) \neq h(ab)$<br>
+$   \begin{align*} h(a)h(b) &amp; = \sum_{d|a}f(d)g(\frac{a}{d}) \sum_{d|b}f(d)g(\frac{b}{d}) \newline
+&amp; = \sum_{d_a|a}\sum_{d_b|b} f(d_a)g(\frac{a}{d_a})f(d_b)g(\frac{b}{d_b}) \newline
+&amp; = \sum_{d_a|a}\sum_{d_b|b} f(d_ad_b)g(\frac{a}{d_a})g(\frac{b}{d_b}) \newline
+&amp; = f(1)g(a)g(b) + \sum_{d|ab, d \neq 1} f(d)g(\frac{ab}{d}) \leftarrow \mathrm{這裡可以這樣做是因為一開始假設最小的組合} \newline
+&amp; = f(1)g(a)g(b) + h(ab) - g(ab) \newline
+&amp; = g(a)g(b) + h(ab) - g(ab) \leftarrow \text{積性函數 } f \text{ 故 } f(1) = 1\newline \end{align*}$<br>
+所以：<br>
+若 $g$ 為積性，$h$ 亦為積性；若 $h$ 為積性，$g$ 亦為積性，故矛盾，得證。<br>
+感謝 Andrew Yang 提供&gt;&lt;，當初好像是 SCMS 可能會有的東西，只是因為疫情不能去;w;</li>
+</ul>
+</li>
+<li>積性函數的逆函數還是積性函數
+<ul>
+<li>由上一點可證</li>
+</ul>
+</li>
+</ul>
+<h3 id="莫比烏斯反演">莫比烏斯反演</h3>
+<p>首先，觀察到<br>
+$\displaystyle\sum_{d|n}\mu(d) = [n = 1]$<br>
+原因是因為：<br>
+假如 $n$ 有 $k$ 種質因數，<br>
+$\displaystyle\sum_{d|n}\mu(d) = C^{k}_0 - C^k_1 + C^k_2 - \cdots + (-1)^k C^k_k = \begin{cases}  1 &amp; n = 1\newline (1 - 1)^{k} = 0 &amp; \mathrm{otherwise} \end{cases}$<br>
+（考慮到取二次方以上都是 $0$）</p>
+<p>當 $n = 1$，$\mathrm{原式} = 1$，否則$\mathrm{原式} = 0$。<br>
+所以我們有 $\displaystyle\sum_{d|n}\mu(d) = \epsilon$<br>
+也就是說：<br>
+$\displaystyle\sum_{d|n}\mu(d)1(\frac{n}{d}) = \epsilon(n) \Rightarrow \mu * 1 = \epsilon \Rightarrow \mu^{-1} = 1$</p>
+<p>根據這個性質，可以發現如果有兩個函數滿足：<br>
+$F(x) = \displaystyle\sum_{d|x}f(d)$，<br>
+就可以透過莫比烏斯函數的逆函數做出這個轉換：<br>
+$F(x) = \displaystyle\sum_{d|x}f(d)1(\frac{n}{d})$<br>
+$F = f * 1$<br>
+$F * \mu = f$<br>
+$f(x) = \displaystyle\sum_{d|x}F(d)\mu(\frac{n}{d})$<br>
+對於某些跟因數有關的函數可以做出這樣的轉換。</p>
+<h3 id="原根">原根</h3>
+<p>在$\mod p$ 下（$p$是質數），一個數 $a$ 的<strong>序</strong>是最小的 $d$ 使得 $a^d \equiv 1 \mod p$，<br>
+例如$\mod 7$ 下的序：  </p>
+<table>
+<thead>
+<tr>
+<th>$a$</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序</td>
+<td>1</td>
+<td>3</td>
+<td>6</td>
+<td>3</td>
+<td>6</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>而$\mod p$ 下（$p$是質數）的<strong>原根</strong>則是有一個最小的 $a$ 使得 $a\mathrm{\ 的序} = p - 1$，<br>
+也就是說他會剛好走完 $2, 3, \cdots p - 1$ 再回到 $1$。</p>
+<h3 id="bsgs">BSGS</h3>
+<p>設 $\mod n$下的原根是$\alpha$，BSGS可以解決的問題是：<br>
+有 $\beta \equiv \alpha^\gamma \mod n$，求最小的$\gamma$（即對數問題）。<br>
+方法是令 $\gamma = p\left\lfloor\sqrt{n}\right\rfloor + q$，<br>
+其中 $0 \leq p,\,q &lt; \left\lfloor\sqrt{n}\right\rfloor$，</p>
+<p>所以有 $\beta \equiv \alpha^{p\left\lfloor\sqrt{n}\right\rfloor + q} \mod n$<br>
+$\beta{(\alpha^{-\left\lfloor\sqrt{n}\right\rfloor}})^p \equiv \alpha^q \mod n$<br>
+這樣可以預處理 $\alpha, \alpha^2, \alpha^3, \cdots, \alpha^{\left\lfloor\sqrt{n}\right\rfloor}, \alpha^{-\left\lfloor\sqrt{n}\right\rfloor}$，<br>
+就能在 $\mathcal{O}(\sqrt{n})$ 內求得解，<br>
+這樣對 $\sqrt{n}$ 分塊的作法其實在數論題中很常見，甚至還有一個技巧稱為<strong>數論分塊</strong>。</p>
+<h2 id="因數">因數</h2>
+<h3 id="因數個數">因數個數</h3>
+<p>對於一個整數 $N$，他的因數個數是 $d(N)$，</p>
+<p>簡單的因數個數 $d(N)$ 的上界是 $O(\sqrt N)$，<br>
+用於估計的話最實際的方法就是跑個爆搜去看看，<br>
+不過因數個數也是有一個數學上的上界的，<br>
+這邊會一步一步推導出來。</p>
+<p>首先需要知道的有：<br>
+$\begin{equation} e^x \approx 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \geq 1 + x \tag{1} \end{equation}$<br>
+（在 $x$ 很小的時候，$e^x$ 的泰勒展開式。）</p>
+<p>接下來，如果 $N$ 有 $k$ 個質數，可以把 $N$ 表示成：</p>
+<p>$\begin{equation} N = p_1^{a_1} \cdots p_k^{a_k} \tag{2} \end{equation}$</p>
+<p>然後又由一點點的排列組合，$d(N)$ 可以表示為：</p>
+<p>$\begin{equation} d(N) = (a_1 + 1) \cdots  (a_k + 1) \tag{3} \end{equation}$</p>
+<p>現在要證明的是，對於任何 $\varepsilon &gt; 0$，都有一個常數 $C_\varepsilon$ 使得：</p>
+<p>$\begin{equation} d(N) \leq C_\varepsilon N^\varepsilon \tag{4} \end{equation}$</p>
+<p>換句話說就是：</p>
+<p>$\begin{equation} d(N) = o(N^\varepsilon) \end{equation}$</p>
+<p>證明的方式是：<br>
+首先，把 $(4)$ 寫成這個樣子：<br>
+$\begin{equation} \dfrac{d(N)}{N^\varepsilon} \leq C_\varepsilon \tag{5} \end{equation}$<br>
+左邊的部分用 $(2)(3)$ 帶入，得到：<br>
+$\begin{equation} \displaystyle\prod_{i = 1}^{k}\dfrac{a_i + 1}{p_i^{\varepsilon a_i}} \tag{6} \end{equation}$</p>
+<p>把每個質因數分開討論，<br>
+分母是指數成長，分子是線性成長，所以在這個條件下分母會逐漸超過分子，至少 $a_i$ 夠大的時候可以確定，<br>
+但是 $\varepsilon$ 是可以任意選的，所以可能有些組合會讓分子大於分母，<br>
+不過可以發現，要達成分子大於分母，必須要 $a_i$ 夠小、$p_i$ 也夠小。</p>
+<p>先考慮夠大的質數，當 $p_i^{\varepsilon a_i} \geq a_i + 1$ 的時候，<br>
+由於 $e^{a_i} \geq a_i + 1$（使用 $(1)$ 的泰勒展開式），<br>
+所以可以確定當 $p_i^{\varepsilon a_i} \geq e^{a_i} \geq a_i + 1$ 的時候，<br>
+$p_i \geq e^{1/\varepsilon}$，而且這一項的貢獻最多只有 $1$。</p>
+<p>那對於 $p_i &lt; e^{1/\varepsilon}$ 的質數呢？<br>
+由於 $a_i \rightarrow \infty$ 的時候，$\dfrac{a_i + 1}{p_i^{\varepsilon a_i}}$ 會趨近於 $0$，<br>
+所以這個 $\dfrac{a_i + 1}{p_i^{\varepsilon a_i}}$ 一定會有某個常數 $C_{p_i,\,\varepsilon}$ 是他的上界，<br>
+因此，所有小於 $e^{1/\varepsilon}$ 的質數都只有對 $(6)$ 有有限度的貢獻，<br>
+但是總共的小質數數量也被 $\varepsilon$ 給限制住了，<br>
+所以 $(6)$ 就會小於某個只隨著 $\varepsilon$ 變動的常數 $C_\varepsilon$，因此原式得證。</p>
+<p>競程中似乎有一個上界是 $O(\sqrt[3]{N})$，這個上界可以用剛剛所證明的代進數字，<br>
+不過這樣估因為常數的關係會有點不準。</p>
+<p>有了這個上界之後，可以更進一步把他限制得更緊：</p>
+<p>首先，要達到更緊的上界，要先把 $C_\varepsilon$ 求出比較精確的值，<br>
+回去考慮 $(6)$：<br>
+$\begin{equation} \displaystyle\prod_{i = 1}^{k}\dfrac{a_i + 1}{p_i^{\varepsilon a_i}} \tag{6, revisited} \end{equation}$<br>
+分母的部分可以用剛剛用過的 $(1)$（泰勒展開式）處理一下：<br>
+$$\begin{equation} p_i^{\varepsilon a_i} = e^{\varepsilon a_i \ln p_i} \geq 1 + \varepsilon a_i \ln p_i \end{equation}$$<br>
+所以<br>
+$\begin{equation} \dfrac{a_i + 1}{p_i^{\varepsilon a_i}} \leq \dfrac{a_i + 1}{1 + \varepsilon a_i \ln p_i} \leq O\left(\dfrac{1}{\varepsilon \log p_i}\right) \tag{7} \end{equation}$<br>
+當然這個上界可以再逼近一點，不過 $e^x$ 的泰勒展開式在 $x$ 很小的時候相當的精確，所以能逼近的不多，</p>
+<p>把 $(7)$ 代入 $(6)$，會發現 $(6)$ 的上界是：</p>
+<p>$$\begin{equation} \displaystyle\prod_{p &lt; e^{1/\varepsilon}} O\left(\dfrac{1}{\varepsilon \log p_i}\right) \end{equation}$$</p>
+<p>為了方便討論，把小於 $e^{1/\varepsilon}$ 的質數的上界設為 $e^{1/\varepsilon}$、$\log p_i$ 的上界設為 $\log 2$ 並當作常數，<br>
+當然還是可以再更逼近一點，但是這裡有個小技巧：<br>
+在處理 $A^B$ 這類的上界的時候，除了 $A$ 很接近 $1$ 的情況，否則把 $B$ 限縮在更好的上界會比限縮 $A$ 更有效。</p>
+<p>因此會得到：<br>
+$$\begin{equation} (6) \leq O\left(\dfrac{1}{\varepsilon}\right)^{\displaystyle e^{1/\varepsilon}} = e^{\displaystyle e^{O({1/\varepsilon})}} \end{equation}$$<br>
+（因為是漸近符號，可以這樣操作）</p>
+<p>這樣表示：<br>
+$$\begin{equation} d(N) \leq e^{\displaystyle e^{O({1/\varepsilon})}}N^\varepsilon \end{equation}$$
+將 $\varepsilon$ 設為 $\dfrac{C}{\log \log N}$ 的時候（其中 $C$ 是某個相當大的常數），<br>
+觀察右邊的兩個東西，都取一次自然對數得到：<br>
+$e^{O({\log \log N / C})} = \log^{1/C} N$ 跟 $\dfrac{N C \ln N}{\log \log N}$<br>
+而第二項的成長會超過第一項，所以把他帶入之後得到：<br>
+$$d(N) \leq N^{O(1/\log \log N)}$$</p>
+<h3 id="質因數種類數">質因數種類數</h3>
+<p>首先，先知道一個東西叫做<strong>質數階乘</strong>，對於質數 $P$：<br>
+$P\# = \displaystyle\prod_{p \leq P \text{ and } p \text{ is prime}} p$</p>
+<p>把質因數種類數表示成 $\omega(n)$，顯然最差的狀況會發生在 $n$ 是質數階乘的時候，</p>
+<p>根據一些酷酷的<a href="https://en.wikipedia.org/wiki/Primorial">定</a><a href="https://en.wikipedia.org/wiki/Chebyshev_function">理</a>，有這個東西：<br>
+$\log x\# = \vartheta(x) \sim x$<br>
+所以 $p\# = e^{(1 + o(1))p}$。</p>
+<p>令 $p$ 是第 $k$ 個質數，所以有 $p \sim k \ln k$，這樣就會推導出：<br>
+由於 $\log p\# =  \vartheta(p) \sim p$，<br>
+（$\vartheta$ 是 first Chebyshev function）<br>
+這樣就會推導出：<br>
+$k = \omega(p\#) = \omega(e^{(1 + o(1))p}) = \omega(e^{(1 + o(1))k \ln k}) = \omega(k^{(1 + o(1))k})$</p>
+<p>接下來就是把 $k$ 解出來了，因為：<br>
+$p\# = k^{(1 + o(1))k}$<br>
+所以：<br>
+$k = \dfrac{\ln p\#}{W(\ln p\#)}$<br>
+其中 $W$ 是 Lambert W function，簡單來說是 $f(x) = xe^x$ 的反函數，<br>
+把它用上下界代入：<br>
+$k = \dfrac{\ln p\#}{\log(\ln p\#) - O(\log \log (\ln p\#))} \sim \dfrac{\ln p\#}{\log(\ln p\#)} = O\left(\dfrac{\log p\#}{\log \log p\#}\right)$</p>
+<p>由這個結論得知，$\omega(n)$ 會是 $O(\dfrac{\log n}{\log \log n})$ 的。</p>
+<h3 id="reference-1">Reference</h3>
+<p><a href="https://terrytao.wordpress.com/2008/09/23/the-divisor-bound/">The Divisor Bound</a><br>
+<a href="https://en.wikipedia.org/wiki/Primorial">Primorial</a><br>
+<a href="https://en.wikipedia.org/wiki/Prime_number_theorem">Prime number theorem</a><br>
+<a href="https://math.stackexchange.com/questions/938204/upper-bound-number-of-distinct-prime-factors">Upper bound number of distinct prime factors</a><br>
+<a href="https://en.wikipedia.org/wiki/Chebyshev_function">Chebyshev function</a><br>
+<a href="https://www.emis.de/journals/JIPAM/images/107_07_JIPAM/107_07_www.pdf">Inequalities On The Lambert W Function And Hyperpower Function</a></p>
+
+      </div>
+    </article>
+
+    
+  
+
+
+
+
+
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Posts</a></li>
+         
+          <li><a href="../../working">Working</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#質數">質數</a>
+      <ul>
+        <li><a href="#多項式的解">多項式的解</a></li>
+        <li><a href="#miller-rabin-質數測試">Miller-Rabin 質數測試</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="#除法">除法</a>
+      <ul>
+        <li><a href="#newton-raphson-除法">Newton-Raphson 除法</a></li>
+      </ul>
+    </li>
+    <li><a href="#進階模運算">進階模運算</a>
+      <ul>
+        <li><a href="#數論函數">數論函數</a></li>
+        <li><a href="#積性函數">積性函數</a></li>
+        <li><a href="#狄利克雷卷積">狄利克雷卷積</a></li>
+        <li><a href="#莫比烏斯反演">莫比烏斯反演</a></li>
+        <li><a href="#原根">原根</a></li>
+        <li><a href="#bsgs">BSGS</a></li>
+      </ul>
+    </li>
+    <li><a href="#因數">因數</a>
+      <ul>
+        <li><a href="#因數個數">因數個數</a></li>
+        <li><a href="#質因數種類數">質因數種類數</a></li>
+        <li><a href="#reference-1">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&text=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&is_video=false&description=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&title=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&name=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e6%83%b3%e5%ad%b8%e6%9b%b4%e5%a4%9a%e6%95%b8%e5%ad%b8%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fmath-modular-advance%2f&t=%5b%e6%95%b8%e8%ab%96%5d%20%e9%80%b2%e9%9a%8e%e8%b3%aa%e6%95%b8%e8%88%87%e6%a8%a1%e9%81%8b%e7%ae%97">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Little Cube Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</script>
+
+
+</html>
