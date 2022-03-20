@@ -353,7 +353,7 @@ body h3 {
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 body h4 {
   color: #eee;
@@ -868,6 +868,9 @@ section#about p{
   max-height: calc(95vh - 7rem);
   text-align: right;
 }
+#header-post #toc::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
 #header-post #toc a:hover {
   color: #d480aa;
 }
@@ -1157,7 +1160,7 @@ article .content h3:before {
   color: #5ddcff;
   content: "#";
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 article .content img,
 article .content video {
