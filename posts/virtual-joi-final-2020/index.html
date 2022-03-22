@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> [Virtual] JOI 本選 2020 (TOI 1! Day 2) | Little Cube Blog</title>
+  <meta name="description" content="如果我也能成為電神就好了...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="google-site-verification" content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388" />
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   <script src="https://littlecube8152.github.io/js/prism.js"></script>  <script src="https://littlecube8152.github.io/js/prism-line-numbers.js"></script> 
+  <meta property="og:title" content="[Virtual] JOI 本選 2020 (TOI 1! Day 2)" />
+<meta property="og:description" content="笨方塊耍笨 vir JOI 2020 被爆揍，燒雞" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://littlecube8152.github.io/posts/virtual-joi-final-2020/" /><meta property="article:section" content="posts" />
+
+<meta property="article:published_time" content="2022-03-23T00:00:00+08:00" />
+
+<meta property="article:modified_time" content="2022-03-23T00:00:00+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Virtual] JOI 本選 2020 (TOI 1! Day 2)"/>
+<meta name="twitter:description" content=""/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://littlecube8152.github.io/css/style-dark.css">
+  
+   <link rel="stylesheet" href="https://littlecube8152.github.io/css/syntax.css">  <link rel="stylesheet" href="https://littlecube8152.github.io/css/prism.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://littlecube8152.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://littlecube8152.github.io/posts/toi-2022-pre/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&text=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&is_video=false&description=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&name=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e8%80%8d%e7%ac%a8%20vir%20JOI%202020%20%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&t=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#賽前">賽前</a></li>
+    <li><a href="#賽中">賽中</a>
+      <ul>
+        <li><a href="#0008-a-green100green">00:08 A <green>100</green></a></li>
+        <li><a href="#0036-b-green100green">00:36 B <green>100</green></a></li>
+        <li><a href="#0107-c-green100green">01:07 C <green>100</green></a></li>
+        <li><a href="#0321-d-green100green">03:21 D <green>100</green></a></li>
+        <li><a href="#0355-e-1">03:55 E 1</a></li>
+        <li><a href="#0410-e-7">04:10 E 7</a></li>
+        <li><a href="#0416-e-14">04:16 E 14</a></li>
+        <li><a href="#0424-e-20">04:24 E 20</a></li>
+      </ul>
+    </li>
+    <li><a href="#result">Result</a></li>
+    <li><a href="#賽後補題">賽後補題</a></li>
+    <li><a href="#檢討">檢討</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline">
+          [Virtual] JOI 本選 2020 (TOI 1! Day 2)
+        </h1>
+
+        
+        <div class="meta">
+          
+          <div class="postdate">
+            
+            <time datetime="2022-03-23 00:00:00 &#43;0800 CST" itemprop="datePublished">2022-03-23</time>
+            
+          </div>
+          
+          
+          <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="../../%20tags/virtual" rel="tag">virtual</a>
+            
+             ,  
+            <a class="tag-link" href="../../%20tags/joi" rel="tag">JOI</a>
+            
+          </div>
+          
+        </div>
+      </header>
+
+      
+      <div class="content" itemprop="articleBody">
+        <p>選訓一天一 OI 計畫 #1 &gt;&lt;</p>
+<h2 id="賽前">賽前</h2>
+<p>因為這場是在選訓 vir 的，所以時間上是 10:00 ~ 中午吃飯 ~ 15:40，維持總時間 4 小時。</p>
+<h2 id="賽中">賽中</h2>
+<p>記得 JOI 是有按照難度排序的，所以開場先讀 A</p>
+<ul>
+<li>A Just Long Neckties<br>
+給你長度是 $N + 1$ 的 $A$ 陣列跟長度是 $N$ 的 $B$ 陣列，定義一個配對 $A_i$ 對 $B_j$ 的奇異度是 $\min\{A_i - B_j ,\, 0\}$，<br>
+對每個 $A$ 陣列的元素輸出把他拔掉之後，所有 $B$ 陣列的都配對完的最小最大奇異度。<br>
+$1 \leq N \leq 2 \times 10^5$<br>
+[1] $N \leq 10$<br>
+[8] $N \leq 2000$<br>
+[91] 無額外限制</li>
+</ul>
+<p>大水題，sort 之後對前綴後綴做完就 <green>AC</green> 了。</p>
+<h3 id="0008-a-green100green">00:08 A <green>100</green></h3>
+<p>$\newline$</p>
+<p>寫完之後繼續往下讀，</p>
+<ul>
+<li>B JJOOII 2<br>
+輸出湊出剛好是「<code>J</code> 重複 $K$ 次、<code>O</code> 重複 $K$ 次、<code>I</code> 重複 $K$ 次」的字串需要最少多少時間。<br>
+$3 \leq N \leq 2 \times 10^5,\, 1 \leq K \leq \frac N 3$<br>
+[1] $N \leq 21$<br>
+[12] $N \leq 3000$<br>
+[87] 無額外限制</li>
+</ul>
+<p>一開始怎麼想都只會做兩個，但後來發現其實只要不斷做 sliding window 就做完了，打錯字 WA 超多次，還好都有找到。</p>
+<h3 id="0036-b-green100green">00:36 B <green>100</green></h3>
+<p>$\newline$</p>
+<ul>
+<li>C Collecting Stamps 3<br>
+你在一個長度為 $L$ 的圓圈上，第 $i$ 個收集站在 $X_i$ 的位置，如果你在 $T_i$ 之前抵達可以收集到第 $i$ 種郵票，<br>
+輸出你可以最多拿到多少種郵票。
+$1 \leq N \leq 200,\, 2 \leq L \leq 10^9,\, 1 \leq X_i &lt; L$<br>
+[5] $N \leq 12,\, L \leq 200,\, T_i \leq 200$ <br>
+[10] $N \leq 15$<br>
+[10] $L \leq 200,\, T_i \leq 200$<br>
+[75] 無額外限制</li>
+</ul>
+<p>稍微想一下就可以列出這個狀態：<br>
+$dp_{i,\,j,\,k,\,0}$ 表示你已經走過 $[i..j]$ 並且得到 $k$ 分的最短時間，最後停留在 $i$，<br>
+$dp_{i,\,j,\,k,\,1}$ 則是最後停留在 $j$，<br>
+把環狀拓展成兩倍然後注意 $j - i &lt; N$ 就好，過程中迴圈順序搞反 WA 了一次，最後過了。</p>
+<h3 id="0107-c-green100green">01:07 C <green>100</green></h3>
+<p>$\newline$</p>
+<ul>
+<li>D Olympic Bus<br>
+給你一張 $N$ 點 $M$ 邊的圖，走第 $i$ 條邊的花費是 $C_i$，反轉的花費是 $D_i$，你最多能反轉一條邊，<br>
+問從 $1$ 到 $N$ 再回來的最小花費，或決定不可能。<br>
+$2 \leq N \leq 200,\, 1 \leq M \leq 50000$<br>
+[5] $M \leq 1000$<br>
+[11] 所有的邊都剛好有偶數個複本<br>
+[21] $C_i = 0$<br>
+[63] 無額外限制</li>
+</ul>
+<p>一開始 naive 的做法是直接暴力然後每次做 Dijkstra，但這樣複雜度是 $O(M^2\log M)$ 或 $O(MN^2)$，顯然不會過。</p>
+<p>後來想一想了很久發現有些邊似乎可以偷懶不要做，於是就有這個做法：</p>
+<ul>
+<li>先跑一次最短路，還有反過來的最短路</li>
+<li>對每條邊如果有在已經找到的最短路中，重算，不然就利用正的反的計算答案。<br>
+這樣一來複雜度是 $O(M + N^3)$ 或 $O(NM \log M)$，實作有點小繁雜但整體來說還可以，所以我就先去吃飯然後再回來實作了。</li>
+</ul>
+<p>（回來的時候 PixelCat 睡著了）</p>
+<h3 id="0321-d-green100green">03:21 D <green>100</green></h3>
+<p>$\newline$</p>
+<p>這時候還有快一個半小時可以做 E，於是我就開始全力做：</p>
+<ul>
+<li>E Fire<br>
+給定長度為 $N$ 的陣列在時間 $0$ 的樣子 $S_i$，每秒如果該陣列左邊的元素比他大，他就會改成他左邊的元素。<br>
+$Q$ 筆詢問在給定時間 $T_i$，$L_i$ 到 $R_i$ 的區間和。<br>
+$1 \leq N,\,Q \leq 2 \times 10^5,\, 1 \leq T_i \leq N$<br>
+[1] $N,\,Q \leq 200$<br>
+[6] $T_i$ 相同 <br>
+[7] 單點查詢<br>
+[6] $S_i \in \{1,\, 2\}$<br>
+[80] 無額外限制</li>
+</ul>
+<p>看完的時候推一推發現每個人影響的範圍都是一個平行四邊形，當下就有想到要用線段樹 + 掃描線維護，<br>
+但是一直想不到要怎麼維護斜的修改。</p>
+<p>於是我就開始寫了子題看看有沒有幫助，$1$ 分用暴力、$6$ 分用 sliding window + 前綴和、$7$ 分用二分搜然後 $6$ 分用 BIT。<br>
+最後子題真的完全沒有幫助，燒雞。</p>
+<h3 id="0355-e-1">03:55 E 1</h3>
+<h3 id="0410-e-7">04:10 E 7</h3>
+<h3 id="0416-e-14">04:16 E 14</h3>
+<h3 id="0424-e-20">04:24 E 20</h3>
+<p>$\newline$</p>
+<h2 id="result">Result</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><green>1</green></td>
+<td><green>8</green></td>
+<td><green>91</green></td>
+<td></td>
+<td></td>
+<td></td>
+<td><green>100</green></td>
+</tr>
+<tr>
+<td>B</td>
+<td><green>1</green></td>
+<td><green>12</green></td>
+<td><green>87</green></td>
+<td></td>
+<td></td>
+<td></td>
+<td><green>100</green></td>
+</tr>
+<tr>
+<td>C</td>
+<td><green>5</green></td>
+<td><green>10</green></td>
+<td><green>10</green></td>
+<td><green>75</green></td>
+<td></td>
+<td></td>
+<td><green>100</green></td>
+</tr>
+<tr>
+<td>D</td>
+<td><green>5</green></td>
+<td><green>11</green></td>
+<td><green>21</green></td>
+<td><green>63</green></td>
+<td></td>
+<td></td>
+<td><green>100</green></td>
+</tr>
+<tr>
+<td>E</td>
+<td><green>1</green></td>
+<td><green>6</green></td>
+<td><green>7</green></td>
+<td><green>6 </green></td>
+<td></td>
+<td>80</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Score</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>420</td>
+</tr>
+</tbody>
+</table>
+<p>級距落在 400 ~ 499 的前 7 內。</p>
+<h2 id="賽後補題">賽後補題</h2>
+<p>賽後我把 E 成功補掉了，算是少數我可以補成功的 OI，<br>
+基本上就是把平行四邊形拆成三角形，然後三角形拆成矩形跟等差位移的矩形，所以總共要兩棵線段樹。<br>
+我還一直拿 BIT 區間修改區間查詢，笨死zzz</p>
+<h2 id="檢討">檢討</h2>
+<p>基本上打的還可以，除了屢屢出小 bug 以外。
+但 E 基本上我應該要做出來，我被線段樹打爆。<br>
+希望模考可以好好寫出我應該要會的題目，</p>
+<p>選訓加油 &gt;&lt;</p>
+
+      </div>
+    </article>
+
+    
+  
+
+
+
+
+
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Posts</a></li>
+         
+          <li><a href="../../working">Working</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#賽前">賽前</a></li>
+    <li><a href="#賽中">賽中</a>
+      <ul>
+        <li><a href="#0008-a-green100green">00:08 A <green>100</green></a></li>
+        <li><a href="#0036-b-green100green">00:36 B <green>100</green></a></li>
+        <li><a href="#0107-c-green100green">01:07 C <green>100</green></a></li>
+        <li><a href="#0321-d-green100green">03:21 D <green>100</green></a></li>
+        <li><a href="#0355-e-1">03:55 E 1</a></li>
+        <li><a href="#0410-e-7">04:10 E 7</a></li>
+        <li><a href="#0416-e-14">04:16 E 14</a></li>
+        <li><a href="#0424-e-20">04:24 E 20</a></li>
+      </ul>
+    </li>
+    <li><a href="#result">Result</a></li>
+    <li><a href="#賽後補題">賽後補題</a></li>
+    <li><a href="#檢討">檢討</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&text=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&is_video=false&description=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&title=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&name=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e8%80%8d%e7%ac%a8%20vir%20JOI%202020%20%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-joi-final-2020%2f&t=%5bVirtual%5d%20JOI%20%e6%9c%ac%e9%81%b8%202020%20%28TOI%201%21%20Day%202%29">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Little Cube Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</script>
+
+
+</html>
