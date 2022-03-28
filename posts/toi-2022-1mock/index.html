@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> [TOI] 2022 1 模 | Little Cube Blog</title>
+  <meta name="description" content="如果我也能成為電神就好了...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="google-site-verification" content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388" />
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   <script src="https://littlecube8152.github.io/js/prism.js"></script>  <script src="https://littlecube8152.github.io/js/prism-line-numbers.js"></script> 
+  <meta property="og:title" content="[TOI] 2022 1 模" />
+<meta property="og:description" content="笨方塊在 TOI 被模考爆揍，燒雞" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://littlecube8152.github.io/posts/toi-2022-1mock/" /><meta property="article:section" content="posts" />
+
+<meta property="article:published_time" content="2022-03-27T17:00:00+08:00" />
+
+<meta property="article:modified_time" content="2022-03-27T17:00:00+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[TOI] 2022 1 模"/>
+<meta name="twitter:description" content=""/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://littlecube8152.github.io/css/style-dark.css">
+  
+   <link rel="stylesheet" href="https://littlecube8152.github.io/css/syntax.css">  <link rel="stylesheet" href="https://littlecube8152.github.io/css/prism.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://littlecube8152.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://littlecube8152.github.io/posts/virtual-joi-final-2019/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&text=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&is_video=false&description=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bTOI%5d%202022%201%20%e6%a8%a1&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&name=%5bTOI%5d%202022%201%20%e6%a8%a1&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e5%9c%a8%20TOI%20%e8%a2%ab%e6%a8%a1%e8%80%83%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&t=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#賽前">賽前</a></li>
+    <li><a href="#賽中">賽中</a>
+      <ul>
+        <li><a href="#0043-a-52">00:43 A 52</a></li>
+        <li><a href="#0112-b-56">01:12 B 56</a></li>
+        <li><a href="#0225-c-11">02:25 C 11</a></li>
+        <li><a href="#0349-d-63">03:49 D 63</a></li>
+      </ul>
+    </li>
+    <li><a href="#result">Result</a></li>
+    <li><a href="#出場">出場</a></li>
+    <li><a href="#檢討">檢討</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline">
+          [TOI] 2022 1 模
+        </h1>
+
+        
+        <div class="meta">
+          
+          <div class="postdate">
+            
+            <time datetime="2022-03-27 17:00:00 &#43;0800 CST" itemprop="datePublished">2022-03-27</time>
+            
+          </div>
+          
+          
+          <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="../../%20tags/toi" rel="tag">toi</a>
+            
+          </div>
+          
+        </div>
+      </header>
+
+      
+      <div class="content" itemprop="articleBody">
+        <h2 id="賽前">賽前</h2>
+<p>賽前真的很緊張，感覺有超多人都會爆打我（結果好像也的確如此），<br>
+只能好好把心態穩下來 qwq</p>
+<h2 id="賽中">賽中</h2>
+<p>進場時間燒雞，所以整場往後延 10 分鐘。<br>
+開場先讀 A</p>
+<ul>
+<li>A diophantus [5.0s, 1 GB]<br>
+給你 $n$ 個數字，問有多少組有序的 $(A,\,B,\,C)$ 滿足 $Ax + By = C$ 有整數解。<br>
+$1 \leq n \leq 10^5,\, 1 \leq a_i \leq 10^7$<br>
+[4] $n \leq 50,\, a_i \leq 100$<br>
+[15] $n \leq 700,\, a_i \leq 10^6$<br>
+[33] $n \leq 5000,\, a_i \leq 10^6$<br>
+[48] 無額外限制</li>
+</ul>
+<p>看了之後大概是數學排容之類的東西，然後看下一題，</p>
+<ul>
+<li>B dungeon [2.0s, 1 GB]<br>
+給你一張 $n$ 點 $m$ 邊帶權的 DAG，其中一個拓撲排序是 $x_1,\,x_2,\,\cdots,\,x_n,\,y_n,\,\cdots,\,y_1$，<br>
+問從 $1$ 開始，從 $x_1$ 開始經過所有下標 $\in [2,\,n]$ 剛好各一次並到達 $y_1$ 的最短距離。<br>
+$3 \leq n \leq 5 \times 10^4,\, 1 \leq m \leq 5 \times 10^5$<br>
+[7] $n \leq 10,\, m \leq 190$<br>
+[17] $n \leq 500$<br>
+[5] $n \leq 5000$，保證有一組最佳解經過剛好 $2$ 個 $x$<br>
+[27] $n \leq 5000$<br>
+[44] 無額外限制</li>
+</ul>
+<p>剛看到還以為不可做，但後來想一想就發現他似乎可以用兩邊夾起來 DP，</p>
+<ul>
+<li>C palindrome  [1.5s, 1 GB]<br>
+給你 $n$ 個字串 $s_i$，總長度是 $m$，計算有多少數對 $(i,\, j)$ 使得 $s_is_j$ 或 $s_js_i$ 是回文。 <br>
+$1 \leq n \leq 10^5,\, 1 \leq m \leq 2 \times 10^6$<br>
+[11] $n \leq 1000,\, m \leq 5000$<br>
+[26] $n \leq 50000,\, |s_i| \leq 300$<br>
+[63] 無額外限制</li>
+</ul>
+<p>看到的第一想法就大概是 hash 之類的東西，可能可以大小分或者做其他的事之類的，</p>
+<ul>
+<li>D fortress [9.0s, 1 GB] <br>
+給你 $n$ 個點，任三點不共線，問有多少凸多邊形。<br>
+$1 \leq n \leq 700$<br>
+[11] $n \leq 20$<br>
+[52] $n \leq 100$<br>
+[37] 無額外限制</li>
+</ul>
+<p>剛看到這題的時候感覺不太可做，想要枚舉一些東西或觀察一些等價的條件都沒找到，所以就先放著。</p>
+<p>開始決定寫 A $O(C \log C)$ 壓壓看可以過到哪裡，</p>
+<h3 id="0043-a-52">00:43 A 52</h3>
+<p>$\newline$</p>
+<p>只有過到值域是 $10^6$ 的 subtask，<br>
+這時候其實狀況不是很好，到了 40 分鐘才刻出來，中間花很久的地方是我有點忘記怎麼排容所以弄式子弄很久，<br>
+但這題是一題裸題所以我不應該在這裡花到太多時間，<br>
+感覺頭腦剛清醒有點笨，連 for 迴圈都可以寫超久。</p>
+<p>接下來去看了 B 發現可以定義 $dp_{i,\,j}$ 表示 $x$ 在 $i$、$y$ 在 $j$ 而且下標到 $\max(i,\,j)$ 的都解決了，<br>
+這時候會發現轉移只有 $x_i$ 走到 $x_{\max(i,\,j) + 1}$ 或 $y_j$ 走到 $x_{\max(i,\,j) + 1}$ 的可能，<br>
+所以可以在 $O(n^2)$ 裡解決這個問題。<br>
+過程中出了一個 bug 是最後算答案的時候跟怪東西取 min，<br>
+整天出 bug 的笨方塊看來這場是要燒掉了。</p>
+<h3 id="0112-b-56">01:12 B 56</h3>
+<p>$\newline$</p>
+<p>C 一開始想要分大小 $\sqrt m$ 的 case 做，但後來我發現這樣要 $O(n\sqrt m\log m)$ 做完我覺得有點太危險，<br>
+想了一段時間發現我根本不用判這樣，可以直接把所有東西 hash 之後丟進去一起做，<br>
+但是等我做完之後，我先用 map 做了一次得到</p>
+<h3 id="0225-c-11">02:25 C 11</h3>
+<p>$\newline$</p>
+<p>這裡最大的問題是，這時候如果我跳題寫 D 很可能心態會穩很多，或是可以嘗試兩題交替想或回去壓 A，<br>
+現在回去看 submission 紀錄覺得這時候想很久真的是整場的敗筆之一，</p>
+<p>回到那筆 submission，後面的 subtask 都是 TLE 所以我就打算先把它壓成 vector + sort，<br>
+這時候腦袋感覺真的很糟，推式子都可以推很久，實作也很燒雞，<br>
+應該要想清楚一點再實作，</p>
+<p>後來又花了很多時間壓下去，壓下去之後變成 WA，所以我就想加兩個 hash／<code>__int128</code> 的 hash，<br>
+這時候真的完全不該花時間在上面做這題，應該要跳題的，<br>
+二模的時候要記的提醒自己不要這樣做，<br>
+一直弄一直弄弄到 03:22 都沒 AC，反而倒虧了一堆時間。<br>
+而且這部分完全反映出我對 hash 不熟，用這樣的 hash 我選定的質數大概要 $O(m^2)$ 量級才行，<br>
+所以說我根本不應該嘗試這個解（何況他還帶 $\log$）</p>
+<p>偷偷回去壓 A 沒壓成功，<br>
+後來才決定跳題寫 D，一開始一直不知道要對什麼東西做事，但後來發現可以直接選定最下面右邊那個點，<br>
+然後就可以極角排序之後用外積好好 DP 了，目前複雜度是 $O(n^4)$，<br>
+寫了一下就一發拿到分數，</p>
+<h3 id="0349-d-63">03:49 D 63</h3>
+<p>$\newline$</p>
+<p>這時候的策略回去做 C 才是對的，因為 A 我感覺我壓不太下去了，然後 B 也沒有更進一步的想法，</p>
+<p>大概在剩 30 分鐘的時候，
+C 想到一個 hash + trie 的方法，可以 $O(n \log n + m)$，這樣應該可以快一點，<br>
+甚至可以加更多 hash，<br>
+接下來就刻到沒 debug 完，燒雞。</p>
+<h2 id="result">Result</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><green>4</green></td>
+<td><green>15</green></td>
+<td><green>33</green></td>
+<td>48</td>
+<td></td>
+<td></td>
+<td>52</td>
+</tr>
+<tr>
+<td>B</td>
+<td><green>7</green></td>
+<td><green>17</green></td>
+<td><green>5</green></td>
+<td><green>27</green></td>
+<td>44</td>
+<td></td>
+<td>56</td>
+</tr>
+<tr>
+<td>C</td>
+<td><green>11</green></td>
+<td>26</td>
+<td>63</td>
+<td></td>
+<td></td>
+<td></td>
+<td>11</td>
+</tr>
+<tr>
+<td>D</td>
+<td><green>11</green></td>
+<td><green>52</green></td>
+<td>37</td>
+<td></td>
+<td></td>
+<td></td>
+<td>63</td>
+</tr>
+<tr>
+<td>Score</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>182</td>
+</tr>
+</tbody>
+</table>
+<p>Rk. 15, 距 2! 線 -40</p>
+<h2 id="出場">出場</h2>
+<p>出場看到一堆人都會 AC，甚至有三個人破台，<br>
+我大概就下去了吧， <br>
+後來聽到 A 大家都是壓常壓下去的，只有我莫比烏斯反演太慢被卡，<br>
+C 有人樸素 hash 就過，甚至有人可以不 TLE，或是帶根號 $\log$ 都能過（還很快），<br>
+這場的 A、C 到底是什麼得= =<br>
+不過我自己策略也不太好，甚至對常數的觀念也很差，<br>
+我也怪不得 TOI 題目耍怪，只能說是自己太笨。</p>
+<h2 id="檢討">檢討</h2>
+<p>我覺得我初選打得還算可以的主要原因是我當下心態有好好穩住，而且開場就能開始全力思考，<br>
+這場心態的部分我沒有爆的很差，但中間花在 C 上面燒雞燒太久了，<br>
+所以我覺得我要開始好好練習貫徹自己的策略，以及保持能夠好好思考的腦袋，<br>
+希望二模可以好好把這個部分補起來，然後正常發揮隨緣看能不能進 2!。</p>
+<p>各位選訓加油 &gt;&lt;</p>
+
+      </div>
+    </article>
+
+    
+  
+
+
+
+
+
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Posts</a></li>
+         
+          <li><a href="../../working">Working</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#賽前">賽前</a></li>
+    <li><a href="#賽中">賽中</a>
+      <ul>
+        <li><a href="#0043-a-52">00:43 A 52</a></li>
+        <li><a href="#0112-b-56">01:12 B 56</a></li>
+        <li><a href="#0225-c-11">02:25 C 11</a></li>
+        <li><a href="#0349-d-63">03:49 D 63</a></li>
+      </ul>
+    </li>
+    <li><a href="#result">Result</a></li>
+    <li><a href="#出場">出場</a></li>
+    <li><a href="#檢討">檢討</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&text=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&is_video=false&description=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bTOI%5d%202022%201%20%e6%a8%a1&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&title=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&name=%5bTOI%5d%202022%201%20%e6%a8%a1&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e5%9c%a8%20TOI%20%e8%a2%ab%e6%a8%a1%e8%80%83%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-1mock%2f&t=%5bTOI%5d%202022%201%20%e6%a8%a1">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Little Cube Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</script>
+
+
+</html>
