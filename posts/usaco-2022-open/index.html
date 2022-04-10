@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> [USACO] USACO 2022 Open Gold (TOI 1! Day 8) | Little Cube Blog</title>
+  <meta name="description" content="如果我也能成為電神就好了...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="google-site-verification" content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388" />
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   <script src="https://littlecube8152.github.io/js/prism.js"></script>  <script src="https://littlecube8152.github.io/js/prism-line-numbers.js"></script> 
+  <meta property="og:title" content="[USACO] USACO 2022 Open Gold (TOI 1! Day 8)" />
+<meta property="og:description" content="笨方塊耍笨打 USACO 被爆揍，燒雞" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://littlecube8152.github.io/posts/usaco-2022-open/" /><meta property="article:section" content="posts" />
+
+<meta property="article:published_time" content="2022-04-10T12:00:00+08:00" />
+
+<meta property="article:modified_time" content="2022-04-10T12:00:00+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[USACO] USACO 2022 Open Gold (TOI 1! Day 8)"/>
+<meta name="twitter:description" content=""/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://littlecube8152.github.io/css/style-dark.css">
+  
+   <link rel="stylesheet" href="https://littlecube8152.github.io/css/syntax.css">  <link rel="stylesheet" href="https://littlecube8152.github.io/css/prism.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://littlecube8152.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://littlecube8152.github.io/posts/toi-2022-2mock/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&text=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&is_video=false&description=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&name=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e8%80%8d%e7%ac%a8%e6%89%93%20USACO%20%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&t=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#賽前">賽前</a></li>
+    <li><a href="#賽中">賽中</a>
+      <ul>
+        <li><a href="#0135-c-2sub16sub">01:35 C 2<sub>/16</sub></a></li>
+        <li><a href="#0144-c-10sub16sub">01:44 C 10<sub>/16</sub></a></li>
+        <li><a href="#0342-b-9sub16sub">03:42 B 9<sub>/16</sub></a></li>
+        <li><a href="#0351-c-2sub16sub">03:51 C 2<sub>/16</sub></a></li>
+        <li><a href="#0354-c-green16sub16subgreen">03:54 C <green>16<sub>/16</sub></green></a></li>
+        <li><a href="#0431-a-green22sub22subgreen">04:31 A <green>22<sub>/22</sub></green></a></li>
+      </ul>
+    </li>
+    <li><a href="#result">Result</a></li>
+    <li><a href="#檢討">檢討</a></li>
+    <li><a href="#心得">心得</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline">
+          [USACO] USACO 2022 Open Gold (TOI 1! Day 8)
+        </h1>
+
+        
+        <div class="meta">
+          
+          <div class="postdate">
+            
+            <time datetime="2022-04-10 12:00:00 &#43;0800 CST" itemprop="datePublished">2022-04-10</time>
+            
+          </div>
+          
+          
+          <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="../../%20tags/virtual" rel="tag">virtual</a>
+            
+             ,  
+            <a class="tag-link" href="../../%20tags/usaco" rel="tag">USACO</a>
+            
+          </div>
+          
+        </div>
+      </header>
+
+      
+      <div class="content" itemprop="articleBody">
+        <p>選訓一天一 OI 計畫 #3 &gt;&lt;<br>
+這篇的主要內容雖然是選訓的時候打的，但因為那是公開的所以理論上我不能當下發文，<br>
+後來結束之後就一直拖稿到現在，燒雞</p>
+<h2 id="賽前">賽前</h2>
+<p>看到 USACO Open Contest 在這幾天辦，所以就決定去打了，<br>
+時間是 11:30 ~ 16:30，有跨午餐。</p>
+<h2 id="賽中">賽中</h2>
+<p>開場先打了 <code>~/.vimrc</code>，然後把全部的題目都讀完：</p>
+<ul>
+<li>A Apple Catching<br>
+有 $N$ 個事件，每個事件有兩種可能：
+<ol>
+<li>在時間 $t_i$ 的時候 $x_i$ 出現了 $n_i$ 隻牛</li>
+<li>在時間 $t_i$ 的時候 $x_i$ 出現了 $n_i$ 隻顆蘋果</li>
+</ol>
+</li>
+<li>每隻牛能夠以 $1$ 單位的速度移動，但每一隻牛只能抓一顆蘋果，另外要是蘋果出現的時候沒有牛去抓他，那顆蘋果就會消失。<br>
+輸出最多能抓到幾顆蘋果。<br>
+$0 \leq  t_i \leq 10^9,\, 0 \leq  x_i \leq 10^9,\,0 \leq  n_i \leq 10^3$<br>
+[1<sub>/22</sub>] 範例<br>
+[21<sub>/22</sub>] 無額外限制</li>
+</ul>
+<p>沒什麼想法，但維度太多了感覺不好做，</p>
+<ul>
+<li>B Pair Programming<br>
+定義一個程式的運作是這樣定義的：
+<ul>
+<li>一開始 stack 是空的</li>
+<li>$+$ 會 push 一個 $1$ 進去</li>
+<li>$d$ 會把整個 stack $\times d$，特別的，如果 $d = 0$ 會清空整個 stack。</li>
+</ul>
+</li>
+<li>你有兩個長度是 $N$ 的程式，在所有把他們合併而不改變相對順序的條件下（共有 $\frac{(2N)!}{N!N!}$ 種），有多少種不同的最終結果？ 輸出 $\mod 10^9 + 7$。<br>
+$1 \leq N \leq 2000$<br>
+[1<sub>/16</sub>] 範例<br>
+[1<sub>/16</sub>] $N \leq 6$<br>
+[3<sub>/16</sub>] $N \leq 100$<br>
+[3<sub>/16</sub>] $N \leq 500$<br>
+[8<sub>/16</sub>] 無額外限制</li>
+</ul>
+<p>光讀懂題目就花很久的時間了，原本的題目沒有這麼好懂，<br>
+讀懂之後大概就知道他要 DP 了，但還是想了很久要怎麼列狀態跟轉移，</p>
+<ul>
+<li>C Balancing a Tree<br>
+你有一棵樹，定根在 $1$，第 $i$ 號節點可以在上面放 $[l_i,\,r_i]$ 的整數，<br>
+令 $s_i$ 是第 $i$ 號節點上的數字，找出一種放法使得 $\displaystyle\max_{u,\,v \in \text{subtree of }u}{|s_u - s_v|}$ 最小。<br>
+$2 \leq N \leq 10^5$<br>
+[1<sub>/16</sub>] 範例，不須構造 $s_i$<br>
+[1<sub>/16</sub>] 範例，須構造 $s_i$<br>
+[1<sub>/16</sub>] $l_i = r_i$，不須構造 $s_i$<br>
+[1<sub>/16</sub>] $l_i = r_i$，須構造 $s_i$<br>
+[1<sub>/16</sub>] 樹是一條鍊，不須構造 $s_i$<br>
+[1<sub>/16</sub>] 樹是一條鍊，須構造 $s_i$<br>
+[4<sub>/16</sub>] 須構造 $s_i$<br>
+[4<sub>/16</sub>] 不須構造 $s_i$</li>
+</ul>
+<p>稍微想一下就可以發現直接對答案二分搜就好，就一邊想細節一邊去吃飯。</p>
+<p>吃完飯就回來實作了，第一次用 vim 打打字有夠慢，還出一堆語法 bug，<br>
+傳上去之後</p>
+<h3 id="0135-c-2sub16sub">01:35 C 2<sub>/16</sub></h3>
+<p>$\newline$</p>
+<p>只過範測= =<br>
+稍微測了一段時間抓到一些問題，修一修再傳上去</p>
+<h3 id="0144-c-10sub16sub">01:44 C 10<sub>/16</sub></h3>
+<p>$\newline$</p>
+<p>不用構造的都過了，大概想了一下還是抓不到錯在哪裡，就先去想 AB 了。</p>
+<p>A 沒什麼頭緒，把時間對座標的圖畫出來還是觀察不到可以怎麼做，也沒有子題可以寫，<br>
+這時候回去看 B 就有點想法了，把 $dp$ 式列成<br>
+$dp_{0,\,i,\,j} = $ 用完第一個的前 $i$、第二個的前 $j$，最後是 push 的種類數<br>
+$dp_{1,\,i,\,j} = $ 用完第一個的前 $i$、第二個的前 $j$，最後是 $\times d$ 的種類數<br>
+小心注意 $0$ 要重置、$1$ 要忽略，就可以用 $O(N)$ 的時間轉移，<br>
+但實作超級麻煩= =</p>
+<p>從開始打第一行到把範測修好總共就花了快一個半小時，終於能傳上去了之後</p>
+<h3 id="0342-b-9sub16sub">03:42 B 9<sub>/16</sub></h3>
+<p>$\newline$</p>
+<p>現在兩題 BC 都要 debug，而且 B de 完還要回去優化前綴和，<br>
+又測了一下抓不到問題，就決定先去看看 C 到底構造錯在哪裡。</p>
+<p>測一下就抓到構造假解了，我的構造要從樹上往下做而不是只拿根的限制就好，所以寫完之後傳上去</p>
+<h3 id="0351-c-2sub16sub">03:51 C 2<sub>/16</sub></h3>
+<p>$\newline$</p>
+<p>不知道改到什麼連不用構造的都錯了= =<br>
+結果是自己複製到第一筆 submission，笨死，<br>
+再傳上去就拿到了，</p>
+<h3 id="0354-c-green16sub16subgreen">03:54 C <green>16<sub>/16</sub></green></h3>
+<p>$\newline$</p>
+<p>心態有稍微回來一點點，但還是覺得自己剩一小時才拿一伴有夠笨， <br>
+接下來就 AB 交替想，在畫 A 的圖之後突然發現牛的涵蓋範圍轉 45 度就是矩形了，這樣一來就可以好好的 greedy，<br>
+寫了掃描線之後</p>
+<h3 id="0431-a-green22sub22subgreen">04:31 A <green>22<sub>/22</sub></green></h3>
+<p>$\newline$</p>
+<p>當下覺得自己最後還能想出來真的有夠賽，這種 45 度我已經遇過好幾次竟然可以看不出來，<br>
+最後就回去找 B 的 bug 但找不出來，不壓前綴和的原因是這樣還要再實作很多，而且壓了也不見得會過，所以就放著了。</p>
+<h2 id="result">Result</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><green>1</green></td>
+<td><green>21</green></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><green>22</green></td>
+</tr>
+<tr>
+<td>B</td>
+<td><green>1</green></td>
+<td>1</td>
+<td><green>3</green></td>
+<td><green>3</green></td>
+<td>2<sub>/8</sub></td>
+<td></td>
+<td></td>
+<td></td>
+<td>9</td>
+</tr>
+<tr>
+<td>C</td>
+<td><green>1</green></td>
+<td><green>1</green></td>
+<td><green>1</green></td>
+<td><green>1</green></td>
+<td><green>1</green></td>
+<td><green>1</green></td>
+<td><green>4</green></td>
+<td><green>4</green></td>
+<td><green>22</green></td>
+</tr>
+<tr>
+<td>Score</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>844<sub>/1000</sub></td>
+</tr>
+</tbody>
+</table>
+<p>Rank 67 among all pre-college participants in this division.<br>
+有成功升上 Platinum，好耶</p>
+<h2 id="檢討">檢討</h2>
+<p>整場最大的問題大概是實作速度跟穩定度，感覺我已經抓到自己這件事不知道幾次了，<br>
+在各大 OJ 上題數超少的下場大概就是這樣吧，很多題目都不實作就放著精神導致比賽打得有夠爛，<br>
+這年要好好把 Queue 裡的東西都要實作完才算結束，不能單單只是解掉而已，<br>
+還有就是 A 那題觀察的東西不難但我觀察的太慢了，<br>
+總之我很笨，都不好好練程式被抓到。</p>
+<h2 id="心得">心得</h2>
+<p>這幾天回來看當初選訓的這些事，<br>
+當然還是會很氣師大卡常，但基本上我覺得好像也沒那麼難過了，<br>
+至少我在這兩個禮拜過的很快樂，可以不用管學校的事情（但我現在要補的東西好多，不想做zzz）<br>
+明年就是最後一年了，就這一年，好好補好我之前沒有扎實練好的，<br>
+這樣的態度應該會比之前那樣健康很多吧，<br>
+好好享受最後能夠在高中打競成的時光。</p>
+
+      </div>
+    </article>
+
+    
+  
+
+
+
+
+
+    <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="../../">Home</a></li>
+         
+          <li><a href="../../posts">Posts</a></li>
+         
+          <li><a href="../../working">Working</a></li>
+         
+          <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#賽前">賽前</a></li>
+    <li><a href="#賽中">賽中</a>
+      <ul>
+        <li><a href="#0135-c-2sub16sub">01:35 C 2<sub>/16</sub></a></li>
+        <li><a href="#0144-c-10sub16sub">01:44 C 10<sub>/16</sub></a></li>
+        <li><a href="#0342-b-9sub16sub">03:42 B 9<sub>/16</sub></a></li>
+        <li><a href="#0351-c-2sub16sub">03:51 C 2<sub>/16</sub></a></li>
+        <li><a href="#0354-c-green16sub16subgreen">03:54 C <green>16<sub>/16</sub></green></a></li>
+        <li><a href="#0431-a-green22sub22subgreen">04:31 A <green>22<sub>/22</sub></green></a></li>
+      </ul>
+    </li>
+    <li><a href="#result">Result</a></li>
+    <li><a href="#檢討">檢討</a></li>
+    <li><a href="#心得">心得</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&text=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&is_video=false&description=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&title=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&name=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e8%80%8d%e7%ac%a8%e6%89%93%20USACO%20%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fusaco-2022-open%2f&t=%5bUSACO%5d%20USACO%202022%20Open%20Gold%20%28TOI%201%21%20Day%208%29">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Little Cube Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="../../">Home</a></li>
+         
+        <li><a href="../../posts">Posts</a></li>
+         
+        <li><a href="../../working">Working</a></li>
+         
+        <li><a href="../../tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</script>
+
+
+</html>
