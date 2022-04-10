@@ -80,10 +80,12 @@
     
 <div id="archive">
   <script>
-    var randNum = Math.floor(Math.random() * 100);
-    window.history.back();
+    var randNum = Math.floor(Math.random() * 1000);
     if (randNum === 0)
-        window.open('https://5a0401.notion.site/', '_self');
+    {
+      window.alert("Redirecting to a very nice blog...")
+      window.open('https://5a0401.notion.site/', '_self');
+    }
     else 
         window.open('./resources/', '_self');
   </script>
