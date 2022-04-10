@@ -8,6 +8,9 @@
     <loc>https://littlecube8152.github.io/</loc>
     <lastmod>2022-04-10T12:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://littlecube8152.github.io/tags/oi/</loc>
+    <lastmod>2022-04-10T12:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://littlecube8152.github.io/posts/</loc>
     <lastmod>2022-04-10T12:00:00+08:00</lastmod>
   </url><url>
@@ -15,9 +18,6 @@
     <lastmod>2022-04-10T12:00:00+08:00</lastmod>
   </url><url>
     <loc>https://littlecube8152.github.io/tags/usaco/</loc>
-    <lastmod>2022-04-10T12:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://littlecube8152.github.io/tags/virtual/</loc>
     <lastmod>2022-04-10T12:00:00+08:00</lastmod>
   </url><url>
     <loc>https://littlecube8152.github.io/posts/toi-2022-2mock/</loc>
@@ -35,6 +35,9 @@
     <loc>https://littlecube8152.github.io/tags/joi/</loc>
     <lastmod>2022-03-23T22:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://littlecube8152.github.io/tags/virtual/</loc>
+    <lastmod>2022-03-23T22:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://littlecube8152.github.io/posts/virtual-joi-final-2020/</loc>
     <lastmod>2022-03-23T00:00:00+08:00</lastmod>
   </url><url>
@@ -43,6 +46,12 @@
   </url><url>
     <loc>https://littlecube8152.github.io/posts/virtual-joi-final-2021/</loc>
     <lastmod>2022-03-06T18:31:58+08:00</lastmod>
+  </url><url>
+    <loc>https://littlecube8152.github.io/tags/camp/</loc>
+    <lastmod>2022-01-29T11:54:18+08:00</lastmod>
+  </url><url>
+    <loc>https://littlecube8152.github.io/tags/ioic/</loc>
+    <lastmod>2022-01-29T11:54:18+08:00</lastmod>
   </url><url>
     <loc>https://littlecube8152.github.io/posts/ioic-2022/</loc>
     <lastmod>2022-01-29T11:54:18+08:00</lastmod>
@@ -71,6 +80,9 @@
     <loc>https://littlecube8152.github.io/posts/dp-sum-over-subsets/</loc>
     <lastmod>2021-06-10T09:57:32+08:00</lastmod>
   </url><url>
+    <loc>https://littlecube8152.github.io/tags/tutorial/</loc>
+    <lastmod>2021-06-10T09:57:32+08:00</lastmod>
+  </url><url>
     <loc>https://littlecube8152.github.io/posts/ds-scanning-line/</loc>
     <lastmod>2021-06-08T21:31:46+08:00</lastmod>
   </url><url>
@@ -90,9 +102,6 @@
     <lastmod>2021-04-24T17:40:29+08:00</lastmod>
   </url><url>
     <loc>https://littlecube8152.github.io/tags/codeforces/</loc>
-    <lastmod>2021-04-24T17:40:29+08:00</lastmod>
-  </url><url>
-    <loc>https://littlecube8152.github.io/tags/tutorial/</loc>
     <lastmod>2021-04-24T17:40:29+08:00</lastmod>
   </url><url>
     <loc>https://littlecube8152.github.io/posts/codeforces-427c/</loc>

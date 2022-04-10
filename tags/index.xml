@@ -8,6 +8,15 @@
     <language>zh-tw</language>
     <lastBuildDate>Sun, 10 Apr 2022 12:00:00 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>OI</title>
+      <link>https://littlecube8152.github.io/tags/oi/</link>
+      <pubDate>Sun, 10 Apr 2022 12:00:00 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/tags/oi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>USACO</title>
       <link>https://littlecube8152.github.io/tags/usaco/</link>
       <pubDate>Sun, 10 Apr 2022 12:00:00 +0800</pubDate>
@@ -17,16 +26,7 @@
     </item>
     
     <item>
-      <title>virtual</title>
-      <link>https://littlecube8152.github.io/tags/virtual/</link>
-      <pubDate>Sun, 10 Apr 2022 12:00:00 +0800</pubDate>
-      
-      <guid>https://littlecube8152.github.io/tags/virtual/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>toi</title>
+      <title>TOI</title>
       <link>https://littlecube8152.github.io/tags/toi/</link>
       <pubDate>Sun, 03 Apr 2022 01:30:00 +0800</pubDate>
       
@@ -40,6 +40,33 @@
       <pubDate>Wed, 23 Mar 2022 22:00:00 +0800</pubDate>
       
       <guid>https://littlecube8152.github.io/tags/joi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virtual</title>
+      <link>https://littlecube8152.github.io/tags/virtual/</link>
+      <pubDate>Wed, 23 Mar 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/tags/virtual/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>camp</title>
+      <link>https://littlecube8152.github.io/tags/camp/</link>
+      <pubDate>Sat, 29 Jan 2022 11:54:18 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/tags/camp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IOIC</title>
+      <link>https://littlecube8152.github.io/tags/ioic/</link>
+      <pubDate>Sat, 29 Jan 2022 11:54:18 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/tags/ioic/</guid>
       <description></description>
     </item>
     
@@ -62,6 +89,15 @@
     </item>
     
     <item>
+      <title>tutorial</title>
+      <link>https://littlecube8152.github.io/tags/tutorial/</link>
+      <pubDate>Thu, 10 Jun 2021 09:57:32 +0800</pubDate>
+      
+      <guid>https://littlecube8152.github.io/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>APIO</title>
       <link>https://littlecube8152.github.io/tags/apio/</link>
       <pubDate>Tue, 25 May 2021 09:42:27 +0800</pubDate>
@@ -76,15 +112,6 @@
       <pubDate>Sat, 24 Apr 2021 17:40:29 +0800</pubDate>
       
       <guid>https://littlecube8152.github.io/tags/codeforces/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tutorial</title>
-      <link>https://littlecube8152.github.io/tags/tutorial/</link>
-      <pubDate>Sat, 24 Apr 2021 17:40:29 +0800</pubDate>
-      
-      <guid>https://littlecube8152.github.io/tags/tutorial/</guid>
       <description></description>
     </item>
     

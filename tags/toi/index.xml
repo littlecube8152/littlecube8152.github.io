@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>toi on Little Cube Blog</title>
+    <title>TOI on Little Cube Blog</title>
     <link>https://littlecube8152.github.io/tags/toi/</link>
-    <description>Recent content in toi on Little Cube Blog</description>
+    <description>Recent content in TOI on Little Cube Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sun, 03 Apr 2022 01:30:00 +0800</lastBuildDate><atom:link href="https://littlecube8152.github.io/tags/toi/index.xml" rel="self" type="application/rss+xml" />
@@ -71,7 +71,7 @@
     </item>
     
     <item>
-      <title>[Blog][TOI] 2021 初選</title>
+      <title>[TOI] 2021 初選</title>
       <link>https://littlecube8152.github.io/posts/toi-2021-pre/</link>
       <pubDate>Sat, 13 Mar 2021 00:29:39 +0800</pubDate>
       
