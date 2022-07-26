@@ -353,13 +353,13 @@ body h3 {
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.333rem;
 }
 body h4 {
   color: #eee;
   text-decoration: underline;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 body h5,
 body h6 {
