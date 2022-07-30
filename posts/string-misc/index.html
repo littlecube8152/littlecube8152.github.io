@@ -1,0 +1,388 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> [String] 字串雜談 | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="[String] 字串雜談">
+<meta property="og:description" content="笨方塊耍笨寫字串被爆揍，燒雞">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/string-misc/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-07-31T00:00:00+08:00">
+<meta property="article:modified_time" content="2022-07-31T00:00:00+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="[String] 字串雜談">
+<meta name=twitter:description content>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/syntax.css> <link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/install-ubuntu/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&text=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&title=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&is_video=false&description=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&title=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&title=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&name=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e8%80%8d%e7%ac%a8%e5%af%ab%e5%ad%97%e4%b8%b2%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&t=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#hashing>Hashing</a></li>
+<li><a href=#minimum-rotation>Minimum Rotation</a>
+<ul>
+<li><a href=#lyndon-word>Lyndon word</a></li>
+<li><a href=#lyndon-factorization>Lyndon Factorization</a></li>
+<li><a href=#duvals-algorithm>Duval&rsquo;s Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+[String] 字串雜談
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2022-07-31 00:00:00 +0800 +0800" itemprop=datePublished>2022-07-31</time>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../%20tags/string rel=tag>string</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p>寫字串被揍爛到有點心得，紀錄一下學到的酷東西。</p>
+<h2 id=hashing>Hashing</h2>
+<p>雜湊的碰撞機率，可以把它看成幾乎是把字串隨機打在對應域 $p$ 裡，所以打 $k$ 次不撞的機率是
+$$\frac{p}{p}\times\frac{p-1}{p}\times\frac{p-2}{p}\times\cdots\times\frac{p-k+1}{p}$$
+利用 $e^x \approx 1 + x$ 來看，因為通常 $p$ 不會太小，所以
+$$\frac{p-k}{p} = 1 - \frac{k}{p} \approx \mathrm{exp}\left(-\frac k p\right)$$
+也就是說
+$$\frac{p}{p}\times\frac{p-1}{p}\times\frac{p-2}{p}\times\cdots\times\frac{p-k+1}{p} \approx \mathrm{exp}\left(-\frac{k(k-1)}{2p}\right)$$
+再用一次得到撞到的機率是
+$$1 - \frac{p}{p}\times\frac{p-1}{p}\times\frac{p-2}{p}\times\cdots\times\frac{p-k+1}{p} \approx \frac{k(k-1)}{2p}$$
+所以說對 $p$ 而言，大概只能辨別 $\mathcal O(\sqrt p)$ 種不同的字串，不然就會撞到。</p>
+<h2 id=minimum-rotation>Minimum Rotation</h2>
+<p>這個問題主要是想解決對一個環狀字串，找到他字典序最小的排列方法。<br>
+顯然可以用 Suffix Array 做掉，但這裡介紹一個酷酷的方法。</p>
+<p>參考 <a href=https://cp-algorithms.com/string/lyndon_factorization.html>Lyndon Factorization</a>，部分用詞可能不一樣。</p>
+<h3 id=lyndon-word>Lyndon word</h3>
+<p>對一個字串 $S$ 而言，他是 Lyndon word 若且唯若</p>
+<ul>
+<li>$S$ 的字典序比他的所有非空也非本身的後綴來的<strong>嚴格</strong>小。<br>
+其實他就等價他的字典序比他所有環狀字串裡字典序<strong>嚴格</strong>最小的排列方法。</li>
+</ul>
+<p>例如 <code>abc</code> 是一個 Lyndon word，但 <code>aa</code> 就不是（因為 <code>a</code> $&lt;$ <code>aa</code>）。</p>
+<h3 id=lyndon-factorization>Lyndon Factorization</h3>
+<p>對一個字串 $S$ 的 Lyndon Factorization 定義為，把 $S$ 切成若干個子字串 $s_1,\,s_2,\,\cdots,\,s_k$ 滿足</p>
+<ul>
+<li>$s_1 + s_2 + s_3 + \cdots + s_k = S$，其中 $+$ 是字串串接。</li>
+<li>$s_1,\,s_2,\,\cdots,\,s_k$ 都是 Lyndon word 。</li>
+<li>$s_1 \geq s_2 \geq \cdots \geq s_k$，其中 $\geq$ 是字典序比較。<br>
+我們先不管他存不存在，先觀察知道如果存在的話，會帶給我們什麼好處。</li>
+</ul>
+<p>對字串 $S + S$ 的 Lyndon Factorization 而言，如果其中一個 $s_i$ 的開頭在第一份的 $S$ 裡，結尾在第二份的 $S$ 裡，那這個子字串的起點一定是其中一個 Minimum Rotation 的開頭。<br>
+考慮所有在這之前的 $s_j\quad(j &lt; i)$ 的開頭，從他們當開頭一定不可能會更好，因為第三條定義：</p>
+<ul>
+<li>$s_1 \geq s_2 \geq \cdots \geq s_k$，其中 $\geq$ 是字典序比較。</li>
+</ul>
+<p>考慮所有在這之前不是 $s_j\quad(j &lt; i)$ 開頭的，他們一定更差，因為 Lyndon word 的定義：</p>
+<ul>
+<li>$S$ 的字典序比他的所有非空也非本身的後綴來的<strong>嚴格</strong>小。</li>
+</ul>
+<p>考慮所有在這之後在第一個 $S$ 裡，不是 $s_j\quad(j > i)$ 開頭的，他們也一定更差，因為 Lyndon word 的定義：</p>
+<ul>
+<li>$S$ 的字典序比他的所有非空也非本身的後綴來的<strong>嚴格</strong>小。</li>
+</ul>
+<p>考慮所有在這之後剩下的那些位置，他們不可能是答案，因為他們一定在前面就被排除了。</p>
+<p>假如我們找不到這樣的 $s_i$ 呢？<br>
+那答案就一定是不旋轉，因為在第二份 $S$ 的開頭就可以剛好適用剛剛的性質。</p>
+<h3 id=duvals-algorithm>Duval&rsquo;s Algorithm</h3>
+<p>問題就在，我們要怎麼找到 Lyndon Factorization？<br>
+剛剛我們甚至連存在性都沒有證明，現在我們要證明它的存在性，利用構造演算法。</p>
+<p>現在定義一個新的概念，我們說一個字串 $S$ 是 almost Lyndon word，如果他是由相同的 Lyndon word $s$ 重複以及一段（可能是空的）$s$ 的前綴。<br>
+為什麼這樣定義呢？因為我們可以觀察 almost Lyndon word 有一個性質：</p>
+<ul>
+<li>almost Lyndon word 前面重複的那些 $s$ 可以分別切成獨立的 Lyndon word。</li>
+</ul>
+<p>而 Duval&rsquo;s Algorithm 的概念很簡單，他把字串分成三分，分別是：<br>
+<strong>Lyndon Factorization 完的</strong>、<strong>almost Lyndon word</strong>、<strong>還沒處理的</strong>。</p>
+<p>這個演算法的概念是，我們嘗試把還沒處理的最前面一個加入 almost Lyndon word 裡，假如加不進去就把 almost Lyndon word 的前綴那些重複的 $s$ 切掉，然後繼續做。<br>
+但這樣永遠會滿足條件嗎？我們來觀察一下：</p>
+<ul>
+<li>假如加入的字元剛好跟 $s$ 的重複出現吻合<br>
+那加入一定沒問題。</li>
+<li>假如加入的字元 $ > s$ 接下來的重複出現字元<br>
+那一樣可以把它加入，也沒問題，因為此時雖然不滿足 $s$ 的重複出現，但整個 almost Lyndon word 現在是 Lyndon word 了，所以可以把它設成 $s$，繼續操作。</li>
+<li>假如加入的字元 $ &lt; s$ 接下來的重複出現字元<br>
+那就需要把前面完整的所有 $s$ 都倒出來變成 Lyndon Factorization 完的，同時繼續往下做完。</li>
+</ul>
+<p>我們可以驗證一下前兩個條件一定會保持，而第三個條件呢？<br>
+首先，同一批切出去的 $s$ 一定會一樣，所以沒問題。<br>
+而不同批切出去的呢？前面一定會比較大，假如是遇到字元變小，那新的那個屬實會更小，而遇到結尾的話，那新的會是前綴，也確實會比較小。</p>
+<p>大概到這裡已經有演算法的雛型了，繼續把它寫個更詳細一點：<br>
+首先有三個指標，$i$ 指著 <strong>almost Lyndon word</strong> 的開始，$j$ 指著<strong>還沒處理的</strong>開始，而 $k$ 則是用來告訴我們，要維持 $s$ 重複出現的話，下一個字元是什麼。<br>
+一開始 $i = k = 0,\,j = i + 1$。</p>
+<ul>
+<li>假如加入的字元剛好跟 $s$ 的重複出現吻合<br>
+那我們就能放心把 $j,\,k$ 都增加 $1$。</li>
+<li>假如加入的字元 $ > s$ 接下來的重複出現字元<br>
+那我們就能放心把 $j$ 都增加 $1$，但這時 $s$ 重置了，所以 $k$ 設成 $i$。</li>
+<li>假如加入的字元 $ &lt; s$ 接下來的重複出現字元<br>
+那我們就需要依序把前面的都清出去，因為 $j,\,k$ 剛好差一個 $s$ 的長度，所以可以不斷用 $j - k$ 當長度切出去。切完之後把 $k$ 設成 $i$，$j$ 設成 $i+1$，這裡是因為，雖然這邊留下來的是 $s$ 的前綴，但一個 Lyndon word 的前綴有可能不是 Lyndon word，所以我們要把它重新拆解。</li>
+</ul>
+<p>時間複雜度：儘管我們有機會失敗，但每次失敗至少都會有一半的字元被算好，所以整體來說鐵定是 $\mathcal O(|S|)$ 的。</p>
+<p>最後只多了判斷哪個是 Minimum Rotation，實作如下：</p>
+<pre><code class=language-cpp>int mincyc(string s)
+{
+    int n = s.size();
+    s = s + s;
+    int i = 0, ans = 0;
+    while (i &lt; s.size())
+    {
+        int j = i + 1, k = i;
+        while (j &lt; s.size() &amp;&amp; s[j] &gt;= s[k])
+        {
+            k = (s[j] &gt; s[k] ? i : k + 1);
+            ++j;
+        }
+        while (i &lt;= k)
+        {
+            if(i &lt; n &amp;&amp; i + j - k &gt;= n)
+                ans = i;
+            i += j - k;
+        }
+    }
+    return ans;
+}
+</code></pre>
+<p>這裡有個小細節可以簡化，也就是 16 - 17 行其實可以改在迴圈開始做，</p>
+<pre><code class=language-cpp>int mincyc(string s)
+{
+    int n = s.size();
+    s = s + s;
+    int i = 0, ans = 0;
+    while (i &lt; s.size())
+    {
+        ans = i;
+        int j = i + 1, k = i;
+        while (j &lt; s.size() &amp;&amp; s[j] &gt;= s[k])
+        {
+            k = (s[j] &gt; s[k] ? i : k + 1);
+            ++j;
+        }
+        while (i &lt;= k)
+            i += j - k;
+    }
+    return ans;
+}
+</code></pre>
+<p>因為，同一批丟出去的其實會一樣，所以這樣寫也會對。</p>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#hashing>Hashing</a></li>
+<li><a href=#minimum-rotation>Minimum Rotation</a>
+<ul>
+<li><a href=#lyndon-word>Lyndon word</a></li>
+<li><a href=#lyndon-factorization>Lyndon Factorization</a></li>
+<li><a href=#duvals-algorithm>Duval&rsquo;s Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&text=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&title=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&is_video=false&description=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&title=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&title=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&name=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e8%80%8d%e7%ac%a8%e5%af%ab%e5%ad%97%e4%b8%b2%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fstring-misc%2f&t=%5bString%5d%20%e5%ad%97%e4%b8%b2%e9%9b%9c%e8%ab%87" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2022 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>
