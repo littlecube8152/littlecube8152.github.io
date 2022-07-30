@@ -1,0 +1,76 @@
+baseURL = "https://littlecube8152.github.io/"
+languageCode = "zh-tw"
+relativeURLs = true
+title = "Little Cube Blog"
+theme = "cactus"
+paginate = 8
+pygmentsUseClasses = true
+
+
+hasCJKLanguage = 1
+summaryLength = -1000000000000
+
+# Navigation
+## Main menu which appears below site header.
+[menu]
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Working"
+url = "/working"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+[[menu.main]]
+name = "Resources"
+url = "/resources"
+weight = 5
+
+[params]
+    description = "如果我也能成為電神就好了..."
+    colortheme = "dark" 
+    googleAnalyticsAsync = true 
+    mathjax = true
+	# Custom CSS applied to default styles.
+    css = ["css/syntax.css", "css/prism.css"]
+    js = ["js/prism.js", "js/prism-line-numbers.js"]
+    [[params.social]]
+    name = "discord"
+    link = "https://discordapp.com/users/582151572646133770/"       
+    [[params.social]]
+    name = "email"
+    link = "froakie20161113@gmail.com"  # no need for "mailto:" in the head
+    [[params.social]]
+    name = "codeforces"
+    link = "https://codeforces.com/profile/LittleCube"
+
+[markup]
+    defaultMarkdownHandler = "goldmark"
+    [markup.goldmark.renderer] 
+        unsafe = true
+    [markup.highlight]
+        anchorLineNos = false
+        codeFences = false
+        # guessSyntax = false
+        # hl_Lines = ""
+        # lineAnchors = ""
+        # lineNoStart = ""
+        # lineNos = false
+        # lineNumbersInTable = false
+        # noClasses = false
+        # style = ""
+        # tabWidth = ""
+
