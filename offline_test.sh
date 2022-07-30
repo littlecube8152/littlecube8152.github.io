@@ -1,1 +1,1 @@
-hugo server -D
+hugo server

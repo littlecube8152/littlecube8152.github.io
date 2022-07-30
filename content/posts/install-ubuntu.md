@@ -2,6 +2,8 @@
 title: "Ubuntu 雙系統"
 date: 2022-07-27T00:00:47+08:00
 draft: false
+tags: ["ubuntu"]
+summary: "笨方塊耍笨裝 Ubuntu 被爆揍，燒雞"
 ---
 
 看到網路上都有很多關於 Ubuntu 的安裝，  
