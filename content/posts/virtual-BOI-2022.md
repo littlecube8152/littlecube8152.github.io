@@ -1,7 +1,7 @@
 ---
 title: "[Online Mirror] BOI 2022"
 date: 2022-05-18T11:11:09+08:00
-draft: true
+draft: false
 tags: ["virtual", "BOI", "OI"]
 summary: "笨方塊耍笨 vir BOI 2022 被爆揍，燒雞"
 ---

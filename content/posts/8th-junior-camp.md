@@ -1,7 +1,7 @@
 ---
 title: "[Camp] 第八屆國中生程式設計營"
 date: 2021-07-28T14:53:45+08:00
-draft: true
+draft: false
 tags: ["camp"]
 summary: "笨方塊想學寫程式被爆揍，燒雞"
 ---

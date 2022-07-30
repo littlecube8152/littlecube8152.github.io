@@ -1,7 +1,7 @@
 ---
 title: "[Virtual] JOI 本選 2021"
 date: 2022-03-06T18:31:58+08:00
-draft: true
+draft: false
 tags: ["virtual", "JOI", "OI"]
 summary: "笨方塊耍笨 vir JOI 2021 被爆揍，燒雞"
 ---

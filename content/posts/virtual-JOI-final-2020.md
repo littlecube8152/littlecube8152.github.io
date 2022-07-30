@@ -2,7 +2,7 @@
 title: "[Virtual] JOI 本選 2020"
 description: "TOI 1! Day 2"
 date: 2022-03-23T00:00:00+08:00
-draft: true
+draft: false
 tags: ["virtual", "JOI", "OI"]
 summary: "笨方塊耍笨 vir JOI 2020 被爆揍，燒雞"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "[AtCoder] DP Contest"
 date: 2021-05-27T17:01:26+08:00
-draft: true
+draft: false
 summary: "笨方塊想學 DP 被爆揍，燒雞"
 ---
 

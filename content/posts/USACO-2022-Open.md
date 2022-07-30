@@ -2,7 +2,7 @@
 title: "[USACO] USACO 2022 Open Gold"
 description: "TOI 1! Day 8"
 date: 2022-04-10T12:00:00+08:00
-draft: true
+draft: false
 tags: ["USACO", "OI"]
 summary: "笨方塊耍笨打 USACO 被爆揍，燒雞"
 ---

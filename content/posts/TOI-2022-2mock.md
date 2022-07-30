@@ -1,7 +1,7 @@
 ---
 title: "[TOI] 2022 2 模 + 1! 心得"
 date: 2022-04-03T01:30:00+08:00
-draft: true
+draft: false
 tags: ["TOI", "OI"]
 summary: "笨方塊在 TOI 被模考爆揍，燒雞"
 ---

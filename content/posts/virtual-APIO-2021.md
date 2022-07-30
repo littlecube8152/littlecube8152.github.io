@@ -1,7 +1,7 @@
 ---
 title: "[Virtual] APIO 2021"
 date: 2021-05-25T09:42:27+08:00
-draft: true
+draft: false
 tags: ["virtual", "APIO", "OI"]
 summary: "笨方塊耍笨 vir APIO 2021 被爆揍，燒雞"
 ---

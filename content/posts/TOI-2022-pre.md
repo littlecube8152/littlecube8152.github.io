@@ -1,7 +1,7 @@
 ---
 title: "[TOI] 2022 初選"
 date: 2022-03-20T20:49:10+08:00
-draft: true
+draft: false
 tags: ["TOI", "OI"]
 summary: "笨方塊再度回到 TOI 初選被爆揍，燒雞"
 ---

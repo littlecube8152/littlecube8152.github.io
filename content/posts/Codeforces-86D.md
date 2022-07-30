@@ -2,7 +2,7 @@
 title: "[Codeforces] 86D"
 description: "Powerful array"
 date: 2021-03-31T12:30:20+08:00
-draft: true
+draft: false
 tags: ["codeforces","tutorial"]
 summary: "笨方塊想學寫程式被爆揍，燒雞"
 ---

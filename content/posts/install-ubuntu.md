@@ -1,7 +1,7 @@
 ---
 title: "Ubuntu 雙系統"
 date: 2022-07-27T00:00:47+08:00
-draft: true
+draft: false
 ---
 
 看到網路上都有很多關於 Ubuntu 的安裝，  

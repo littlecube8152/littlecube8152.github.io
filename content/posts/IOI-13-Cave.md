@@ -1,7 +1,7 @@
 ---
 title: "[IOI] '13 Cave"
 date: 2021-03-30T23:21:27+08:00
-draft: true
+draft: false
 tags: ["IOI", "OI", "tutorial"]
 summary: "笨方塊想寫 IOI 題被爆揍，燒雞"
 ---

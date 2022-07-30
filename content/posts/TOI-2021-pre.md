@@ -1,7 +1,7 @@
 ---
 title: "[TOI] 2021 初選"
 date: 2021-03-13T00:29:39+08:00
-draft: true
+draft: false
 tags: ["TOI", "OI"]
 summary: "笨方塊耍笨 TOI 2021 初選被爆揍，燒雞"
 ---

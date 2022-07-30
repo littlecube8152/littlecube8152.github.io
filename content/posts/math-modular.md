@@ -1,7 +1,7 @@
 ---
 title: "[數論] 質數與模運算"
 date: 2021-07-29T15:13:11+08:00
-draft: true
+draft: false
 tags: ["math"]
 summary: "笨方塊想學數學被爆揍，燒雞"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "[Codeforces] Mashup 練習1"
 date: 2021-03-09T23:29:39+08:00
-draft: true
+draft: false
 tags: ["codeforces"]
 summary: "笨方塊想學寫程式被爆揍，燒雞"
 ---

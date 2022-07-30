@@ -2,7 +2,7 @@
 title: "[DP] Sum over Subsets Optimization"
 description: "CF 165E, CF 383E, CF 449D, CF 800D"
 date: 2021-06-10T09:57:32+08:00
-draft: true
+draft: false
 tags: ["tutorial"]
 summary: "笨方塊想學 SoS DP 優化被爆揍，燒雞"
 ---

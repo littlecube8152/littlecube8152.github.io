@@ -2,7 +2,7 @@
 title: "[Codeforces] 986B"
 description: "Petr and Permutations"
 date: 2021-03-30T15:05:49+08:00
-draft: true
+draft: false
 tags: ["codeforces","tutorial"]
 summary: "笨方塊想學寫程式被爆揍，燒雞"
 ---

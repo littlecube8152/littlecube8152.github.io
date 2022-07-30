@@ -1,7 +1,7 @@
 ---
 title: "[TOI] 2022 1 模"
 date: 2022-03-28T10:00:00+08:00
-draft: true
+draft: false
 tags: ["TOI", "OI"]
 summary: "笨方塊在 TOI 被模考爆揍，燒雞"
 ---

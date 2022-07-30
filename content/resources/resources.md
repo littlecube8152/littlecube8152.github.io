@@ -1,7 +1,7 @@
 ---
 title: "Resources"
 date: 2022-04-10T15:25:38+08:00
-draft: true
+draft: false
 ---
 列出一些學習資源，希望可以幫到想學習競程的人  
 

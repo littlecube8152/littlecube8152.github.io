@@ -2,7 +2,7 @@
 title: "[Codeforces] 427C"
 description: "Checkposts"
 date: 2021-04-21T02:17:49+08:00
-draft: true
+draft: false
 tags: ["codeforces","tutorial"]
 summary: "笨方塊想學寫程式被爆揍，燒雞"
 ---

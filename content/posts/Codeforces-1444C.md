@@ -2,7 +2,7 @@
 title: "[Codeforces] 1444C"
 description: "Team-Building"
 date: 2021-04-25T13:33:39+08:00
-draft: true
+draft: false
 summary: "笨方塊想學寫程式被爆揍，燒雞"
 ---
 

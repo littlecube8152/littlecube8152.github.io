@@ -2,7 +2,7 @@
 title: "[Codeforces] 1182E"
 description: "Product Oriented Recurrence"
 date: 2021-02-03T21:08:39+08:00
-draft: true
+draft: false
 tags: ["codeforces","math","tutorial"]
 summary: "笨方塊想學寫程式被爆揍，燒雞"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "[Virtual] BOI 2018"
 date: 2021-12-31T12:31:55+08:00
-draft: true
+draft: false
 tags: ["virtual", "BOI", "OI"]
 summary: "笨方塊耍笨 vir BOI 2018 被爆揍，燒雞"
 ---
