@@ -72,7 +72,7 @@ $$1 - \frac{p}{p}\times\frac{p-1}{p}\times\frac{p-2}{p}\times\cdots\times\frac{p
  - 假如加入的字元 $ > s$ 接下來的重複出現字元  
     那一樣可以把它加入，也沒問題，因為此時雖然不滿足 $s$ 的重複出現，但整個 almost Lyndon word 現在是 Lyndon word 了，所以可以把它設成 $s$，繼續操作。
  - 假如加入的字元 $ < s$ 接下來的重複出現字元  
-    那就需要把前面完整的所有 $s$ 都倒出來變成 Lyndon Factorization 完的，同時繼續往下做完。  
+    那就需要把前面完整的所有 $s$ 都倒出來變成 Lyndon Factorization 完的。這裡雖然直覺會覺得可以繼續往下做完，但實際上要是這個 $s$ 的前綴有循環就會燒雞，所以要把所有剩下的 almost Lyndon word 都設成還沒處理。  
 
 我們可以驗證一下前兩個條件一定會保持，而第三個條件呢？  
 首先，同一批切出去的 $s$ 一定會一樣，所以沒問題。  
