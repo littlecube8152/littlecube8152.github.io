@@ -1,0 +1,101 @@
+{
+    "Hit": {
+        "name": "\u78b0\u649e",
+        "short_name": "Hit",
+        "contest": "T24_5fSurvival",
+        "max_score": 100,
+        "extra_headers": [
+            "Subtask 1 (20)",
+            "Subtask 2 (80)"
+        ],
+        "order": 3,
+        "score_mode": "max_subtask",
+        "score_precision": 0
+    },
+    "Ice": {
+        "name": "\u586b\u6eff\u51b0\u584a",
+        "short_name": "Ice",
+        "contest": "T24_5fSurvival",
+        "max_score": 100,
+        "extra_headers": [
+            "Subtask 1 (0)",
+            "Subtask 2 (49)",
+            "Subtask 3 (51)"
+        ],
+        "order": 6,
+        "score_mode": "max_subtask",
+        "score_precision": 0
+    },
+    "Virus": {
+        "name": "\u75c5\u6bd2\u64f4\u6563",
+        "short_name": "Virus",
+        "contest": "T24_5fSurvival",
+        "max_score": 100,
+        "extra_headers": [
+            "Subtask 1 (10)",
+            "Subtask 2 (10)",
+            "Subtask 3 (45)",
+            "Subtask 4 (35)"
+        ],
+        "order": 4,
+        "score_mode": "max_subtask",
+        "score_precision": 0
+    },
+    "Classroom": {
+        "name": "\u56db\u5341\u4e94\u5ea6\u96fb\u8166\u6559\u5ba4",
+        "short_name": "Classroom",
+        "contest": "T24_5fSurvival",
+        "max_score": 100,
+        "extra_headers": [
+            "Subtask 1 (0)",
+            "Subtask 2 (23)",
+            "Subtask 3 (77)"
+        ],
+        "order": 5,
+        "score_mode": "max_subtask",
+        "score_precision": 0
+    },
+    "Tsunami": {
+        "name": "\u6d77\u562f",
+        "short_name": "Tsunami",
+        "contest": "T24_5fSurvival",
+        "max_score": 100,
+        "extra_headers": [
+            "Subtask 1 (0)",
+            "Subtask 2 (5)",
+            "Subtask 3 (16)",
+            "Subtask 4 (79)"
+        ],
+        "order": 2,
+        "score_mode": "max_subtask",
+        "score_precision": 0
+    },
+    "Chat": {
+        "name": "\u804a\u5929",
+        "short_name": "Chat",
+        "contest": "T24_5fSurvival",
+        "max_score": 100,
+        "extra_headers": [
+            "Subtask 1 (0)",
+            "Subtask 2 (40)",
+            "Subtask 3 (60)"
+        ],
+        "order": 0,
+        "score_mode": "max_subtask",
+        "score_precision": 0
+    },
+    "Vending": {
+        "name": "\u81ea\u52d5\u8ca9\u8ce3\u6a5f",
+        "short_name": "Vending",
+        "contest": "T24_5fSurvival",
+        "max_score": 100,
+        "extra_headers": [
+            "Subtask 1 (0)",
+            "Subtask 2 (34)",
+            "Subtask 3 (66)"
+        ],
+        "order": 1,
+        "score_mode": "max_subtask",
+        "score_precision": 0
+    }
+}
