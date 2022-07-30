@@ -1,0 +1,513 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> [TOI] 2022 2 模 + 1! 心得 | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="[TOI] 2022 2 模 + 1! 心得">
+<meta property="og:description" content="笨方塊在 TOI 被模考爆揍，燒雞">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/toi-2022-2mock/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-04-03T01:30:00+08:00">
+<meta property="article:modified_time" content="2022-04-03T01:30:00+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="[TOI] 2022 2 模 + 1! 心得">
+<meta name=twitter:description content>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/syntax.css> <link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/toi-2022-1mock/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/usaco-2022-open/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&text=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&title=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&is_video=false&description=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&title=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&title=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&name=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e5%9c%a8%20TOI%20%e8%a2%ab%e6%a8%a1%e8%80%83%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&t=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#前言>前言</a></li>
+<li><a href=#1-總結>1! 總結</a></li>
+<li><a href=#2-模>2 模</a>
+<ul>
+<li><a href=#d-0>D 0</a></li>
+<li><a href=#d-0-1>D 0</a></li>
+<li><a href=#d-測資有誤稍後修正後將會進行-rejudge>D 測資有誤，稍後修正後將會進行 rejudge。</a></li>
+<li><a href=#d-11>D 11</a></li>
+<li><a href=#d-green100green>D <green>100</green></a></li>
+<li><a href=#a-32>A 32</a></li>
+<li><a href=#b-25>B 25</a></li>
+<li><a href=#因應-d-測資問題部分參賽者將延長比賽時間>因應 D 測資問題，部分參賽者將延長比賽時間</a></li>
+<li><a href=#c-666>C 6.66</a></li>
+<li><a href=#c-823>C 8.23</a></li>
+</ul>
+</li>
+<li><a href=#result>Result</a></li>
+<li><a href=#出場>出場</a></li>
+<li><a href=#檢討>檢討</a></li>
+<li><a href=#結訓>結訓</a></li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+[TOI] 2022 2 模 + 1! 心得
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2022-04-03 01:30:00 +0800 +0800" itemprop=datePublished>2022-04-03</time>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../%20tags/toi rel=tag>TOI</a>
+,
+<a class=tag-link href=../../%20tags/oi rel=tag>OI</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<h2 id=前言>前言</h2>
+<p>長話短說，我沒有進 2!，Rk. 14 w/ -41.0<br>
+結果是，如果我一模過了 A 48 或 C，就會進二階。<br>
+我不知道接下來要怎麼辦，<br>
+但至少把現在的想法記錄下來，之後再回來看，或明年的這時候再回來看，<br>
+或許會有不一樣的感覺吧，<br>
+又或者到了那個時候，我比今年還更慘。</p>
+<p>接下來的內容可能有點負面，請自行斟酌閱讀。</p>
+<h2 id=1-總結>1! 總結</h2>
+<p>基本上跟去年類似，資奧真的是一個很歡樂的地方，<br>
+比起去年而言，我跟其他人更熟了一點~~，也多噴了很多怪話~~<br>
+每天的日程大概是聽課／寫題／vir OI → 午餐 → 聽課／寫題／vir 剛剛暫停的 OI → 晚餐 → 耍廢 → 回飯店打日麻<br>
+高一的時候真的不知道在幹嘛，今年至少比較有進入狀況了。<br>
+一些酷／怪事：</p>
+<ul>
+<li>球場都在整修沒辦法打球 qwq</li>
+<li>TIOJ 愚人節比賽（對不起 A 爆雷的那個就是我，我道歉 qwq）</li>
+<li>剛打開就有預處理的拼圖</li>
+<li>連續兩次延期的模考</li>
+<li>PixelCat 被我盜帳超多次</li>
+<li>友人場三人南和出國士無雙，但還是吃三位</li>
+<li>變超好的西餐廳（但是很貴 qwq）</li>
+<li>shaun 的國士無雙 orz</li>
+<li>看到附中高一都在刷 USACO Guide Platinum 但我還在 Silver qwq
+這項真的不是我裝弱，我 Silver 裡面有很多 Very Hard 跟 Insane 都寫不出來</li>
+<li>我怪話 Rk. 1</li>
+<li>學會用 vim</li>
+</ul>
+<h2 id=2-模>2 模</h2>
+<p>註：以下很多是靠印象的，所以沒有實際時間，甚至順序我可能記錯了，<br>
+所以僅供參考而已。</p>
+<p>開場先登入跟打 .vimrc，<br>
+然後先讀了 A</p>
+<ul>
+<li>A roller [1.0s, 1 GB]<br>
+給你 $n$ 個點的樹，有 $m$ 個點有不同的油漆滾筒，油漆滾筒可以自由的在同色的地方移動，如果移動到空白就會把那格染上那個顏色，另外不能移動到已經被塗色的地方。<br>
+定義兩個方案不同若且唯若按照被染色的順序排列空白節點之後，存在一個位置兩個方案的節點不同或染的顏色不同，輸出方案數 $\mod 10^9 + 7$。 <br>
+$1 \leq m \leq n \leq 500$ <br>
+[7] $n \leq 8$<br>
+[25] $n \leq 20$<br>
+[29] 每個點的點度至多是 $3$<br>
+[39] 無額外限制</li>
+</ul>
+<p>看了覺得是樹 DP，但怎麼推卻發現狀態越開越多，亂做做到還要一堆數學式子就覺得他是難題就先放著了。</p>
+<ul>
+<li>B fertility [<strong>Communication</strong>, 5.0s, 1 GB]<br>
+Judge 有一個 $n \times n$ 的 +1/-1 網格， <br>
+你可以詢問一格或一個矩形的總和最多 $40000$ 次，決定一條從 $(0,\,0)$ 到 $(n,\,n)$ 只包含 <code>U</code>、<code>R</code> 的路徑，<br>
+如果你的詢問跟路徑都是合法的，則答案的價值 $a$ 定義為這條路徑右下的總和。若最佳解為 $a^*$，則你的分數 $S$ 被定義為<br>
+$S = \begin{cases} 0.0 & a &lt; 0 \\ 1.0 & a > 0.99a^* \\ \frac{a}{0.99a^*} & \text{otherwise} \end{cases}$<br>
+$3 \leq n \leq 1000 ,\, a^* \geq 2n$ <br>
+[11] $n \leq 100$<br>
+[14] 每個列的值非嚴格遞增<br>
+[75] 無額外限制</li>
+</ul>
+<p>剛看到大概就決定把他先丟掉了，只有知道 Subtask 1, 2 是可以確定性的做出來的。</p>
+<ul>
+<li>C lantern [0.5s, 1 GB]<br>
+給你 $4n$ 個數字 $c_i \in [0,\,n - 1]$ 以及評分常數 $k$，你要拿出 $2n$ 個數字使得所有 $c_i$ 都出現兩次，而且所選擇位置的總和恰好是全部的一半，接下來你要把他們兩兩配對，定義 $d$ 為位置總和最大那組及最小那組的差。有解輸出方案，無解請輸出 <code>-1</code>。 <br>
+你的分數 $S$ 定義為
+$S = \begin{cases} 1.0 & \text{the test case don&rsquo;t have any solution and you outputs } -1 \\ 0.0 & \text{the test case has a solution and you outputs } -1 \\ \dfrac{k}{k + d^{0.7}} & \text{otherwise} \end{cases}$
+$1 \leq n \leq 10^5,\, 1 \leq k \leq 50$<br>
+[10] $n \leq 10,\,k = 10$<br>
+[31] $n \leq 210,\,k = 24$<br>
+[59] 無額外限制</li>
+</ul>
+<p>看到的第一想法是大怪題，甚至我猜根本沒有滿分解，就先丟掉等到後來再回來做好了。</p>
+<ul>
+<li>D rectangle [0.5s, 1 GB] <br>
+給你 $N$ 個矩形，第 $i$ 個個矩形有參數高 $H_i$、寬 $W_i$、亮度 $D_i$、成本參數 $C_i,\,F_i$。<br>
+其中 $H$ 是單調遞增的，覆蓋 $[L,\,R]$ 的矩形需要成本
+$$C_R \frac{\sum_{i = L}^{R}D_iW_i}{\sum_{i = L}^{R}W_i}\sum_{i = L}^{R}W_i + F_R$$<br>
+問最小覆蓋成本。<br>
+$1 \leq N \leq 2 \times 10^5,\, 1 \leq W_i,\,H_i \leq 10^6,\, -16 \leq D_i \leq 16,\, -10^6 \leq C_i,\, F_i \leq 10^6$<br>
+[3] $N \leq 100$<br>
+[8] $N \leq 2000$<br>
+[12] $C_i = 1$<br>
+[32] $D_i > 0$<br>
+[45] 無額外限制</li>
+</ul>
+<p>剛看到這題的時候感覺連 $O(N^2)$ 都只給 11 分是什麼狠題，但仔細一看才發現這題根本是裸的斜率優化，因為前面都太難所以二話不說直接開刻。</p>
+<h3 id=d-0>D 0</h3>
+<p>$\newline$</p>
+<p>debug 了好多次都 WA，我記得這時候我大概花了一個多小時，但我覺得其他題目不好做，所以就決定寫暴力對拍看看，反正暴力很快，</p>
+<h3 id=d-0-1>D 0</h3>
+<p>$\newline$</p>
+<p>？？？？？<br>
+確定轉移式是好的之後，就打算先放著去看看 A 有沒有好做法了。<br>
+推一推發現真的很難 DP，不限制時間下還是很難列出多項式時間的做法，<br>
+但就在我放棄 D 的 10 分鐘後，</p>
+<h3 id=d-測資有誤稍後修正後將會進行-rejudge>D 測資有誤，稍後修正後將會進行 rejudge。</h3>
+<p>我看到之後心態簡直是崩了，等他 rejudge 完之後我還是 0 分，<br>
+但我覺得怪怪的，所以我就再傳了一次暴力（我印象中是傳完全一模一樣的 code），</p>
+<h3 id=d-11>D 11</h3>
+<p>$\newline$</p>
+<p>？？？？？
+現在想起來我很有可能是傳到錯的 code，但印象中又沒有，</p>
+<p>總之當下的心情蠻生氣的，<br>
+至少我對拍一下就抓到 bug 了，終於</p>
+<h3 id=d-green100green>D <green>100</green></h3>
+<p>$\newline$</p>
+<p>這大概是第一次在模考裡面拿到 <green>AC</green> 吧，所以當下心態就直接回來了。</p>
+<p>之後就繼續去推 A 的式子發現越推這坨東西根本就沒辦法推進到滿分，就決定先寫個快速的暴力</p>
+<h3 id=a-32>A 32</h3>
+<p>$\newline$</p>
+<p>之後就去寫了 C 的暴力 $6^n$ 但 TLE，明明我覺得夠快，</p>
+<p>至少好好實作把 B 的前兩個寫掉了，<br>
+這部分我就不細做說明，因為過程其實就蠻單純的，</p>
+<h3 id=b-25>B 25</h3>
+<p>$\newline$</p>
+<p>後來發現自己 A 的解其實可以多做那 29，但越推越發現 case 很多而且數學的部分還要推，<br>
+所以就決定放棄去喇 B 跟 C，</p>
+<p>首先是先在 C 的爆搜加了時間剪枝跟答案 0 剪枝，傳上去拿到</p>
+<h3 id=因應-d-測資問題部分參賽者將延長比賽時間>因應 D 測資問題，部分參賽者將延長比賽時間</h3>
+<p>調整的規則是（rejudge 前最後一次 submit 時間 - rejudge 前第一次分數有變動的 submission），<br>
+也就是說，儘管測資爛掉我還是沒補到時間，<br>
+有點想確認我的那個暴力到底是發生什麼事，<br>
+如果我沒想錯的話，我的時間是被吃掉了。</p>
+<p>師大燒雞= =</p>
+<h3 id=c-666>C 6.66</h3>
+<p>$\newline$</p>
+<p>然後就去把 B 的大子題打算用分塊做看看，但很不幸地沒有拿到任何分數。<br>
+這時候敗筆是，B 的難度顯然比 C 簡單，所以我應該隨便做 C 就回來做 B，</p>
+<p>後來把 C 加了一些 random 喇到</p>
+<h3 id=c-823>C 8.23</h3>
+<p>然後比賽就結束了。</p>
+<h2 id=result>Result</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>Sum</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><green>7</green></td>
+<td><green>25</green></td>
+<td>29</td>
+<td>39</td>
+<td></td>
+<td>32</td>
+<td></td>
+</tr>
+<tr>
+<td>B</td>
+<td><green>11</green></td>
+<td><green>14</green></td>
+<td>75</td>
+<td></td>
+<td></td>
+<td>25</td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td><green>8.23</green><sub>/10</sub></td>
+<td>31</td>
+<td>59</td>
+<td></td>
+<td></td>
+<td>8.23</td>
+<td></td>
+</tr>
+<tr>
+<td>D</td>
+<td><green>3</green></td>
+<td><green>8</green></td>
+<td><green>12</green></td>
+<td><green>32</green></td>
+<td><green>45</green></td>
+<td><green>100</green></td>
+<td></td>
+</tr>
+<tr>
+<td>Score</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>165.23</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>一二模 Rk. 14, 距 2! 線 -41</p>
+<h2 id=出場>出場</h2>
+<p>出場大概知道自己涼了，沒有發現 B 其實可以亂喇喇到很高，<br>
+然後 C 聽到竟然是 2020 IMO p3 直接照抄，<br>
+我覺得師大今年真的是燒雞，<br>
+初選出了 2022、一模卡常、二模抄題目跟測資出爛，<br>
+接下來三四模又會長怎樣呢？</p>
+<p>結果是，如果我一模過了 A 48 或 C，就會進二階。</p>
+<h2 id=檢討>檢討</h2>
+<p>這場我覺得時間安排上沒有很大的問題，但就是 B 我沒有好好喇，然後 C 我覺得我可能有機會猜出來吧（雖然機會渺茫），<br>
+總之今年就結果來講，我花了一年卻沒有什麼長進。</p>
+<h2 id=結訓>結訓</h2>
+<p>坐上到北車的接駁車上，就只有我一個人，<br>
+就這樣結束了，我的眼淚默默地流下來，<br>
+我看著我被卡常的事實，<br>
+好像也不能改變什麼。</p>
+<p>下一年就是高三了，除了普通的課業還有學測要顧，<br>
+在高二的時候我光是一般的課業就沒辦法兼顧競程了，<br>
+在高三這年，我還能繼續堅持下去嗎？<br>
+今天坐車的時候，我很確定我要搭哪班車、到哪裡，<br>
+但同樣是今天，我不知道接下來該怎麼做，<br>
+看著明年就是最後一年了，<br>
+我的高中就好像恍恍惚惚少了一半，<br>
+今年高一的人明年還有高二、高三，但我<br>
+是不是，只剩最後的機會了？</p>
+<p>明年的這個時候，我會在哪裡？</p>
+<p>總之等 USACO Open 出來的時候我應該會再寫一篇（因為那場是選訓營裡打的），<br>
+到時候等我的心情沉澱之後，再看我到時候怎麼想吧。</p>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#前言>前言</a></li>
+<li><a href=#1-總結>1! 總結</a></li>
+<li><a href=#2-模>2 模</a>
+<ul>
+<li><a href=#d-0>D 0</a></li>
+<li><a href=#d-0-1>D 0</a></li>
+<li><a href=#d-測資有誤稍後修正後將會進行-rejudge>D 測資有誤，稍後修正後將會進行 rejudge。</a></li>
+<li><a href=#d-11>D 11</a></li>
+<li><a href=#d-green100green>D <green>100</green></a></li>
+<li><a href=#a-32>A 32</a></li>
+<li><a href=#b-25>B 25</a></li>
+<li><a href=#因應-d-測資問題部分參賽者將延長比賽時間>因應 D 測資問題，部分參賽者將延長比賽時間</a></li>
+<li><a href=#c-666>C 6.66</a></li>
+<li><a href=#c-823>C 8.23</a></li>
+</ul>
+</li>
+<li><a href=#result>Result</a></li>
+<li><a href=#出場>出場</a></li>
+<li><a href=#檢討>檢討</a></li>
+<li><a href=#結訓>結訓</a></li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&text=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&title=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&is_video=false&description=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&title=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&title=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&name=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e5%9c%a8%20TOI%20%e8%a2%ab%e6%a8%a1%e8%80%83%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2022-2mock%2f&t=%5bTOI%5d%202022%202%20%e6%a8%a1%20%2b%201%21%20%e5%bf%83%e5%be%97" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2022 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>

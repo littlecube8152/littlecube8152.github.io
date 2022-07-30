@@ -1,0 +1,404 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> [Camp] 第八屆國中生程式設計營 | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="[Camp] 第八屆國中生程式設計營">
+<meta property="og:description" content="笨方塊想學寫程式被爆揍，燒雞">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/8th-junior-camp/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-07-28T14:53:45+08:00">
+<meta property="article:modified_time" content="2021-07-28T14:53:45+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="[Camp] 第八屆國中生程式設計營">
+<meta name=twitter:description content>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/syntax.css> <link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/virtual-boi-2020/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/math-modular-advance/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&text=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&title=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&is_video=false&description=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&title=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&title=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&name=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e6%83%b3%e5%ad%b8%e5%af%ab%e7%a8%8b%e5%bc%8f%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&t=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#事前>事前</a></li>
+<li><a href=#day-1>Day 1</a></li>
+<li><a href=#day-2>Day 2</a></li>
+<li><a href=#day-3>Day 3</a></li>
+<li><a href=#day-4>Day 4</a></li>
+<li><a href=#day-5>Day 5</a></li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+[Camp] 第八屆國中生程式設計營
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2021-07-28 14:53:45 +0800 +0800" itemprop=datePublished>2021-07-28</time>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../%20tags/camp rel=tag>camp</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p>終於把營隊辦完了，即使是線上營隊，辦起來也沒有比較輕鬆，<br>
+可能過個幾天就忘了，所以先把心得放在這裡。</p>
+<h2 id=事前>事前</h2>
+<p>好像資訊社的傳統是都要在暑假辦一次營隊來回饋這個社會（<del>當作未來課程的試教</del>），<br>
+所以剛交接完幹部就要來處理這個營隊了，</p>
+<p>事前工作大概就是準備教材、然後出練習賽的題目，<br>
+教材的部分我很抱歉在前一天才生出來;w;，不過除了程式碼的一點小 bug 以外都沒有什麼問題，<br>
+而練習賽的部分就有的講了，
+題目出完之後測資也沒什麼問題，不過學長跟我們講這樣的題單太難了，<br>
+所以之後就花了很多時間調整題目的難度，<br>
+會在 Day 5 再重新提到。</p>
+<p>不過由於我有點不太認真，所以時間上拖到營隊開始還在一邊修;w;<br>
+還好最後也是沒有什麼問題。</p>
+<h2 id=day-1>Day 1</h2>
+<p>營隊分成兩組：基礎班跟進階班。</p>
+<p>第一天的早上我是去教進階班函數與遞迴、位址與指標、還有複雜度分析，<br>
+時間上控制的應該還算好，但是學員好像都沒什麼互動;w;<br>
+也有可能是單純因為線上營隊的關係，跟實體的感覺可能還是有差。</p>
+<p>進階班沒什麼問題，倒是基礎班有點小慘，<br>
+之前學長有講過基礎班可能有很多語法問題，現在就真的發生了，<br>
+例如說 <code>;</code> 沒加、括號括錯、等等，有很多事情都發生了，<br>
+可能是因為我接觸 C++ 有因為用過 Arduino 而有一些 C 的底子，所以當初玩的時候蠻順的，<br>
+現在回來看我沒有出這些 bug 實在是有點神奇。</p>
+<p>進階班的下午是排序與二分搜，不過不是我講的，<br>
+感覺他們對這些還是有點難消化，<br>
+而基礎班好像還是有很多問題;w;</p>
+<h2 id=day-2>Day 2</h2>
+<p>進階班是整天的 STL 容器，<br>
+上完之後我覺得這個東西真的對他們有點難消化，<br>
+即使是簡單的 <code>set</code> 例題他們也沒有一個能 <green>AC</green>，實在是有點慘，<br>
+下午的時間安排我覺得有點少，原本表定是學 <code>priority_queue</code>、<code>set</code> 跟 <code>map</code>，<br>
+但是實際上起來還有很多空檔，<br>
+所以我就用這些時間講了 <code>array</code>、<code>pair</code>、<code>tuple</code> 跟一些額外的語法技巧。</p>
+<p>不過我有發現我的講義裡的 STL 容器沒有範例，只有介紹，<br>
+或許這是為什麼他們會聽不太懂;w;</p>
+<p>基礎班的部分出了一個小問題，就是對於題目分析的問題，<br>
+大概的情況是有學員問這一題，因為他沒有想法，<br>
+但是對於沒有想法的應該是要一步一步引導出答案，不是直接講答案，<br>
+我覺得真的好難，要帶這一步又想提示又不想直接破梗，<br>
+可能我還要練習，教出來的感覺是這邊我還是不太會;w;。</p>
+<h2 id=day-3>Day 3</h2>
+<p>好耶，完全沒課，<br>
+就這樣整天都在幫忙 debug，大概一天就這樣沒了。</p>
+<p>忘記到底是哪一天了，跟學長在工作群組聊的時候又多知道了一點 TOJ 的東西，<br>
+過程中也 rejudge 了很多題，現在才發現以前好多假解 XD</p>
+<h2 id=day-4>Day 4</h2>
+<p>早上的課是基礎班的函數，<br>
+前幾天已經看過基礎班的狀況了，所以就把陣列的傳入拿掉，<br>
+不過我覺得可能是我教的不好，很多人的程式都會寫出這種東西：</p>
+<pre><code class=language-cpp>string function()
+{
+    cout &lt;&lt; &quot;Hello&quot;;
+}
+int main()
+{
+    cout &lt;&lt; function();
+}
+</code></pre>
+<p>希望學員們最後都有好好搞懂函數 >&lt;</p>
+<p>接著教了下午的遞迴，直接燒光光，<br>
+原本還有對數的概念，但是我都把它拿掉了。<br>
+基本上函數不好就不用多指望遞迴會學得好了吧;w;<br>
+希望以後可以找到其他方法來解釋函數跟遞迴，不然感覺會是一場災難。</p>
+<h2 id=day-5>Day 5</h2>
+<p>早上是國手的經驗分享，超電，我只能被嘲諷，<br>
+下午是練習賽，<br>
+先來講一下後來的題目長怎樣：</p>
+<table>
+<thead>
+<tr>
+<th>編號</th>
+<th style=text-align:center>A</th>
+<th style=text-align:center>B</th>
+<th style=text-align:center>C</th>
+<th style=text-align:center>D</th>
+<th style=text-align:center>E</th>
+<th style=text-align:center>F</th>
+<th style=text-align:center>G</th>
+<th style=text-align:center>H</th>
+<th style=text-align:center>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>之前</td>
+<td style=text-align:center>Hello World</td>
+<td style=text-align:center>單層迴圈</br>二進位</td>
+<td style=text-align:center>雙層迴圈</br>字元</td>
+<td style=text-align:center>數學</br>閱讀題</td>
+<td style=text-align:center>組合DP</td>
+<td style=text-align:center>Greedy</td>
+<td style=text-align:center>單調隊列</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>之後</td>
+<td style=text-align:center>Hello World</td>
+<td style=text-align:center><strong>單層迴圈</strong></br>總和</td>
+<td style=text-align:center><strong>單層迴圈</strong></br>條件式</td>
+<td style=text-align:center>雙層迴圈</br>字元</td>
+<td style=text-align:center><strong>雙層迴圈</strong></br>星星樹</td>
+<td style=text-align:center><strong>雙層迴圈</strong></br>字串處理</td>
+<td style=text-align:center>數學</br>閱讀題</td>
+<td style=text-align:center>組合DP</td>
+<td style=text-align:center>Greedy</td>
+</tr>
+</tbody>
+</table>
+<p>題單直接變得超簡單，不過對不起我好像沒出不用迴圈的水題<br>
+特別講一下幾題：<br>
+Problem C 是問 $N$ 個元素中可不可以取前 $K$ 個元素而且沒有同分的沒被取到，<br>
+順帶一提，這題的名稱跟那題刪掉的單調隊列一樣，<br>
+Problem E 超機車，詳細可以上去 TOJ 上看這題的輸出，<br>
+Problem G 是擴展歐幾里得，不過題目敘述應該都有提到，<br>
+Problem I 是問 $N$ 個元素中重排裡元素中相鄰相差的絕對值總和最大的解。</p>
+<p>實際的狀況是，似乎有一隊很晚才做出 A，<br>
+然後 B 只有一隊卡，<br>
+而 C 的 AC 人數甚至比 D 少，過程中我還重新給了兩個範例測試資料，不過還是一堆燒雞，<br>
+原因有兩個：</p>
+<ul>
+<li>$K = N$ 沒有判斷，存到陣列外面。</li>
+<li><code>YES</code>、<code>NO</code> 不是 Codeforces 模式，真的有大小寫沒分好的。</li>
+</ul>
+<p>有點可惜，明明這題比 D 簡單超多<br>
+接下來是 E 比 F 稍微難一點，不過應該差不多，主要的問題在：</p>
+<ul>
+<li>E 的實作超麻煩。</li>
+<li>F 有些人不會處理字串。</li>
+</ul>
+<p>之前的難度預估直接失準，</p>
+<p>然後是 G 有兩個人去撈分，H 滅台，<br>
+比較可惜的是 I 有人沒判到兩種 case， 100 分變 7 分，<br>
+另外有個元素都是 ${0,\, 1}$ 的也沒人做，有點可惜。</p>
+<p>最終 Rk.1 是 600 分，完全沒有想要撈分 XD<br>
+然後有學員反映說這個營隊實在教得有點趕，都沒辦法好好學好，<br>
+對不起;w;，不過在這幾天要教完這些確實有點趕，也希望你們都可以繼續學習;w;</p>
+<p>營隊就這樣辦完了，要當教學真的好難喔，<br>
+最後剩下一件事就是怎麼把 checker 放上 TOJ 了，<br>
+感謝學長的幫助還有其他資訊社社員的幫忙，</p>
+<p>突然想到暑假過一半了還沒做暑假作業跟學習歷程，燒雞。<br>
+BOI 2020 也還沒補完</p>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#事前>事前</a></li>
+<li><a href=#day-1>Day 1</a></li>
+<li><a href=#day-2>Day 2</a></li>
+<li><a href=#day-3>Day 3</a></li>
+<li><a href=#day-4>Day 4</a></li>
+<li><a href=#day-5>Day 5</a></li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&text=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&title=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&is_video=false&description=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&title=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&title=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&name=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e6%83%b3%e5%ad%b8%e5%af%ab%e7%a8%8b%e5%bc%8f%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2f8th-junior-camp%2f&t=%5bCamp%5d%20%e7%ac%ac%e5%85%ab%e5%b1%86%e5%9c%8b%e4%b8%ad%e7%94%9f%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88%e7%87%9f" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2022 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>

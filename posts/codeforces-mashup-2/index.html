@@ -1,0 +1,345 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> [Codeforces] Mashup 練習2 | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="[Codeforces] Mashup 練習2">
+<meta property="og:description" content="笨方塊想學寫程式被爆揍，燒雞">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/codeforces-mashup-2/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-03-11T08:27:38+08:00">
+<meta property="article:modified_time" content="2021-03-11T08:27:38+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="[Codeforces] Mashup 練習2">
+<meta name=twitter:description content>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/syntax.css> <link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/codeforces-mashup-1/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/toi-2021-pre/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&text=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&title=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&is_video=false&description=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&title=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&title=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&name=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e6%83%b3%e5%ad%b8%e5%af%ab%e7%a8%8b%e5%bc%8f%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&t=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#1244e---minimizing-difference>1244E - Minimizing Difference</a>
+<ul>
+<li><a href=#題敘>題敘</a></li>
+<li><a href=#想法>想法</a></li>
+</ul>
+</li>
+<li><a href=#1370e---binary-subsequence-rotation>1370E - Binary Subsequence Rotation</a>
+<ul>
+<li><a href=#題敘-1>題敘</a></li>
+<li><a href=#想法-1>想法</a></li>
+</ul>
+</li>
+<li><a href=#895d---string-mark>895D - String Mark</a>
+<ul>
+<li><a href=#題敘-2>題敘</a></li>
+<li><a href=#想法-2>想法</a></li>
+<li><a href=#細節>細節</a></li>
+</ul>
+</li>
+<li><a href=#1336c---kaavi-and-magic-spell>1336C - Kaavi and Magic Spell</a>
+<ul>
+<li><a href=#題敘-3>題敘</a></li>
+<li><a href=#想法-3>想法</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+[Codeforces] Mashup 練習2
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2021-03-11 08:27:38 +0800 +0800" itemprop=datePublished>2021-03-11</time>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../%20tags/codeforces rel=tag>codeforces</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p>提升一下難度就不會了 傷心<br>
+都要靠題解的提示了QwQ</p>
+<h2 id=1244e---minimizing-difference>1244E - Minimizing Difference</h2>
+<h3 id=題敘>題敘</h3>
+<p><a href=https://codeforces.com/problemset/problem/1244/E>Link</a><br>
+每一步操作可以把一個數字加1或減1，問操作完全距最小是多少。</p>
+<h3 id=想法>想法</h3>
+<p>用map暴搜，<br>
+迭代器超難寫:(<br>
+<a href=https://codeforces.com/problemset/submission/1244/109637029>AC Code</a></p>
+<h2 id=1370e---binary-subsequence-rotation>1370E - Binary Subsequence Rotation</h2>
+<h3 id=題敘-1>題敘</h3>
+<p><a href=https://codeforces.com/problemset/problem/1370/E>Link</a><br>
+有一個01字串，<br>
+每次可以選一個子序列然後順時針轉一個位置，<br>
+問做到對齊的最小次數。</p>
+<h3 id=想法-1>想法</h3>
+<p>這題我真的想不到:(</p>
+<p>官解是證明每次選取010101010&mldr;的字串至少會是最佳解，<br>
+原題就變成了最大連續和<br>
+<a href=hhttps://codeforces.com/problemset/submission/1370/109639148>AC Code</a></p>
+<h2 id=895d---string-mark>895D - String Mark</h2>
+<h3 id=題敘-2>題敘</h3>
+<p><a href=https://codeforces.com/problemset/problem/895/D>Link</a><br>
+有兩個字串$a$，$b$，
+問有多少$a$的排列滿足字典序大於$a$小於$b$。<br>
+輸出$\mod 10^9 + 7$。</p>
+<h3 id=想法-2>想法</h3>
+<p>分開作小於$a$，小於$b$再相減，<br>
+用DP/排列組合就可以過。</p>
+<h3 id=細節>細節</h3>
+<p>本題時限卡很緊，需要優化。<br>
+(建議可以用階乘反元素處理)</p>
+<p><a href=https://codeforces.com/problemset/submission/895/109648882>AC Code</a></p>
+<h2 id=1336c---kaavi-and-magic-spell>1336C - Kaavi and Magic Spell</h2>
+<h3 id=題敘-3>題敘</h3>
+<p><a href=https://codeforces.com/problemset/problem/1336/C>Link</a><br>
+有一個空字串A，<br>
+依序把原字串S的前面放到A的頭或尾(不需要放完)，<br>
+有多少<strong>操作順序</strong>使得做出來的A有一個前綴是T。<br>
+輸出$\mod 998244353$。</p>
+<h3 id=想法-3>想法</h3>
+<p>令$dp[i][j]$表示已經放了$[0..i]$，開頭在$j$，滿足條件的可能，<br>
+每次就只要考慮放前或放後兩種可能就好。</p>
+<p><a href=https://codeforces.com/problemset/submission/1172/109497694>AC Code</a></p>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#1244e---minimizing-difference>1244E - Minimizing Difference</a>
+<ul>
+<li><a href=#題敘>題敘</a></li>
+<li><a href=#想法>想法</a></li>
+</ul>
+</li>
+<li><a href=#1370e---binary-subsequence-rotation>1370E - Binary Subsequence Rotation</a>
+<ul>
+<li><a href=#題敘-1>題敘</a></li>
+<li><a href=#想法-1>想法</a></li>
+</ul>
+</li>
+<li><a href=#895d---string-mark>895D - String Mark</a>
+<ul>
+<li><a href=#題敘-2>題敘</a></li>
+<li><a href=#想法-2>想法</a></li>
+<li><a href=#細節>細節</a></li>
+</ul>
+</li>
+<li><a href=#1336c---kaavi-and-magic-spell>1336C - Kaavi and Magic Spell</a>
+<ul>
+<li><a href=#題敘-3>題敘</a></li>
+<li><a href=#想法-3>想法</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&text=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&title=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&is_video=false&description=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&title=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&title=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&name=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e6%83%b3%e5%ad%b8%e5%af%ab%e7%a8%8b%e5%bc%8f%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-mashup-2%2f&t=%5bCodeforces%5d%20Mashup%20%e7%b7%b4%e7%bf%922" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2022 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>

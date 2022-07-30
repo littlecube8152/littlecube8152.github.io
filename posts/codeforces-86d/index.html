@@ -1,0 +1,359 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> [Codeforces] 86D | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="[Codeforces] 86D">
+<meta property="og:description" content="笨方塊想學寫程式被爆揍，燒雞">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/codeforces-86d/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-03-31T12:30:20+08:00">
+<meta property="article:modified_time" content="2021-03-31T12:30:20+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="[Codeforces] 86D">
+<meta name=twitter:description content="Powerful array">
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/syntax.css> <link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/ioi-13-cave/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/tioj-1013/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&text=%5bCodeforces%5d%2086D" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&title=%5bCodeforces%5d%2086D" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&is_video=false&description=%5bCodeforces%5d%2086D" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bCodeforces%5d%2086D&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&title=%5bCodeforces%5d%2086D" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&title=%5bCodeforces%5d%2086D" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&name=%5bCodeforces%5d%2086D&description=Powerful%20array" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&t=%5bCodeforces%5d%2086D" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#題敘>題敘</a></li>
+<li><a href=#想法>想法</a></li>
+<li><a href=#ac-code>AC Code</a></li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+[Codeforces] 86D
+</h1>
+<h1 class=postsubtitle itemprop="name headline">
+Powerful array
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2021-03-31 12:30:20 +0800 +0800" itemprop=datePublished>2021-03-31</time>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../%20tags/codeforces rel=tag>codeforces</a>
+,
+<a class=tag-link href=../../%20tags/tutorial rel=tag>tutorial</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p>又達成成就了>w&lt;</p>
+<h2 id=題敘>題敘</h2>
+<p>有一個陣列，<br>
+令在區間$[l..r]$裡$a_i$出現了$k_i$次，<br>
+問$\sum k_i^2a_i$，多筆詢問。</p>
+<h2 id=想法>想法</h2>
+<p>用線段樹超難合併，<br>
+但我們發現把區間左或右界加減$1$只要$\mathcal{O}(1)$的時間，<br>
+所以考慮莫隊算法，<br>
+如果把$a_i$移出陣列只要扣$(2k_i - 1)a_i$，<br>
+移入只要加上$(2 k_i + 1)a_i$，<br>
+如果把左界$K$個一塊，計算只要$\mathcal{O}(\frac{\displaystyle N}{\displaystyle K}N +NK)$，<br>
+就是每塊的右界都要從頭到尾，左界每次最多移動$K$，
+取$K = \sqrt{N}$，複雜度是$\mathcal{O}(N \sqrt{N})$，<br>
+離線排序詢問，就可以AC了。</p>
+<h2 id=ac-code>AC Code</h2>
+<pre><code class=language-cpp>/*  | |       _    _  | |        _____       | |
+//  | |   _  | |  | | | | _____ /  ___|__  __| |___  _____
+//  | |  |_|[   ][   ]| |/  _  \| |    | | | |  _  \/  _  \  
+//  | L__| | | |_ | |_| || ____|| |___ | |_| | |_| || ____|
+//  L____|_| |___||___|_|\_____|\_____|\_____/\____/\_____|
+//  Segment Tree is hard.
+*/  
+#pragma GCC optimize(&quot;O3,unroll-loops&quot;)
+#include &lt;bits/stdc++.h&gt;
+#pragma pack(0)
+#define int long long
+#define ll long long
+#define pii pair&lt;int, int&gt;
+#define pll pair&lt;ll, ll&gt;
+#define F first
+#define S second
+#define pb(x) emplace_back(x)
+#define MOD 1000000007
+#define MOD2 998244353
+#define _INFINITY 9223372036854775807
+#define fast ios::sync_with_stdio(0), cin.tie(0)
+using namespace std;
+
+struct query
+{
+    int l, r, i;
+};
+vector&lt;query&gt; v[10005];
+
+ll n, t, arr[300005], ans[300005];
+
+signed main()
+{
+    fast;
+    cin &gt;&gt; n &gt;&gt; t;
+    for (int i = 1; i &lt;= n; i++)
+        cin &gt;&gt; arr[i];
+    for (int i = 1; i &lt;= t; i++)
+    {
+        int l, r;
+        cin &gt;&gt; l &gt;&gt; r;
+        v[(int)(l / sqrt(n))].pb((query{l, r, i}));
+    }
+    for (int i = 0; i &lt;= ceil(sqrt(n)); i++)
+        sort(v[i].begin(), v[i].end(), [](query q1, query q2) { return q1.r &lt; q2.r; });
+    for (int i = 0; i &lt;= ceil(sqrt(n)); i++)
+    {
+        int l = i * sqrt(n), r = l, sum = arr[l], tmp[1000005] = {0};
+        tmp[arr[l]] = 1;
+
+        for (query q : v[i])
+        {
+            for (; r + 1 &lt;= q.r;)
+            {
+                r++;
+                sum += (tmp[arr[r]] * 2 + 1) * arr[r];
+                tmp[arr[r]]++;
+            }
+            if (q.l &lt; l)
+            {
+                for (; q.l &lt;= l - 1;)
+                {
+                    l--;
+                    sum += (tmp[arr[l]] * 2 + 1) * arr[l];
+                    tmp[arr[l]]++;
+                }
+            }
+            else
+            {
+                for (; l &lt; q.l; l++)
+                {
+                    sum -= (tmp[arr[l]] * 2 - 1) * arr[l];
+                    tmp[arr[l]]--;
+                }
+            }
+            ans[q.i] = sum;
+        }
+    }
+    for (int i = 1; i &lt;= t;i++)
+        cout &lt;&lt; ans[i] &lt;&lt; '\n';
+}
+</code></pre>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#題敘>題敘</a></li>
+<li><a href=#想法>想法</a></li>
+<li><a href=#ac-code>AC Code</a></li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&text=%5bCodeforces%5d%2086D" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&title=%5bCodeforces%5d%2086D" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&is_video=false&description=%5bCodeforces%5d%2086D" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bCodeforces%5d%2086D&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&title=%5bCodeforces%5d%2086D" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&title=%5bCodeforces%5d%2086D" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&name=%5bCodeforces%5d%2086D&description=Powerful%20array" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-86d%2f&t=%5bCodeforces%5d%2086D" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2022 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>
