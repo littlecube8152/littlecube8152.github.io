@@ -1,6 +1,5 @@
 cd C:\\Hugo\\Sites\\github.io 
 hugo -D
-cd public
 git init
 git add .
 timestr=$(date +"%Y-%m-%d %T")
