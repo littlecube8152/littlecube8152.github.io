@@ -382,7 +382,7 @@ $a^{p-2} = a^{-1} \mod p$ （三個其實是同一式）
     m + 1 & m + 2 & m + 3 & \cdots & 2m \newline
     2m + 1 & 2m + 2 & 2m + 3 & \cdots & 3m \newline
     \vdots & \vdots & \vdots & \ddots & \vdots \newline
-    (n-1)m + 1 & (n-1)m + 2 & (n-1)m + 3 & \cdots} & nm 
+    (n-1)m + 1 & (n-1)m + 2 & (n-1)m + 3 & \cdots & nm 
     \end{bmatrix}$   
 
 每一橫列都有$\Phi(m)$個元素是跟$m$互質的，  
