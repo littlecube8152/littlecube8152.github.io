@@ -45,7 +45,7 @@ weight = 5
     googleAnalyticsAsync = true 
     mathjax = true
 	# Custom CSS applied to default styles.
-    css = ["css/syntax.css", "css/prism.css"]
+    css = ["css/prism.css"]
     js = ["js/prism.js", "js/prism-line-numbers.js"]
     [[params.social]]
     name = "discord"
