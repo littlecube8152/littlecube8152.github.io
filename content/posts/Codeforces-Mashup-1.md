@@ -1,5 +1,5 @@
 ---
-title: "[Codeforces] Mashup 練習1"
+title: "[Codeforces] Mashup 練習 1"
 date: 2021-03-09T23:29:39+08:00
 draft: false
 tags: ["codeforces"]
