@@ -20,6 +20,221 @@ img.emoji {
   overflow: hidden;
 }
 
+.table-cell {
+  display: table-cell;
+  overflow: hidden;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.fit {
+  max-width: 100%;
+}
+
+.truncate {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.max-width-1 {
+  max-width: 24rem;
+}
+
+.max-width-2 {
+  max-width: 32rem;
+}
+
+.max-width-3 {
+  max-width: 48rem;
+}
+
+.max-width-4 {
+  max-width: 64rem;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.m0 {
+  margin: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.mr0 {
+  margin-right: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.ml0 {
+  margin-left: 0;
+}
+
+.mx0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.my0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.m1 {
+  margin: 0.5rem;
+}
+
+.mt1 {
+  margin-top: 0.5rem;
+}
+
+.mr1 {
+  margin-right: 0.5rem;
+}
+
+.mb1 {
+  margin-bottom: 0.5rem;
+}
+
+.ml1 {
+  margin-left: 0.5rem;
+}
+
+.mx1 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.my1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.m2 {
+  margin: 1rem;
+}
+
+.mt2 {
+  margin-top: 1rem;
+}
+
+.mr2 {
+  margin-right: 1rem;
+}
+
+.mb2 {
+  margin-bottom: 1rem;
+}
+
+.ml2 {
+  margin-left: 1rem;
+}
+
+.mx2 {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.my2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.m3 {
+  margin: 2rem;
+}
+
+.mt3 {
+  margin-top: 2rem;
+}
+
+.mr3 {
+  margin-right: 2rem;
+}
+
+.mb3 {
+  margin-bottom: 2rem;
+}
+
+.ml3 {
+  margin-left: 2rem;
+}
+
+.mx3 {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.my3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.m4 {
+  margin: 4rem;
+}
+
+.mt4 {
+  margin-top: 4rem;
+}
+
+.mr4 {
+  margin-right: 4rem;
+}
+
+.mb4 {
+  margin-bottom: 4rem;
+}
+
+.ml4 {
+  margin-left: 4rem;
+}
+
+.mx4 {
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+
+.my4 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
 
 .mxn1 {
   margin-right: -0.5rem;
@@ -54,9 +269,144 @@ img.emoji {
   margin-left: auto;
 }
 
+.p0 {
+  padding: 0;
+}
+
+.pt0 {
+  padding-top: 0;
+}
+
+.pr0 {
+  padding-right: 0;
+}
+
+.pb0 {
+  padding-bottom: 0;
+}
+
+.pl0 {
+  padding-left: 0;
+}
+
+.px0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.py0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.p1 {
+  padding: 0.5rem;
+}
+
+.pt1 {
+  padding-top: 0.5rem;
+}
+
+.pr1 {
+  padding-right: 0.5rem;
+}
+
+.pb1 {
+  padding-bottom: 0.5rem;
+}
+
+.pl1 {
+  padding-left: 0.5rem;
+}
+
+.py1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px1 {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.p2 {
+  padding: 1rem;
+}
+
+.pt2 {
+  padding-top: 1rem;
+}
+
+.pr2 {
+  padding-right: 1rem;
+}
+
+.pb2 {
+  padding-bottom: 1rem;
+}
+
+.pl2 {
+  padding-left: 1rem;
+}
+
+.py2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px2 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.p3 {
+  padding: 2rem;
+}
+
+.pt3 {
+  padding-top: 2rem;
+}
+
+.pr3 {
+  padding-right: 2rem;
+}
+
+.pb3 {
+  padding-bottom: 2rem;
+}
+
+.pl3 {
+  padding-left: 2rem;
+}
+
+.py3 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .px3 {
   padding-right: 2rem;
   padding-left: 2rem;
+}
+
+.p4 {
+  padding: 4rem;
+}
+
+.pt4 {
+  padding-top: 4rem;
+}
+
+.pr4 {
+  padding-right: 4rem;
+}
+
+.pb4 {
+  padding-bottom: 4rem;
+}
+
+.pl4 {
+  padding-left: 4rem;
 }
 
 .py4 {
@@ -64,6 +414,10 @@ img.emoji {
   padding-bottom: 4rem;
 }
 
+.px4 {
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
 
 body h1,
 body .h1 {
@@ -196,6 +550,10 @@ body ol {
   list-style: decimal;
 }
 
+body dt {
+  font-weight: bold;
+}
+
 body table {
   width: 100%;
   border-collapse: collapse;
@@ -216,6 +574,12 @@ body th {
 body td {
   padding: 0 8px;
   border-bottom: none;
+}
+
+@font-face {
+  font-style: normal;
+  font-family: "Meslo LG";
+  src: local("Meslo LG S"), url("../lib/meslo-LG/MesloLGS-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -387,6 +751,10 @@ section#about p {
     padding-left: 1rem;
   }
 
+  .my4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @media (min-width: 480px) {
@@ -467,6 +835,7 @@ section#about p {
   margin-right: 15px;
   border-right: 1px dotted;
   border-color: #5ddcff;
+  vertical-align: middle;
 }
 
 #header #nav ul .icon {
@@ -498,6 +867,7 @@ section#about p {
 
   #header #title h1 {
     display: table-cell;
+    vertical-align: middle;
     font-size: 1.5em;
   }
 
@@ -580,6 +950,7 @@ section#about p {
 #header-post ul li {
   display: inline-block;
   margin-right: 15px;
+  vertical-align: middle;
 }
 
 #header-post ul li:last-child {
@@ -860,6 +1231,7 @@ section#about p {
   display: inline-table;
   padding: 10px;
   width: 20%;
+  vertical-align: middle;
 }
 
 #footer-post #actions-footer {
@@ -898,6 +1270,7 @@ section#about p {
   display: inline-table;
   padding: 10px;
   width: 20%;
+  vertical-align: middle;
 }
 
 #footer-post #toc-footer {
@@ -1243,6 +1616,7 @@ article .content .caption {
   margin-right: 15px;
   border-right: 1px solid;
   border-color: #666;
+  vertical-align: middle;
 }
 
 #footer li a {
@@ -1270,6 +1644,7 @@ article .content .caption {
 
 #footer .footer-left {
   height: 20px;
+  vertical-align: middle;
   line-height: 20px;
 }
 
