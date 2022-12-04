@@ -56,7 +56,7 @@
 </a>
 </li>
 <li>
-<a class=icon href=https://littlecube8152.github.io/posts/icpc-nwerc-2021/ aria-label=Next>
+<a class=icon href=https://littlecube8152.github.io/posts/virtual-nwerc-2021/ aria-label=Next>
 <i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
 </a>
 </li>
@@ -211,7 +211,136 @@ $1 \leq n \leq 10^6,\,0 \leq a_i,\,b_j \leq 10^9$</p>
 <li>DFS 計算答案（單調隊列 $\mathcal O(n)$）</li>
 </ul>
 <p>總共就有線性時間的做法了，不需要大算法、大資節，甚至比官解描述的解法還要好。</p>
-<p><a href=https://codeforces.com/group/Uo1lq8ZyWf/contest/311770/submission/181677515>AC Code</a></p>
+<details>
+<summary>AC Code</summary>
+<pre><code class=language-cpp>#include &lt;bits/stdc++.h&gt;
+#define ll long long
+#define pii pair&lt;int, int&gt;
+#define pll pair&lt;ll, ll&gt;
+#define F first
+#define S second
+using namespace std;
+ 
+ll n, a[2000006], ans[1000006], l[2000006], r[2000006], root, over[2000006], sum[2000006];
+vector&lt;int&gt; child[2000006];
+ 
+bool pre(int i)
+{
+	if (1 &lt;= i &amp;&amp; i &lt;= 2 * n &amp;&amp; child[i].empty())
+		sum[i] = a[i];
+ 
+	for (int j : child[i])
+	{
+		over[i] |= pre(j);
+		sum[i] += sum[j];
+	}
+ 
+	if (i == 0 || i == 2 * n + 2)
+		over[i] = 1;
+	return over[i];
+}
+ 
+ll wall(int i)
+{
+	if (i % 2 == 0)
+		return 0;
+	else
+		return a[i];
+}
+ 
+pll merge(pll p, ll k)
+{
+	if (k &gt; 0)
+		p.S += k;
+	else if (k &lt; 0)
+	{
+		if (p.S + k &lt;= 0)
+			p = pll(p.F + p.S + k, 0);
+		else
+			p = pll(p.F, p.S + k);
+	}
+	return p;
+}
+ 
+ 
+pll zero = pll(0, 0);
+ 
+ 
+void dfs(int i, pll &amp;pre)
+{
+	if (child[i].empty())
+	{
+		pll cur = merge(merge(pll(0, a[i]), pre.F), pre.S);
+		ans[i / 2] = -cur.F;
+	}
+	else
+	{
+		for (int j = 0; j &lt;= 1; j++)
+			if (!over[child[i][j]])
+			{
+				pll cur = merge(merge(pll(0, sum[child[i][j ^ 1]]), pre.F), pre.S);
+				cur = merge(merge(pll(-max(0LL, wall(i) - wall(child[i][j])), 0), cur.F), cur.S);
+				dfs(child[i][j], cur);
+			}
+			else
+				dfs(child[i][j], zero);
+	}
+}
+ 
+signed main()
+{
+	ios::sync_with_stdio(0);
+	cin.tie(0), cout.tie(0);
+	cin &gt;&gt; n;
+	for (int i = 1; i &lt;= n; i++)
+		cin &gt;&gt; a[2 * i];
+	for (int i = 0; i &lt;= n; i++)
+		cin &gt;&gt; a[2 * i + 1];
+	vector&lt;pll&gt; v;
+	a[0] = a[2 * n + 2] = 1e12;
+	for (int i = 1; i &lt;= 2 * n + 2; i++)
+	{
+		if (i &amp; 1)
+		{
+			while (!v.empty() &amp;&amp; v.back().F &lt; a[i])
+				v.pop_back();
+			if (!v.empty())
+				l[i] = v.back().S;
+			v.push_back(pii(a[i], i));
+		}
+		else
+			l[i] = v.back().S;
+	}
+	v.clear();
+	for (int i = 2 * n + 1; i &gt;= 0; i--)
+	{
+		if (i &amp; 1)
+		{
+			while (!v.empty() &amp;&amp; v.back().F &lt;= a[i])
+				v.pop_back();
+			if (!v.empty())
+				r[i] = v.back().S;
+			v.push_back(pii(a[i], i));
+		}
+		else
+			r[i] = v.back().S;
+	}
+	for (int i = 0; i &lt;= 2 * n + 2; i++)
+	{
+		if (l[i] == 0 &amp;&amp; r[i] == 0)
+			root = i;
+		else if (a[l[i]] &lt; a[r[i]])
+			child[l[i]].emplace_back(i);
+		else
+			child[r[i]].emplace_back(i);
+	}
+	pre(root);
+	dfs(root, zero);
+	for(int i = 1; i &lt;= n; i++)
+		cout &lt;&lt; ans[i] &lt;&lt; &quot; \n&quot;[i == n];
+}
+</code></pre>
+</details>
 </div>
 </article>
 <div id=footer-post-container>
