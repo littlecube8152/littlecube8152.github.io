@@ -1,5 +1,5 @@
 <meta property="og:title" content="{{ .Title }}" />
-<meta property="og:description" content="{{if .IsPage}}{{ .Summary }}{{ end }}" />
+<meta property="og:description" content="{{if .IsPage}}{{ .Summary }}{{else}}如果我也能成為電神就好了…{{ end }}" />
 
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
