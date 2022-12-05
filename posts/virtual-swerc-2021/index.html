@@ -1,0 +1,458 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> [Virtual] SWERC 2021-2022 | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://twemoji.maxcdn.com/v/latest/twemoji.min.js crossorigin=anonymous></script>
+<script>window.onload=function(){twemoji.parse(document.body,{folder:'svg',ext:'.svg'})}</script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="[Virtual] SWERC 2021-2022">
+<meta property="og:description" content="笨方塊耍笨 virtual SWERC 拖累隊友還被爆揍，燒雞">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/virtual-swerc-2021/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-12-05T22:00:00+08:00">
+<meta property="article:modified_time" content="2022-12-05T22:00:00+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="[Virtual] SWERC 2021-2022">
+<meta name=twitter:description content="團練篇">
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/ aria-label=Home>
+<i class="fas fa-home" aria-hidden=true onmouseover="$('#i-home').toggle()" onmouseout="$('#i-home').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/npsc-2022/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-home class=info style=display:none>Home</span>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&text=%5bVirtual%5d%20SWERC%202021-2022" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&title=%5bVirtual%5d%20SWERC%202021-2022" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&is_video=false&description=%5bVirtual%5d%20SWERC%202021-2022" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bVirtual%5d%20SWERC%202021-2022&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&title=%5bVirtual%5d%20SWERC%202021-2022" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&title=%5bVirtual%5d%20SWERC%202021-2022" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&name=%5bVirtual%5d%20SWERC%202021-2022&description=%e5%9c%98%e7%b7%b4%e7%af%87" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&t=%5bVirtual%5d%20SWERC%202021-2022" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#前言>前言</a></li>
+<li><a href=#virtual>Virtual</a>
+<ul>
+<li><a href=#5-pa-greengreen>5 pA <green>+</green></a></li>
+<li><a href=#9-pm-greengreen>9 pM <green>+</green></a></li>
+<li><a href=#18-ph-greengreen>18 pH <green>+</green></a></li>
+<li><a href=#29-pd--1>29 pD -1</a></li>
+<li><a href=#33-pd--2>33 pD -2</a></li>
+<li><a href=#69-po--1>69 pO -1</a></li>
+<li><a href=#77-po-green1green>77 pO <green>+1</green></a></li>
+<li><a href=#78-pd-green2green>78 pD <green>+2</green></a></li>
+<li><a href=#118-pi-greengreen>118 pI <green>+</green></a></li>
+<li><a href=#134-pl--1>134 pL -1</a></li>
+<li><a href=#140-pl-green1green>140 pL <green>+1</green></a></li>
+<li><a href=#245-pf--1>245 pF -1</a></li>
+<li><a href=#252-pf--2>252 pF -2</a></li>
+<li><a href=#254-pf--3>254 pF -3</a></li>
+<li><a href=#259-pf--4>259 pF -4</a></li>
+<li><a href=#260-pf--5>260 pF -5</a></li>
+<li><a href=#262-pf--6>262 pF -6</a></li>
+<li><a href=#267-pf--7>267 pF -7</a></li>
+<li><a href=#268-pf--8>268 pF -8</a></li>
+<li><a href=#278-pf--9>278 pF -9</a></li>
+<li><a href=#278-pf--10>278 pF -10</a></li>
+</ul>
+</li>
+<li><a href=#檢討>檢討</a></li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+[Virtual] SWERC 2021-2022
+</h1>
+<h1 class=postsubtitle itemprop="name headline">
+團練篇
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2022-12-05 22:00:00 +0800 +0800" itemprop=datePublished>2022-12-05</time>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../%20tags/icpc rel=tag>ICPC</a>
+,
+<a class=tag-link href=../../%20tags/swerc rel=tag>SWERC</a>
+,
+<a class=tag-link href=../../%20tags/virtual rel=tag>virtual</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<h2 id=前言>前言</h2>
+<p>基本上就是 NPSC 團練第二場，其實還有第三場 NERC，NPSC 前確實沒機會檢討了吧<br>
+（原本是想說除非我拋棄睡眠讓 NPSC 燒雞，不過實際上也是一樣啦）</p>
+<h2 id=virtual>Virtual</h2>
+<p>開場一樣高嘉泓從前面開始讀，我從後面開始讀，<br>
+一開始高嘉泓先看到 A 好像是水題而且很多人做，我就直接開寫，</p>
+<blockquote>
+<p><strong>pA</strong><br>
+給你 $n$ 道問題，每題有難度美麗度 $b_i$ 跟難度 $d_i$，<br>
+你要找出 10 道問題使得難度在 1 到 10 之間都恰好有一題，<br>
+輸出最大美麗度或者不可能找到那 10 題。<br>
+$1 \leq t \leq 100,\,1 \leq n \leq 100$</p>
+</blockquote>
+<p>水題，我能寫錯我就是智障。</p>
+<h3 id=5-pa-greengreen>5 pA <green>+</green></h3>
+</br>
+<p>接下來我們看到很多人開 M 就直接讀他，</p>
+<blockquote>
+<p><strong>pM</strong><br>
+你要拿出 $n$ 瓶酒，每瓶可以是紅酒或白酒，<br>
+有 $m$ 個評審，第 $i$ 個評審想找到一個連續區間使得其中剛好有 $r_i$ 瓶紅酒以及 $w_i$ 瓶白酒，<br>
+構造一組解或者輸出不可能。<br>
+$1 \leq t \leq 100,\,1 \leq n,\,m \leq 100,\,0 \leq r_i,\,w_i \leq 100$</p>
+</blockquote>
+<p>把紅白分兩邊就好的水題。</p>
+<h3 id=9-pm-greengreen>9 pM <green>+</green></h3>
+</br>
+<p>接下來高嘉泓看到 H 很多人開，發現開個 gcd 跟因數就好，上去寫</p>
+<blockquote>
+<p><strong>pH</strong><br>
+給一個 $w \times l$ 的網格，<br>
+輸出所有 $a$ 滿足 $1 \times a$ 的磁磚可以鋪滿網格的邊框。<br>
+$1 \leq t \leq 100,\,3 \leq w,\,l \leq 10^9$，輸出的總數 $\leq 2 \cdot 10^5$</p>
+</blockquote>
+<p>高嘉泓寫了一小段時間然後就一發了，教我</p>
+<h3 id=18-ph-greengreen>18 pH <green>+</green></h3>
+</br>
+<p>然後我看了 D 發現很多人寫，讀了一下就打算上去寫寫看</p>
+<blockquote>
+<p><strong>pD</strong><br>
+一個字串可以加入或刪除連續的 <code>AA</code>、<code>BB</code>、<code>CC</code>、<code>ABAB</code>、<code>BCBC</code>，<br>
+給兩個只有 <code>ABC</code> 的字串 $u,\,v$ 問可不可以經由操作把 $s$ 改成 $t$。<br>
+$1 \leq t \leq 100,\,1 \leq |u|,\,|v| \leq 200$</p>
+</blockquote>
+<p>一開始我以為是 DP，感覺 $\mathcal O(t|u||v|)$ 蠻合理的，寫一寫感覺對了就傳上去</p>
+<h3 id=29-pd--1>29 pD -1</h3>
+</br>
+<p>我想說蛤什麼鬼，應該不是我 DP 寫錯吧，<br>
+看了一下還真的寫錯了，改完之後測一測發現應該是好的就再傳了一次</p>
+<h3 id=33-pd--2>33 pD -2</h3>
+</br>
+<p>感覺是正確性爛掉了，然後我就發現 <code>BAB</code> 可以變成 <code>AABAB</code> 再變成 <code>A</code>，<br>
+我想說應該這個 case 判完就沒了吧，結果越想越不對，有超多東西會爆掉。<br>
+沒記錯的話我應該就先讓高嘉泓上去寫 I 了，</p>
+<blockquote>
+<p><strong>pI</strong><br>
+一條數線上有 $n$ 區的人，第 $i$ 區在 $100(i-1)$ 的位置，有 $p_i$ 個人，<br>
+另外有 $m$ 間冰淇淋店，第 $i$ 間在 $x_i$，<br>
+你要開設一家冰淇淋店使得有最多的顧客距離你的店嚴格最近，輸出這個值。<br>
+$2 \leq n \leq 2 \cdot 10^5,\,1 \leq m \leq 2\cdot 10^5,\,1 \leq p_i \leq 10^9,\,0 \leq x_i \leq 10^9,\,x_i \neq x_j (i \neq j)$。</p>
+</blockquote>
+<p>高嘉泓他會做所以我就下來想 D，在弄他之前我發現 O 很多人過，所以就趁高嘉泓還在想小細節的時候寫了 O：</p>
+<blockquote>
+<p><strong>pO</strong><br>
+有一個圓形的迷宮，裡面有 $n$ 道牆壁，<br>
+有可能是直線，會蓋在半徑介於 $[r_1,\,r_2]$，方向角是 $\theta$ 的地方，<br>
+或是弧線，固定半徑是 $r$ 而方向角從 $[\theta_1,\,\theta_2]$（可能會繞過 $0$）都有牆，<br>
+輸出可不可能從無限遠的地方走到 $(0,\,0)$。<br>
+$1 \leq t \leq 20,\,1 \leq n \leq 5000$，沒有牆相交在正實數長度。</p>
+</blockquote>
+<p>想了之後其實就好好蓋圖做 DFS 就好，所以我就先上去把它寫出來，</p>
+<h3 id=69-po--1>69 pO -1</h3>
+</br>
+<p>我去一旁慢慢 debug，然後高嘉泓繼續去修他的 I，<br>
+很快我就發現我似乎沒有處理好開閉區間的問題，再仔細看過一次確定沒問題我就上去改了一點點就再傳了一次，</p>
+<h3 id=77-po-green1green>77 pO <green>+1</green></h3>
+</br>
+<p>下來之後電腦繼續交給高嘉泓的處理 I，我則是去把剛剛錯兩次的 D 給弄好，<br>
+之後推了幾次發現了這些性質：</p>
+<ul>
+<li><code>BA</code> &lt;-> <code>AABABB</code> &lt;-> <code>AB</code></li>
+<li><code>CB</code> &lt;-> <code>BBCBCC</code> &lt;-> <code>BC</code></li>
+</ul>
+<p>也就是 <code>B</code> 可以自由移動，我只要判 <code>B</code> 的奇偶跟 <code>AC</code> 就好，變超簡單。<br>
+所以我趁高嘉泓在燒實作的時候迅速寫完，傳上去<br>
+「應該不會這麼梗吧，如果是這樣我真的會超氣」</p>
+<h3 id=78-pd-green2green>78 pD <green>+2</green></h3>
+</br>
+<p>做完我就一起幫高嘉泓看 I 應該要怎麼算合法區間，推了一小段時間我意識到我不太會數學，<br>
+但好事是只剩這個部分，所以最後修修改改好像就好了，所以就傳上去，</p>
+<h3 id=118-pi-greengreen>118 pI <green>+</green></h3>
+</br>
+<p>接下來我去開 L，</p>
+<blockquote>
+<p><strong>pL</strong><br>
+你一開始在數線上的 $0$，接下來有 $i$ 個目標，<br>
+如果你在 $t_i$ 的時間點抵達 $a_i$ 就會獲得 $1$ 分，<br>
+而你每秒能移動的最大速度就是 $v$，<br>
+求出最高得分。<br>
+$1 \leq n \leq 2 \cdot 10^5,\,1 \leq v \leq 10^6,\,1 \leq t_i \leq 10^9,\,-10^9 \leq a_i \leq 10^9$</p>
+</blockquote>
+<p>看幾眼畫個圖就發現是伸縮之後轉 45 度經典題，所以就轉完然後歸成 LIS 直接用 vector + 二分搜寫掉，<br>
+一開始我還想用浮點數跟推轉 45 度轉很久，不過都算是小事，<br>
+過程中突然發現要從 $0$ 當起點，所以就得反過來寫。<br>
+寫完之後傳上去就吃了一個大大的 WA。</p>
+<h3 id=134-pl--1>134 pL -1</h3>
+</br>
+<p>我想說我不可能連 LIS 都寫錯吧，結果測了一些小 case 發現是我忘記 $0$ 當起點的時候有人可能會超過，他們不能算，<br>
+所以改完就穩穩地拿到了 AC。</p>
+<h3 id=140-pl-green1green>140 pL <green>+1</green></h3>
+</br>
+<p>下一個多的人開得是 F，</p>
+<blockquote>
+<p>pF<br>
+有 $n$ 座天線，第 $i$ 座的強度是 $p_i$，<br>
+兩個天線 $i,\,j$ 能花 $1$ 單位的時間傳遞訊息若且唯若 $\min(p_i,\,p_j) \geq |i-j|$，<br>
+輸出天線 $a$ 傳遞到 $b$ 需要多久。<br>
+$1 \leq t \leq 10^5,\,1 \leq a,\,b,\,p_i \leq n,\,\sum n \leq 2\cdot 10^5$</p>
+</blockquote>
+<p>接下來就進行睡覺環節了，我們對這題毫無頭緒，除了一個持久化線段樹優化建圖的怪東西，</p>
+<p>後來我是想到可以不用真的持久化，只要跑一個邊點都是 $\mathcal O(n \log n)$ 的 BFS 就能做完，<br>
+所以我就開始寫了，實際上沒有很難，只是我一直對建邊出了一些小問題，<br>
+修修改改總算過範測了，不過這題的問題是空間只有 256 MB，然後我們砸下去就是硬生生地吃了 MLE，<br>
+我一邊不斷的壓然後高嘉泓一邊想其他解，<br>
+最後他還是想不到，而這 MLE 的過程其實蠻痛苦的，就如實跟大家呈現記憶體爆掉的後果吧。</p>
+<h3 id=245-pf--1>245 pF -1</h3>
+<h3 id=252-pf--2>252 pF -2</h3>
+<h3 id=254-pf--3>254 pF -3</h3>
+<h3 id=259-pf--4>259 pF -4</h3>
+<h3 id=260-pf--5>260 pF -5</h3>
+<h3 id=262-pf--6>262 pF -6</h3>
+<h3 id=267-pf--7>267 pF -7</h3>
+<h3 id=268-pf--8>268 pF -8</h3>
+<h3 id=278-pf--9>278 pF -9</h3>
+<h3 id=278-pf--10>278 pF -10</h3>
+</br>
+<h2 id=檢討>檢討</h2>
+<p>其實 F 可以好好做，而且很快一個 $\log$，<br>
+剩下的題目（包含 F）應該會開一個補題篇慢慢打，所以就敬請期待吧。</p>
+<p>主要的問題是我實作會有小偏差，整體被小地方卡的都是零碎時間，但積起來會很可怕，<br>
+感覺是會多到影響題數的那種，可能要在全國賽前多練幾場讓自己的實作上軌道，<br>
+還有就是應該要想到的得好好想到，<br>
+還是出了不少問題，怎麼會這樣……</p>
+<p>我真的是不會 OI 也不會 ICPC 的笨蛋。</p>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#前言>前言</a></li>
+<li><a href=#virtual>Virtual</a>
+<ul>
+<li><a href=#5-pa-greengreen>5 pA <green>+</green></a></li>
+<li><a href=#9-pm-greengreen>9 pM <green>+</green></a></li>
+<li><a href=#18-ph-greengreen>18 pH <green>+</green></a></li>
+<li><a href=#29-pd--1>29 pD -1</a></li>
+<li><a href=#33-pd--2>33 pD -2</a></li>
+<li><a href=#69-po--1>69 pO -1</a></li>
+<li><a href=#77-po-green1green>77 pO <green>+1</green></a></li>
+<li><a href=#78-pd-green2green>78 pD <green>+2</green></a></li>
+<li><a href=#118-pi-greengreen>118 pI <green>+</green></a></li>
+<li><a href=#134-pl--1>134 pL -1</a></li>
+<li><a href=#140-pl-green1green>140 pL <green>+1</green></a></li>
+<li><a href=#245-pf--1>245 pF -1</a></li>
+<li><a href=#252-pf--2>252 pF -2</a></li>
+<li><a href=#254-pf--3>254 pF -3</a></li>
+<li><a href=#259-pf--4>259 pF -4</a></li>
+<li><a href=#260-pf--5>260 pF -5</a></li>
+<li><a href=#262-pf--6>262 pF -6</a></li>
+<li><a href=#267-pf--7>267 pF -7</a></li>
+<li><a href=#268-pf--8>268 pF -8</a></li>
+<li><a href=#278-pf--9>278 pF -9</a></li>
+<li><a href=#278-pf--10>278 pF -10</a></li>
+</ul>
+</li>
+<li><a href=#檢討>檢討</a></li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&text=%5bVirtual%5d%20SWERC%202021-2022" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&title=%5bVirtual%5d%20SWERC%202021-2022" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&is_video=false&description=%5bVirtual%5d%20SWERC%202021-2022" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bVirtual%5d%20SWERC%202021-2022&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&title=%5bVirtual%5d%20SWERC%202021-2022" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&title=%5bVirtual%5d%20SWERC%202021-2022" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&name=%5bVirtual%5d%20SWERC%202021-2022&description=%e5%9c%98%e7%b7%b4%e7%af%87" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fvirtual-swerc-2021%2f&t=%5bVirtual%5d%20SWERC%202021-2022" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2022 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>

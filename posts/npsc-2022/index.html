@@ -56,6 +56,11 @@
 </a>
 </li>
 <li>
+<a class=icon href=https://littlecube8152.github.io/posts/virtual-swerc-2021/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
 <a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
 <i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
 </a>
@@ -128,15 +133,14 @@
 <li><a href=#初賽>初賽</a>
 <ul>
 <li><a href=#9-pg-greengreen>9 pG <green>+</green></a></li>
-<li><a href=#13-pg-greengreen>13 pG <green>+</green></a></li>
+<li><a href=#13-pd-greengreen>13 pD <green>+</green></a></li>
 <li><a href=#29-pb-greengreen>29 pB <green>+</green></a></li>
-<li><a href=#-pf--1>? pF -1</a></li>
-<li><a href=#-pf--2>? pF -2</a></li>
-<li><a href=#-pf--3>? pF -3</a></li>
-<li><a href=#-pf--4>? pF -4</a></li>
-<li><a href=#-pf--5>? pF -5</a></li>
-<li><a href=#-pf--6>? pF -6</a></li>
-<li><a href=#119-pf-green6green>119 pF <green>+6</green></a></li>
+<li><a href=#94-pf--1>94 pF -1</a></li>
+<li><a href=#99-pf--2>99 pF -2</a></li>
+<li><a href=#109-pf--3>109 pF -3</a></li>
+<li><a href=#110-pf--4>110 pF -4</a></li>
+<li><a href=#116-pf--5>116 pF -5</a></li>
+<li><a href=#119-pf-green5green>119 pF <green>+5</green></a></li>
 <li><a href=#186-pa-greengreen>186 pA <green>+</green></a></li>
 <li><a href=#230-pc-greengreen>230 pC <green>+</green></a></li>
 </ul>
@@ -192,6 +196,7 @@ NPSC 2022
 </header>
 <div class=content itemprop=articleBody>
 <style type=text/css>#TableOfContents>ul>li:nth-child(1)>ul,#TableOfContents>ul>li:nth-child(4)>ul{display:none}</style>
+<p>*12/5 UPD：初賽 F 的部分翻完 submission 截圖才改成比較貼近事實的細節</p>
 <p>最近有點多比賽還沒檢討，包含 NERC 2021-2022、SWERC 2021-2022 跟剛剛打的 IOI &lsquo;15 Day 1，<br>
 不過 NPSC 算是繼區賽之後重要很多的大比賽，而且全國賽也快到了，趁著記憶新鮮來檢討一下。</p>
 <h2 id=初賽>初賽</h2>
@@ -203,29 +208,27 @@ NPSC 2022
 <h3 id=9-pg-greengreen>9 pG <green>+</green></h3>
 </br>
 <p>過了之後高嘉泓跟我說 D 是水題，所以他就先去寫 D，寫完不久就過了，</p>
-<h3 id=13-pg-greengreen>13 pG <green>+</green></h3>
+<h3 id=13-pd-greengreen>13 pD <green>+</green></h3>
 </br>
 <p>B 其實我有一點點忘記了，不過應該也是順順的寫就過了</p>
 <h3 id=29-pb-greengreen>29 pB <green>+</green></h3>
 </br>
 <p>之後高嘉泓去做了 C，他跟我講完想法我覺得很合理，結果寫完就在範測 WA 了，問題出在我們不知道前面有多的可以換得這件事之後，要怎麼用他們構造出更好的解，所以我看著芒果那一隊開出 F 之後就去看了 F，</p>
-<p>F 一臉結論題的樣子，因為高嘉泓裝弱說他不會賽局，所以就由我這個數學笨蛋來開這題。<br>
+<p>F 一臉結論題的樣子，因為高嘉泓裝弱說他不會賽局，所以就由我這個數學笨蛋來開這題。 <br>
 所以我就隨便打表亂耍笨就傳上去吃了一個大大的 WA</p>
-<h3 id=-pf--1>? pF -1</h3>
+<h3 id=94-pf--1>94 pF -1</h3>
 </br>
 <p>推一推想說不太可能錯吧，所以我就把我的打表從二維變成三維，然後 claim 了另一個結論又吃了大大的 WA，</p>
-<h3 id=-pf--2>? pF -2</h3>
+<h3 id=99-pf--2>99 pF -2</h3>
 </br>
-<p>然後我就做了一樣的事情，把表開成四維然後再 claim 了一個大大的 WA，</p>
-<h3 id=-pf--3>? pF -3</h3>
+<p>然後我就做了一樣的事情，把表開成四維然後再 claim 了一下，覺得不放心再改了一次，<br>
+後來開成五維靜下心來好好推之後就想到了一個很棒的結論，但我不確定他到底是不是好的，所以就被友慫恿傳了兩個更大的 WA</p>
+<h3 id=109-pf--3>109 pF -3</h3>
+<h3 id=110-pf--4>110 pF -4</h3>
 </br>
-<p>後來開成五維靜下心來好好推之後就想到了一個很棒的結論，但我不確定他到底是不是好的，所以就被友慫恿傳了一個更大的 WA</p>
-<h3 id=-pf--4>? pF -4</h3>
-</br>
-<p>最後就知道答案了可是我又更笨吃了兩個 WA，</p>
-<h3 id=-pf--5>? pF -5</h3>
-<h3 id=-pf--6>? pF -6</h3>
-<h3 id=119-pf-green6green>119 pF <green>+6</green></h3>
+<p>最後就知道答案了可是我又更笨吃了一個 WA，</p>
+<h3 id=116-pf--5>116 pF -5</h3>
+<h3 id=119-pf-green5green>119 pF <green>+5</green></h3>
 </br>
 <p>我們這時候想說我們 penalty 已經吃爆了，接下來就只能拚題數了，<br>
 （不過四題應該還是會進決賽吧）</p>
@@ -369,7 +372,7 @@ $1 \leq T \leq 100,\,2 \leq N \leq 2\cdot 10^5$</p>
 </blockquote>
 <p>很早就知道可以把質數拆成 $2,\,3$，就變成是一題實作樹 DP，簡單來講就是當成是 $dp_{i,\,j}$ 表示 $i$ 的子樹根還可以留一個長度為 $j (\leq 2)$ 的鍊，剩下有沒有辦法刪光光，推了 DP 之後發現可以判斷有沒有解，同時也能回溯，所以我們就直接去開 E 了，<br>
 我其實覺得這時候我應該專注開寫，不過我還是決定跟隊友驗然後慢慢寫，畢竟是大實作，<br>
-一開始很快就寫完可不可行了，然後就是量幾乎是兩倍然後思考量是四倍的東西，<br>
+一開始很快就寫完可不可行了，然後就是量幾乎是兩倍然後思考量是四倍的回溯，<br>
 我一邊慢慢寫一邊想有沒有比較好的方式，最後還是實作出來了，<br>
 寫完驗解的時候燒掉，怎麼抓都抓不出來是哪條轉移爛掉，結果是高嘉泓把圖畫錯了。<br>
 確定沒問題就傳上去，結果</p>
@@ -424,15 +427,14 @@ $1 \leq T \leq 100,\,2 \leq N \leq 2\cdot 10^5$</p>
 <li><a href=#初賽>初賽</a>
 <ul>
 <li><a href=#9-pg-greengreen>9 pG <green>+</green></a></li>
-<li><a href=#13-pg-greengreen>13 pG <green>+</green></a></li>
+<li><a href=#13-pd-greengreen>13 pD <green>+</green></a></li>
 <li><a href=#29-pb-greengreen>29 pB <green>+</green></a></li>
-<li><a href=#-pf--1>? pF -1</a></li>
-<li><a href=#-pf--2>? pF -2</a></li>
-<li><a href=#-pf--3>? pF -3</a></li>
-<li><a href=#-pf--4>? pF -4</a></li>
-<li><a href=#-pf--5>? pF -5</a></li>
-<li><a href=#-pf--6>? pF -6</a></li>
-<li><a href=#119-pf-green6green>119 pF <green>+6</green></a></li>
+<li><a href=#94-pf--1>94 pF -1</a></li>
+<li><a href=#99-pf--2>99 pF -2</a></li>
+<li><a href=#109-pf--3>109 pF -3</a></li>
+<li><a href=#110-pf--4>110 pF -4</a></li>
+<li><a href=#116-pf--5>116 pF -5</a></li>
+<li><a href=#119-pf-green5green>119 pF <green>+5</green></a></li>
 <li><a href=#186-pa-greengreen>186 pA <green>+</green></a></li>
 <li><a href=#230-pc-greengreen>230 pC <green>+</green></a></li>
 </ul>
