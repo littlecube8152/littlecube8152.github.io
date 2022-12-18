@@ -1,0 +1,1 @@
+{"name": "base", "short_name": "base", "contest": "nhspc2022", "max_score": 100.0, "extra_headers": ["Subtask 1 (4)", "Subtask 2 (20)", "Subtask 3 (11)", "Subtask 4 (32)", "Subtask 5 (33)"], "order": 0, "score_mode": "max_subtask", "score_precision": 0}
