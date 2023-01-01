@@ -16,10 +16,8 @@
         twemoji.parse(document.body, 
                 {folder: 'svg', ext: '.svg'} // This is to specify to Twemoji to use SVGs and not PNGs
         );
-
     }
-
-</script>
+  </script>
   {{ range .Site.Params.js }} <script src="{{ . | absURL }}"></script> {{ end }}
   {{ partial "opengraph.html" . }}
   {{ partial "twitter_cards.html" . }}
@@ -44,11 +42,14 @@
     {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
   {{ end }}
   {{ end }}
-  {{ if .Site.GoogleAnalytics }}
-  {{ if .Site.Params.googleAnalyticsAsync }}
-    {{ template "_internal/google_analytics_async.html" . }}
-  {{ else }}
-    {{ template "_internal/google_analytics.html" . }}
-  {{ end }}
-  {{ end }}
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPQGDNSYSX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZPQGDNSYSX');
+  </script>
 </head>

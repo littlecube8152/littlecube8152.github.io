@@ -43,6 +43,7 @@ weight = 5
     description = "如果我也能成為電神就好了..."
     colortheme = "dark" 
     googleAnalyticsAsync = true 
+    GoogleAnalytics = 'G-ZPQGDNSYSX'
     mathjax = true
 	# Custom CSS applied to default styles.
     css = ["css/prism.css"]
