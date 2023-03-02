@@ -1546,6 +1546,7 @@ code {
   border: 1px dotted #666;
   border-radius: 2px;
   -webkit-border-radius: 2px;
+  font-family: "Consolas";
 }
 
 .highlight {
