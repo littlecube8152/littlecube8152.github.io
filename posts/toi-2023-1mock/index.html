@@ -1,0 +1,687 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> TOI 2023 一模 (+ 一階心得亂寫) | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://twemoji.maxcdn.com/v/latest/twemoji.min.js crossorigin=anonymous></script>
+<script>window.onload=function(){twemoji.parse(document.body,{folder:'svg',ext:'.svg'})}</script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="TOI 2023 一模 (+ 一階心得亂寫)">
+<meta property="og:description" content="笨方塊在一模被 Communication 揍爛，燒雞">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/toi-2023-1mock/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-03-27T01:30:00+08:00">
+<meta property="article:modified_time" content="2023-03-27T01:30:00+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="TOI 2023 一模 (+ 一階心得亂寫)">
+<meta name=twitter:description content>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPQGDNSYSX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ZPQGDNSYSX')</script>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/ aria-label=Home>
+<i class="fas fa-home" aria-hidden=true onmouseover="$('#i-home').toggle()" onmouseout="$('#i-home').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/joisc-2021-escape-route/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-home class=info style=display:none>Home</span>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&text=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&title=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&is_video=false&description=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&title=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&title=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&name=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e5%9c%a8%e4%b8%80%e6%a8%a1%e8%a2%ab%20Communication%20%e6%8f%8d%e7%88%9b%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&t=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#一模>一模</a>
+<ul>
+<li><a href=#題目>題目</a></li>
+<li><a href=#比賽>比賽</a></li>
+<li><a href=#賽後>賽後</a></li>
+</ul>
+</li>
+<li><a href=#一階>一階</a>
+<ul>
+<li><a href=#day-1>Day 1</a></li>
+<li><a href=#day-2>Day 2</a></li>
+<li><a href=#day-3>Day 3</a></li>
+<li><a href=#day-4>Day 4</a></li>
+<li><a href=#day-5>Day 5</a></li>
+<li><a href=#day-6>Day 6</a></li>
+<li><a href=#day-7>Day 7</a></li>
+<li><a href=#day-8>Day 8</a></li>
+<li><a href=#day-9>Day 9</a></li>
+<li><a href=#day-10>Day 10</a></li>
+<li><a href=#day-11>Day 11</a></li>
+<li><a href=#day-12>Day 12</a></li>
+<li><a href=#day-13>Day 13</a></li>
+</ul>
+</li>
+<li><a href=#附件>附件</a></li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+TOI 2023 一模 (+ 一階心得亂寫)
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2023-03-27 01:30:00 +0800 +0800" itemprop=datePublished>2023-03-27</time>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../%20tags/toi rel=tag>TOI</a>
+,
+<a class=tag-link href=../../%20tags/oi rel=tag>OI</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<h2 id=一模>一模</h2>
+<h3 id=題目>題目</h3>
+<h4 id=pa-國王的簽名照-autograph-communication-3s2-gb>pA 國王的簽名照 (autograph) [Communication, 3s/2 GB]</h4>
+<p>有一個 $5 \times 5$ 的網格，國王會在上面走 Hamiltonian Path，每一天走一格，兩個格子相鄰若且唯若他們共用一條邊界。<br>
+你每一天可以拜訪一個點（不同天可以重複），你的目標是最大化跟國王在同一個點的天數，如果你沒遇到，那你還是能知道國王來過了沒以及什麼時候來過。<br>
+具體來說，你可以呼叫<strong>至多</strong> $25$ 次 <code>Check(</code>$k$<code>)</code>，第 $i$ 次呼叫表示你第 $i$ 天造訪 $k$ 號節點，而回傳的值是</p>
+<ul>
+<li>$0$，如果國王當天在那個節點</li>
+<li>$d$，如果國王在這天之前來過，表示國王在第 $d$ 天抵達這個節點</li>
+<li>$-1$，如果國王沒有來過</li>
+</ul>
+<p>在一次測試中，評分程式最多呼叫這個函數 $10$ 次。</p>
+<p>Judge 是 Adaptive 的。</p>
+<p>定義你跟國王在同一地點的天數是 $K$，那你的得分是</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>$K$</th>
+<th style=text-align:center>$0$</th>
+<th style=text-align:center>$1$</th>
+<th style=text-align:center>$[2, 8]$</th>
+<th style=text-align:center>$9$</th>
+<th style=text-align:center>$10$</th>
+<th style=text-align:center>$[11, 25]$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>得分</td>
+<td style=text-align:center>$0$</td>
+<td style=text-align:center>$0.08$</td>
+<td style=text-align:center>$0.03K+0.15$</td>
+<td style=text-align:center>$0.51$</td>
+<td style=text-align:center>$0.75$</td>
+<td style=text-align:center>$1.0$</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>分數</th>
+<th style=text-align:left>額外輸入限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>$12$</td>
+<td style=text-align:left>Judge 不是 Adaptive 的</td>
+</tr>
+<tr>
+<td style=text-align:center>$30$</td>
+<td style=text-align:left>國王從 $1$ 號節點（左上角）出發</td>
+</tr>
+<tr>
+<td style=text-align:center>$14$</td>
+<td style=text-align:left>當天的 <code>Check(k)</code> 不會影響該次 Judge 的 Adaptive 策略</td>
+</tr>
+<tr>
+<td style=text-align:center>$44$</td>
+<td style=text-align:left>無額外限制</td>
+</tr>
+</tbody>
+</table>
+<h4 id=pb-最佳劇照-stills-batch-1s2-gb>pB 最佳劇照 (stills) [Batch, 1s/2 GB]</h4>
+<p>有 $n$ 個線段，第 $i$ 個是 $[l_i,r_i]$，你要找出若干個整數點覆蓋所有的線段，如果你選擇時間 $t$，則該點的<strong>不自然度</strong>是所有包含這個點的線段的 $|(r_i - t) - (t - l_i)|$ 的總和。<br>
+你要找到一組覆蓋的方式使得該方式所有點的<strong>不自然度</strong>總和最少，並且輸出其中一組最佳方案。</p>
+<ul>
+<li>$1 \leq n \leq 10^5$</li>
+<li>$0 \leq l_i &lt; r_i \leq 10^9$ 且 $l_i, r_i$ 都是偶數</li>
+</ul>
+<p>定義你找到的最佳解的<strong>不自然度</strong>總和是 $S$，而方案是覆蓋 $t_1,t_2,\cdots,t_k$，那</p>
+<ul>
+<li>如果 $S$ 是最佳解且方案是最佳方案，那得分是 $1.0$</li>
+<li>如果 $S$ 是最佳解但方案不合法或總<strong>不自然度</strong>不是 $S$，那得分是 $0.6$</li>
+<li>如果 $S$ 不是最佳解，那得分是 $0$。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>分數</th>
+<th style=text-align:left>額外輸入限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>$11$</td>
+<td style=text-align:left>$n \leq 1000, r_i \leq 1000$</td>
+</tr>
+<tr>
+<td style=text-align:center>$15$</td>
+<td style=text-align:left>$n \leq 1000, r_i \leq 10^7$</td>
+</tr>
+<tr>
+<td style=text-align:center>$17$</td>
+<td style=text-align:left>$n \leq 10^5, r_i \leq 10^6, \sum_i (r_i - l_i) \leq 5 \times 10^8$</td>
+</tr>
+<tr>
+<td style=text-align:center>$57$</td>
+<td style=text-align:left>無額外限制</td>
+</tr>
+</tbody>
+</table>
+<h4 id=pc-密碼提示系統-guesspass-communication-3s2-gb>pC 密碼提示系統 (guesspass) [Communication, 3s/2 GB]</h4>
+<p>有一個未知的密碼字串 $R$，長度為 $n$，包含前 $m$ 個大寫英文字母且每種至少出現一次。<br>
+你可以做出兩種詢問，兩種詢問都是給定一個嚴格遞增序列 $S$，定義 $X = R_{s_1}R_{s_2}\cdots R_{s_{|S|}}$，</p>
+<ul>
+<li><code>GetCount(</code>$S$<code>)</code> 會回傳 $X$ 有多少種不同的字元。</li>
+<li><code>GetRank(</code>$S$<code>)</code> 會回傳對於所有 $X$ 的排列來說，$X$ 是字典序第幾小的答案，但若這個答案超過 $10^{15}$，會回傳 $-1$。</li>
+</ul>
+<p>兩種詢問的代價都是 $5+|S|$，總詢問代價不能超過 $200000 = 2 \times 10^5$。</p>
+<p>在一次測試中，評分程式最多呼叫這個函數 $5$ 次。</p>
+<ul>
+<li>$1 \leq m \leq n \leq 1000$</li>
+<li>$1 \leq m \leq 26$</li>
+<li>Judge 不是 Adaptive</li>
+</ul>
+<p>假設在所有呼叫中，你的程式呼叫 <code>GetCount</code> 跟 <code>GetRank</code> 的總代價最大值是 $Q$，那你的得分 $S$ 是</p>
+<p>$S = \begin{cases}0 & \text{if } Q > 200000\\\lfloor\frac{200000-Q}{3200}\rfloor\times 0.01 & \text{if } 40000 &lt; Q \leq 200000\\ 0.5 + \lfloor\frac{40000-Q}{200}\rfloor\times 0.01 & \text{if } 30000 &lt; Q \leq 40000\\1 & \text{if } Q \leq 30000\end{cases}$</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>分數</th>
+<th style=text-align:left>額外輸入限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>$3$</td>
+<td style=text-align:left>$n = m$</td>
+</tr>
+<tr>
+<td style=text-align:center>$10$</td>
+<td style=text-align:left>$m = 2$</td>
+</tr>
+<tr>
+<td style=text-align:center>$20$</td>
+<td style=text-align:left>$m \leq 10$</td>
+</tr>
+<tr>
+<td style=text-align:center>$67$</td>
+<td style=text-align:left>無額外限制</td>
+</tr>
+</tbody>
+</table>
+<h4 id=pd-安逸旅行路線-jaunt-batch-3s2-gb>pD 安逸旅行路線 (jaunt) [Batch, 3s/2 GB]</h4>
+<p>有一張 $n$ 點 $m$ 邊有向圖，邊 $u \rightarrow v$ 的難度係數為 $d(u, v)$，代表如果 $u \rightarrow v$ 是路徑上的第 $k$ 條邊（1-based），則這條邊的<strong>辛苦程度</strong>是 $d(u, v)^k\mod P$，一條路徑的辛苦程度被定義為路徑上所有邊的最大<strong>辛苦程度</strong>。</p>
+<p>輸出 $s$ 到 $t$ 的所有路徑中，最小辛苦程度的值，若不存在請輸出 $-1$。</p>
+<ul>
+<li>$1 \leq n \leq 1000$</li>
+<li>$1 \leq m \leq 5000$</li>
+<li>$2 \leq P \leq 10^5$ 且 $P$ 是質數</li>
+<li>$0 \leq d(u_i, v_i) &lt; P$</li>
+<li>$1 \leq s, t, u_i, v_i \leq n$</li>
+<li>$s \neq t$</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>分數</th>
+<th style=text-align:left>額外輸入限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>$8$</td>
+<td style=text-align:left>$n \leq 10, m \leq 100$</td>
+</tr>
+<tr>
+<td style=text-align:center>$16$</td>
+<td style=text-align:left>$n \leq 100, m \leq 500$，圖沒有環</td>
+</tr>
+<tr>
+<td style=text-align:center>$23$</td>
+<td style=text-align:left>$n \leq 100, m \leq 500$</td>
+</tr>
+<tr>
+<td style=text-align:center>$53$</td>
+<td style=text-align:left>無額外限制</td>
+</tr>
+</tbody>
+</table>
+<h3 id=比賽>比賽</h3>
+<p>小插曲是這場延時 46 分鐘，一開始是先延 10 分鐘，10 分鐘後又說延到 30 分，30 分的時候大家打開題本才急急忙忙說先不要開，說等教授宣布開始才開始，結果就一直延到 46 分的時候突然說開始，<br>
+一開始看到 Communication、Batch、Communication、Batch 的時候先涼了一半，<br>
+讀完題發現 A 是什麼噁，B 感覺最好做，C 可以亂做，D 是什麼怪，<br>
+A 先試了亂 random 直接本機就發現喔不對阿，我根本就在耍笨吧，<br>
+所以就直線去開 B 了，B 不帶權是經典題目，但這題帶了一個詭譎權重所以很自然地就會想到 $dp_i$ 表示上次拍照是在 $i$ 且右界在 $i$ 以前的區間沒有人被漏掉，想一想之後發現根本就只有 $l_i - 1, l_i, \frac{l_i + r_i}{2}, r_i, r_i + 1$ 是重要的，所以就快樂離散化然後 DP 算答案順便構解，寫了一下傳上去</p>
+<h4 id=113-b-0>1:13 B 0</h4>
+</br>
+<p>詭異的是吃的竟然是 TLE，所以我猜我構解爆掉了，assert 一下發現</p>
+<h4 id=117-b-0>1:17 B 0</h4>
+</br>
+<p>所以我就把構解關掉，傳上去得到</p>
+<h4 id=121-b-0>1:21 B 0</h4>
+</br>
+<p>而且這次是吃 WA，完全不懂的時候又亂作亂想繼續吃 WA，</p>
+<h4 id=123-b-0>1:23 B 0</h4>
+</br>
+<p>我覺得我大概是漏了不知道什麼東西，回去看題本才發現 $l$ 可以是 $0$ 之後把最小值改成負的就過了。</p>
+<h4 id=125-b-green100green>1:25 B <green>100</green></h4>
+</br>
+<p>過了之後先去搞 C，一開始我還想 sort 之類的詭譎，但後來想想我要是能分辨前 $m$ 個我就可以直接快樂二分搜，所以我就想了一個不知道會多好的解，估一下應該有 40 ~ 60 分就先寫寫，<br>
+我的方法是先找到前 $m$ 個，所以就先維護已經找到的集合然後看看有沒有在裡面，<br>
+找完之後剩下的就快樂二分搜看看是誰，<br>
+因為一開始要是太不亂就會燒雞，所以先 shuffle 讓他接近中間，<br>
+寫完測 stub 的時候處處碰壁，打開一看才發現跟題本上說的不一樣，<br>
+努力看懂之後本機測過了，然後丟上去就吃了 WA</p>
+<h4 id=230-c-0>2:30 C 0</h4>
+</br>
+<p>不懂發生什麼事了，但多測一下就發現我後面二分搜判錯人了，改完測一下就傳</p>
+<h4 id=234-c-5261>2:34 C 52.61</h4>
+</br>
+<p>跑去做 D，發現子題 3 之前可能 $\mathcal O(P(n + m)\log P)$ 對答案二分搜可能會過，<br>
+因為我沒有很想賭超大陣列，所以我算 cost 的時候是蓋根號表，也就是紀錄對每個邊來講，base $B = \sqrt P \approx 350$ 的兩位數各自長怎樣，<br>
+傳上去吃了 WA，</p>
+<h4 id=306-d-0>3:06 D 0</h4>
+</br>
+<p>我發現我把起點當成 $1$ 號點了，明明就是 $s$，我超笨，</p>
+<h4 id=306-d-24>3:06 D 24</h4>
+</br>
+<p>一看發現連子題 3 都沒過，感覺有點詭譎，但還是先跳 A，<br>
+A 我突然發現可以直接猜 $1, 2, 1, 2, \cdots$，因為國王根本就只會走黑白黑白，<br>
+C 多傳兩次看看 shuffle 會不會變好，但結果怎麼是變爛啊 qwq</p>
+<h4 id=313-c-5094>3:13 C 50.94</h4>
+<h4 id=314-a-21>3:14 A 21</h4>
+<h4 id=315-c-5007>3:15 C 50.07</h4>
+</br>
+<p>稍微唬爛一下發現我根本不會唬爛，所以在 A 又多吃了笨分數，<br>
+後來有個子題是從 1 開始，所以可以直接猜 $1, 2, 3, 2, 3, \cdots$，<br>
+這段時間基本上就是 A 亂唬爛 + C 亂傳，<br>
+接下來的過程如果不小心有 C 的 submission 就是我在亂傳拚 random shuffle，<br>
+順便去寫了一個我現在也不知道在幹嘛的 D，</p>
+<h4 id=316-a-0>3:16 A 0</h4>
+<h4 id=323-a-096>3:23 A 0.96</h4>
+<h4 id=323-c-5074>3:23 C 50.74</h4>
+<h4 id=330-c-5007>3:30 C 50.07</h4>
+<h4 id=330-d-8>3:30 D 8</h4>
+<h4 id=331-a-0>3:31 A 0</h4>
+<h4 id=336-c-5007>3:36 C 50.07</h4>
+<h4 id=339-a-2136>3:39 A 21.36</h4>
+<h4 id=341-c-5007>3:41 C 50.07</h4>
+<h4 id=341-a-219>3:41 A 21.9</h4>
+<h4 id=350-c-5094>3:50 C 50.94</h4>
+<h4 id=351-a-219>3:51 A 21.9</h4>
+<h4 id=353-a-21>3:53 A 21</h4>
+</br>
+<p>後來我想到 D 根本就可以跑 Dijkstra，而且距離只有 $0$ 到 $P - 1$ 所以可以快樂用 0-1 BFS 的概念做掉，<br>
+這樣複雜度是 $\mathcal O(P(n + m))$，應該穩穩地過子題 3，所以我就先寫下去了，<br>
+傳上去</p>
+<h4 id=410-d-24>4:10 D 24</h4>
+</br>
+<p>得到的是 TLE，我以為我被卡常所以先加了 pragma，</p>
+<h4 id=412-d-24>4:12 D 24</h4>
+<h4 id=421-d-24>4:21 D 24</h4>
+<h4 id=421-c-5007>4:21 C 50.07</h4>
+<h4 id=423-d-24>4:23 D 24</h4>
+</br>
+<p>這三筆 submission 我忘記發生什麼事了，但我記得就是我本機亂暴力生測資亂跑都很快啊，我完全不知道發生什麼事，<br>
+我甚至丟上去跑了 Testing 也超級快就跑出來，<br>
+結果我發現是我上一個爛解有東西沒拔掉不小心讓複雜度變成 $\mathcal O(P^2)$，超笨= =</p>
+<h4 id=424-d-green100green>4:24 D <green>100</green></h4>
+</br>
+<p>莫名其妙的過了？？？<br>
+我原本是只有預期 47，但多賺不虧啊</p>
+<p>回頭做 C，我發現 GetRank 我只有用到兩項有點浪費，但好像我也想不到可以好好弄的解，所以我想到的是一開始找相異的時候可以不要一個一個找，先一次跳一個 $magic$，要是沒有就可以全部偷懶掉，</p>
+<h4 id=441-c-0>4:41 C 0</h4>
+</br>
+<p>智障才會拿 <code>.size()</code> 直接做減法= =</p>
+<h4 id=443-c-6129>4:43 C 61.29</h4>
+</br>
+<p>後來的過程就是我一直拿一堆東西亂調 $magic$，</p>
+<h4 id=443-c-6022>4:43 C 60.22</h4>
+<h4 id=444-c-6102>4:44 C 61.02</h4>
+<h4 id=444-c-5762>4:44 C 57.62</h4>
+<h4 id=445-c-6002>4:45 C 60.02</h4>
+<h4 id=445-c-6029>4:45 C 60.29</h4>
+<h4 id=446-c-5882>4:46 C 58.82</h4>
+<h4 id=446-c-6002>4:46 C 60.02</h4>
+<h4 id=446-c-6062>4:46 C 60.62</h4>
+<h4 id=447-c-5942>4:47 C 59.42</h4>
+<h4 id=448-c-6022>4:48 C 60.22</h4>
+<h4 id=449-c-6069>4:49 C 60.69</h4>
+<h4 id=450-c-5942>4:50 C 59.42</h4>
+<h4 id=450-c-5982>4:50 C 59.82</h4>
+<h4 id=451-c-6069>4:51 C 60.69</h4>
+<h4 id=451-c-6049>4:51 C 60.49</h4>
+<h4 id=451-c-6149>4:51 C 61.49</h4>
+<h4 id=452-c-6062>4:52 C 60.62</h4>
+<h4 id=452-c-6062-1>4:52 C 60.62</h4>
+</br>
+<p>最後好像是 $magic = 0.18\dfrac{n}{m} + 1$ 的時候最好。</p>
+<p>比賽快結束前再去唬爛一下 A，然後就結束了。</p>
+<h4 id=456-a-924>4:56 A 9.24</h4>
+<h4 id=459-a-2136>4:59 A 21.36</h4>
+</br>
+<h3 id=賽後>賽後</h3>
+<p>Result:</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>A</th>
+<th style=text-align:center>B</th>
+<th style=text-align:center>C</th>
+<th style=text-align:center>D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>22.26</td>
+<td style=text-align:center><green>100</green></td>
+<td style=text-align:center>61.69</td>
+<td style=text-align:center><green>100</green></td>
+</tr>
+</tbody>
+</table>
+<p>出場問芒果他把 A 做到 89，他到底是什麼神仙啊 OAO<br>
+基本上這場我的問題就是把 A 丟掉沒有認真喇分，燒雞，<br>
+還有其實開 B 的速度可以再快一點的樣子，<br>
+現在打完二模的我很後悔一模應該再認真一點 qwq</p>
+<h2 id=一階>一階</h2>
+<p>因為我記憶力燒雞了所以這邊大概就是一些亂記之類的東西 >&lt;</p>
+<h3 id=day-1>Day 1</h3>
+<p>第一天我們先跑去台大混順便借日麻，然後就差點報到燒雞ㄌ<br>
+去捷絲旅寄行李的時候發現 Foxyy 跟 PixelCat 還有 victor.gao 一間，結果去師大才知道今年改成用 (年級, 名字) sort。</p>
+<p>順帶一提以後去選訓營的人可以記得先去寄行李就可以不用搬去師大再搬回來，然後洗衣粉其實捷絲旅有可以買。</p>
+<h3 id=day-2>Day 2</h3>
+<p>整天都是蔡孟宗的課，這次除了複習了我以前聽過的東西還加了很多很多，<br>
+今天的時候芒果做出了 Articulation Triangle，雖然我還是沒聽懂教授後面的作法但我還是因為幫忙微不足道的證明所以蹭到了平時成績，好耶，<br>
+順便推坑教授寫 Escape Route 了，<br>
+晚上的體育課恢復成我一年級進來時候的樣子了，沒有下雨好棒</p>
+<h3 id=day-3>Day 3</h3>
+<p>今天是講 STL + sorting 的教授，所以今天我去補 virtual 了 JOISC 2019 Day 4，做出酷題目很開心，<br>
+但我好像還是當不了日本國手，果然我還是得變強。</p>
+<h3 id=day-4>Day 4</h3>
+<p>今天是 8e7 跟 WiwiHo 講課，講了很多 Communication 跟 Output Only 題，上課的時候我大概把 IOI Transfer 跟 Combo 做掉了，APIO 那題直接把我揍爛，TOI 自助餐也順便嗆了我不會寫程式，但晚上的體育課完我就突然想到要怎麼拿自助餐的 90 分了，好耶</p>
+<p>忘記是不是這天芒果被竹科實中的老師發現在打 tetr.io，整件事情超🉐，想知道的還是去問芒果比較好。</p>
+<h3 id=day-5>Day 5</h3>
+<p>又是蔡孟宗的酷酷課，比較可惜的是今年沒機會聽 forest 跟 matching 版的 alias table 讓我有點小傷心，<br>
+晚上我就不記得發生什麼事了</p>
+<h3 id=day-6>Day 6</h3>
+<p>加菲貓教授的課，雖然不太需要聽但今天是模考前一天所以我大概只補題不開題，在芒果老師的教導下把 JOISC 2019 全數補完題了，</p>
+<h3 id=day-7>Day 7</h3>
+<p>一模，大概就在上面講完了，<br>
+晚上在打 JOISC 2023 Day 1，但因為我想不出題目躺在地上所以感冒了，真的不要躺在地上，<br>
+早知道就聽 WiwiHo 說的躺在地板上會感冒 qwq<br>
+JOISC 我打得不怎麼樣，燒雞</p>
+<h3 id=day-8>Day 8</h3>
+<p>JOISC 2023 Day 2 online mirror，打得算可以，反正整天都是 vjudge 教授講自動機，所以那也沒怎樣。</p>
+<h3 id=day-9>Day 9</h3>
+<p>JOISC 2023 Day 3 online mirror + vjudge，<br>
+早上是 UVa 教授的 UVa mashup，先不論 UVa 的題目輸入輸出很毒瘤，<br>
+vjudge 今天似乎抓不到他的 verdict，<br>
+因為 UVa 一度爛掉，所以我 claim 之後 vjudge 也不會好我就直接不寫後面兩題跑去 JOISC 燒雞了<br>
+（根據 PixelCat 的說法，後來是好的所以我好像有點小虧）
+今天的壞事可能是 JOISC 真的打超爛= =，<br>
+可能我今天狀況本來就不好而且身體狀況燒雞再加上連續打讓我直接噴飛，</p>
+<p>下午吃飯的酷事：芒果在講他是怎麼學會數學進入 TMO 的經歷，然後我因為鼻子不舒服去抽衛生紙被芒果以為是我被他嗆哭，<br>
+在感冒期間打資訊奧林匹克真的會燒雞，很🉐的事是有個搶角錐遊戲，結果最後一場我們一直送角錐，超好笑</p>
+<h3 id=day-10>Day 10</h3>
+<p>第一次體會輔導課，然後我講了一大堆的怪話，詳情請見選訓怪話集。
+JOISC 2023 Day 4 好像打得有點差，燒雞。</p>
+<h3 id=day-11>Day 11</h3>
+<p>又推了一個教授寫 Escape Route，<br>
+但我的感冒好像在讓我亂講話（或是我腦袋短路但我在找藉口），</p>
+<h3 id=day-12>Day 12</h3>
+<p>養病休息 + 為二模祈禱，<br>
+壞事是 PixelCat 在地板上小睡一下也感冒了，雖然他二模打贏我但還是不要在躺在地板上，真的會感冒</p>
+<h3 id=day-13>Day 13</h3>
+<p>二模，等之後有開 judge 再來把我的燒雞歷程公諸於世。</p>
+<h2 id=附件>附件</h2>
+<p>題本跟範例互動程式：</p>
+<p><a href=./../TOI-2023-1/1A_zh_tw.pdf>1A.pdf</a>
+<a href=./../TOI-2023-1/stubA.cpp>stubA.cpp</a>
+<a href=./../TOI-2023-1/1A_sample.cpp>1A_sample.cpp</a><br>
+<a href=./../TOI-2023-1/1B_zh_tw.pdf>1B.pdf</a><br>
+<a href=./../TOI-2023-1/1C_zh_tw.pdf>1C.pdf</a>
+<a href=./../TOI-2023-1/stubC.cpp>stubC.cpp</a>
+<a href=./../TOI-2023-1/1C_sample.cpp>1C_sample.cpp</a><br>
+<a href=./../TOI-2023-1/1D_zh_tw.pdf>1D.pdf</a></p>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#一模>一模</a>
+<ul>
+<li><a href=#題目>題目</a></li>
+<li><a href=#比賽>比賽</a></li>
+<li><a href=#賽後>賽後</a></li>
+</ul>
+</li>
+<li><a href=#一階>一階</a>
+<ul>
+<li><a href=#day-1>Day 1</a></li>
+<li><a href=#day-2>Day 2</a></li>
+<li><a href=#day-3>Day 3</a></li>
+<li><a href=#day-4>Day 4</a></li>
+<li><a href=#day-5>Day 5</a></li>
+<li><a href=#day-6>Day 6</a></li>
+<li><a href=#day-7>Day 7</a></li>
+<li><a href=#day-8>Day 8</a></li>
+<li><a href=#day-9>Day 9</a></li>
+<li><a href=#day-10>Day 10</a></li>
+<li><a href=#day-11>Day 11</a></li>
+<li><a href=#day-12>Day 12</a></li>
+<li><a href=#day-13>Day 13</a></li>
+</ul>
+</li>
+<li><a href=#附件>附件</a></li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&text=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&title=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&is_video=false&description=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&title=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&title=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&name=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e5%9c%a8%e4%b8%80%e6%a8%a1%e8%a2%ab%20Communication%20%e6%8f%8d%e7%88%9b%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2ftoi-2023-1mock%2f&t=TOI%202023%20%e4%b8%80%e6%a8%a1%20%28%2b%20%e4%b8%80%e9%9a%8e%e5%bf%83%e5%be%97%e4%ba%82%e5%af%ab%29" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2023 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>
