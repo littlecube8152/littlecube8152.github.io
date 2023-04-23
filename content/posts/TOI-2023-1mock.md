@@ -1,5 +1,5 @@
 ---
-title: "TOI 2023 一模 (+ 一階心得亂寫)"
+title: "TOI 2023 一模（+ 一階心得亂寫）"
 date: 2023-03-27T01:30:00+08:00
 draft: false
 tags: ["TOI", "OI"]
@@ -8,9 +8,9 @@ summary: "笨方塊在一模被 Communication 揍爛，燒雞"
 
 ## 一模
 
-### 題目
+### pA 國王的簽名照 (autograph) 
+[Communication, 3s/2 GB]
 
-#### pA 國王的簽名照 (autograph) [Communication, 3s/2 GB]
 有一個 $5 \times 5$ 的網格，國王會在上面走 Hamiltonian Path，每一天走一格，兩個格子相鄰若且唯若他們共用一條邊界。  
 你每一天可以拜訪一個點（不同天可以重複），你的目標是最大化跟國王在同一個點的天數，如果你沒遇到，那你還是能知道國王來過了沒以及什麼時候來過。   
 具體來說，你可以呼叫**至多** $25$ 次 `Check(`$k$`)`，第 $i$ 次呼叫表示你第 $i$ 天造訪 $k$ 號節點，而回傳的值是
@@ -34,7 +34,8 @@ Judge 是 Adaptive 的。
 |$14$|當天的 `Check(k)` 不會影響該次 Judge 的 Adaptive 策略
 |$44$|無額外限制
 
-#### pB 最佳劇照 (stills) [Batch, 1s/2 GB]
+### pB 最佳劇照 (stills) 
+[Batch, 1s/2 GB]
 
 有 $n$ 個線段，第 $i$ 個是 $[l_i,r_i]$，你要找出若干個整數點覆蓋所有的線段，如果你選擇時間 $t$，則該點的**不自然度**是所有包含這個點的線段的 $|(r_i - t) - (t - l_i)|$ 的總和。  
 你要找到一組覆蓋的方式使得該方式所有點的**不自然度**總和最少，並且輸出其中一組最佳方案。  
@@ -55,7 +56,8 @@ Judge 是 Adaptive 的。
 |$17$|$n \leq 10^5, r_i \leq 10^6, \sum_i (r_i - l_i) \leq 5 \times 10^8$ 
 |$57$|無額外限制
 
-#### pC 密碼提示系統 (guesspass) [Communication, 3s/2 GB]
+### pC 密碼提示系統 (guesspass) 
+[Communication, 3s/2 GB]
 
 有一個未知的密碼字串 $R$，長度為 $n$，包含前 $m$ 個大寫英文字母且每種至少出現一次。  
 你可以做出兩種詢問，兩種詢問都是給定一個嚴格遞增序列 $S$，定義 $X = R_{s_1}R_{s_2}\cdots R_{s_{|S|}}$，  
@@ -82,7 +84,8 @@ $S = \begin{cases}0 & \text{if } Q > 200000\\\\\lfloor\frac{200000-Q}{3200}\rflo
 |$20$|$m \leq 10$
 |$67$|無額外限制
 
-#### pD 安逸旅行路線 (jaunt) [Batch, 3s/2 GB]
+### pD 安逸旅行路線 (jaunt) 
+[Batch, 3s/2 GB]
 
 有一張 $n$ 點 $m$ 邊有向圖，邊 $u \rightarrow v$ 的難度係數為 $d(u, v)$，代表如果 $u \rightarrow v$ 是路徑上的第 $k$ 條邊（1-based），則這條邊的**辛苦程度**是 $d(u, v)^k\mod P$，一條路徑的辛苦程度被定義為路徑上所有邊的最大**辛苦程度**。  
 
