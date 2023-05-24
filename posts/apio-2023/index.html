@@ -1,0 +1,429 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> APIO 2023 | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://twemoji.maxcdn.com/v/latest/twemoji.min.js crossorigin=anonymous></script>
+<script>window.onload=function(){twemoji.parse(document.body,{folder:'svg',ext:'.svg'})}</script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="APIO 2023">
+<meta property="og:description" content="笨方塊耍笨打 APIO 被爆揍，燒雞">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/apio-2023/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-05-24T09:00:00+08:00">
+<meta property="article:modified_time" content="2023-05-24T09:00:00+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="APIO 2023">
+<meta name=twitter:description content>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPQGDNSYSX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ZPQGDNSYSX')</script>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/ aria-label=Home>
+<i class="fas fa-home" aria-hidden=true onmouseover="$('#i-home').toggle()" onmouseout="$('#i-home').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/toi-2023-4mock/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-home class=info style=display:none>Home</span>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&text=APIO%202023" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&title=APIO%202023" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&is_video=false&description=APIO%202023" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=APIO%202023&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&title=APIO%202023" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&title=APIO%202023" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&name=APIO%202023&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e8%80%8d%e7%ac%a8%e6%89%93%20APIO%20%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&t=APIO%202023" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#測機>測機</a></li>
+<li><a href=#賽前>賽前</a></li>
+<li><a href=#比賽>比賽</a>
+<ul>
+<li><a href=#045-a-97>0:45 A 97</a></li>
+<li><a href=#101-a-green100green>1:01 A <green>100</green></a></li>
+<li><a href=#134-c-12>1:34 C 12</a></li>
+<li><a href=#216-c-12>2:16 C 12</a></li>
+<li><a href=#222-b-28>2:22 B 28</a></li>
+<li><a href=#248-c-66>2:48 C 66</a></li>
+<li><a href=#255-b-7>2:55 B 7</a></li>
+<li><a href=#311-b-0>3:11 B 0</a></li>
+<li><a href=#353-b-12>3:53 B 12</a></li>
+<li><a href=#436-b-0>4:36 B 0</a></li>
+<li><a href=#439-b-13>4:39 B 13</a></li>
+<li><a href=#442-b-13>4:42 B 13</a></li>
+</ul>
+</li>
+<li><a href=#賽後>賽後</a></li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+APIO 2023
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2023-05-24 09:00:00 +0800 +0800" itemprop=datePublished>2023-05-24</time>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../%20tags/apio rel=tag>APIO</a>
+,
+<a class=tag-link href=../../%20tags/oi rel=tag>OI</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p>今年 TOI 決定要開始把 APIO 算進二階成績裡面，雖然說根據邪惡表格我似乎不會被逆，<br>
+但是在選訓的時候我有 virtual APIO 2019 然後打的很爛，高一的時候有 virtual 過 2021，同樣也打的很糟，<br>
+二階結束之後 virtual 了 APIO 2022 然後有拿到金牌，可是整個二階過後大概就只有練習這個，現在想起來有點太燒雞了。</p>
+<h2 id=測機>測機</h2>
+<p>今年 APIO 是 5/20 到 5/21 （星期六日），台灣是選 5/20 打，然後上禮拜五的時候 TOI 宣稱他們有寄測試帳號給我們，<br>
+不過我們都沒收到，寄信給 TOI 之後他們回了帳號密碼跟 CMS 的 admin 介面，<br>
+等我決定去測機的時候，我一打開發現他給我的連結是 port 8889 的 admin 介面，所以我猜他們沒有改 ContestWebServer 的 port，改成 8888 就進去了，</p>
+<p>測機有三題，第一題是水題，第二題是動態加點或刪點問有沒有一個點不在當下的點集但以他為根的時候至少三個子樹都有點，第三題是詭譎互動題，詳細我有點忘了，</p>
+<p>第一題亂寫亂寫我得到 50 分（Subtask 3, 4），這時候題目的兩個參數 $Q$ 跟 $S$ 我看反了，<br>
+然後這樣導致我範測一理解錯，改了一個錯誤的理解拿到 80 分（Subtask 2, 3, 4），<br>
+搞很久才發現我看錯那兩個參數了，改過來才拿到滿分，不知道在幹嘛。</p>
+<p>第二題我大概想到了可是我懶的寫，高嘉泓說他寫了一個很乾淨的作法，超強。</p>
+<h2 id=賽前>賽前</h2>
+<p>TOI 說前一天晚上八點前在捷絲旅報到，報到的時候要順便訂比賽當天下午的 pizza 所以卡了很久（？<br>
+報到完就沒什麼好說的了，晚上的時候我跟 Darren 在討論為什麼 2022 四模 A 我們的做法是不是可以拿不錯的分數，然後就快樂睡覺了。</p>
+<p>早上起來我們在讀規則，TOI 說我們等等比賽的時候要自己帶測試的帳號密碼進去，因為跟正式的帳號密碼一樣，這樣要是有人事先分享或者不小心知道不是就會大作弊嗎，超級怪。</p>
+<p>還有我以為比照模考的意思是 TOI 會用路由器鎖我們只能連到他們 CMS 的介面，可是實際上好像是可以連外網，所以我們在想要怎麼把我們的東西放到網路上，還好我從以前到現在幾乎所有 code 都在一個 repo 裡面，所以我只要 push 然後開成 public 就完事，打 OI 突然變成軍備競賽（X</p>
+<h2 id=比賽>比賽</h2>
+<p>這次的考場是 E202，到考場的時候我們發現今年 TOI 的筆電上有 VSCode 了，所以可以期待一下以後的模考可以用。</p>
+<p>考場內 TOI 有印好中文跟英文的題本，開賽的時候登入然後 Start 要自己按開始，我以為都登記好參賽時間了 CMS 應該可以直接設定參賽時間，導致結束的時候大家會差個一兩分鐘之類的。</p>
+<p>A 是一題水圖論題，看完題目的時候我就知道 $K$ 其實是 $\log C + \log N$ 量級的東西，而只有最後一個 3 分 subtask 是這個東西就讓我更清楚他是對的。<br>
+B 看起來是一道奇怪的資料結構題，想了一下沒有很多想法，<br>
+C 是一道 3-steps 的電路題，看懂題目花了我超級多時間，基本上就是用 16 種真值表的電路算詭譎的東西，</p>
+<p>我先去發了一個 C 的問題然後動手寫 A，不過他似乎不能回答我 C 的問題，因為這個問題的答案其實題本裡面有，不過那個部分應該是小問題所以應該不會怎樣，A 寫完傳上去一直等 compile 我以為我 CE 了，等了一段時間發現他有 Announcement 說 judge 卡住了要等大概一段時間才會得到結果，所以我就先去思考 B 跟 C。</p>
+<h3 id=045-a-97>0:45 A 97</h3>
+</br>
+<p>subtask 8 是 WA，所以應該就是 $K$ 太小了，把它改成最多 80 再傳一次，</p>
+<p>這時候我的 B 沒有任何想法，可是 C 的 12 分超級好拿，然後 54 分很好賺，所以我就先去寫了一個加法器跟一個乘法器寫 C，<br>
+印象中這時候 Announcement 說 submission 要過半小時才會有結果。</p>
+<h3 id=101-a-green100green>1:01 A <green>100</green></h3>
+</br>
+<p>大概 A 確定有 100 的時候我的 C 12 寫完傳上去了，<br>
+這時候想想發現 C 66 我只要把名子換成 bit，然後假設 Alice 拿著名子 $n_i$ 的人數字是 $a_i$，Bob 拿著 $s_i$ 寄給 $r_i$，那我只要算
+$$\sum_{j = 0}^{m - 1}[n_j = r_i]\left(\sum_{i = 0}^{n - 1}[n_i = s_j]a_i\right)$$
+就好，<br>
+這樣可以快樂 $nm$ 次比對跟加法就做完了，</p>
+<h3 id=134-c-12>1:34 C 12</h3>
+</br>
+<p>傳上去之後去想 B，B 真的對後面的子題一點頭緒都沒有所以決定開始喇分數，我先是直接開抄我的 PBDS 然後快樂寫完 28 分，之後開始想 7、12 跟 13 分要怎麼做，<br>
+B 的 7 分是遞增再遞減，我一開始看成是兩段遞增，不過作法幾乎沒差，而且還簡單還多，思考一下推了東西也傳上去了。</p>
+<h3 id=216-c-12>2:16 C 12</h3>
+</br>
+<p>出問題了，一測發現不得了，我的解在亂跑，<br>
+後來發現是我的字串沒有考慮到長度可能不足 4，所以改完之後再傳一次等大概 30 分鐘，</p>
+<h3 id=222-b-28>2:22 B 28</h3>
+</br>
+<p>12 分是值域只有 1, 2, 3，有點難所以我就去外面想想，後來想到 2 不用處理，答案直接跟 2 的出現次數取 max 就好，所以我就寫了 BIT 算那種中位數的東西，</p>
+<h3 id=248-c-66>2:48 C 66</h3>
+<h3 id=255-b-7>2:55 B 7</h3>
+</br>
+<p>這時候 judge 說大概要等 45 分鐘，我 B 12 傳上去之後就開始想 B 13，想一想想到了一個 $\mathcal O(N \log N)$ 的線段樹作法，基本上就是看兩個出現的東西中間必須拿，前後要拿兩個前綴後綴調整讓這個東西在裡面，因為連續性我只需要考慮可以達到的區間就好了，可是線段樹有點肥然後它還要被修改查詢 $10^6$ 次，所以我有一點不敢寫，</p>
+<h3 id=311-b-0>3:11 B 0</h3>
+</br>
+<p>Wrong Answer，直接開本機對拍發現我 3 的時候忘記把數字改掉了，先傳上去然後多拍幾次確定沒有大問題之後繼續往下想，</p>
+<p>想一想我記得全國賽的快快 judge 可以跑得過這麼多次的詢問，然後 IOI 2018 Seats 的修改量似乎也有這麼大，我就直接開始寫下去了。<br>
+寫完大概比賽還有半小時，我先傳了一次之後本機對拍，一拍出問題了，發現我出現次數只有 1 的時候忘記改線段樹然後直接繼續做，修改完再傳上去然後測時間，但我還是沒有很放心所以傳了一個有 pragma 的版本。</p>
+<p>這時候官方說 judge 要等一小時才有結果，真的是爛透了。
+快結束的時候多跑出來了一筆結果，</p>
+<h3 id=353-b-12>3:53 B 12</h3>
+</br>
+<p>然後比賽就結束了，TOI 有把題本收走，雖然我不太確定為什麼，賽後我們發現 judge 還是可以上去看題目跟 submission 所以一點意義都沒有吧。</p>
+<p>下面是比賽完才出來的 submission：</p>
+<h3 id=436-b-0>4:36 B 0</h3>
+<h3 id=439-b-13>4:39 B 13</h3>
+<h3 id=442-b-13>4:42 B 13</h3>
+</br>
+<h2 id=賽後>賽後</h2>
+<p>賽後我們花了一點時間才知道系統還可以登入然後看結果，大概再等了一小時我的 13 分有跑出來拿到了，當下覺得蠻開心的，在這個爛 judge 上我還可以拿到至少不差的分數，</p>
+<p>最後分數是</p>
+<table>
+<thead>
+<tr>
+<th>task</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A cyberland</td>
+<td><green>5</green></td>
+<td><green>8</green></td>
+<td><green>13</green></td>
+<td><green>19</green></td>
+<td><green>7</green></td>
+<td><green>16</green></td>
+<td><green>29</green></td>
+<td><green>3</green></td>
+<td></td>
+<td><green>100</green></td>
+</tr>
+<tr>
+<td>B sequence</td>
+<td><green>11</green></td>
+<td><green>17</green></td>
+<td><green>7</green></td>
+<td><green>12</green></td>
+<td><green>13</green></td>
+<td>22</td>
+<td>18</td>
+<td></td>
+<td></td>
+<td>60</td>
+</tr>
+<tr>
+<td>C abc</td>
+<td><green>4</green></td>
+<td><green>4</green></td>
+<td><green>4</green></td>
+<td><green>24</green></td>
+<td><green>24</green></td>
+<td><green>6</green></td>
+<td>18</td>
+<td>10</td>
+<td>6</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>牌位截至目前還沒有出來（現在似乎是等待 appeal 環節），不過我猜我有很高的機率是銀牌。</p>
+<p>明天還要考台大二階的筆試，所以我就繼續待在台北，<br>
+晚上有空的時候我想一想，想到說 B 用這個做法，當我遇到同樣的時候它可以是小於也可以是大於也可以是一樣，所以就能對某個 $k$ 做這樣的一件事然後用詢問二分搜答案是不是 $\geq k$，比賽中我有嘗試二分搜但是我一直卡在 $=k$ 有很多反例，這個做法要兩個 $\log$，但要是我把每一段都記錄下來，然後對每個數字分別二分搜，那其中一個 $\log$ 就消失了，而我這樣就會多 40 分，<br>
+越想心情開始有點糟，自己把一個滿分丟掉然後大概也沒有機會金牌了，<br>
+雖然說第一次打正式的 APIO 或許遇到這樣的爛 judge 可能算是表現的還可以了，但是這代表要是我最後去打 IOI 的話，我的實力還是不夠。</p>
+<p>至少今年的題目讓我知道 APIO 可能越來越朝著正常的 OI 方向邁進了（？<br>
+雖然我未來大概也沒有機會參加 APIO 了吧。</p>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#測機>測機</a></li>
+<li><a href=#賽前>賽前</a></li>
+<li><a href=#比賽>比賽</a>
+<ul>
+<li><a href=#045-a-97>0:45 A 97</a></li>
+<li><a href=#101-a-green100green>1:01 A <green>100</green></a></li>
+<li><a href=#134-c-12>1:34 C 12</a></li>
+<li><a href=#216-c-12>2:16 C 12</a></li>
+<li><a href=#222-b-28>2:22 B 28</a></li>
+<li><a href=#248-c-66>2:48 C 66</a></li>
+<li><a href=#255-b-7>2:55 B 7</a></li>
+<li><a href=#311-b-0>3:11 B 0</a></li>
+<li><a href=#353-b-12>3:53 B 12</a></li>
+<li><a href=#436-b-0>4:36 B 0</a></li>
+<li><a href=#439-b-13>4:39 B 13</a></li>
+<li><a href=#442-b-13>4:42 B 13</a></li>
+</ul>
+</li>
+<li><a href=#賽後>賽後</a></li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&text=APIO%202023" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&title=APIO%202023" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&is_video=false&description=APIO%202023" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=APIO%202023&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&title=APIO%202023" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&title=APIO%202023" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&name=APIO%202023&description=%e7%ac%a8%e6%96%b9%e5%a1%8a%e8%80%8d%e7%ac%a8%e6%89%93%20APIO%20%e8%a2%ab%e7%88%86%e6%8f%8d%ef%bc%8c%e7%87%92%e9%9b%9e" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fapio-2023%2f&t=APIO%202023" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2023 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>
