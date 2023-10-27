@@ -1,0 +1,293 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> [Codeforces] 587F | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://twemoji.maxcdn.com/v/latest/twemoji.min.js crossorigin=anonymous></script>
+<script>window.onload=function(){twemoji.parse(document.body,{folder:'svg',ext:'.svg'})}</script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="[Codeforces] 587F">
+<meta property="og:description" content="笨方塊想學寫程式被爆揍，燒雞">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/codeforces-587f/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-10-28T02:00:00+08:00">
+<meta property="article:modified_time" content="2023-10-28T02:00:00+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="[Codeforces] 587F">
+<meta name=twitter:description content="Duff is Mad">
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPQGDNSYSX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ZPQGDNSYSX')</script>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/ aria-label=Home>
+<i class="fas fa-home" aria-hidden=true onmouseover="$('#i-home').toggle()" onmouseout="$('#i-home').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/apio-2023/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-home class=info style=display:none>Home</span>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&text=%5bCodeforces%5d%20587F" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&title=%5bCodeforces%5d%20587F" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&is_video=false&description=%5bCodeforces%5d%20587F" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bCodeforces%5d%20587F&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&title=%5bCodeforces%5d%20587F" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&title=%5bCodeforces%5d%20587F" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&name=%5bCodeforces%5d%20587F&description=Duff%20is%20Mad" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&t=%5bCodeforces%5d%20587F" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#題目敘述>題目敘述</a></li>
+<li><a href=#weird-solution>Weird Solution</a></li>
+<li><a href=#better-solution>Better Solution</a></li>
+<li><a href=#reference-code>Reference Code</a></li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+[Codeforces] 587F
+</h1>
+<h1 class=postsubtitle itemprop="name headline">
+Duff is Mad
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2023-10-28 02:00:00 +0800 +0800" itemprop=datePublished>2023-10-28</time>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p>期中考前隨興寫題目寫到一題字串題，最終用了很奇怪的複雜度過了，自己還算錯一次，覺得這樣值得紀念所以寫了這篇文。</p>
+<h2 id=題目敘述>題目敘述</h2>
+<p><a href=https://codeforces.com/contest/587/problem/F>Link</a><br>
+有 $n$ 個由小寫字母組成的字串 $s_i$，支援 $q$ 筆詢問：</p>
+<ul>
+<li>讓 $\mathrm{occ}(t, s)$ 表示字串 $s$ 出現了幾次 $t$，給定 $l, r, k$ 回答 $\sum_{i=l}^{r}\mathrm{occ}(s_i, s_k)$.</li>
+</ul>
+<p>$1 \leq n, q, \sum |s_i| \leq 10^5$</p>
+<h2 id=weird-solution>Weird Solution</h2>
+<p>考慮離線並對字串的長短分塊，假設 $N = \max (\sum |s_i|, q)$。</p>
+<ul>
+<li>Case 1. $s_i \geq K$<br>
+可以將所有字串丟進 AC 自動機中求得所有 $\mathrm{occ}(s_j, s_i)$，直接用前綴和離線回答答案。時間複雜度 $O\left(N \cdot \frac N K\right)$。</li>
+<li>Case 2. $s_i \leq K$
+一樣丟進 AC 自動機中匹配，不過事先對自動機上節點預處理「不斷跳 fail link 第一個遇到的字串結尾節點」，這時候每次匹配一個新的字元的時候，一口氣按照這個預處理的結果不斷跳下去並蒐集所有節點。<br>
+求答案時可以直接對蒐集到的所有節點計算「某個節點上有多少位於 $l, r$ 之間的字串尾」。時間複雜度 $O\left(N \cdot K^2 \log N\right)$。</li>
+</ul>
+<p>這樣總時間複雜度取 $K = \left(\dfrac{N}{\log N}\right)^{\frac 1 3}$，會得到 $O\left(N^{\frac 5 3}\log^{\frac 1 3} N\right)$，空間只需要 $O(N\Sigma)$ 開自動機。</p>
+<p>實際寫下去會過（感覺是沒有人特別卡，不過這個作法應該不至於太糟，應該還是會過的）。</p>
+<p>小插曲是，我以為 Case 2 的其實只有 $O\left(N \cdot K \sqrt K \log N\right)$，不過實際上「跳 $\sqrt N$ 次就會結束」必須要以總共的字串長度來看，所以算出了另一個奇怪複雜度，不過代進去實際數字其實差不多就是了，所以沒有差太多。</p>
+<h2 id=better-solution>Better Solution</h2>
+<p>事實上 Case 2. 有個更好用的性質，也就是利用 fail link 會形成一棵樹，根會在起始節點，所以上面的問題會變成一個掃描線問題，每個節點要查詢的會是根到祖先的路徑，每個詢問要查詢的就是那一堆走到的狀態分別到祖先的路徑上全部的總和，也就是說，我們要解下列的問題：</p>
+<p>有一棵定好根的樹，我們要想辦法處理：</p>
+<ul>
+<li>$O(N)$ 次單點加值</li>
+<li>$O(NK)$ 次查詢根到祖先的和</li>
+</ul>
+<p>第一個操作顯然可以貴一點，所以我們考慮對 DFS order 分塊，並讓單點加值變成子樹加值，而路徑詢問變成單點詢問，所以 Case 2 就可以被壓進 $O(NK)$，總時間複雜度來到乾淨的 $O(N \sqrt N)$。</p>
+<h2 id=reference-code>Reference Code</h2>
+<p><a href=https://codeforces.com/contest/587/submission/230061757>Weird Solution</a> （注意那個註解是我之前算錯複雜度的，所以以這篇為主）<br>
+<a href=https://codeforces.com/contest/587/submission/230062033>Better Solution</a></p>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#題目敘述>題目敘述</a></li>
+<li><a href=#weird-solution>Weird Solution</a></li>
+<li><a href=#better-solution>Better Solution</a></li>
+<li><a href=#reference-code>Reference Code</a></li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&text=%5bCodeforces%5d%20587F" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&title=%5bCodeforces%5d%20587F" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&is_video=false&description=%5bCodeforces%5d%20587F" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=%5bCodeforces%5d%20587F&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&title=%5bCodeforces%5d%20587F" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&title=%5bCodeforces%5d%20587F" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&name=%5bCodeforces%5d%20587F&description=Duff%20is%20Mad" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fcodeforces-587f%2f&t=%5bCodeforces%5d%20587F" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2023 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>
