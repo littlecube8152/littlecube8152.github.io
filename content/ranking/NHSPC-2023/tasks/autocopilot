@@ -1,0 +1,1 @@
+{"name": "autocopilot", "short_name": "autocopilot", "contest": "nhspc2023", "max_score": 100.0, "extra_headers": ["Subtask 1 (4)", "Subtask 2 (24)", "Subtask 3 (31)", "Subtask 4 (41)"], "order": 2, "score_mode": "max_subtask", "score_precision": 0}
