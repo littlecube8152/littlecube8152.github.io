@@ -84,7 +84,7 @@ body h2,
 body .h2 {
   display: block;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
   color: #5ddcff;
   letter-spacing: 0.01em;
   font-weight: 700;
@@ -273,8 +273,8 @@ body {
 
 .content p {
   hyphens: auto;
-  font-size: 1.05rem;
-  line-height: 2.25rem;
+  font-size: 1.0rem;
+  line-height: 1.75rem;
   margin-top: 0;
   margin-bottom: 1rem;
   -moz-hyphens: auto;
@@ -1546,7 +1546,7 @@ code {
   border: 1px dotted #666;
   border-radius: 2px;
   -webkit-border-radius: 2px;
-  font-family: "Consolas";
+  /* font-family: "Consolas"; */
 }
 
 .highlight {

@@ -1,5 +1,5 @@
 ---
-title: "NHSPC 全國學科能力競賽 + 模擬賽"
+title: "2022 NHSPC 全國學科能力競賽 + 模擬賽"
 date: 2022-12-19T14:00:00+08:00
 draft: false
 tags: ["NHSPC", "OI"]
