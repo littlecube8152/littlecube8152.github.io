@@ -1543,10 +1543,10 @@ pre code {
 
 code {
   padding: 0 5px;
-  border: 1px dotted #666;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  /* font-family: "Consolas"; */
+  border: 3px dotted #666;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  font-family: "JetBrains Mono";
 }
 
 .highlight {
@@ -1563,7 +1563,6 @@ code {
   margin: -5px 0 5px;
   color: #666;
   font-size: 0.9em;
-  zoom: 1;
 }
 
 .highlight figcaption a {
