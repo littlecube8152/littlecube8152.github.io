@@ -1,0 +1,496 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title> IOI 2023 高中競賽最終章 | Little Cube Blog</title>
+<meta name=description content="如果我也能成為電神就好了...">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<meta name=google-site-verification content="OQ_9U47lnsbNF2bY2B6jTk8Ea7wqE_fu7ou8CAMe388">
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+TC:wght@100..900&display=swap" rel=stylesheet>
+<script src=https://code.iconify.design/1/1.0.7/iconify.min.js></script>
+<script src=https://unpkg.com/twemoji@latest/dist/twemoji.min.js crossorigin=anonymous></script>
+<script>window.onload=function(){twemoji.parse(document.body,{folder:'svg',ext:'.svg'})}</script>
+<script src=https://littlecube8152.github.io/js/prism.js></script> <script src=https://littlecube8152.github.io/js/prism-line-numbers.js></script>
+<meta property="og:title" content="IOI 2023 高中競賽最終章">
+<meta property="og:description" content="好想，好想成為真正的電神&mldr;">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlecube8152.github.io/posts/ioi-2023/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-10-08T12:00:00+08:00">
+<meta property="article:modified_time" content="2023-10-08T12:00:00+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="IOI 2023 高中競賽最終章">
+<meta name=twitter:description content>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/style-dark.css>
+<link rel=stylesheet href=https://littlecube8152.github.io/css/prism.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<link rel=icon type=image/png href=https://littlecube8152.github.io/images/favicon.ico>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPQGDNSYSX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ZPQGDNSYSX')</script>
+</head>
+<body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+<div id=header-post>
+<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu>
+<span id=nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</span>
+<br>
+<span id=actions>
+<ul>
+<li>
+<a class=icon href=https://littlecube8152.github.io/ aria-label=Home>
+<i class="fas fa-home" aria-hidden=true onmouseover="$('#i-home').toggle()" onmouseout="$('#i-home').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/apio-2023/ aria-label=Previous>
+<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=https://littlecube8152.github.io/posts/codeforces-587f/ aria-label=Next>
+<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
+</a>
+</li>
+<li>
+<a class=icon href=# aria-label=Share>
+<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
+</a>
+</li>
+</ul>
+<span id=i-home class=info style=display:none>Home</span>
+<span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span>
+</span>
+<br>
+<div id=share style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f" aria-label=Facebook>
+<i class="fab fa-facebook" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&text=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=Twitter>
+<i class="fab fa-twitter" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&title=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=Linkedin>
+<i class="fab fa-linkedin" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&is_video=false&description=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=Pinterest>
+<i class="fab fa-pinterest" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f" aria-label=Email>
+<i class="fas fa-envelope" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&title=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=Pocket>
+<i class="fab fa-get-pocket" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&title=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=reddit>
+<i class="fab fa-reddit" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&name=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0&description=%e5%a5%bd%e6%83%b3%ef%bc%8c%e5%a5%bd%e6%83%b3%e6%88%90%e7%82%ba%e7%9c%9f%e6%ad%a3%e7%9a%84%e9%9b%bb%e7%a5%9e%26hellip%3b" aria-label=Tumblr>
+<i class="fab fa-tumblr" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&t=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label="Hacker News">
+<i class="fab fa-hacker-news" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#前言>前言</a></li>
+<li><a href=#day-0>Day 0</a></li>
+<li><a href=#day-1>Day 1</a></li>
+<li><a href=#day-2>Day 2</a></li>
+<li><a href=#day-3>Day 3</a></li>
+<li><a href=#day-4>Day 4</a></li>
+<li><a href=#day-5>Day 5</a></li>
+<li><a href=#day-6>Day 6</a></li>
+<li><a href=#day-7>Day 7</a></li>
+<li><a href=#day-8>Day 8</a></li>
+<li><a href=#心得>心得</a></li>
+<li><a href=#whats-next>What&rsquo;s next?</a></li>
+</ul>
+</nav>
+</div>
+</span>
+</div>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header>
+<h1 class=posttitle itemprop="name headline">
+IOI 2023 高中競賽最終章
+</h1>
+<div class=meta>
+<div class=postdate>
+<time datetime="2023-10-08 12:00:00 +0800 +0800" itemprop=datePublished>2023-10-08</time>
+</div>
+<div class=article-tag>
+<i class="fas fa-tag"></i>
+<a class=tag-link href=../../%20tags/oi rel=tag>OI</a>
+</div>
+</div>
+</header>
+<div class=content itemprop=articleBody>
+<p>這邊前前後後拖稿數次，最後也有點不知道自己在寫什麼了，就當作是封存高中競賽美好回憶的一卷膠帶讓這些快樂的時光留在這裡。</p>
+<p>[13 Sep 2024] 最近看到 IOI 2024 都比完了才赫然想起這篇文章遲遲沒有 release，在大學迷迷糊糊的過了一年，才將這篇塵封已久的文章上傳。早已忘記當初為什麼沒有 push 上來，不過是時候該做這件事了。最後動稿的時間應該確定是這篇文章所標注的日期。如果我改了最後更動日期那看起來會像是我其實是打 IOI 2024（不過違背現實，我也好想），所以就留著這個日期了。</p>
+<h2 id=前言>前言</h2>
+<p>IOI 是個相當特別的體驗，它可以說是完全顛覆了我的想像。<br>
+這篇文章主要是用來紀錄以及傳達我在 IOI 的經歷以及感想。考慮到有許多人可能還需要這場比賽的題目用來練習，競賽的部份我會以 spoiler 遮擋，所以可以放心閱讀就好，可能會帶有一點點關於排名的資訊，但我會盡量讓它不會影響到任何事情（畢竟你點進來這裡其實就不太可能完全不知道發生什麼事，對吧）。</p>
+<p>在此我想先感謝一路上幫助我的許多人。</p>
+<p>感謝曹宸睿帶我參加 2020 NPSC，啟發我開始向競賽程式努力，以及在高一的時候指導我相當多競賽起步以及持續進步的各種事情。</p>
+<p>感謝資訊社 T22 的教學羅文謙、張晏誠、吳亦娃教會我一些有關競技程式的知識以及帶領我進入這個領域。</p>
+<p>感謝高嘉泓在高中三年一路上互相成長以及當我相當多比賽的隊友。</p>
+<p>感謝其他 IOI 2023 的三位國手，在競賽上願意與我互相努力，以及在我壓力很大崩潰的時候願意聽我亂講話以及忍受我在國培以及 IOI 噴的許多爛梗，還有讓我理解到我的數學還需要繼續加強。</p>
+<p>感謝最近兩年全國賽的所有參賽者以及最近三年 TOI 選訓營的所有人，每次去到這些地方對我來講都相當重要，在這裡可以學到新東西，交到一群願意與你一起 duel、一起 virtual、一起學習奇怪科技、一起討厭毒瘤等等的朋友。</p>
+<p>感謝各位曾經在全國比賽或者營隊，例如 IOIC、NPSC、YTP、全國模擬賽等等的工作人員，你們一起創造了一個美好的競賽程式交流學習的地方，如果沒有這些活動或許我今天只會是一個平凡的考試學生。</p>
+<p>感謝 <a href=https://discord.gg/Xg3aZPssEy>Code Community</a> 裡一起討論的各位，我在這裡受到了很多課業上、競賽上或甚至心理上的幫助，謝謝你們。</p>
+<p>（我可能有漏掉一些，但是我暫時想不起來了，總之還是感謝各位。）</p>
+<h2 id=day-0>Day 0</h2>
+<p>Day 0 的目的只有一個：準時在機場出現然後搭飛機。</p>
+<p>基本上不難但是有一件很糟糕的事情是出國剛好卡到開學，所以我那天的計畫是早上先去搬宿舍然後晚上來等飛機。飛機坐的相當順利，但是我的採樣空間只有兩次所以可能我說的沒有很有參考價值。</p>
+<p>一些雜記：</p>
+<ul>
+<li>洗面乳可以帶，我一直以為它可能會被算成黏稠狀液體之類的東西（還是其實會算但我沒有帶超過？）</li>
+<li>TOI 今年有車接送，據說是因為有時候根本就沒有車可以坐但是明明有機場捷運可以用，可是那個車很大很舒服 -w-</li>
+<li>飛機餐很棒，但是音樂沒有，座位底下好像有插座（台灣 110V 的插座），可是可能跟機型不同會有差就是。</li>
+<li>搭飛機的時候記得出去前先拍行李，要是機艙在卡常所以被砸爛的話可以要賠償。</li>
+<li>有時候去飛機上的廁所會拿的到牙刷跟眼罩，但是我沒有弄清楚出現的規則是什麼。</li>
+</ul>
+<p>睡睡吃吃就到了，我也不知道大氣層長怎樣因為我並沒有坐靠窗。</p>
+<h2 id=day-1>Day 1</h2>
+<p>Registration</p>
+<p>另外這次大會有個 app 可以用，相當酷炫。</p>
+<p>報到的時候我有英文障礙不知道他們在說什麼，但是 IOI 大會也沒有檢查護照（我印象中只有入住飯店的時候才有），所以我沒有很搞的清楚他們的報到是怎麼運作的。入住飯店的時候要填地址，還好我 Google Code Jam 跟 Meta Hacker Cup 有拿過 T-shirt 幾次所以我成功唬爛了一個很接近的地址（不過忘記的話趕快去台灣郵政網翻譯一下就好）。</p>
+<p>房間很扯，只是沒有防盜鎖，另外大會有送一個包包，裡面裝了各式各樣有 IOI logo 的東西，今年比較酷的應該是有桌球拍。</p>
+<p>IOI 一個隊伍的組成是有參賽者、leader + guest，一報到之後 leader 跟 guest 就會直接跟參賽者分開，下一次遇到就會是 practice session 的時候了。每個國家還會有一個當地應徵的 team guide，基本上他會負責整隊帶隊，處理一些問題以及帶隊出去散步（如果想要的話），只是說抽 team guide 可能要靠一點運氣，例如中國的 team guide 好像是從英國留學跑來的，我們在晚餐的時候遇到她（因為中國隊十點才會出現，但據說領隊早早就報到完了，不知道在幹嘛）<del>還有我們的 team guide 在最後一天晚上失蹤</del>，不過大部份的 team guide 還是有一定水準（根據他們的說法是要經過面試），如果 team guide 很雷也可以考慮直接跳過去找 senior guide。</p>
+<p>中午報到完我們去 Jane Street 的遊戲攤亂玩了一通，有一個經濟學的遊戲，大概長的是這樣：</p>
+<blockquote>
+<p>有四種撲克牌花色的牌，其中一種是 12 張，另一種是 8 張。<br>
+12 張的那種稱為 common suit，同顏色的另一邊則稱為 golden suit（注意到 golden suit 不見得是 8 張），
+玩家可以互相以分數交易卡片（喊價）直到交易停止為止。有任何一張 golden suit 在結算的時候會 +10，有最多 golden suit 的玩家可以 +100（平手則平分）。<br>
+你的目標是最大化你的分數。</p>
+</blockquote>
+<p>但是我直接不會玩，玩到虧錢，可見我數學差人一等。</p>
+<p>team guide 後來決定 IOI app 的 private chat 有點難用所以他想要加我們的 whatsapp，但是亞洲圈又不常用這個所以我們花了很多時間在找到 IOI 發的網卡的電話號碼。</p>
+<p>晚餐之前我們跑去打乒乓球，到了 IOI 我才知道我小學的時候看到其他人排兩排一直循環在打桌球的時候在幹嘛。</p>
+<h2 id=day-2>Day 2</h2>
+<p>Practice Session & Opening Ceremony</p>
+<p>我必須說這次 IOI 的食物真的超級強。</p>
+<p>Practice Session 是用和之前一樣的題目，有一題簡單題，然後剩下的都好難。我很快把 A plus B 寫掉之後測了一下速度，大概是一秒 $1.5 \times 10^8$ 的 <code>mt19937</code> 與基本運算，後來的時間我都在搞 truck driver，有想到解但是好噁心，寫完一條鍊的線段樹上二分就放棄了，後來跟芒果討論，他會最後一題自動機構造，果然是數學家。然後我們有發現一個簡單一點的作法，但這題就需要 HLD + 重剖大雜燴，兩種享受一次滿足 (X</p>
+<p>如果有什麼想要比賽時用的東西，要記得 Practice Session 就帶去放在那邊，我自己是只有帶文具，不過實際上 IOI 那邊會提供鉛筆、原子筆還有紙，所以要是真的忘記也不會出大事。主要是要帶食物以及鍵盤滑鼠的要注意。</p>
+<p>結束之後回到飯店吃破台午餐，接著就帶隊去開幕典禮了。IOI 真的不愧是國際大會，這個典禮是我看過最酷炫最強的，致詞的時候有一個教授說他討厭寫程式但是他的演講真的很好笑。</p>
+<p>Open Ceremony 結束之後有可以自選的散步回 hotel，因為開幕典禮在那附近的某個圖書館，所以可以繞一下遠路晃晃，基本上就是在會場周圍看看一些建築跟雕像，然後主要都是 senior guide 在介紹。</p>
+<p>回來之後吃晚餐、打桌球然後好好睡覺，明天是 Contest Day 1。</p>
+<h2 id=day-3>Day 3</h2>
+<p>Contest Day 1。</p>
+<p>比賽前會有半小時到一小時不等的時間會在會場，但是只有最後五到十分鐘會請你坐好等比賽開始，大概到快十分鐘的時候突然有一群人在中間一直跳，於是乎就有快一半的人一起跑到中間一起跳，跳到主辦方都要大聲廣播 Do not jump in the contest hall，很好笑，不過我覺得在比賽前動一動有助於讓我進入狀況，建議各位找到能夠讓自己能好好發揮實力的辦法。</p>
+<details>
+<summary>比賽過程</summary>
+<p>開場看完三題之後真的都是什麼鬼。</p>
+<p>A (closing) [Batch]<br>
+有一棵 $N$ 點邊帶權樹，兩點 $u, v$ 間的距離 $d(u, v)$ 是樹上的邊權總和。<br>
+另外有兩個相異重要的點 $X, Y$，你要為每個點 $u$ 給一個關閉時間 $c_u$ 使得</p>
+<ul>
+<li>$\sum_{i = 0}^{N-1} c_i \leq K$</li>
+<li>最大化 $S = \sum_{i=0}^{N-1}[d(X, i) \leq c_i] + [d(Y, i) \leq c_i]$</li>
+</ul>
+<p>輸出 $S$。</p>
+<p>B (longesttrip) [Communication]</p>
+<p>有一張簡單圖，任三相異點間至少有 $D$ 條邊，構造最長路徑。<br>
+你每次可以找兩個互斥點集 $A, B$，judge 會回傳有沒有 $a \in A, b \in B$ 滿足 $(a, b)$ 有邊。</p>
+<p>C (soccer) [Batch]</p>
+<p>有一個 $N \times N$ 的網格，有一些格子有障礙，你要找到最大的區域滿足任意兩點在那個區域內都可以透過至多兩次<strong>直線踢</strong>到達彼此。一個從格子 $a$ 至 $b$ 的移動被稱為<strong>直線踢</strong>如果 $a, b$ 同列或同行且他們之間的所有格子都在區域內。</p>
+<p>如果你能決定所有空格式不是一個球場，你能獲得 25% 的分數。</p>
+<hr>
+<p>A 不是 DP 就是 greedy，B 是奇怪互動題找 longest path，C 是很像之前看過的網格圖找 pattern。</p>
+<p>感覺 C 是最可做的因此著手想了一個條件覺得我可以做 $\mathcal O(N^3)$，寫下去傳了得到 0 分，仔細想想條件好像不對，不斷修修改改修修改改發現根本徹頭徹尾的錯了，於是跳題看 B。</p>
+<p>B 想說要做 Hamiltonian Path 怎麼想都不可能可以做，子題有一個 2-apx 也不知道是來幹嘛的，所以，直接從題目的條件下手發現每三條就會有一條可以連，而且至多有兩個連通塊，所以想了一個二分搜的做法：</p>
+<blockquote>
+<p>先維護一條鍊，一開始是 $[0]$，然後不斷延伸，要是兩端沒有邊那亂挑一個點一定會連到其中一個。<br>
+否則鍊是一個環，所以可以二分搜連接環和外面那些點的邊，要是沒有那就找到一張完全圖了。</p>
+</blockquote>
+<p>預計拿 60 或 70，傳上去得到 15 分。</p>
+<p>後來我找到我插入鍊頭的時候弄爆了，所以改完就有 60 分了。</p>
+<p>A general 的狀況不會做，觀察了一下發現要是有重疊到的話，那中間會拿的東西應該是固定的，所以我利用這個觀察寫了一個亂 greedy 的作法，結果傳上去只有拿到不可能重疊的 8 分子題，仔細想想之後我發現範測有夠糟糕，沒有給會拿到兩個重要點外面東西，而我的 greedy 正好就爛在外面，所以我趕快把它修好之後，想了一個很詭譎的 greedy：</p>
+<blockquote>
+<p>先做一次假設沒有重疊的。有重疊的話，那 $X$ 到 $Y$ 中間路徑上離 $X$ 近的要能從 $X$ 走得到，剩下的要能從 $Y$ 走得到，先把這些的代價都預支掉（要是破產就直接跳過這個情況）。<br>
+接下來把兩邊切開，會有對稱的性質，因此我們先討論離 $X$ 近的那些點。<br>
+一個簡單的性質是，這些點要不是兩點都走不到、也不是只能從 $X$ 能走到，就是能從 $XY$ 兩點都走到。<br>
+假設一個點要能夠從 $X$ 走到要付的代價是 $w_1$，然後要讓 $Y$ 也走到<strong>多付</strong>的代價是 $w_2$，這時候要是 $w_1 \leq w_2$ 就好好把兩個拆開 greedy，否則同時 push $w_1$ 得到 $+1$ 以及 $w_1 + w_2$ 得到 $+2$ 進入兩個不同的 priority queue，接著對這兩個 queue，要是 $+1$ 那個 queue 前兩個加起來比較 $+2$ 的最小，拿一個 $+1$，否則拿一個 $+2$。</p>
+</blockquote>
+<p>第一次傳上去拿到 0 分，但我有點忘記是出什麼問題了，大概很笨所以我沒有印象。</p>
+<p>第二次傳上去發現我拿到 35 分，也就是一條鍊的全過，樹的沒有過，但走不到的也沒過，結果是我沒開 <code>long long</code>，改完傳上去就有聯集到 43 分了。</p>
+<p>接著回去推 C，終於找到一個相當相當噁心的等價條件了：</p>
+<ul>
+<li>對第 $i$ 列，足球場包含 $(i, L_i)$ 至 $(i, R_i)$，令 $S_i$ 是 $L_i$ 到 $R_i$ 的所有整數。</li>
+<li>$f(i) = |S_i|$ 是單峰函數</li>
+<li>不存在 $i, j$ 使得 $S_i \cup S_j$ 不是 $S_i$ 也不是 $S_j$（不能部份交集）</li>
+</ul>
+<p>所以我先寫了這個條件的驗證，傳上去拿到 1.5 分，改了又傳拿到 0 分，結果是因為我區間根本就在亂排序，改好就拿到 25 分了。</p>
+<p>所以這樣就有一個噁噁 $\mathcal O(N^6)$ 的 DP：</p>
+<blockquote>
+<p>$dp(l, r, u, d)$ 表示，$i \in [u, d]$ 的格子都被考慮過，而最後最小的區間是 $[l, r]$<br>
+轉移的狀況只能往上下一格長，而且區間要比 $[l, r]$ 小且沒有撞到障礙物。</p>
+</blockquote>
+<p>傳上去先 WA 了兩次因為我忘記判障礙物跟判錯，最後拿到 48 分，總共 61 分。</p>
+<p>回去 A 觀察了一下還是想不透 greedy，回去驀然發現 $O(N^2)$ 竟然有 83 分欸，趕緊寫了樹上背包傳上去拿了 0 分，結果是我又在搞事了，終於拿到 83 分。</p>
+<p>B 在最後想到了一個詭譎常數很大的 $\mathcal O(N)$ 作法，</p>
+<blockquote>
+<p>先檢查 $0, 1, \ldots, N - 1$ 是不是，不是的話找其中一條爆掉的邊叫做 $a, b$（$b = a + 1$）。<br>
+接著，從 $a, b$ 分別長兩條鍊出來，要是兩邊都是環就不用二分搜了，因為任意一個點都會連 $a, b$ 其中一個。<br>
+然後，連完兩個之後就可以找到一條鍊滿足 $a, b$ 都在裡面，或是找到兩個連通塊。<br>
+最後繼續延伸，一樣遇到環的時候改成用 $a, b$ 延伸。</p>
+</blockquote>
+<p>好不容易寫完傳上去拿了個 5 分，不過我也有點忘記確切是什麼問題了，修好之後就拿到 70 分了。</p>
+<p>最後回去把 C 的 4.5 分拿回來，比賽就結束了。</p>
+</details>
+<p>結束之後就會遇到 leader，有什麼需要申訴的要一起在當下提出，我覺得我沒有打的很好，但是喇分喇到 200 多感覺又不太可能很低，結果第一天結束我竟然收在 Rank 20。我覺得這對我的實際表現來講我覺得有一點點超出預期。</p>
+<p>比賽當天是在會場吃午餐，可是會場的午餐有點怪怪的，很多我沒看過的食物。回去的 analysis mode 是讓人補題以及測測問題的，所以基本上沒有正式題解環節，收收東西就可以走人了。</p>
+<h2 id=day-4>Day 4</h2>
+<p>Excursion 1 (Ópusztaszer)</p>
+<p>Ópusztaszer 應該算是當地的一個小園區，有歷史博物館以及一些各種匈牙利傳統文化的小房子，長的有點像一個小村莊，但是每個房子裡面會有不同項目，例如說烘焙、舞蹈等等的。中間的歷史博物館收藏了各種匈牙利是從蒙古發源的一些文物以及繪畫，還有一些基督教的建堂設計等等，看起來沒有那種我想像的教堂那樣裝飾華美所以我一開始還看不太出來那是什麼，缺點是匈牙利這邊感覺沒有很喜歡放英文，所以不見得所有東西都能看得懂是什麼。</p>
+<p>看完歷史文物之後我們去看了在地傳統手環和匈牙利傳統舞蹈，PixelCat 有一起下去跳，超強；午餐結束之後我們去看了馬術，雖然在不久之前已經知道匈牙利人有蒙古血統，但是實際看了之後，我這一生還是不要惹匈牙利人好了。</p>
+<p>這次 IOI 的其中一個小缺點是連 team guide 都不見得知道接駁車的時間表。</p>
+<h2 id=day-5>Day 5</h2>
+<p>Contest Day 2</p>
+<p>開賽前與之前幾乎是一樣，只是這次多了一些很好笑的事件，例如說開始倒數到一半突然變成 The Contest Has Ended!，以及莫名其妙有一群人拍手所以大家一起拍手環節，還有美國隊有個人找了一團人唱 99 bottles of beer on the wall，只是好像唱到八十幾就失敗了，後來變成非洲或者是某個我看不出來地區的小圈圈一起唱某個很嗨的歌，感覺很多聽不懂所以大家都只有跟著拍手而已。</p>
+<p>前十分鐘當然有大家一起跳環節，主辦方這次也改成廣播 Please do not fall，超級好笑。</p>
+<details>
+<summary> 比賽過程 </summary>
+<p>A (beechtree) [Batch]<br>
+有一棵定根在 $0$ 的樹，邊上有顏色。$r$ 的子樹被稱為<strong>美麗的</strong>如果有一個子樹節點排列 $p$ 滿足</p>
+<ul>
+<li>$p_0 = r$</li>
+<li>定義 $f(i)$ 為 $p_0, p_1, \ldots, p_{i-1}$ 中，往祖先的邊與 $p_i$ 往祖先的邊一樣顏色的數量，則 $p_{f(i)} = p_i$ 的祖先。</li>
+</ul>
+<p>對所有子樹決定他是不是美麗的。</p>
+<p>B (overtaking) [Batch]</p>
+<p>有 $N$ 台公車，在一條長 $L$ 的路上行駛，第 $i$ 台於 $T_i$ 時從 $0$ 出發，走一單位距離需要 $W_i$ 的時間。<br>
+這些公車是不能超車的，除了在 $M$ 個超車站以外（保證 $0, L$ 都是超車站），亦即有一台較快的公車要是會超過一台比較慢的公車它需要等到下一個超車站才能超越它。<br>
+現在主辦方想要多加一台公車 $N$，已經確定走一單位需要時 $X$，但並不確定何時發車。你需要支援查詢 $Q$ 次詢問，如果這台公車在時間 $Y$ 出發，什麼時候會抵達道路的另一端。</p>
+<p>C (robot) [Communication]<br>
+有一台機器狗，在一個 $H\times W$ 的迷宮內，一開始這個迷宮的外緣顏色都是 -2，有一些顏色為 -1 的障礙物，剩下都是可以行走的格子顏色 0。</p>
+<p>機器狗的程式如下運作：</p>
+<p>首先，讀取周遭四格以及本身的顏色。<br>
+如果這樣的組合沒有指定動作，機器人會壞掉。<br>
+每個動作都是由一個顏色 $c$ 與一個移動 $m$ 組成：機器人會先把腳下這格塗成 $c$，接著根據 $m$ 移動，$m$ 可以是往東南西北走、不動或者是中止。</p>
+<p>你的目標是讓機器人中止的時候，塗著顏色 1 的地板是從 $(0, 0)$ 到 $(H - 1, W - 1)$ 的最短路徑。<br>
+如果其他格子都保持或被復原為 0，那你會得到 complete，否則你會的到 partial。</p>
+<hr>
+<p>打開看三題，A 是什麼詭譎條件驗子樹性質，B 一看起來就是得做掉的題目，然後 C 是超級詭譎超級詭譎互動題。</p>
+<p>所以果斷先做 B，很快就想到一些性質決心直接攻滿分解，寫完傳上去拿到 9 分，一直抓不到錯在哪裡，結果發現是我交點找錯人了，所以先把後面的東西改成暴力試試看，結果還是 9 分。</p>
+<p>我想說一開始的計算應該不會出問題吧，所以想說改成暴力算驗驗看到底錯在哪裡，沒想到這樣竟然變成 0 分了。</p>
+<p>到處亂修一通猛然發現我 sort 的時候竟然沒有開 <code>long long</code>，奉勸各位一開始就把編譯指令的全部 warning 打開。</p>
+<p>改完直接變回原本的暴力方式成功拿到 65 分，因為 bug 太多決定先跳題。</p>
+<p>A 推了一大堆詭譎必要條件仍然沒有結果，亂測範測就錯了所以我就放棄了。</p>
+<p>C 看起來可以喇分喇分，我發現樹跟往右下走的兩個子題都有一個特徵，就是可以尋著一個規則走下去才可能會走到對的地方，所以可以直接實作 DFS 就好，花了一段時間搞懂到底互動模式要怎麼做，然後到處設了同樣的狀態之後才搞懂狀況。我先寫不用撤回的 partial 寫法，傳上去一發就拿到 16 分了。寫完順便把 subtask 2 的 10 分也先拿到。</p>
+<p>接著回去把 B 的滿分做掉，我想一想發現只要相對順序不改變那這台車就不會撞車，
+所以我可以一口氣跳到下一次就會撞車的超車站，然後直接暴力撞下去，因為除了第一次撞車需要每次重算，其他狀況其實都是會在某台車在某個超車站的交點開始，所以至多需要算 $\mathcal O(NM+Q)$ 次，不過我這在這裡不小心兩邊都二分搜變成 $\log^2 N$ 的作法，所以好不容易把 bug 都找出來之後傳上去還是一樣只有 65 分。</p>
+<p>但是我當時可能是腦霧或者是被其他兩題恐嚇到沒有在正常運作了，我以為我被卡常所以在到處亂壓亂壓常數，包含 <code>pragma optimize</code>、<code>pragma target</code>，把存答案的 <code>map</code> 改成 <code>gp_hash_table</code>，壓一壓發現沒有路了，我想說怎麼可能，我人生中竟然會在 IOI 被卡常嗎，結果笨笨方塊終於發現自己寫成兩個 $\log$ 了。</p>
+<p>我決定讓自己冷靜一下，去上廁所想想看，結果我一舉牌，走出去，我就想到了。</p>
+<p>所以我跟帶我去上廁所的說我想先回去，他可能覺得我是大怪人但是我還是回去了，出了一點點 $\pm 1$ 的問題之後終於</p>
+<p>B <green>100</green></p>
+<p>接下來就要好好面對兩題大怪獸了，我先打算拿 A 的前三個 5 + 9 + 9，但是過程不知道在幹嘛所以我 $\mathcal O(N\cdot N!)$ 在亂 <code>assert(N &lt;= 7)</code>。</p>
+<p>拿完我先去快速寫了一棵樹的 C，好像出了一點點事但是比之前順利很多。</p>
+<p>然後一條鍊不知道在寫什麼忘記 <code>break</code>，接著最後一個深度最多 2 的子題一直少一個條件。</p>
+<p>最後的時間我在把 C 的那兩個 subtask 從 partial 改成 complete，雖然右下走拿到了但是樹來不及，剩一分鐘我卻還沒有想好全部，所以我決定坐在位子上。</p>
+<p>高中競賽生涯的最後一掌比賽，就這樣結束了。</p>
+<p>出場的時候我真的是覺得我打如果沒有很超糟就是不好，只不過我真心希望 beechtree 是難很難的題目。</p>
+</details>
+<p>結束之後，我想如果那題真的很難的話，我或許還有機會有個金牌線或者銀牌頂也不錯。</p>
+<p>在緊張興奮害怕這種複雜的心情見到教授之後，蔡孟宗教授跟我說我金牌的時候，我當下有一點點像是我中大獎的感覺，實際看到我 Rank 14 之後，這是真的難以置信。</p>
+<p>我自己的感覺是我真的靠了很多運氣，但實際上我覺得應該是這樣的：我自己認為單憑數學或者競程的知識點或者各種比較能夠量化的能力，我不可能是很強的那種，但我想正是這些不能量化的東西，例如說穩定度、比賽策略、心態、運氣等等的東西，讓我能夠表現出這樣的成果，所以我會有一切都好不真實的感覺，我想這是我認為我靠運氣的解釋，因為我也無從得知為什麼這件事情發生了，感覺就像運氣很好一樣。</p>
+<h2 id=day-6>Day 6</h2>
+<p>Excursion 2 (Vadaspark / Makó) & Cultural Night</p>
+<p>Vadaspark 是在地一間動物園，可是實際上我覺得動物園一旦小時候去過就很難超過之前的體驗了，所以就是普普通通，而且有一些動物搞失蹤，例如說籠子內根本就沒有東西，而且這裡一樣很不喜歡放英文的說明，所以我很多還是不懂這到底想表達什麼。主辦方有提供一個詭譎動物小知識考驗，有人之後在 app 上問贏了可以幹嘛，然後有個 commitee 的人回 a sense of pride and acomplishment 超級好笑。</p>
+<p>Makó 倒是很猛，它有點像是當地比較強的那種 playground，有排球場、滑索、彈簧床、划船、電子漆彈跟高中攀爬的那種東西（我不會描述），不過時間太短了基本上不可能全部體驗，所以我只有去玩滑索跟高空攀爬的項目，後面那個超級難超級累但是很好玩，包含高空獨木橋、輪胎橋、繩索橋之類的，後面那兩個如果不懂是什麼可能是我的問題，因為我也不會形容，如果有成功找到照片好說明很多。</p>
+<p><del>私心希望把動物園直接刪掉直接全天去 Makó 就好</del></p>
+<p>Cultural Night 不確定是不是每次 IOI 都會有的東西，但基本上就是演唱會或者舞會，當時加拿大隊問我們有沒有準備的時候我們整個嚇到了，原來還有這種環節。一開始是匈牙利當地的人代大家一起跳舞，然後後面是所有人都可以上去唱，可以說是我人生中第一個也是最盛大的 party 了。很嗨，很強，很好玩，建議以後的國手如果想要可以準備一首歌（最好是英文的，因為字幕會在上面所以要是非英文的可能會比較少人唱，除非它很 well-known），不要像我一樣社恐不敢上去當現充，如果不知道要唱哪首的話我推薦 [Program in C]。</p>
+<h2 id=day-7>Day 7</h2>
+<p>Knowledge Fair / Closing Ceremony</p>
+<p>早上是 knowledge fair，但是我發現內容其實都是演講，又沒有很感興趣所以我就決定跑去隔壁打一整個早上的桌球，來 IOI 打桌球可能是我最沒有想到的事情之一，而且我覺得我的桌球進步好多（雖然還是相當爛），如果你像我一樣不擅長跟其他人搭話，可以考慮整天蹲手足球或者是桌球桌，不過我不確定其他屆的 IOI 會不會有類似的東西，可以看出來我抽到2023 年可以說是運氣很好。</p>
+<p>Closing Ceremony 基本上就是象徵 IOI 的尾聲了，會有一些來賓致詞、表演跟頒發 IOI 服務獎（嗎？），然後就會直接頒獎，今年是一個一個叫上去頒獎，不確定之前是怎麼運作的。</p>
+<p>上台領牌的那個瞬間，或許過程中我靠了很多運氣，我沒辦法描述那種感覺，但你可以想像你在國際比賽上台就會有一種說不出來的那種感動，有點像是四模比完之後所有事情都結束了的感覺。</p>
+<p>但是在 Closing Ceremony 左右，有人突然發現了 IOI app 的聊天功能是用 HTML 實作的，到底是哪個天才想到要在<strong>資訊</strong>奧林匹亞競賽的東西留一堆漏洞，所以它很快就炸掉了。半夜的時候甚至有人找到 API 後台直接把整個 app 給 hack 掉了，超好笑。</p>
+<p>結束之後我們在外面跟國旗拍照，然後中國真的站在我們後面很火，有點詭譎，但更詭譎的是，我們的 team guide 失蹤了，到處跟其他人拍完照之後我們尋求其他人幫助，在還不知道他去哪裡的狀況隨便搭上接駁車回飯店休息了。</p>
+<h2 id=day-8>Day 8</h2>
+<p>Departure</p>
+<p>悲傷時刻，跟大家說再見。</p>
+<h2 id=心得>心得</h2>
+<p>首先是對這次比賽的一些檢討（雖然說我再也沒有打 OI 比賽的資格了，但我就是想檢討一下），</p>
+<details>
+<summary>檢討</summary>
+<p>Day 1 的策略很好，但是實際上我覺得以我的實力 closing 和 longesttrip 都應該要拿到滿分，我需要想更快跟不要亂做詭譎的事情，實際上 closing 如果全部都丟進去 greedy 就會拿滿了。</p>
+<p>Day 2 的敗點在我 overtaking 直接 overtake 我整場的時間，以及我被 robot 恐嚇了，理想要做出來的分數是 beechtree 23 或 31，overtaking 100 以及 robot 75+。</p>
+<p>總覺得 IOI 的題目越來越喜歡恐嚇人了，所以我建議未來的國手在比 IOI 的時候，不要被題目嚇到就認為自己不可能做出高分或滿分，IOI 基本上不常出這種噁爛題目（好吧今年的 beechtree 可能是例外）</p>
+</details>
+<p>最後是我想說的一些話。</p>
+<p>IOI 的比賽其實在整個活動當中真的有一點點像是在很多活動裡面偷偷塞了兩場比賽，明明比賽應該要很重要才對，不過作息都很正常但是會很累。在 IOI，幾乎全世界資訊最強的所有高中生都在這裡了，所以看到一些像是聞名全 Codeforces、曾經上過 TED 演講或者是已經打了三年的都不用意外。高一進入選訓營的時候發現每個人都把線段樹當水喝，然後走路就會遇到去年國手這件事情震撼了我一次，高三去到 IOI 的時候又震撼了我一次，個人覺得去過 IOI 之後就再也沒有辦法覺得自己有實力了。</p>
+<p>儘管站在你旁邊的人很可能就是金牌得主本人，但在 IOI 大家都很友善，甚至會遇到會說中文的人所以放心跟大家快樂聊天交流就好，如果有人想要知道今年的一些相關細節可以再私訊我。我覺得 IOI 有一半的目的是比賽，而另一半的目的是交流，所以以後的國手可以考慮在國培的時候除了練習以及 virtual，還可以考慮把自己的英文弄好（我英文很爛讓我很後悔）或者是準備各種東西，例如準備 Cultural Night 也是很好的選擇。</p>
+<p>（可惡，感想好多可是寫出來的真的好少喔）</p>
+<p>最後回顧一下高中我到底搞砸了幾次。<br>
+高一的我什麼都不會，蒙混進選訓營學到了好多。<br>
+高二的我以為我會了，不過事實是我實力遠遠不足，心態與比賽策略更沒有任何能力。<br>
+高三，最後一年，我沒有全心賭在競賽的勇氣，所以在學測靠賽免除升學壓力，最終一路靠著不確定有多少的實力以及大概是很大的運氣前進 IOI。</p>
+<p>回頭看看選訓時丟掉的分數，JOISC 證明的實力不足，APIO 吃的鍋貼，這樣讓我覺得拿了這樣的分數有點太不真實。</p>
+<h2 id=whats-next>What&rsquo;s next?</h2>
+<p>我想 IOI 2023 的結束，正式的畫下了我高中程式競賽的句點。</p>
+<p>ICPC 我想並不是屬於我的舞台，除非我要再有像這樣的運氣。所以我想，今後我還是會繼續當個休閒的競賽程式玩家，可能還是會列一些目標達成、時不時在這裡更新酷題目的講解以及一些新學到的科技等等，而且大學可能還有相當多東西可以持續探索（條件是選課系統要接受我的選擇）。</p>
+<p>希望我的大學人生，或甚至是往後的生活，我都能保有動力持續努力我所熱愛的事物，以及抱持好奇心持續向未知探索。</p>
+<blockquote>
+<p>Twenty years from now you will be more disappointed by the things you didn’t do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.</p>
+</blockquote>
+</div>
+</article>
+<div id=footer-post-container>
+<div id=footer-post>
+<div id=nav-footer style=display:none>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</div>
+<div id=toc-footer style=display:none>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#前言>前言</a></li>
+<li><a href=#day-0>Day 0</a></li>
+<li><a href=#day-1>Day 1</a></li>
+<li><a href=#day-2>Day 2</a></li>
+<li><a href=#day-3>Day 3</a></li>
+<li><a href=#day-4>Day 4</a></li>
+<li><a href=#day-5>Day 5</a></li>
+<li><a href=#day-6>Day 6</a></li>
+<li><a href=#day-7>Day 7</a></li>
+<li><a href=#day-8>Day 8</a></li>
+<li><a href=#心得>心得</a></li>
+<li><a href=#whats-next>What&rsquo;s next?</a></li>
+</ul>
+</nav>
+</div>
+<div id=share-footer style=display:none>
+<ul>
+<li>
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f" aria-label=Facebook>
+<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&text=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=Twitter>
+<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&title=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=Linkedin>
+<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&is_video=false&description=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=Pinterest>
+<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="mailto:?subject=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0&body=Check out this article: https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f" aria-label=Email>
+<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&title=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=Pocket>
+<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&title=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label=reddit>
+<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&name=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0&description=%e5%a5%bd%e6%83%b3%ef%bc%8c%e5%a5%bd%e6%83%b3%e6%88%90%e7%82%ba%e7%9c%9f%e6%ad%a3%e7%9a%84%e9%9b%bb%e7%a5%9e%26hellip%3b" aria-label=Tumblr>
+<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
+</a>
+</li>
+<li>
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2flittlecube8152.github.io%2fposts%2fioi-2023%2f&t=IOI%202023%20%e9%ab%98%e4%b8%ad%e7%ab%b6%e8%b3%bd%e6%9c%80%e7%b5%82%e7%ab%a0" aria-label="Hacker News">
+<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div>
+<div id=actions-footer>
+<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
+<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
+<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
+<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
+<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
+</div>
+</div>
+</div>
+<footer id=footer>
+<div class=footer-left>
+Copyright &copy; 2024 Little Cube Blog
+</div>
+<div class=footer-right>
+<nav>
+<ul>
+<li><a href=../../>Home</a></li>
+<li><a href=../../posts>Posts</a></li>
+<li><a href=../../working>Working</a></li>
+<li><a href=../../tags>Tags</a></li>
+<li><a href=../../resources>Resources</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+<link rel=stylesheet href=../../lib/font-awesome/css/all.min.css>
+<script src=../../lib/jquery/jquery.min.js></script>
+<script src=../../js/main.js></script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script>
+</script>
+</html>
