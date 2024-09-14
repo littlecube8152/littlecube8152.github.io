@@ -1,6 +1,6 @@
 ---
 title: "ICPC 2024 World Finals"
-date: 2024-09-15T08:00:00+08:00
+date: 2024-09-15T03:00:00+08:00
 draft: false
 tags: ["ICPC"]
 summary: ""
