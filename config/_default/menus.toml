@@ -1,0 +1,25 @@
+
+[[main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[[main]]
+    name = "Posts"
+    url = "/posts"
+    weight = 2
+
+[[main]]
+    name = "Working"
+    url = "/working"
+    weight = 3
+
+[[main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 4
+
+[[main]]
+    name = "Resources"
+    url = "/resources"
+    weight = 5

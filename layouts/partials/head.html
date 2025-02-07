@@ -14,16 +14,15 @@
   <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
   <script>
     window.onload = function() {    
-        // Parses the document body and    
-        // inserts <img> tags in place of Unicode Emojis    
-        twemoji.parse(document.body, 
-                {folder: 'svg', ext: '.svg'} // This is to specify to Twemoji to use SVGs and not PNGs
-        );
+      twemoji.parse(document.body, 
+        { folder: 'svg', ext: '.svg',
+          base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'} 
+      );
     }
   </script>
   {{ range .Site.Params.js }} <script src="{{ . | absURL }}"></script> {{ end }}
-  {{ partial "opengraph.html" . }}
-  {{ partial "twitter_cards.html" . }}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
   {{ .Scratch.Set "colortheme" "white"}}
   {{ if .Site.Params.Colortheme }}
     {{ .Scratch.Set "colortheme" .Site.Params.Colortheme }}

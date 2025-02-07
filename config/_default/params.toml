@@ -1,0 +1,17 @@
+description = "如果我也能成為電神就好了..."
+colortheme = "dark"
+googleAnalyticsAsync = true
+GoogleAnalytics = 'G-ZPQGDNSYSX'
+mathjax = true
+# Custom CSS applied to default styles.
+css = ["css/prism.css"]
+js = ["js/prism.js", "js/prism-line-numbers.js"]
+[[social]]
+name = "discord"
+link = "https://discordapp.com/users/582151572646133770/"
+[[social]]
+name = "email"
+link = "froakie20161113@gmail.com" # no need for "mailto:" in the head
+[[social]]
+name = "codeforces"
+link = "https://codeforces.com/profile/LittleCube"
