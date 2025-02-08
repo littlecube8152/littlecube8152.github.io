@@ -1,12 +1,18 @@
 baseURL = "https://littlecube8152.github.io/"
-languageCode = "zh-tw"
 relativeURLs = true
+
+# language
+languageCode = "zh-tw"
+defaultContentLanguage = "zh-tw"
+
+# styles
 title = "LittleCube Blog"
 theme = "cactus"
-paginate = 8
-pygmentsUseClasses = true
 
+# misc
 hasCJKLanguage = true
+enableEmoji = true
 summaryLength = 0
+pygmentsUseClasses = true
 
 

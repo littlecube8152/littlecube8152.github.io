@@ -1,8 +1,19 @@
 
 defaultMarkdownHandler = "goldmark"
 
+[goldmark]
+    [goldmark.extensions]
+        [goldmark.extensions.passthrough]
+            
+            enable = true
+            [goldmark.extensions.passthrough.delimiters]
+                block = [['\[', '\]'], ['$$', '$$']]
+                inline = [['\(', '\)'], ['$', '$']]
+
+
 [goldmark.renderer]
     unsafe = true
+    
 
 [highlight]
     anchorLineNos = false
