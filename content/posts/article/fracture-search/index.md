@@ -34,7 +34,7 @@ summary: "笨方塊不會搜索，燒雞"
 
 先不論這個算法是否能通過，很大的問題是他是錯的，考慮以下的反例：  
 
-{{< figure src="/images/fracture-search/counterexample.webp" width="300" >}}
+{{< figure src="counterexample.webp" width="300" >}}
 
 |$k$-th|生成樹|替換邊之後的次小生成樹|
 |-|-|-|

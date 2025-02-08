@@ -22,7 +22,7 @@ Windows 版本是 Windows 10，我不確定 11 有沒有變，但大概 Windows 
 你可以直接裝一顆新硬碟，或是從舊的擠出空間。  
 
 在 Windows 上按右鍵，開啟**磁碟管理**，接下來就是準備從硬碟裡擠出空間，直接對你要擠出空間來的磁碟分割點右鍵，按下**壓縮磁碟區...**
-{{< figure src="/images/install-ubuntu/compress-disk.png" width="400" >}}  
+{{< figure src="compress-disk.png" width="400" >}}  
 這時候如果順利的話，會直接成功生出一堆空間給你切出來，不過，我自己在切 C: 的時候有遇到能切出來的超級少的問題，爬了文發現這是因為 Windows 還有一堆檔案不是連續存下去的，所以很容易產生只能切一點點的問題。  
 
 參考[在Windows11,10, 8, 7中無法壓縮C槽](https://www.diskpart.com/tw/windows-10/unable-to-shrink-partition-c-0310.html)。

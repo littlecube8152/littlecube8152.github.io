@@ -319,7 +319,7 @@ subtask 2 是無人機的 $x$ 座標都一樣，所以先 sort 就能對剛剛�
 總之我覺得我的整個高中競賽歷程，實在是太神奇了。  
 
 ## [更新] 題本
-[4A.pdf](./../TOI-2023-4/4A_zh_tw.pdf)
-[4B.pdf](./../TOI-2023-4/4B_zh_tw.pdf)  
-[4C.pdf](./../TOI-2023-4/4C_zh_tw.pdf)  
-[4D.pdf](./../TOI-2023-4/4D_zh_tw.pdf) 
+[4A.pdf](resources/4A_zh_tw.pdf)  
+[4B.pdf](resources/4B_zh_tw.pdf)  
+[4C.pdf](resources/4C_zh_tw.pdf)  
+[4D.pdf](resources/4D_zh_tw.pdf) 

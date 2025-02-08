@@ -48,7 +48,7 @@ summary: "笨方塊在二模被幾何揍爛，燒雞"
 
 有一個 $n \times n$ 的網格，每格是白（`0`）或黑（`1`），且對主對角線對稱，你想要把這個網格變成這個樣子：  
 
-{{< figure src="/images/TOI-2023-2mock/tiles.png" width="400" >}}
+{{< figure src="resources/tiles.png" width="400" >}}
 
 其中 $\text{I, II, III}$ 是全 `0` 的正方形，$\text{IV, V}$ 是全 `1` 的長方形，若長或寬是 $0$ 也算數（例如，全部都是白色也是一組解，因為 $\text I$ 的長寬是 $n$ 而其他的長寬都是 $0$）
 
@@ -184,9 +184,9 @@ debug 難度極高，所以最後我亂傳亂修都還是沒有過。
 ## 附件
 題本跟範例互動程式： 
 
-[2A.pdf](./../TOI-2023-2/2A_zh_tw.pdf)  
-[2B.pdf](./../TOI-2023-2/2B_zh_tw.pdf)  
-[2C.pdf](./../TOI-2023-2/2C_zh_tw.pdf)
-[2C_sample.cpp](./../TOI-2023-2/2C_sample.cpp)
-[2C_sample_grader.cpp](./../TOI-2023-2/2C_sample_grader.cpp)  
-[2D.pdf](./../TOI-2023-2/2D_zh_tw.pdf)  
+[2A.pdf](resources/2A_zh_tw.pdf)  
+[2B.pdf](resources/2B_zh_tw.pdf)  
+[2C.pdf](resources/2C_zh_tw.pdf)
+[2C_sample.cpp](resources/2C_sample.cpp)
+[2C_sample_grader.cpp](resources/2C_sample_grader.cpp)  
+[2D.pdf](resources/2D_zh_tw.pdf)  

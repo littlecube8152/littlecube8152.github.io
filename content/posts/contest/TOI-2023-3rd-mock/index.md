@@ -102,16 +102,16 @@ $$\frac S {1 + 0.3 \log_2(Q_a + Q_b + 1)}$$
 
 |測試資料|檔案名稱|分數比重 $S$|說明
 |:-:|:-:|:-:|:-|
-|1|[input_01.txt](./../TOI-2023-3/input_01.txt)|$10$|$n = 5, k = 5, d = 8$
-|2|[input_02.txt](./../TOI-2023-3/input_02.txt)|$10$|$n = 7, k = 11, d = 8$
-|3|[input_03.txt](./../TOI-2023-3/input_03.txt)|$10$|$n = 12, k = 9, d = 8$
-|4|[input_04.txt](./../TOI-2023-3/input_04.txt)|$10$|$n = 12, k = 7, d = 8$
-|5|[input_05.txt](./../TOI-2023-3/input_05.txt)|$10$|$n = 9, k = 3, d = 5$
-|6|[input_06.txt](./../TOI-2023-3/input_06.txt)|$10$|$n = 11, k = 3, d = 5$
-|7|[input_07.txt](./../TOI-2023-3/input_07.txt)|$10$|$n = 12, k = 3, d = 5$
-|8|[input_08.txt](./../TOI-2023-3/input_08.txt)|$10$|$n = 7, k = 5, d = 2$
-|9|[input_09.txt](./../TOI-2023-3/input_09.txt)|$10$|$n = 9, k = 7, d = 2$
-|10|[input_10.txt](./../TOI-2023-3/input_10.txt)|$10$|$n = 11, k = 9, d = 2$
+|1|[input_01.txt](resources/input_01.txt)|$10$|$n = 5, k = 5, d = 8$
+|2|[input_02.txt](resources/input_02.txt)|$10$|$n = 7, k = 11, d = 8$
+|3|[input_03.txt](resources/input_03.txt)|$10$|$n = 12, k = 9, d = 8$
+|4|[input_04.txt](resources/input_04.txt)|$10$|$n = 12, k = 7, d = 8$
+|5|[input_05.txt](resources/input_05.txt)|$10$|$n = 9, k = 3, d = 5$
+|6|[input_06.txt](resources/input_06.txt)|$10$|$n = 11, k = 3, d = 5$
+|7|[input_07.txt](resources/input_07.txt)|$10$|$n = 12, k = 3, d = 5$
+|8|[input_08.txt](resources/input_08.txt)|$10$|$n = 7, k = 5, d = 2$
+|9|[input_09.txt](resources/input_09.txt)|$10$|$n = 9, k = 7, d = 2$
+|10|[input_10.txt](resources/input_10.txt)|$10$|$n = 11, k = 9, d = 2$
 
 ### 比賽
 
@@ -384,20 +384,20 @@ Result:
 ## 附件
 題本跟範例互動程式： 
 
-[3A.pdf](./../TOI-2023-3/3A_zh_tw.pdf)
-[3A_sample.cpp](./../TOI-2023-3/3A_sample.cpp)
-[3A_sample_grader.cpp](./../TOI-2023-3/3A_sample_grader.cpp)  
-[3B.pdf](./../TOI-2023-3/3B_zh_tw.pdf)  
-[3C.pdf](./../TOI-2023-3/3C_zh_tw.pdf)  
-[3D.pdf](./../TOI-2023-3/3D_zh_tw.pdf) 
-[testdata.zip](./../TOI-2023-3/testdata.zip)（
-[input_01.txt](./../TOI-2023-3/input_01.txt)
-[input_02.txt](./../TOI-2023-3/input_02.txt)
-[input_03.txt](./../TOI-2023-3/input_03.txt)
-[input_04.txt](./../TOI-2023-3/input_04.txt)
-[input_05.txt](./../TOI-2023-3/input_05.txt)
-[input_06.txt](./../TOI-2023-3/input_06.txt)
-[input_07.txt](./../TOI-2023-3/input_07.txt)
-[input_08.txt](./../TOI-2023-3/input_08.txt)
-[input_09.txt](./../TOI-2023-3/input_09.txt)
-[input_10.txt](./../TOI-2023-3/input_10.txt)）
+[3A.pdf](resources/3A_zh_tw.pdf)
+[3A_sample.cpp](resources/3A_sample.cpp)
+[3A_sample_grader.cpp](resources/3A_sample_grader.cpp)  
+[3B.pdf](resources/3B_zh_tw.pdf)  
+[3C.pdf](resources/3C_zh_tw.pdf)  
+[3D.pdf](resources/3D_zh_tw.pdf) 
+[testdata.zip](resources/testdata.zip)（
+[input_01.txt](resources/input_01.txt)
+[input_02.txt](resources/input_02.txt)
+[input_03.txt](resources/input_03.txt)
+[input_04.txt](resources/input_04.txt)
+[input_05.txt](resources/input_05.txt)
+[input_06.txt](resources/input_06.txt)
+[input_07.txt](resources/input_07.txt)
+[input_08.txt](resources/input_08.txt)
+[input_09.txt](resources/input_09.txt)
+[input_10.txt](resources/input_10.txt)）

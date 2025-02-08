@@ -1,4 +1,3 @@
 # Public
 /public/
-/public/*
-*.sh
+/public/**

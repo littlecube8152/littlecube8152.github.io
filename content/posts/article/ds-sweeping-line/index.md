@@ -25,7 +25,7 @@ summary: "笨方塊想學掃描線被爆揍，燒雞"
 不過要怎麼維護覆蓋量？  
 
 $*_{\scriptstyle 註：還是可行的，但是複雜度是O(N\log^2N)}$  
-{{< figure src="/images/ds-scanning-line/scanning-1.webp" width="750" >}}  
+{{< figure src="assets/scanning-1.webp" width="750" >}}  
 
 參考上面這張圖，當我加入一個矩形的時候，  
 必須要對區間都加一次值（代表多被覆蓋一次），  
@@ -205,7 +205,7 @@ $K,\ Q \leq 2 \times 10^5$
 所以對於每一橫排，當我掃到$\\,R\\,$的時候，  
 需要把左邊所有的城堡都放進去，  
 也就是保留$\\,R-1\\,$的狀況，新增在$\\,R\\,$上的城堡，  
-{{< figure src="/images/ds-scanning-line/scanning-2.webp" width="500" >}}  
+{{< figure src="assets/scanning-2.webp" width="500" >}}  
 
 當我遇到那一橫排有新的加入，就覆蓋掉前面的，  
 因為當我回答的時候可以想像成**從右界開始往左掃回去**，所以越右邊的會越好。  
@@ -236,7 +236,7 @@ $dp[i][j]$ 表示已經安排好$[1..i]$的部分，而且已經切了$\\,j\\,$�
 觀察到每個數字排在一行上，其實跟上一題的情況有點像，  
 只需要改一下維護的值，  
 當同樣一個數字出現的時候，需要對$[上次出現+1..這次出現]$加值，    
-{{< figure src="/images/ds-scanning-line/scanning-2-2.webp" width="500" >}}  
+{{< figure src="assets/scanning-2-2.webp" width="500" >}}  
 
 [Code](https://codeforces.com/contest/833/submission/118806751)  
 
@@ -256,7 +256,7 @@ $N,\ Q,\ c_i \leq 10^6$。
 ### 做法
 
 把質因數分解之後，一一對齊會長的像是：  
-{{< figure src="/images/ds-scanning-line/scanning-3.webp" width="400" >}}  
+{{< figure src="assets/scanning-3.webp" width="400" >}}  
 
 
 還記得剛剛優化的核心概念嗎？  
@@ -271,7 +271,7 @@ $N,\ Q,\ c_i \leq 10^6$。
 -  當新的次方較大，就把舊的刪除
 -  否則，差分完丟進我們維護的線段樹內
 
-{{< figure src="/images/ds-scanning-line/scanning-4.webp" width="700" >}}  
+{{< figure src="assets/scanning-4.webp" width="700" >}}  
 
 如觀察所述，我需要做到：  
  - 質數篩 + DP $\mathcal O(C + \sqrt C \log \log C)$ 

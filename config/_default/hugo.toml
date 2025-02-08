@@ -15,4 +15,5 @@ enableEmoji = true
 summaryLength = 0
 pygmentsUseClasses = true
 
+ignoreFiles = ['^content/old-posts']
 

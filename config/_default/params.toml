@@ -2,6 +2,7 @@
 description = "Explore. Dream. Discover."
 colortheme = "dark"
 mathjax = true
+showAllPostsArchive = false # only explicitly set this will enable post pagination
 
 googleAnalyticsAsync = true
 GoogleAnalytics = 'G-ZPQGDNSYSX'

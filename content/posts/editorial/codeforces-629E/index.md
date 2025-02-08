@@ -38,7 +38,7 @@ $\newline$　
 $size[p]$是$p$子樹的大小，$dp[p]$是$p$子樹所有點到根的距離總和，$dis[p]$是$p$到根的距離，    
 然後答案就是$\displaystyle \frac{dp[u]}{size[u]} + \frac{dp[v]}{size[v]} - dis[k]\times 2 + 1$ 
 
-{{< figure src="/images/Codeforces-629E/case-1-graph.webp" width="500" >}}
+{{< figure src="assets/case-1-graph.webp" width="500" >}}
 
 ### Case 2
 - 兩個點**有**間接祖先或小孩的關係  
@@ -57,7 +57,7 @@ $\newline$
 $\begin{align*}& \frac{dp'[u] - dp[k] + dis[k]size[k]}{N - size[u]} + \frac{dp[v] - dis[y]size[y]}{size[v]} + dis[v] - dis[u] + 1\newline = & \frac{dp'[u] - dp[k] + dis[k]size[k]}{N - size[u]} + \frac{dp[v]}{size[v]} - dis[u] + 1\end{align*}$  
 求$k$可以用倍增法得到，甚至可以跟Case 1共用一個函式。  
 
-{{< figure src="/images/Codeforces-629E/case-2-graph.webp" width="500" >}}
+{{< figure src="assets/case-2-graph.webp" width="500" >}}
 
 ## AC Code
 [Link](https://codeforces.com/contest/629/submission/114114848)  

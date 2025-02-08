@@ -4,6 +4,11 @@ date: 2023-03-27T01:30:00+08:00
 draft: false
 tags: ["TOI", "OI"]
 summary: "笨方塊在一模被 Communication 揍爛，燒雞"
+
+publishResources: true
+resources:
+- src: 'resources/**.pdf'
+- src: 'resources/**.cpp'
 ---
 
 ## 一模
@@ -274,6 +279,8 @@ Result:
 
 因為我記憶力燒雞了所以這邊大概就是一些亂記之類的東西 ><  
 
+{{< figure src="resources/camp-schedule.png" width="300" >}}
+
 ### Day 1
 第一天我們先跑去台大混順便借日麻，然後就差點報到燒雞ㄌ  
 去捷絲旅寄行李的時候發現 Foxyy 跟 PixelCat 還有 victor.gao 一間，結果去師大才知道今年改成用 (年級, 名字) sort。  
@@ -341,11 +348,11 @@ JOISC 2023 Day 4 好像打得有點差，燒雞。
 ## 附件
 題本跟範例互動程式： 
 
-[1A.pdf](./../TOI-2023-1/1A_zh_tw.pdf)
-[stubA.cpp](./../TOI-2023-1/stubA.cpp)
-[1A_sample.cpp](./../TOI-2023-1/1A_sample.cpp)  
-[1B.pdf](./../TOI-2023-1/1B_zh_tw.pdf)  
-[1C.pdf](./../TOI-2023-1/1C_zh_tw.pdf)
-[stubC.cpp](./../TOI-2023-1/stubC.cpp)
-[1C_sample.cpp](./../TOI-2023-1/1C_sample.cpp)  
-[1D.pdf](./../TOI-2023-1/1D_zh_tw.pdf)  
+[1A.pdf](resources/1A_zh_tw.pdf)
+[stubA.cpp](resources/stubA.cpp)
+[1A_sample.cpp](resources/1A_sample.cpp)  
+[1B.pdf](resources/1B_zh_tw.pdf)  
+[1C.pdf](resources/1C_zh_tw.pdf)
+[stubC.cpp](resources/stubC.cpp)
+[1C_sample.cpp](resources/1C_sample.cpp)  
+[1D.pdf](resources/1D_zh_tw.pdf)  
