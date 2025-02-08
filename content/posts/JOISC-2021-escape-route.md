@@ -69,7 +69,7 @@ $2 \leq N \leq 90,\\,M \leq \frac{N(N-1)}{2},\\,2 \leq S \leq 10^{15},\\,1 \leq 
 總共更新的數量也維持不變是 $\mathcal O(N^3)$，在 pq 裡面只會多一個 $\log$，  
 總時間複雜度來到 $\mathcal O(N^4)$，加上前面的查詢 $\mathcal O(QN)$ 足以通過。  
 
-其實這題明明想法不難但為啥截至現在只有 11 個人寫 <emoji>🤔</emoji>
+其實這題明明想法不難但為啥截至現在只有 11 個人寫 :thinking:
 
 <details>
     <summary> Code </summary>
