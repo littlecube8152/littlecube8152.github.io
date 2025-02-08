@@ -1,21 +1,20 @@
-description = ":cube::burn::chicken:"
+# cactus theme options
+description = "Explore. Dream. Discover."
 colortheme = "dark"
-googleAnalyticsAsync = true
-GoogleAnalytics = 'G-ZPQGDNSYSX'
 mathjax = true
 
-showAllPostsArchive = false
+googleAnalyticsAsync = true
+GoogleAnalytics = 'G-ZPQGDNSYSX'
 
-# Custom CSS applied to default styles.
-css = ["css/prism.css"]
-js = ["js/prism.js", "js/prism-line-numbers.js"]
+# CSS and JS
+css = ["css/syntax.css"]
 
+[[social]]
+    name = "github"
+    link = "https://github.com/littlecube8152/"
 [[social]]
     name = "discord"
     link = "https://discordapp.com/users/582151572646133770/"
 [[social]]
-    name = "email"
-    link = "froakie20161113@gmail.com" # no need for "mailto:" in the head
-    [[social]]
     name = "codeforces"
     link = "https://codeforces.com/profile/LittleCube"
