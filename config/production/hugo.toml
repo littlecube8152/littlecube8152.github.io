@@ -1,3 +1,0 @@
-# Do not parse tests into production
-ignoreFiles = ['^content/tests']
-

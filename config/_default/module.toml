@@ -1,0 +1,32 @@
+
+# conventional 
+[[mounts]]
+    source = 'archetypes'
+    target = 'archetypes'
+[[mounts]]
+    source = 'layouts'
+    target = 'layouts'
+[[mounts]]
+    source = 'static'
+    target = 'static'
+# [[mounts]] no content yet
+#     source = 'assets'
+#     target = 'assets'
+# [[mounts]] not implemented yet
+#     source = 'i18n'
+#     target = 'i18n'
+
+# posts
+[[mounts]]
+    source = 'content/posts/article'
+    target = 'content/posts'
+[[mounts]]
+    source = 'content/posts/contest'
+    target = 'content/posts'
+[[mounts]]
+    source = 'content/posts/editorial'
+    target = 'content/posts'
+[[mounts]]
+    source = 'content/posts/entry'
+    target = 'content/posts'
+
