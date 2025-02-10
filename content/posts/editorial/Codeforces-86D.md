@@ -2,28 +2,28 @@
 title: "[Codeforces] 86D"
 description: "Powerful array"
 date: 2021-03-31T12:30:20+08:00
-draft: false
+draft: true
 tags: ["codeforces","tutorial"]
 summary: "笨方塊想學寫程式被爆揍，燒雞"
 ---
 
-又達成成就了>w<
+又達成成就了 >w<
 
 ## 題敘
-有一個陣列，  
-令在區間$[l..r]$裡$a_i$出現了$k_i$次，  
-問$\sum k_i^2a_i$，多筆詢問。
+有一個陣列，
+令在區間 $[l, r]$ 裡 $a_i$ 出現了 $k_i$ 次，
+問 $\sum k_i^2a_i$，多筆詢問。
 
 ## 想法
-用線段樹超難合併，  
-但我們發現把區間左或右界加減$1$只要$\mathcal{O}(1)$的時間，  
-所以考慮莫隊算法，  
-如果把$a_i$移出陣列只要扣$(2k_i - 1)a_i$，  
-移入只要加上$(2 k_i + 1)a_i$，  
-如果把左界$K$個一塊，計算只要$\mathcal{O}(\frac{\displaystyle N}{\displaystyle K}N +NK)$，  
-就是每塊的右界都要從頭到尾，左界每次最多移動$K$，
-取$K = \sqrt{N}$，複雜度是$\mathcal{O}(N \sqrt{N})$，  
-離線排序詢問，就可以AC了。  
+用線段樹超難合併，
+但我們發現把區間左或右界加減 $1$ 只要 $\mathcal{O}(1)$ 的時間，
+所以考慮莫隊算法，
+如果把 $a_i$ 移出陣列只要扣 $(2k_i - 1)a_i$，
+移入只要加上 $(2 k_i + 1)a_i$，
+如果把左界 $K$ 個一塊，計算只要 $\mathcal{O}(\frac{\displaystyle N}{\displaystyle K}N +NK)$，
+就是每塊的右界都要從頭到尾，左界每次最多移動 $K$，
+取 $K = \sqrt{N}$，複雜度是 $\mathcal{O}(N \sqrt{N})$，
+離線排序詢問，就可以 AC 了。
 
 ## AC Code
 ```cpp

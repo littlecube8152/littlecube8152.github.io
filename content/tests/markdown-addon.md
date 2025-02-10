@@ -59,6 +59,13 @@ Not sure why mailto:foo@bar.baz won't work tho
 
 This piece of math equation, $a^*=x-b^*$ is typed using `a^*=x-b^*`, in which the pair `*` might be substituted by italics format HTML tag. 
 
+Testing English with display math next to it:  
+$$ a^n + b^n = c^n $$
+
+測試中文旁邊有整行數學式：  
+$$ a^n + b^n = c^n $$
+
+
 ### Goldmark Extensions: Typographer (`typographer`)
 
 These 'single' quote, "double" quote, <<angle>> quote are recognized. 
