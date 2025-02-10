@@ -28,18 +28,19 @@ $$1 - \frac{p}{p}\times\frac{p-1}{p}\times\frac{p-2}{p}\times\cdots\times\frac{p
 ### Lyndon word 
 對一個字串 $S$ 而言，他是 Lyndon word 若且唯若
  - $S$ 的字典序比他的所有非空也非本身的後綴來的**嚴格**小。  
+
 其實他就等價他的字典序比他所有環狀字串裡字典序**嚴格**最小的排列方法。  
 
 例如 `abc` 是一個 Lyndon word，但 `aa` 就不是（因為 `a` $<$ `aa`）。  
 
 ### Lyndon Factorization 
-對一個字串 $S$ 的 Lyndon Factorization 定義為，把 $S$ 切成若干個子字串 $s_1,\\,s_2,\\,\cdots,\\,s_k$ 滿足  
+對一個字串 $S$ 的 Lyndon Factorization 定義為，把 $S$ 切成若干個子字串 $s_1,s_2,\cdots,s_k$ 滿足  
  - $s_1 + s_2 + s_3 + \cdots + s_k = S$，其中 $+$ 是字串串接。  
- - $s_1,\\,s_2,\\,\cdots,\\,s_k$ 都是 Lyndon word 。  
+ - $s_1,s_2,\cdots,s_k$ 都是 Lyndon word 。  
  - $s_1 \geq s_2 \geq \cdots \geq s_k$，其中 $\geq$ 是字典序比較。  
 我們先不管他存不存在，先觀察知道如果存在的話，會帶給我們什麼好處。  
 
-對字串 $S + S$ 的 Lyndon Factorization 而言，如果其中一個 $s_i$ 的開頭在第一份的 $S$ 裡，結尾在第二份的 $S$ 裡，那這個子字串的起點一定是其中一個 Minimum Rotation 的開頭。  
+對字串 $S + S$ 的 Lyndon Factorization 而言，如果其中一個 $s_i$ 的開頭在第一份的 $S$ 裡，結尾在第二份的 $S$ 裡，那這個子字串的起點一定是其中一個 Minimum Rotation 的開頭。
 考慮所有在這之前的 $s_j\quad(j < i)$ 的開頭，從他們當開頭一定不可能會更好，因為第三條定義：  
  - $s_1 \geq s_2 \geq \cdots \geq s_k$，其中 $\geq$ 是字典序比較。  
 
@@ -51,21 +52,21 @@ $$1 - \frac{p}{p}\times\frac{p-1}{p}\times\frac{p-2}{p}\times\cdots\times\frac{p
 
 考慮所有在這之後剩下的那些位置，他們不可能是答案，因為他們一定在前面就被排除了。  
 
-假如我們找不到這樣的 $s_i$ 呢？  
+假如我們找不到這樣的 $s_i$ 呢？
 那答案就一定是不旋轉，因為在第二份 $S$ 的開頭就可以剛好適用剛剛的性質。  
 
 ### Duval's Algorithm
-問題就在，我們要怎麼找到 Lyndon Factorization？  
+問題就在，我們要怎麼找到 Lyndon Factorization？
 剛剛我們甚至連存在性都沒有證明，現在我們要證明它的存在性，利用構造演算法。  
 
-現在定義一個新的概念，我們說一個字串 $S$ 是 almost Lyndon word，如果他是由相同的 Lyndon word $s$ 重複以及一段（可能是空的）$s$ 的前綴。  
+現在定義一個新的概念，我們說一個字串 $S$ 是 almost Lyndon word，如果他是由相同的 Lyndon word $s$ 重複以及一段（可能是空的）$s$ 的前綴。
 為什麼這樣定義呢？因為我們可以觀察 almost Lyndon word 有一個性質：  
  - almost Lyndon word 前面重複的那些 $s$ 可以分別切成獨立的 Lyndon word。  
 
 而 Duval's Algorithm 的概念很簡單，他把字串分成三分，分別是：  
 **Lyndon Factorization 完的**、**almost Lyndon word**、**還沒處理的**。  
 
-這個演算法的概念是，我們嘗試把還沒處理的最前面一個加入 almost Lyndon word 裡，假如加不進去就把 almost Lyndon word 的前綴那些重複的 $s$ 切掉，然後繼續做。  
+這個演算法的概念是，我們嘗試把還沒處理的最前面一個加入 almost Lyndon word 裡，假如加不進去就把 almost Lyndon word 的前綴那些重複的 $s$ 切掉，然後繼續做。
 但這樣永遠會滿足條件嗎？我們來觀察一下：  
  - 假如加入的字元剛好跟 $s$ 的重複出現吻合  
     那加入一定沒問題。  
@@ -74,19 +75,19 @@ $$1 - \frac{p}{p}\times\frac{p-1}{p}\times\frac{p-2}{p}\times\cdots\times\frac{p
  - 假如加入的字元 $ < s$ 接下來的重複出現字元  
     那就需要把前面完整的所有 $s$ 都倒出來變成 Lyndon Factorization 完的。這裡雖然直覺會覺得可以繼續往下做完，但實際上要是這個 $s$ 的前綴有循環就會燒雞，所以要把所有剩下的 almost Lyndon word 都設成還沒處理。  
 
-我們可以驗證一下前兩個條件一定會保持，而第三個條件呢？  
-首先，同一批切出去的 $s$ 一定會一樣，所以沒問題。  
+我們可以驗證一下前兩個條件一定會保持，而第三個條件呢？
+首先，同一批切出去的 $s$ 一定會一樣，所以沒問題。
 而不同批切出去的呢？前面一定會比較大，假如是遇到字元變小，那新的那個屬實會更小，而遇到結尾的話，那新的會是前綴，也確實會比較小。  
 
 大概到這裡已經有演算法的雛型了，繼續把它寫個更詳細一點：  
 首先有三個指標，$i$ 指著 **almost Lyndon word** 的開始，$j$ 指著**還沒處理的**開始，而 $k$ 則是用來告訴我們，要維持 $s$ 重複出現的話，下一個字元是什麼。  
-一開始 $i = k = 0,\\,j = i + 1$。  
+一開始 $i = k = 0,j = i + 1$。  
  - 假如加入的字元剛好跟 $s$ 的重複出現吻合  
-    那我們就能放心把 $j,\\,k$ 都增加 $1$。   
+    那我們就能放心把 $j,k$ 都增加 $1$。   
  - 假如加入的字元 $ > s$ 接下來的重複出現字元  
     那我們就能放心把 $j$ 都增加 $1$，但這時 $s$ 重置了，所以 $k$ 設成 $i$。   
  - 假如加入的字元 $ < s$ 接下來的重複出現字元  
-    那我們就需要依序把前面的都清出去，因為 $j,\\,k$ 剛好差一個 $s$ 的長度，所以可以不斷用 $j - k$ 當長度切出去。切完之後把 $k$ 設成 $i$，$j$ 設成 $i+1$，這裡是因為，雖然這邊留下來的是 $s$ 的前綴，但一個 Lyndon word 的前綴有可能不是 Lyndon word，所以我們要把它重新拆解。  
+    那我們就需要依序把前面的都清出去，因為 $j,k$ 剛好差一個 $s$ 的長度，所以可以不斷用 $j - k$ 當長度切出去。切完之後把 $k$ 設成 $i$，$j$ 設成 $i+1$，這裡是因為，雖然這邊留下來的是 $s$ 的前綴，但一個 Lyndon word 的前綴有可能不是 Lyndon word，所以我們要把它重新拆解。  
 
 時間複雜度：儘管我們有機會失敗，但每次失敗至少都會有一半的字元被算好，所以整體來說鐵定是 $\mathcal O(|S|)$ 的。
 

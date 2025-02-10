@@ -1,4 +1,3 @@
-
 defaultMarkdownHandler = "goldmark"
 
 [goldmark]
@@ -10,15 +9,13 @@ defaultMarkdownHandler = "goldmark"
                 block = [['\[', '\]'], ['$$', '$$']]
                 inline = [['\(', '\)'], ['$', '$']]
 
-
 [goldmark.renderer]
     unsafe = true
-    
-
 
 [highlight]
     lineNoStart = 1
     lineNos = true
     lineNumbersInTable = true
     tabWidth = 4
+    style = 'github-dark'
 

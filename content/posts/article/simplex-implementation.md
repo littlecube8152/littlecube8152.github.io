@@ -18,10 +18,10 @@ LP 就是線性規劃（Linear Programming），會被稱為線性規劃的原�
 
 $$
     \begin{array}{rrl}
-        \text{maximize} & x + 2y \\\
+        \text{maximize} & x + 2y \\
         \text{subject to} 
-        & x + y & \leq 3 \\\
-        &    x & \geq 0 \\\
+        & x + y & \leq 3 \\
+        &    x & \geq 0 \\
         &    y & \geq 0 
     \end{array}
 $$
@@ -32,10 +32,10 @@ $$
 
 $$
     \begin{array}{rrl}
-        \text{maximize} & \mathbf{c}^\top\mathbf{x} \\\
+        \text{maximize} & \mathbf{c}^\top\mathbf{x} \\
         \text{subject to} 
-        & A\mathbf{x} & \leq \mathbf{b} \\\
-        &    \mathbf{x} & \geq 0 \\\
+        & A\mathbf{x} & \leq \mathbf{b} \\
+        &    \mathbf{x} & \geq 0 \\
     \end{array}
 $$
 
@@ -43,13 +43,13 @@ $$
 
 $$
     \begin{array}{rrl}
-        \text{maximize} & c_1x_1 + c_2x_2 + \cdots + c_nx_n \\\
+        \text{maximize} & c_1x_1 + c_2x_2 + \cdots + c_nx_n \\
         \text{subject to} 
-        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n & \leq b_1 \\\
-        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n & \leq b_2 \\\
-        & \vdots \\\
-        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n & \leq b_m \\\
-        &   x_i & \geq 0 \\\
+        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n & \leq b_1 \\
+        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n & \leq b_2 \\
+        & \vdots \\
+        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n & \leq b_m \\
+        &   x_i & \geq 0 \\
     \end{array}
 $$
 
@@ -83,38 +83,38 @@ Simplex 演算法的想法就是，二維的 LP 會是一個凸包，三維的 L
 Simplex 的想法是，既然大家都是小於等於：
 $$
     \begin{array}{rrl}
-        \text{maximize} & c_1x_1 + c_2x_2 + \cdots + c_nx_n \\\
+        \text{maximize} & c_1x_1 + c_2x_2 + \cdots + c_nx_n \\
         \text{subject to} 
-        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n & \leq b_1 \\\
-        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n & \leq b_2 \\\
-        & \vdots \\\
-        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n & \leq b_m \\\
-        &   x_i & \geq 0 \\\
+        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n & \leq b_1 \\
+        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n & \leq b_2 \\
+        & \vdots \\
+        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n & \leq b_m \\
+        &   x_i & \geq 0 \\
     \end{array}
 $$
 我們可以幫每個不等式補一個假的變數（slack variable）$s_i$，換成
 $$
     \begin{array}{rrl}
-        \text{maximize} & c_1x_1 + c_2x_2 + \cdots + c_nx_n \\\
+        \text{maximize} & c_1x_1 + c_2x_2 + \cdots + c_nx_n \\
         \text{subject to} 
-        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n + \boxed{s_1} & \boxed=\ b_1 \\\
-        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n + \boxed{s_2} & \boxed=\ b_2 \\\
-        & \vdots \\\
-        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n + \boxed{s_m} & \boxed=\ b_m \\\
-        &   x_i, \boxed{s_j} & \geq 0 \\\
+        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n + \boxed{s_1} & \boxed=\ b_1 \\
+        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n + \boxed{s_2} & \boxed=\ b_2 \\
+        & \vdots \\
+        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n + \boxed{s_m} & \boxed=\ b_m \\
+        &   x_i, \boxed{s_j} & \geq 0 \\
     \end{array}
 $$
 當然這些變數都要是非負的才會滿足原本的條件。同樣的狀況也可以**對目標函數**做事！也就是說我們開一個答案 $Z$，就可以轉換成
 $$
     \begin{array}{rrl}
-        \text{maximize} & \boxed{Z} \\\
+        \text{maximize} & \boxed{Z} \\
         \text{subject to} 
-        & \boxed{Z-c_1x_1 - c_2x_2 - \cdots - c_nx_n} & \boxed{= 0} \\\
-        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n + s_1 & = b_1 \\\
-        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n + s_2 & = b_2 \\\
-        & \vdots \\\
-        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n + s_m & = b_m \\\
-        &   x_i, s_j & \geq 0 \\\
+        & \boxed{Z-c_1x_1 - c_2x_2 - \cdots - c_nx_n} & \boxed{= 0} \\
+        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n + s_1 & = b_1 \\
+        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n + s_2 & = b_2 \\
+        & \vdots \\
+        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n + s_m & = b_m \\
+        &   x_i, s_j & \geq 0 \\
     \end{array}
 $$
 這時候要介紹一個概念：基底變數跟非基底變數（basic variable and non-basic variable）。基底變數可以想成是我們手上握著一組目前的答案，而非基底變數都會是 $0$，如果有學一點點線性代數，就可以想像成非基底是可以自由調整的變數，而我們手上的基底是合法的解，所以非基底的變數全部不取，都是 $0$ 會是一組合法解；而基底變數就是我們手上維持不變的解。在一開始的時候，我們一定是握著 $Z = 0, s_i = b_i$ 的這組基底。
@@ -125,23 +125,23 @@ $$
 
 $$
     \begin{array}{rrl}
-        \text{maximize} & 2x + 3y + 4z \\\
+        \text{maximize} & 2x + 3y + 4z \\
         \text{subject to} 
-        & 3x + 2y + z & \leq 10 \\\
-        & 2x + 5y + 3z & \leq 15 \\\
-        &    x,y,z & \geq 0 \\\
+        & 3x + 2y + z & \leq 10 \\
+        & 2x + 5y + 3z & \leq 15 \\
+        &    x,y,z & \geq 0 \\
     \end{array}
 $$
 
 我們先轉換成等式的樣子：
 $$
     \begin{array}{rrl}
-        \text{maximize} & Z \\\
+        \text{maximize} & Z \\
         \text{subject to} 
-        & Z -2x - 3y - 4z   & = 0 \\\
-        & 3x + 2y + z + s_1 & = 10 \\\
-        & 2x + 5y + 3z + s_2 & =15 \\\
-        &    x,y,z,s_1,s_2 & \geq 0 \\\
+        & Z -2x - 3y - 4z   & = 0 \\
+        & 3x + 2y + z + s_1 & = 10 \\
+        & 2x + 5y + 3z + s_2 & =15 \\
+        &    x,y,z,s_1,s_2 & \geq 0 \\
     \end{array}
 $$
 現在我們手上的解，也就是基底變數，是 $Z = 0, s_1 = 10, s_2 = 15$。這時候我們嘗試透過 $z$ 去增加答案，$z$ 可以增加多少呢？先不考慮第一列的目標函數，
@@ -151,12 +151,12 @@ $$
 我們直接讓第三列生效（因為他是最緊的限制），這時候 $z = 5$。為了處理這樣的改變，那一列的基底變數 $s_2$ 會被丟出去。此時基底受到 $z$ 的影響要做出改變才能滿足等式，也就是變成 $Z = 20, s_1 = 5, z = 5$。為了方便我們用高斯消去只讓第三列有 $z$，也就是
 $$
     \begin{array}{rrl}
-        \text{maximize} & Z \\\
+        \text{maximize} & Z \\
         \text{subject to} 
-        & Z +\frac 2 3x - \frac {11} 3 y + \frac 4 3 s_2 & = 0 \\\
-        & \frac 7 3 x + \frac 1 3 y + s_1 - \frac 1 3 s_2 & = 5 \\\
-        & 2x + 5y + 3z + s_2 & = 15 \\\
-        &    x,y,z,s_1,s_2 & \geq 0 \\\
+        & Z +\frac 2 3x - \frac {11} 3 y + \frac 4 3 s_2 & = 0 \\
+        & \frac 7 3 x + \frac 1 3 y + s_1 - \frac 1 3 s_2 & = 5 \\
+        & 2x + 5y + 3z + s_2 & = 15 \\
+        &    x,y,z,s_1,s_2 & \geq 0 \\
     \end{array}
 $$
 這時候非基底不管怎麼調整都不會變大，因為他們原本是 $0$，一變大 $Z$ 就會變小，換句話說我們達到最佳解了。
@@ -179,22 +179,22 @@ $$
 這樣的好處是當我們在放進一個非基底變數的時候，不需要透過其他運算就可以輕鬆得到是誰先出去。維護的方法也只需要拿進去基底變數的那一橫列去消去就好。我們把剛剛上面的狀況排好看之後感受一下。
 $$
     \begin{array}{rrrrrrrl}
-        \text{maximize} & Z \\\
+        \text{maximize} & Z \\
         \text{subject to} 
-        & \boxed{Z} & -2x & -3y & -4z & & & = 0 \\\
-        & &3x &+ 2y &+ z &\boxed{+ s_1}& & = 10 \\\
-        & &2x &+ 5y &+ 3z &&\boxed{+ s_2} & =15 \\\
-        & &   x,&y,&z,&s_1,&s_2 & \geq 0 \\\
+        & \boxed{Z} & -2x & -3y & -4z & & & = 0 \\
+        & &3x &+ 2y &+ z &\boxed{+ s_1}& & = 10 \\
+        & &2x &+ 5y &+ 3z &&\boxed{+ s_2} & =15 \\
+        & &   x,&y,&z,&s_1,&s_2 & \geq 0 \\
     \end{array}
 $$
 $$
     \begin{array}{rrrrrrrl}
-        \text{maximize} & Z \\\
+        \text{maximize} & Z \\
         \text{subject to} 
-        & \boxed Z &+\frac 2 3x &- \frac {11} 3 y &&&+ \frac 4 3 s_2 & = 0 \\\
-        & &\frac 7 3 x &+ \frac 1 3 y &&\boxed{+ s_1} &- \frac 1 3 s_2 & = 5 \\\
-        & &2x &+ 5y &\boxed{+ 3z} &&+ s_2 & = 15 \\\
-        & &   x,&y,&z,&s_1,&s_2 & \geq 0 \\\
+        & \boxed Z &+\frac 2 3x &- \frac {11} 3 y &&&+ \frac 4 3 s_2 & = 0 \\
+        & &\frac 7 3 x &+ \frac 1 3 y &&\boxed{+ s_1} &- \frac 1 3 s_2 & = 5 \\
+        & &2x &+ 5y &\boxed{+ 3z} &&+ s_2 & = 15 \\
+        & &   x,&y,&z,&s_1,&s_2 & \geq 0 \\
     \end{array}
 $$
 這時候我們把要離開的變數所對應的列叫做 pivot row，我不太確定這個名詞的翻譯，但是如果你學過高斯消去法應該就會知道這是什麼意思。
@@ -269,22 +269,22 @@ Phase II 的實作應該相當簡單，讀者可以嘗試先寫出 [UOJ 179 線�
 
 $$
     \begin{array}{rrl}
-        \text{maximize} & x + 2y \\\
+        \text{maximize} & x + 2y \\
         \text{subject to} 
-        & x + y & \leq 4 \\\
-        & x + y & \geq 2 \\\
-        & x - y & \leq 1 \\\
-        & x - y & \geq -1 \\\
+        & x + y & \leq 4 \\
+        & x + y & \geq 2 \\
+        & x - y & \leq 1 \\
+        & x - y & \geq -1 \\
         & x, y & \geq 0 
     \end{array}
 $$
 的可行空間會是一個轉了 45 度的正方形，最大值是 $6.5$，但是我們不能再從 $(x, y) = (0, 0)$ 開始了！在另一個例子當中，
 $$
     \begin{array}{rrl}
-        \text{maximize} & x + 2y \\\
+        \text{maximize} & x + 2y \\
         \text{subject to} 
-        & x + y & \leq 2 \\\
-        & x + y & \geq 3 \\\
+        & x + y & \leq 2 \\
+        & x + y & \geq 3 \\
         & x, y & \geq 0 
     \end{array}
 $$
@@ -295,15 +295,15 @@ $$
 具體來說，我們要怎麼做到這件事呢？假設對於原本的限制，
 $$
     \begin{array}{rrl}
-        \text{maximize} & Z \\\
+        \text{maximize} & Z \\
         \text{subject to} 
-        & Z-c_1x_1 - c_2x_2 - \cdots - c_nx_n & = 0 \\\
-        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n + s_1 & = b_1 \\\
-        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n + s_2 & = b_2 \\\
-        & a_{3,1}x_1 + a_{3,2}x_2 + \cdots + a_{3,n}x_n + s_3 & = b_3 \\\
-        & \vdots \\\
-        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n + s_m & = b_m \\\
-        &   x_i, s_j & \geq 0 \\\
+        & Z-c_1x_1 - c_2x_2 - \cdots - c_nx_n & = 0 \\
+        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n + s_1 & = b_1 \\
+        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n + s_2 & = b_2 \\
+        & a_{3,1}x_1 + a_{3,2}x_2 + \cdots + a_{3,n}x_n + s_3 & = b_3 \\
+        & \vdots \\
+        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n + s_m & = b_m \\
+        &   x_i, s_j & \geq 0 \\
     \end{array}
 $$
 這時候，**假設只有 $b_2, b_3 < 0$，其他都還是正的**，那我們在選取原本的基底變數的時候，就會窒礙難行，因為我們的起始點 $s_2 = b_2, s_3 = b_3$ 是不合法的。
@@ -311,15 +311,15 @@ $$
 這時候，我們要做的是在 $b_i < 0$ 的條件**再引入更多變數**（這些稱為 artifical variable），例如說從上面的例子，我們就可以創造 $t_2, t_3$：
 $$
     \begin{array}{rrrl}
-        % \text{maximize} & Z \\\
+        % \text{maximize} & Z \\
         \text{subject to} 
-        & Z-c_1x_1 - c_2x_2 - \cdots - c_nx_n & & = 0 \\\
-        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n + s_1 & & = b_1 \\\
-        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n + s_2 & \boxed{-t_2} & = b_2 \\\
-        & a_{3,1}x_1 + a_{3,2}x_2 + \cdots + a_{3,n}x_n + s_3 & \boxed{-t_3} & = b_3 \\\
-        & \vdots \\\
-        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n + s_m & & = b_m \\\
-        &   x_i, s_j, & \boxed{t_k} & \geq 0 \\\
+        & Z-c_1x_1 - c_2x_2 - \cdots - c_nx_n & & = 0 \\
+        & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n + s_1 & & = b_1 \\
+        & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n + s_2 & \boxed{-t_2} & = b_2 \\
+        & a_{3,1}x_1 + a_{3,2}x_2 + \cdots + a_{3,n}x_n + s_3 & \boxed{-t_3} & = b_3 \\
+        & \vdots \\
+        & a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n + s_m & & = b_m \\
+        &   x_i, s_j, & \boxed{t_k} & \geq 0 \\
     \end{array}
 $$
 這樣做的意義在哪裡呢？如果 $t_k$ 都必須要是正的，因為原本都是小於等於的狀況，所以在原本的限制底下就根本沒有解，所以換句話說，**如果我們嘗試最大化 $-t_2-t_3$，就可以得知原本有沒有解！**
@@ -327,54 +327,54 @@ $$
 讓我們直接來看一個例子。
 $$  
     \begin{array}{rrl}
-        \text{maximize} & -x -y \\\
+        \text{maximize} & -x -y \\
         \text{subject to} 
-        & x + 2y & \geq 2 \\\
-        & 2x + y & \geq 2 \\\
+        & x + 2y & \geq 2 \\
+        & 2x + y & \geq 2 \\
         & x, y & \geq 0 
     \end{array}
 $$
 轉換成 Simplex 的樣子就是
 $$  
     \begin{array}{rrrrrl}
-        \text{maximize} & Z \\\
+        \text{maximize} & Z \\
         \text{subject to}
-        & Z & +x +y     &           && = 0 \\\ 
-        &   & -x - 2y    & +s_1      && = -2 \\\
-        &   & -2x - y    & +s_2      && = -2 \\\
+        & Z & +x +y     &           && = 0 \\ 
+        &   & -x - 2y    & +s_1      && = -2 \\
+        &   & -2x - y    & +s_2      && = -2 \\
         &   &   x, y,   & s_1, s_2  &&\geq 0 
     \end{array}
 $$
 對於 $b_i$ 是負的條件，我們都補上一個 $t_i$。在這個例子裡是全部都是負的，所以在 Phase I 的一開始會先轉換成
 $$  
     \begin{array}{rrrrl}
-        \text{maximize} & \boxed{-t_1-t_2} \\\
+        \text{maximize} & \boxed{-t_1-t_2} \\
         \text{subject to}
         % & Z & +x +y     &           && = 0\\ 
-        & -x - 2y    & +s_1      & \boxed{-t_1}  & = -2 \\\
-        & -2x - y    & +s_2      & \boxed{-t_2}  & = -2 \\\
+        & -x - 2y    & +s_1      & \boxed{-t_1}  & = -2 \\
+        & -2x - y    & +s_2      & \boxed{-t_2}  & = -2 \\
         &   x, y,   & s_1, s_2, & t_1, t_2      & \geq 0 
     \end{array}
 $$
 然後會重新做一個新的目標函數：
 $$  
     \begin{array}{rrrrrl}
-        \text{maximize} & \boxed{Z'} \\\
+        \text{maximize} & \boxed{Z'} \\
         \text{subject to}
-        & Z' &        &           & \boxed{+t_1+t_2} & =  -4 \\\
-        && -x - 2y    & +s_1      & -t_1  & = -2 \\\
-        && -2x - y    & +s_2      & -t_2  & = -2 \\\
+        & Z' &        &           & \boxed{+t_1+t_2} & =  -4 \\
+        && -x - 2y    & +s_1      & -t_1  & = -2 \\
+        && -2x - y    & +s_2      & -t_2  & = -2 \\
         &&   x, y,   & s_1, s_2, & t_1, t_2      & \geq 0 
     \end{array}
 $$
 這時候我們的基底變數是 $Z' = -4, t_1 = 2, t_2 = 2$。不過我們的目標函數沒辦法得知要調整哪個非基底變數，所以我們先做高斯消去（其實只要代換就好，因為只有第一列要被消掉）。
 $$  
     \begin{array}{rrrrrl}
-        \text{maximize} &  Z' \\\
+        \text{maximize} &  Z' \\
         \text{subject to}
-        & Z' & \boxed{-3x-3y} & \boxed{+s_1+s_2} && = -4 \\\
-        && -x - 2y    & +s_1      & -t_1  & = -2 \\\
-        && -2x - y    & +s_2      & -t_2  & = -2 \\\
+        & Z' & \boxed{-3x-3y} & \boxed{+s_1+s_2} && = -4 \\
+        && -x - 2y    & +s_1      & -t_1  & = -2 \\
+        && -2x - y    & +s_2      & -t_2  & = -2 \\
         &&  x, y,   & s_1, s_2, & t_1, t_2      & \geq 0 
     \end{array}
 $$
@@ -384,22 +384,22 @@ $$
 這件事情壞掉了，理由是因為 Phase II 一開始的基底變數都是 $s_i$，所以過程中保證基底變數那一列的所有的係數都是正的，所以可以直接取得正確的離開變數，所以這邊我的方法是**直接把 $b_i < 0$ 的那一些列都取負**，理論上應該要可以用基底變數的係數處理正負，不過這樣我覺得會更為麻煩。這樣每次替換變數的時候都會保證基底變數的係數非負，然後選取該列的時候 $a_{i, j}$ 必定是正的，所以從頭到尾 $b_i$ 都也會維持是正的。
 $$  
     \begin{array}{rrrrrl}
-        \text{maximize} &  Z' \\\
+        \text{maximize} &  Z' \\
         \text{subject to}
-        & Z' & \boxed{-3x-3y} & \boxed{+s_1+s_2} && = -4 \\\
-        && x + 2y    & -s_1      & +t_1  & = 2 \\\
-        && 2x + y    & -s_2      & +t_2  & = 2 \\\
+        & Z' & \boxed{-3x-3y} & \boxed{+s_1+s_2} && = -4 \\
+        && x + 2y    & -s_1      & +t_1  & = 2 \\
+        && 2x + y    & -s_2      & +t_2  & = 2 \\
         &&  x, y,   & s_1, s_2, & t_1, t_2      & \geq 0 
     \end{array}
 $$
 這時候會選擇進入的變數是 $x$，並且選取第三行，使得出來的變數是 $t_2$，變成
 $$  
     \begin{array}{rrrrrl}
-        \text{maximize} &  Z' \\\
+        \text{maximize} &  Z' \\
         \text{subject to}
-        & Z' & -\frac 3 2y & +s_1-\frac 1 2 s_2 & +\frac 3 2 t_2& = -1 \\\
-        && \frac 3 2 y    & -s_1+\frac 1 2s_2      & +t_1-\frac 1 2 t_2  & = 1 \\\
-        && 2x + y    & -s_2      & +t_2  & = 2 \\\
+        & Z' & -\frac 3 2y & +s_1-\frac 1 2 s_2 & +\frac 3 2 t_2& = -1 \\
+        && \frac 3 2 y    & -s_1+\frac 1 2s_2      & +t_1-\frac 1 2 t_2  & = 1 \\
+        && 2x + y    & -s_2      & +t_2  & = 2 \\
         &&  x, y,   & s_1, s_2, & t_1, t_2      & \geq 0 
     \end{array}
 $$  
@@ -408,33 +408,33 @@ $$
 繼續選取進入變數，接下來會選到 $y$ 進入、$t_1$ 離開：
 $$  
     \begin{array}{rrrrrl}
-        \text{maximize} &  Z' \\\
+        \text{maximize} &  Z' \\
         \text{subject to}
-        & Z' &  & & +t_1+t_2& = 0 \\\
-        && \frac 3 2 y    & -s_1+\frac 1 2s_2      & +t_1-\frac 1 2 t_2  & = 1 \\\
-        && 2x    & +\frac 2 3s_1 -\frac 4 3 s_2      & -\frac 2 3 t_1+\frac 4 3 t_2  & = \frac 4 3 \\\
+        & Z' &  & & +t_1+t_2& = 0 \\
+        && \frac 3 2 y    & -s_1+\frac 1 2s_2      & +t_1-\frac 1 2 t_2  & = 1 \\
+        && 2x    & +\frac 2 3s_1 -\frac 4 3 s_2      & -\frac 2 3 t_1+\frac 4 3 t_2  & = \frac 4 3 \\
         &&  x, y,   & s_1, s_2, & t_1, t_2      & \geq 0 
     \end{array}
 $$  
 基底變成 $Z' = 0, x = 1, y = \frac 2 3$ 並且 Phase I 的 LP 解完了。這時候 $t_1, t_2$ 確實變成了 $0$，所對應的解在原本的狀況也是合法的，所以我們直接把 $t_i$ 這些 artificial variable 都拿掉，並且放回我們原本的目標：
 $$  
     \begin{array}{rrrrl}
-        \text{maximize} & Z \\\
+        \text{maximize} & Z \\
         \text{subject to}
-        & Z & +x +y     &           & = 0 \\\
-        && \frac 3 2 y    & -s_1+\frac 1 2s_2       & = 1 \\\
-        && 2x    & +\frac 2 3s_1 -\frac 4 3 s_2      & = \frac 4 3 \\\
+        & Z & +x +y     &           & = 0 \\
+        && \frac 3 2 y    & -s_1+\frac 1 2s_2       & = 1 \\
+        && 2x    & +\frac 2 3s_1 -\frac 4 3 s_2      & = \frac 4 3 \\
         &&  x, y,   & s_1, s_2, & \geq 0 
     \end{array}
 $$  
 這時候的基底是 $Z = \frac 3 5, x = 1, y = \frac 2 3$，不過新的第一列並沒有處理好，含有其他的基底變數，所以先消一下：
 $$  
     \begin{array}{rrrrl}
-        \text{maximize} & Z \\\
+        \text{maximize} & Z \\
         \text{subject to}
-        & Z &  &   +\frac 1 3 s_1+\frac 1 3s_2         & = -\frac 4 3 \\\
-        && \frac 3 2 y    & -s_1+\frac 1 2s_2       & = 1 \\\
-        && 2x    & +\frac 2 3s_1 -\frac 4 3 s_2      & = \frac 4 3 \\\
+        & Z &  &   +\frac 1 3 s_1+\frac 1 3s_2         & = -\frac 4 3 \\
+        && \frac 3 2 y    & -s_1+\frac 1 2s_2       & = 1 \\
+        && 2x    & +\frac 2 3s_1 -\frac 4 3 s_2      & = \frac 4 3 \\
         &&  x, y,   & s_1, s_2, & \geq 0 
     \end{array}
 $$  
@@ -444,9 +444,9 @@ $$
 
 $$  
     \begin{array}{rrl}
-        \text{maximize} & x \\\
+        \text{maximize} & x \\
         \text{subject to} 
-        & x + y & \leq -1 \\\
+        & x + y & \leq -1 \\
         & x, y  & \geq 0
     \end{array}
 $$
@@ -454,10 +454,10 @@ $$
 在 Phase I 就會直接寫出
 $$  
     \begin{array}{rrl}
-        \text{maximize} & Z' \\\
+        \text{maximize} & Z' \\
         \text{subject to} 
-        & Z' + x + y + s_1 & = -1 \\\
-        & -x - y - s_1 + t_1 & = 1 \\\
+        & Z' + x + y + s_1 & = -1 \\
+        & -x - y - s_1 + t_1 & = 1 \\
         & x, y, s_1, t_1  & \geq 0
     \end{array}
 $$
@@ -466,43 +466,43 @@ $$
 不過，直接 artificial variable 都拿掉是安全的嗎？有沒有可能 artificial variable 是基底變數？的確是有可能 artificial 是基底變數，但剛剛好是 $0$，在這個狀況就不可以貿然直接拿掉，因為這樣基底變數就會少一個。比如說以下的例子：
 $$  
     \begin{array}{rrl}
-        \text{maximize} & y \\\
+        \text{maximize} & y \\
         \text{subject to} 
-        & -2x + y & \leq -6 \\\
-        & x + y & \leq 3 \\\
+        & -2x + y & \leq -6 \\
+        & x + y & \leq 3 \\
         & x, y & \geq 0 
     \end{array}
 $$
 我們直接轉換成 Phase I 的目標
 $$  
     \begin{array}{rrrrrl}
-        \text{maximize} &  Z' \\\
+        \text{maximize} &  Z' \\
         \text{subject to}
-        & Z' &&& +t_1 & = 0 \\\
-        && -2x + y  & +s_1  & -t_1       & = -6 \\\
-        && x + y    & +s_2  &           & = 3 \\\
+        & Z' &&& +t_1 & = 0 \\
+        && -2x + y  & +s_1  & -t_1       & = -6 \\
+        && x + y    & +s_2  &           & = 3 \\
         &&  x, y,   & s_1, s_2, & t_1   & \geq 0 
     \end{array}
 $$  
 基底是 $Z' = -6, s_2 = 3, t_1 = 6$，轉換成可以跑的形式就會是
 $$  
     \begin{array}{rrrrrl}
-        \text{maximize} &  Z' \\\
+        \text{maximize} &  Z' \\
         \text{subject to}
-        & Z' & -2x + y & + s_1 && = -6 \\\
-        && 2x - y  & -s_1  & +t_1       & = 6 \\\
-        && x + y    & +s_2  &           & = 3 \\\
+        & Z' & -2x + y & + s_1 && = -6 \\
+        && 2x - y  & -s_1  & +t_1       & = 6 \\
+        && x + y    & +s_2  &           & = 3 \\
         &&  x, y,   & s_1, s_2, & t_1   & \geq 0 
     \end{array}
 $$  
 接下來鐵定是選擇 $x$ 作為進入變數，這時候基底會有兩種改變方法，其中一種是取代 $s_2$，改變為 $Z' = 0, x = 3, t_1 = 0$：
 $$  
     \begin{array}{rrrrrl}
-        \text{maximize} &  Z' \\\
+        \text{maximize} &  Z' \\
         \text{subject to}
-        & Z' & + 3y & + s_1 + 2s_2 && = 0 \\\
-        &&  - 3y  & -s_1 - 2s_2  & +t_1       & = 0 \\\
-        && x + y    & +s_2  &           & = 3 \\\
+        & Z' & + 3y & + s_1 + 2s_2 && = 0 \\
+        &&  - 3y  & -s_1 - 2s_2  & +t_1       & = 0 \\
+        && x + y    & +s_2  &           & = 3 \\
         &&  x, y,   & s_1, s_2, & t_1   & \geq 0 
     \end{array}
 $$  

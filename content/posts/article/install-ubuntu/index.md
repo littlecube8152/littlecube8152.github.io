@@ -115,5 +115,5 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 ### 後記
 之後我可能會再丟一篇負責記錄我是怎麼搞爆他重裝一次、處理用英文裝 Discord 很醜的問題、還有如何裝 Nvidia 顯卡驅動跟在 Minecraft 裡用它，  
-而且我好像還欠一篇我想寫的 CF 解題文章，但我好懶好笨，都打輸 IOI 滿分金芒果手，🥭🖐️⚡🥇🛐。  
+而且我好像還欠一篇我想寫的 CF 解題文章，但我好懶好笨，都打輸 IOI 滿分金芒果手，:mango::raised_hand_with_fingers_splayed::zap::1st_place_medal::place_of_worship:。  
 

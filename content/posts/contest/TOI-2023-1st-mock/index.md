@@ -80,7 +80,7 @@ Judge 是 Adaptive 的。
 
 假設在所有呼叫中，你的程式呼叫 `GetCount` 跟 `GetRank` 的總代價最大值是 $Q$，那你的得分 $S$ 是  
 
-$S = \begin{cases}0 & \text{if } Q > 200000\\\\\lfloor\frac{200000-Q}{3200}\rfloor\times 0.01 & \text{if } 40000 < Q \leq 200000\\\\ 0.5 + \lfloor\frac{40000-Q}{200}\rfloor\times 0.01 & \text{if } 30000 < Q \leq 40000\\\\1 & \text{if } Q \leq 30000\end{cases}$
+$S = \begin{cases}0 & \text{if } Q > 200000 \\ \lfloor\frac{200000-Q}{3200}\rfloor\times 0.01 & \text{if } 40000 < Q \leq 200000 \\ 0.5 + \lfloor\frac{40000-Q}{200}\rfloor\times 0.01 & \text{if } 30000 < Q \leq 40000 \\ 1 & \text{if } Q \leq 30000\end{cases}$
 
 |分數|額外輸入限制|
 |:-:|:-|
@@ -319,16 +319,17 @@ JOISC 我打得不怎麼樣，燒雞
 JOISC 2023 Day 2 online mirror，打得算可以，反正整天都是 vjudge 教授講自動機，所以那也沒怎樣。  
 
 ### Day 9
-JOISC 2023 Day 3 online mirror + vjudge，  
-早上是 UVa 教授的 UVa mashup，先不論 UVa 的題目輸入輸出很毒瘤，   
-vjudge 今天似乎抓不到他的 verdict，  
-因為 UVa 一度爛掉，所以我 claim 之後 vjudge 也不會好我就直接不寫後面兩題跑去 JOISC 燒雞了  
+JOISC 2023 Day 3 online mirror + vjudge，
+早上是 UVa 教授的 UVa mashup，先不論 UVa 的題目輸入輸出很毒瘤，
+vjudge 今天似乎抓不到他的 verdict，
+因為 UVa 一度爛掉，所以我 claim 之後 vjudge 也不會好我就直接不寫後面兩題跑去 JOISC 燒雞了
 （根據 PixelCat 的說法，後來是好的所以我好像有點小虧）
-今天的壞事可能是 JOISC 真的打超爛= =，  
-可能我今天狀況本來就不好而且身體狀況燒雞再加上連續打讓我直接噴飛，  
+
+今天的壞事可能是 JOISC 真的打超爛= =，
+可能我今天狀況本來就不好而且身體狀況燒雞再加上連續打讓我直接噴飛。
 
 下午吃飯的酷事：芒果在講他是怎麼學會數學進入 TMO 的經歷，然後我因為鼻子不舒服去抽衛生紙被芒果以為是我被他嗆哭，  
-在感冒期間打資訊奧林匹克真的會燒雞，很🉐的事是有個搶角錐遊戲，結果最後一場我們一直送角錐，超好笑  
+在感冒期間打資訊奧林匹克真的會燒雞，很:ideograph_advantage:的事是有個搶角錐遊戲，結果最後一場我們一直送角錐，超好笑  
 
 ### Day 10
 第一次體會輔導課，然後我講了一大堆的怪話，詳情請見選訓怪話集。

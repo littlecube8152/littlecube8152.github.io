@@ -13,7 +13,7 @@ theme = "cactus"
 hasCJKLanguage = true
 enableEmoji = true
 summaryLength = 0
-pygmentsUseClasses = true
+# pygmentsUseClasses = true
 
 ignoreFiles = ['^content/old-posts']
 

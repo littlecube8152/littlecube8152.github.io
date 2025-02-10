@@ -57,7 +57,7 @@ summary: "笨方塊在三模被 Output Only 揍爛，燒雞"
 
 有一棵樹，第 $i$ 個節點可能有兩種狀況：**已開發**或**發展中**，對**已開發**的城市，平均薪資固定為 $x_i$，而對於**發展中**的城市，平均薪資起始為 $x_i = 0$，而這些城市會不斷的（同時或不同時）調漲員工薪水，對這些城市而言，定義 $N(i)$ 是該點的鄰居集合而 $c_i$ 為加碼的常數，那這次薪水的調漲將會是
 
-$$x_i \leftarrow \max\left\\{x_i, c_i + \frac 1 {|N(i)|}\sum_{j\in N(i)}x_j\right\\}$$
+$$x_i \leftarrow \max\left\{x_i, c_i + \frac 1 {|N(i)|}\sum_{j\in N(i)}x_j\right\}$$
 
 也就是鄰居的薪資平均加上加碼常數 $c_i$ 與當下的薪資取最大值。
 
@@ -69,7 +69,7 @@ $$x_i \leftarrow \max\left\\{x_i, c_i + \frac 1 {|N(i)|}\sum_{j\in N(i)}x_j\righ
 |分數|額外輸入限制|
 |:-:|:-|
 |$17$|$n \leq 50$
-|$9$|$\|N(i)\| \leq 2$
+|$9$|$\lvert N(i) \rvert \leq 2$
 |$22$|$c_i = 0$
 |$19$|$n \leq 5000$
 |$33$|無額外限制
@@ -86,7 +86,7 @@ $$x_i \leftarrow \max\left\\{x_i, c_i + \frac 1 {|N(i)|}\sum_{j\in N(i)}x_j\righ
 
 注意可以有複數個代表人代表相同來源的意見。
 
-你的目標是對於給定的 $f : [0, 2^n-1] \rightarrow \\{0, 1\\}$，你想要構造一種投票的過程滿足最後一天唯一一場投票的結果為 $f(\sum 2^ib_i)$。
+你的目標是對於給定的 $f : [0, 2^n-1] \rightarrow \{0, 1\}$，你想要構造一種投票的過程滿足最後一天唯一一場投票的結果為 $f(\sum 2^ib_i)$。
 
  - $2 \leq n \leq 12$
  - $3 \leq k \leq 11$ 且為奇數
